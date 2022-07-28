@@ -1,0 +1,47 @@
+# Default ignored files
+/vendor/
+/.git
+/.idea
+/.gitattributes
+/.editorconfig
+/drush
+/web/core
+/web/modules/contrib
+/web/profiles
+/web/autoload.php
+/web/example.gitignore
+/web/index.php
+/web/INSTALL.txt
+/web/README.txt
+/web/robots.txt
+/web/update.php
+/web/web.config
+/web/.csslintrc
+/web/.eslintignore
+/web/.eslintrc.json
+/web/.ht.router.php
+/web/sites/README.txt
+/web/sites/example.sites.php
+/web/sites/default/default.services.yml
+/web/sites/default/default.settings.php
+/web/sites/default/settings.local.php
+/web/modules/README.txt
+/web/themes/README.txt
+/web/README.md
+/web/themes/contrib
+
+
+#Ignore configuration files that may contain sensitive information.
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+/web/sites/development.*.yml
+/web/sites/example.*.php
+
+# Ignore paths that contain user-generated content.
+/web/sites/*/files
+/web/sites/*/private
+/web/sites/default/development.services.yml
+
+/db/
+/robo.yml
+/web/libraries/

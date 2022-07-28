@@ -1,0 +1,18 @@
+uuid: ef93126e-7788-49dc-adcd-7d2f4ac9a91b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - edwt
+id: primaryadminactions
+theme: edwt
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
