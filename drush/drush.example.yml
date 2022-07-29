@@ -1,0 +1,4 @@
+# Global options.
+options:
+# Specify the base_url that should be used when generating links.
+ uri: 'http://iccwc.local'
