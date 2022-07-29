@@ -7,7 +7,7 @@ $settings['file_private_path'] = realpath($app_root . '/../private');
 
 /** Customize to your local configuration */
 $databases['default']['default'] = array (
-  'database' => 'drupal',
+  'database' => 'iccwc',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
@@ -19,7 +19,7 @@ $databases['default']['default'] = array (
 
 # SMTP configuration
 $config['smtp.settings']['smtp_host'] = 'localhost';
-$config['smtp.settings']['smtp_port'] = 465;
+$config['smtp.settings']['smtp_port'] = 25;
 $config['smtp.settings']['smtp_protocol'] = 'ssl';
 $config['smtp.settings']['smtp_from'] = 'no-reply@example.com';
 $config['smtp.settings']['smtp_username'] = 'no-reply@example.com';
@@ -29,5 +29,5 @@ $config['system.site']['mail'] = 'no-reply@example.com';
 
 # Project trusted host pattern
 $settings['trusted_host_patterns'] = [
-  '^example\.localhost',
+  '^iccwc\.local',
 ];

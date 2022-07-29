@@ -39,6 +39,7 @@
 *.sql.gz
 
 /web/sites/*/settings*.php
+!/web/sites/*/settings.php
 /web/sites/*/services*.yml
 /web/sites/example.settings.local.php
 /web/sites/development.services.yml
@@ -72,3 +73,5 @@ phpunit.xml
 
 /.github/workflows
 /drush
+
+.idea
