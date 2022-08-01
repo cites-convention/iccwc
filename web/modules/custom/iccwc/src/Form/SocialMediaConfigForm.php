@@ -15,7 +15,7 @@ class SocialMediaConfigForm extends ConfigFormBase {
    *
    * @var string
    */
-  const SETTINGS = 'iccwc_social_media.settings';
+  const SETTINGS = 'iccwc.social_media.settings';
 
   /**
    * {@inheritdoc}
