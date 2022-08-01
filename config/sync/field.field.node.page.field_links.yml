@@ -1,16 +1,16 @@
-uuid: 4af35ef3-2bb4-4af1-959d-888730a19932
+uuid: 998ee0db-3930-46c3-acba-713fb5c4e906
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_links
-    - node.type.news
+    - node.type.page
   module:
     - link
-id: node.news.field_links
+id: node.page.field_links
 field_name: field_links
 entity_type: node
-bundle: news
+bundle: page
 label: 'Other links'
 description: ''
 required: false
