@@ -76,3 +76,7 @@ phpunit.xml
 drush/drush.yml
 
 .idea
+
+node_modules
+
+test.php
