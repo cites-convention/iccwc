@@ -1,7 +1,13 @@
 {
   "patches": {
-    "drupal/backup_migrate": {
-      "#3228379 Failed network - error": "https://www.drupal.org/files/issues/2022-02-02/3228379-download-errors-19.patch"
+    "drupal/entity_browser": {
+      "#2721665 - Problems with multilingual entities": "https://www.drupal.org/files/issues/2021-12-23/entity_browser-problems-with-multilingual-2721665-56.patch"
+    },
+    "drupal/media_entity_browser": {
+      "#2939543 - Improving JS behavior to comply with field cardinality": "https://www.drupal.org/files/issues/2019-06-25/media_entity_browser-ported-file-browser-cadinality-support-2939543-17.patch"
+    },
+    "drupal/core": {
+      "media": "https://www.drupal.org/files/issues/2022-06-01/2985168-125.patch"
     }
   }
 }

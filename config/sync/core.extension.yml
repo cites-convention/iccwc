@@ -41,6 +41,7 @@ module:
   iccwc: 0
   image: 0
   image_captcha: 0
+  inline_entity_form: 0
   language: 0
   layout_builder: 0
   layout_builder_browser: 0
@@ -54,6 +55,7 @@ module:
   mail_login: 0
   media: 0
   media_library: 0
+  media_library_edit: 0
   media_library_form_element: 0
   media_library_theme_reset: 0
   menu_link_attributes: 0
