@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_related_content
     - node.type.news
     - node.type.page
+    - node.type.success_story
 id: node.page.field_related_content
 field_name: field_related_content
 entity_type: node
@@ -22,6 +23,7 @@ settings:
     target_bundles:
       news: news
       page: page
+      success_story: success_story
     sort:
       field: _none
       direction: ASC

@@ -1,4 +1,4 @@
-uuid: 1d90483f-0c37-42e1-80aa-b0593a54e7e4
+uuid: 60ff9463-768a-4538-a907-d0730373883a
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,10 @@ dependencies:
     - node.type.news
     - node.type.page
     - node.type.success_story
-id: node.news.field_related_content
+id: node.success_story.field_related_content
 field_name: field_related_content
 entity_type: node
-bundle: news
+bundle: success_story
 label: 'Related content'
 description: ''
 required: false
