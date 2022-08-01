@@ -25,6 +25,16 @@ function iccwc_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_page_attachments().
+ */
+function iccwc_page_attachments(array &$attachments) {
+  // Add custom CSS to admin pages.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'iccwc/admin';
+  }
+}
+
+/**
  * Implements hook_field_widget_form_alter().
  */
 function iccwc_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
@@ -51,7 +61,7 @@ function iccwc_field_widget_form_alter(&$element, FormStateInterface $form_state
               $translate_url->setRouteParameter('target', $language->getId());
 
               $edit_url_query_params = [
-                'media_library_edit' => 'ajax',
+                'media_library_translate' => 'ajax',
               ];
               $translate_url->setOption('query', $edit_url_query_params);
 
@@ -70,20 +80,10 @@ function iccwc_field_widget_form_alter(&$element, FormStateInterface $form_state
 }
 
 /**
- * Implements hook_page_attachments().
- */
-function iccwc_page_attachments(array &$attachments) {
-  // Add custom CSS to admin pages.
-  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
-    $attachments['#attached']['library'][] = 'iccwc/admin';
-  }
-}
-
-/**
  * Implements hook_form_alter().
  */
 function iccwc_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (\Drupal::request()->query->get('media_library_edit') === 'ajax') {
+  if (\Drupal::request()->query->get('media_library_translate') === 'ajax') {
     $form['actions']['submit']['#ajax'] = [
       'callback' => '_iccwc_media_translate_save',
       'event' => 'click',
