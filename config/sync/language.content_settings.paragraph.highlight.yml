@@ -1,18 +1,18 @@
-uuid: 5cdc53e4-1be5-435e-aa41-3a11df2712f0
+uuid: 40a04431-7bef-4a07-8c9c-48396ed2b6c5
 langcode: en
 status: true
 dependencies:
   config:
-    - media.type.file
+    - paragraphs.paragraphs_type.highlight
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: media.file
-target_entity_type_id: media
-target_bundle: file
+id: paragraph.highlight
+target_entity_type_id: paragraph
+target_bundle: highlight
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

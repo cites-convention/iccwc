@@ -1,20 +1,20 @@
-uuid: 72ceea54-5900-4c6c-98ad-f9c708a1e021
+uuid: 5c4fee08-ae7c-4a96-8442-61a99ccf2f0d
 langcode: en
 status: true
 dependencies:
   config:
-    - media.type.image
-id: media.image.status
+    - paragraphs.paragraphs_type.vertical_tab
+id: paragraph.vertical_tab.status
 field_name: status
-entity_type: media
-bundle: image
+entity_type: paragraph
+bundle: vertical_tab
 label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

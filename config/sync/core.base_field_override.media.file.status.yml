@@ -1,20 +1,20 @@
-uuid: 72ceea54-5900-4c6c-98ad-f9c708a1e021
+uuid: 7cded26c-5f2d-4063-9045-499378da1e02
 langcode: en
 status: true
 dependencies:
   config:
-    - media.type.image
-id: media.image.status
+    - media.type.file
+id: media.file.status
 field_name: status
 entity_type: media
-bundle: image
+bundle: file
 label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'
