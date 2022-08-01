@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * The iccwc module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function iccwc_theme($existing, $type, $theme, $path) {
@@ -14,4 +19,3 @@ function iccwc_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
-
