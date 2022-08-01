@@ -90,7 +90,8 @@
             "file-mapping": {
                 "[web-root]/sites/example.settings.local.php": {
                     "append": "patches/append-example.settings.local.php.txt"
-                }
+                },
+                "[web-root]/sites/development.services.yml": false
             }
         },
         "installer-paths": {
