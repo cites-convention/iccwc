@@ -1,0 +1,52 @@
+uuid: bd39ea04-301c-4879-8729-5ffb1234888b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlight.field_date
+    - field.field.paragraph.highlight.field_description
+    - field.field.paragraph.highlight.field_link
+    - field.field.paragraph.highlight.field_title
+    - paragraphs.paragraphs_type.highlight
+  module:
+    - datetime
+    - link
+    - text
+id: paragraph.highlight.default
+targetEntityType: paragraph
+bundle: highlight
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

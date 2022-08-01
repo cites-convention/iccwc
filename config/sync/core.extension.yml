@@ -32,6 +32,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   edw_healthcheck: 0
+  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -85,10 +86,12 @@ module:
   views_ui: 0
   webform: 0
   webform_ui: 0
+  youtube: 0
   pathauto: 1
   xmlsitemap: 1
   content_translation: 10
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   seven: 0

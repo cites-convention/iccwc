@@ -1,0 +1,21 @@
+uuid: 07c886db-f946-46f6-8a0a-40e0eb6b2a5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video
+    - paragraphs.paragraphs_type.vertical_tab
+  module:
+    - youtube
+id: paragraph.vertical_tab.field_video
+field_name: field_video
+entity_type: paragraph
+bundle: vertical_tab
+label: 'Youtube video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube
