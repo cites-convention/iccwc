@@ -53,6 +53,7 @@
         "drupal/spamspan": "^1.2",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.1",
+        "drupal/twitter_feed": "^1.4",
         "drupal/webform": "^6.1",
         "drupal/xmlsitemap": "^1.2",
         "drupal/youtube": "^1.2",
