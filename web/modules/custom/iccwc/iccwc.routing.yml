@@ -1,0 +1,7 @@
+iccwc.settings.social_media:
+  path: '/admin/config/iccwc/social-media'
+  defaults:
+    _form: '\Drupal\iccwc\Form\SocialMediaConfigForm'
+    _title: 'Social media settings'
+  requirements:
+    _permission: 'administer site configuration'
