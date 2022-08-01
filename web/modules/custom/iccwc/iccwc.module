@@ -7,15 +7,9 @@ function iccwc_theme($existing, $type, $theme, $path) {
   return [
     'social_media_links' => [
       'variables' => [
-        'twitter' => '',
-        'youtube' => '',
-        'linkedin'  => '',
-        ],
-    ],
-    'social_media_item' => [
-      'variables' => [
-        'link' => NULL,
-        'icon' => NULL,
+        'twitter_link' => '',
+        'youtube_link' => '',
+        'linkedin_link'  => '',
       ],
     ],
   ];
