@@ -1,0 +1,23 @@
+uuid: 55244070-c43e-43f8-a210-b719aaba2dd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_past_donor
+    - node.type.partner
+id: node.partner.field_past_donor
+field_name: field_past_donor
+entity_type: node
+bundle: partner
+label: 'Past donor'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
