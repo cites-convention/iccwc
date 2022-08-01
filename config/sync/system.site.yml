@@ -2,8 +2,8 @@ _core:
   default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
 langcode: en
 uuid: 64b88f66-435e-425a-94ca-480cbffd974e
-name: TODO
-mail: root@localhost
+name: ICCWC
+mail: no_reply@eaudeweb.ro
 slogan: ''
 page:
   403: ''
