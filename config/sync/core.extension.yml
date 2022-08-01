@@ -38,7 +38,6 @@ module:
   file: 0
   filter: 0
   honeypot: 0
-  iccwc: 0
   image: 0
   image_captcha: 0
   inline_entity_form: 0
@@ -92,6 +91,7 @@ module:
   youtube: 0
   pathauto: 1
   xmlsitemap: 1
+  iccwc: 9
   content_translation: 10
   views: 10
   paragraphs: 11

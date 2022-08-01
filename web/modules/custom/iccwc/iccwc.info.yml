@@ -3,3 +3,6 @@ description: ICCWC custom functionality
 package: ICCWC
 type: module
 core_version_requirement: ^8.8.0 || ^9 || ^10
+dependencies:
+  - media_library_edit:media_library_edit
+

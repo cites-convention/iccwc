@@ -16,6 +16,7 @@ dependencies:
   module:
     - link
     - media_library
+    - media_library_edit
     - metatag
     - path
     - text
@@ -64,7 +65,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_links:
     type: link_default
     weight: 27
