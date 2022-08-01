@@ -1,0 +1,10 @@
+uuid: df145adf-5fdf-4b08-a036-de82be03161c
+langcode: en
+status: true
+dependencies: {  }
+id: vertical_tab
+label: 'Vertical tab'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

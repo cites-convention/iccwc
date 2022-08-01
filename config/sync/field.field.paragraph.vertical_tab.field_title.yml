@@ -1,0 +1,19 @@
+uuid: 10dd2ae2-35aa-4421-af80-0b3249875fd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.vertical_tab
+id: paragraph.vertical_tab.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: vertical_tab
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -56,6 +56,7 @@
         "drupal/twitter_feed": "^1.4",
         "drupal/webform": "^6.1",
         "drupal/xmlsitemap": "^1.2",
+        "drupal/youtube": "^1.2",
         "drush/drush": "^11.0",
         "tubalmartin/cssmin": "^4.1"
     },
@@ -89,7 +90,8 @@
             "file-mapping": {
                 "[web-root]/sites/example.settings.local.php": {
                     "append": "patches/append-example.settings.local.php.txt"
-                }
+                },
+                "[web-root]/sites/development.services.yml": false
             }
         },
         "installer-paths": {

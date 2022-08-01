@@ -1,0 +1,43 @@
+{
+  "name": "EaudeWebTheme",
+  "version": "1.0.0",
+  "description": "Drupal 9 and bootstrap 5 + gulp. and css var",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.drupalcode.org/project/edwt"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 10",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ],
+  "author": "JoSecret",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "sass": "^1.49.9",
+    "gulp-css-purge": "^3.0.9",
+    "gulp-minify": "^3.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-strip-comments": "^2.5.2"
+  },
+  "dependencies": {
+    "bootstrap": "5.1.3"
+  }
+}
