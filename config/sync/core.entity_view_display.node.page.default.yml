@@ -74,6 +74,11 @@ third_party_settings:
         - 'bootstrap_layout_builder:blb_col_2'
         - 'bootstrap_layout_builder:blb_col_3'
         - 'bootstrap_layout_builder:blb_col_4'
+      restricted_categories:
+        - 'Chaos Tools'
+        - Forms
+        - Menus
+        - System
       blacklisted_blocks:
         'Content fields':
           - 'field_block:node:page:uid'
@@ -118,11 +123,6 @@ third_party_settings:
           - webform_block
         core:
           - page_title_block
-      restricted_categories:
-        - 'Chaos Tools'
-        - Forms
-        - Menus
-        - System
 id: node.page.default
 targetEntityType: node
 bundle: page
