@@ -24,7 +24,7 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'breadcrumb' => '',
         'caption' => '',
         'image' => '',
-      ]
+      ],
     ],
   ];
 }
