@@ -66,11 +66,18 @@ class SocialMediaLinksBlock extends BlockBase implements ContainerFactoryPluginI
     $linkedin_link = $this->config->get('linkedin_link');
 
     return [
-      '#theme' => "social_media_links",
+      '#theme' => 'social_media_links',
       '#twitter_link' => $twitter_link,
       '#youtube_link' => $youtube_link,
       '#linkedin_link' => $linkedin_link,
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    return ['config:iccwc.social_media.settings'];
   }
 
 }
