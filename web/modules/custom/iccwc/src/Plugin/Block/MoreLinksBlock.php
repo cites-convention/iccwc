@@ -2,8 +2,6 @@
 
 namespace Drupal\iccwc\Plugin\Block;
 
-use Drupal\Core\Block\BlockBase;
-
 /**
  * Provides a 'ICCWC more links' Block.
  *
@@ -13,14 +11,14 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("ICCWC"),
  * )
  */
-class MoreLinksBlock  extends BlockBase {
+class MoreLinksBlock extends ICCWCBlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function build() {
     /** @var Drupal\node\Entity\Node $node */
-    $node = \Drupal::routeMatch()->getParameter('node');
+    $node = $this->routeMatch->getParameter('node');
     $links = [];
     foreach ($node->get('field_links') as $item) {
       $links[$item->uri] = $item->title;
@@ -28,7 +26,7 @@ class MoreLinksBlock  extends BlockBase {
 
     return [
       '#theme' => 'more_links',
-      '#links' => $links
+      '#links' => $links,
     ];
   }
 

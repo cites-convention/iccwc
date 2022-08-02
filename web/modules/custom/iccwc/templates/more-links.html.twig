@@ -1,4 +1,3 @@
-{% for key, value in links %}
-  <a href="{{ key }}">{{ value }}</a>
-  <br>
+{% for url, title in links %}
+  <a href="{{ url }}">{{ title }}</a>
 {% endfor %}
