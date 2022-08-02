@@ -15,7 +15,7 @@ class SocialMediaConfigForm extends ConfigFormBase {
    *
    * @var string
    */
-  const SETTINGS = 'iccwc_social_media.settings';
+  const SETTINGS = 'iccwc.social_media.settings';
 
   /**
    * {@inheritdoc}
@@ -47,13 +47,13 @@ class SocialMediaConfigForm extends ConfigFormBase {
 
     $form['youtube_link'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Youtube link'),
+      '#title' => $this->t('YouTube link'),
       '#default_value' => $config->get('youtube_link'),
     ];
 
     $form['linkedin_link'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Linkedin link'),
+      '#title' => $this->t('LinkedIn link'),
       '#default_value' => $config->get('linkedin_link'),
     ];
 
@@ -64,7 +64,6 @@ class SocialMediaConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Retrieve the configuration.
     $this->config(static::SETTINGS)
       ->set('twitter_link', $form_state->getValue('twitter_link'))
       ->set('youtube_link', $form_state->getValue('youtube_link'))

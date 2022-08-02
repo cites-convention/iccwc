@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * The iccwc module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function iccwc_theme($existing, $type, $theme, $path) {
@@ -15,3 +20,12 @@ function iccwc_theme($existing, $type, $theme, $path) {
   ];
 }
 
+/**
+ * Implements hook_page_attachments().
+ */
+function iccwc_page_attachments(array &$attachments) {
+  // Add custom CSS to admin pages.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'iccwc/admin';
+  }
+}

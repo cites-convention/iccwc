@@ -1,0 +1,12 @@
+iccwc.admin_config_iccwc:
+  route_name: iccwc.admin_config_iccwc
+  parent: system.admin_config
+  title: ICCWC Settings
+  description: 'Configure ICCWC settings'
+  weight: -100
+
+iccwc.config.social_media:
+  title: 'Social media links'
+  description: 'Change the social media links'
+  parent: iccwc.admin_config_iccwc
+  route_name: iccwc.settings.social_media

@@ -31,3 +31,11 @@ $config['system.site']['mail'] = 'no-reply@example.com';
 $settings['trusted_host_patterns'] = [
   '^iccwc\.local',
 ];
+
+$config['search_api.server.solr']['backend_config']['connector'] = 'standard';
+$config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'iccwc';
+$config['search_api.server.solr']['backend_config']['connector_config']['port'] = '8983';
+$config['search_api.server.solr']['backend_config']['connector_config']['host'] = 'localhost';
+$config['search_api.server.solr']['backend_config']['connector_config']['scheme'] = 'http';
+$config['search_api.server.solr']['backend_config']['connector_config']['username'] = FALSE;
+$config['search_api.server.solr']['backend_config']['connector_config']['password'] = FALSE;

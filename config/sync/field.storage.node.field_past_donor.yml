@@ -1,0 +1,18 @@
+uuid: beec5d41-973b-4d33-8a94-c28e8890a231
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_past_donor
+field_name: field_past_donor
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

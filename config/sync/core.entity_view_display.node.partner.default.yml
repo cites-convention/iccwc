@@ -1,0 +1,50 @@
+uuid: e6d613fc-817f-4a0e-a89d-368d3a1b8461
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.partner.field_amount
+    - field.field.node.partner.field_image
+    - field.field.node.partner.field_past_donor
+    - node.type.partner
+  module:
+    - user
+id: node.partner.default
+targetEntityType: node
+bundle: partner
+mode: default
+content:
+  field_amount:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_past_donor:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+.media-library-edit__link.media-library-translate__link {
+  top: 75px;
+  background: url(/modules/custom/iccwc/css/icons/translate.svg) #fff center no-repeat;
+  background-size: cover;
+}
+
+.ui-dialog .media-library-edit__modal::before{
+  display: block !important;
+}
