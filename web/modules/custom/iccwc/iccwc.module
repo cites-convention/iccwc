@@ -22,9 +22,17 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'links' => [],
       ],
     ],
+    'banner_block' => [
+      'variables' => [
+        'summary' => '',
+        'title' => '',
+        'breadcrumb' => '',
+        'caption' => '',
+        'image' => '',
+      ],
+    ],
   ];
 }
-
 
 /**
  * Implements hook_page_attachments().
