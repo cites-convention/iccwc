@@ -1,0 +1,20 @@
+uuid: 3dbf3fda-049b-46ba-affd-9cd9a1877927
+langcode: en
+status: true
+dependencies:
+  module:
+    - iccwc
+  theme:
+    - frontend
+id: iccwcsearchform
+theme: frontend
+region: header_right
+weight: -5
+provider: null
+plugin: iccwc_search_form
+settings:
+  id: iccwc_search_form
+  label: 'ICCWC Search form'
+  label_display: '0'
+  provider: iccwc
+visibility: {  }
