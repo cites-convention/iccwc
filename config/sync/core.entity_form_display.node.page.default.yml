@@ -15,6 +15,8 @@ dependencies:
     - node.type.page
   module:
     - link
+    - media_library
+    - media_library_edit
     - metatag
     - path
     - text
@@ -58,15 +60,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_image:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 29
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_links:
     type: link_default
     weight: 27
