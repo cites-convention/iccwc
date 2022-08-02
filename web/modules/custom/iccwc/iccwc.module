@@ -17,8 +17,14 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'linkedin_link'  => '',
       ],
     ],
+    'more_links' => [
+      'variables' => [
+        'links' => [],
+      ],
+    ],
   ];
 }
+
 
 /**
  * Implements hook_page_attachments().
