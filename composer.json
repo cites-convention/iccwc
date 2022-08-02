@@ -36,6 +36,7 @@
         "drupal/field_group": "^3.2",
         "drupal/honeypot": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/lang_dropdown": "^2.0",
         "drupal/layout_builder_browser": "^1.4",
         "drupal/layout_builder_modal": "^1.1",
         "drupal/layout_builder_restrictions": "^2.12",
