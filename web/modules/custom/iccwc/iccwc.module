@@ -36,9 +36,12 @@ function iccwc_page_attachments(array &$attachments) {
 
 /**
  * Implements hook_field_widget_form_alter().
+ *
+ * @see media_library_edit_field_widget_form_alter().
  */
 function iccwc_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   $plugin_id = $context['widget']->getPluginId();
+  $language = \Drupal::languageManager()->getCurrentLanguage();
 
   // Add translate link to media items.
   if ($plugin_id == 'media_library_widget') {
@@ -51,7 +54,6 @@ function iccwc_field_widget_form_alter(&$element, FormStateInterface $form_state
         if ($media = $context['items']->entity) {
           if ($media->access('update') && $media->getEntityType()->getLinkTemplate('drupal:content-translation-add')) {
             foreach (Element::children($element['selection']) as $key) {
-              $language = \Drupal::languageManager()->getCurrentLanguage();
               if ($media->hasTranslation($language->getId())) {
                 continue;
               }
