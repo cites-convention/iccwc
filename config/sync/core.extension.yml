@@ -92,6 +92,7 @@ module:
   pathauto: 1
   xmlsitemap: 1
   iccwc: 9
+  iccwc_media: 9
   content_translation: 10
   views: 10
   paragraphs: 11
