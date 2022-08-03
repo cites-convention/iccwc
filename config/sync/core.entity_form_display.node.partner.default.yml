@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.partner.field_amount
+    - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
     - field.field.node.partner.field_past_donor
     - node.type.partner
   module:
+    - link
     - path
 id: node.partner.default
 targetEntityType: node
@@ -27,6 +29,14 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_external_url:
+    type: link_default
+    weight: 125
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_image:
     type: entity_reference_autocomplete

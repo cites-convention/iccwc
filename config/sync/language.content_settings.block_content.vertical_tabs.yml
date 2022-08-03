@@ -1,0 +1,16 @@
+uuid: 893e65ea-427a-4a3b-a778-bccc878962d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vertical_tabs
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.vertical_tabs
+target_entity_type_id: block_content
+target_bundle: vertical_tabs
+default_langcode: site_default
+language_alterable: false

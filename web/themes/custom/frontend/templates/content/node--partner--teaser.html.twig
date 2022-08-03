@@ -1,0 +1,7 @@
+<article{{ attributes }}>
+  <div{{ content_attributes }}>
+    <a href="{{ file_url(content.field_external_url[0]['#url'].uri) }}" rel="bookmark">
+      <img src="{{ file_url(content.field_image[0]['#media'].field_media_image.entity.uri.value) }}">
+    </a>
+  </div>
+</article>

@@ -1,0 +1,26 @@
+uuid: fe515e4d-cbf4-4b77-b197-a1f35ec1446e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vertical_tabs
+    - field.field.block_content.vertical_tabs.field_tabs
+  module:
+    - entity_reference_revisions
+id: block_content.vertical_tabs.default
+targetEntityType: block_content
+bundle: vertical_tabs
+mode: default
+content:
+  field_tabs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
