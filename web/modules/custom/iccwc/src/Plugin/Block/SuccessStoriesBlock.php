@@ -8,6 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\Views;
+use Drupal\node\Entity\Node;
 
 /**
  * Provides a 'ICCWC Success stories' Block.
@@ -18,97 +19,35 @@ use Drupal\views\Views;
  *   category = @Translation("ICCWC"),
  * )
  */
-class SuccessStoriesBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
-  /**
-   * The configuration for Success stories.
-   *
-   * @var \Drupal\Core\Config\ImmutableConfig
-   *
-   * @see \Drupal\iccwc\Form\SocialMediaConfigForm
-   */
-  protected $config;
-
-  /**
-   * SuccessStoriesBlock constructor.
-   *
-   * @param array $configuration
-   *   The configuration.
-   * @param string $plugin_id
-   *   The plugin id.
-   * @param mixed $plugin_definition
-   *   The plugin definition.
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The config factory.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->config = $config_factory->get('iccwc_success_stories');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('config.factory')
-    );
-  }
-
+class SuccessStoriesBlock extends ICCWCBlockBase {
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $ref_type = $this->configuration['ref_type'];
-    $ct_types = $this->configuration['ct_type'];
-    $result = NULL;
-    $args = NULL;
-    $block_display_id = NULL;
+    $story = $this->configuration['story'];
+    $node = Node::load($story);
 
-    if ("view_data" == $ref_type) {
-      // Show most recent content of selected content types
-      $args = implode('+', $ct_types);
-      $block_display_id = 'block_related_content';
+    $featured_date = $node->get('created')->getValue();
+    $featured_title = $node->getTitle();
+    $featured_image = $node->get('field_image')->view('teaser');
+    $featured_text = $node->get('field_banner_text')->view('teaser');
+    $featured_link = $node->toUrl()->toString();
 
-    } else {
-      // Shw data from field from node
-      $nids = [];
-
-      $entity = \Drupal::routeMatch()->getParameter('node');
-      if ($entity instanceof \Drupal\node\NodeInterface) {
-        $related_ents = $entity->get('field_related_content')->getValue();
-        if (isset($related_ents)) {
-          foreach ($related_ents as $related_ent) {
-            $nids[] = $related_ent['target_id'];
-          }
-
-          $args = implode('+', $nids);
-          $block_display_id = 'block_related_node';
-        }
-      }
-    }
-
-    if (isset($args) && isset($block_display_id)) {
-      // Generate view results based on selected options
-      $view = Views::getView('related_content');
-      if (is_object($view)) {
-        $view->setArguments([$args]);
-        $view->setDisplay($block_display_id);
-        $view->preExecute();
-        $view->execute();
-        $render = $view->render();
-
-        $result = \Drupal::service('renderer')->render($render);
-      }
-    }
+    $view = [
+      '#type' => 'view',
+      '#view' => Views::getView('success_stories'),
+      '#display_id' => 'block_success_stories',
+      '#arguments' => [$story],
+    ];
 
     return [
       '#theme' => 'success_stories',
-      '#related_content_view' => $result,
+      '#featured_date' => $featured_date[0]['value'],
+      '#featured_title' => $featured_title,
+      '#featured_image' => $featured_image,
+      '#featured_text' => $featured_text,
+      '#featured_link' => $featured_link,
+      '#success_stories' => $view,
     ];
   }
 
@@ -117,18 +56,22 @@ class SuccessStoriesBlock extends BlockBase implements ContainerFactoryPluginInt
    */
   public function blockForm($form, FormStateInterface $form_state)
   {
+    $story = $this->configuration['story'];
+
+    // Default value for entity_autocomplete needs entities.
+    $entity = Node::load($story);
+
     // Attach extra field to block config form
-    $form['stories'] = [
+    $form['story'] = [
       '#type' => 'entity_autocomplete',
+      '#description' => $this->t("Leave empty to feature the latest Success Story, or select only one."),
+      '#selection_handler' => 'default',
       '#target_type' => 'node',
-      '#title' => $this->t('Success Stories'),
-//      '#description' => $this->t('Select Success Stories:'),
-//      '#default_value' => $default_entities,
-      '#tags' => TRUE,
+      '#title' => $this->t('Featured Success story:'),
+      '#default_value' => $entity,
       '#selection_settings' => array(
-        'target_bundles' => array('page', 'article'),
+        'target_bundles' => array('success_story'),
       ),
-      '#weight' => '0',
     ];
 
     return $form;
@@ -138,6 +81,6 @@ class SuccessStoriesBlock extends BlockBase implements ContainerFactoryPluginInt
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['stories'] = $form_state->getValue('stories');
+    $this->configuration['story'] = $form_state->getValue('story');
   }
 }

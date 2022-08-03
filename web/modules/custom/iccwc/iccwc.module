@@ -36,6 +36,16 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'related_content_view' => '',
       ],
     ],
+    'success_stories' => [
+      'variables' => [
+        'featured_date' => '',
+        'featured_title' => '',
+        'featured_image' => '',
+        'featured_text' => '',
+        'featured_link' => '',
+        'success_stories' => '',
+      ],
+    ],
   ];
 }
 
