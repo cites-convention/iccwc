@@ -101,3 +101,12 @@ $font-family-headings:        'Source Sans Pro', sans-serif !default;
   font-size: 14px;
   line-height: 16px;
 }
+
+@mixin max-lines($n) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  line-clamp: $n;
+  -webkit-box-orient: vertical;
+}

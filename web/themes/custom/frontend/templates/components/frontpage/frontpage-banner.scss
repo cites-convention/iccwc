@@ -1,14 +1,125 @@
+@import "../../../src/scss/variables_drupal";
+
+.slick-next:before {
+  background-image: url('../../../../icons/arrow-white.svg');
+  transform: rotate(270deg);
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  margin-left: -15px;
+}
+
+.slick-prev:before {
+  transform: rotate(90deg);
+  background-image: url('../../../../icons/arrow-white.svg');
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+
 .slick--field-highlights {
   width: 600px;
 
+  .slick-list {
+    display: flex;
+  }
 
   .slick__slide {
     background-color: var(--color-white);
     border-radius: 10px 10px 0 0;
+    margin-right: 15px;
+    height: 100%;
   }
 
   .slick__arrow {
     width: calc(100% + 100px);
     left: -50px;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+}
+
+.block-inline-blockfrontpage-banner {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  position: relative;
+  border-top: 4px solid var(--color-orange);
+
+  .wrapper {
+    position: relative;
+    padding: 38px 93px 0 93px;
+    height: 610px;
+  }
+
+  .background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .content-wrapper {
+    height: 100%;
+  }
+
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > .field--name-field-description {
+      @include heading-3;
+
+      color: var(--color-white);
+    }
+  }
+
+  .field--name-field-youtube-video {
+    max-width: 600px;
+    margin-left: 60px;
+  }
+
+  .highlights {
+    margin-top: auto;
+  }
+
+  .whats-new {
+    @include heading-6;
+
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    color: var(--color-white);
+  }
+}
+
+.paragraph--type--highlight {
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+
+  > * {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .field--name-field-title {
+    @include max-lines(2);
+
+    font-weight: bold;
+  }
+
+  .field--name-field-description {
+    @include max-lines(3);
   }
 }

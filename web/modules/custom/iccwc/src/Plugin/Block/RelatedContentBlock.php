@@ -106,6 +106,10 @@ class RelatedContentBlock extends ICCWCBlockBase {
       '#default_value' => $this->configuration['see_more_text'],
     ];
 
+    $see_more_page = NULL;
+    if (!empty($this->configuration['see_more_page'])) {
+      $see_more_page = $this->entityTypeManager->getStorage('node')->load($this->configuration['see_more_page']);
+    }
     $form['see_more_page'] = [
       '#type' => 'entity_autocomplete',
       '#title' => $this->t('See more page'),
@@ -113,7 +117,7 @@ class RelatedContentBlock extends ICCWCBlockBase {
       '#selection_settings' => [
         'target_bundles' => ['page'],
       ],
-      '#default_value' => $this->configuration['see_more_page'],
+      '#default_value' => $see_more_page,
     ];
 
     return $form;

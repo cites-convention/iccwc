@@ -6,9 +6,12 @@ dependencies:
     - block_content.type.frontpage_banner
     - field.field.block_content.frontpage_banner.field_description
     - field.field.block_content.frontpage_banner.field_highlights
+    - field.field.block_content.frontpage_banner.field_image
     - field.field.block_content.frontpage_banner.field_youtube_video
+    - responsive_image.styles.homepage_banner
   module:
     - iccwc
+    - media_responsive_thumbnail
     - youtube
 id: block_content.frontpage_banner.default
 targetEntityType: block_content
@@ -48,11 +51,20 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_image:
+    type: media_responsive_thumbnail
+    label: hidden
+    settings:
+      responsive_image_style: homepage_banner
+      image_link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_youtube_video:
     type: youtube_video
     label: hidden
     settings:
-      youtube_size: 450x315
+      youtube_size: responsive
       youtube_width: ''
       youtube_height: ''
       youtube_autoplay: false
