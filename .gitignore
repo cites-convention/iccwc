@@ -33,6 +33,7 @@
 /web/profiles/README.txt
 /web/themes/README.txt
 /web/update.php
+/web/libraries
 
 # Ignore configuration files that may contain sensitive information.
 *.sql
