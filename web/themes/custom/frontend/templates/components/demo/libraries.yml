@@ -1,4 +1,0 @@
-demo:
-  css:
-    component:
-      css/templates/components/demo/demo.css: {}

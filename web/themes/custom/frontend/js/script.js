@@ -1,1 +1,1 @@
-!function(c,o){o.behaviors.iccwc={attach(c,o){console.log("xx")}}}(jQuery,Drupal);
+!function(c,a){a.behaviors.iccwc={attach(c,a){}}}(jQuery,Drupal);

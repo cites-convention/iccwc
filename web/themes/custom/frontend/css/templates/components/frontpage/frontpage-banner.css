@@ -1,0 +1,12 @@
+.slick--field-highlights {
+  width: 600px;
+}
+.slick--field-highlights .slick__slide {
+  background-color: var(--color-white);
+  border-radius: 10px 10px 0 0;
+}
+.slick--field-highlights .slick__arrow {
+  width: calc(100% + 100px);
+  left: -50px;
+}
+/*# sourceMappingURL=../../map/components/frontpage/frontpage-banner.css.map */
