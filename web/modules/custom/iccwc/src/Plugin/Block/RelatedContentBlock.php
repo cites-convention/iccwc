@@ -21,7 +21,7 @@ use Drupal\views\Views;
 class RelatedContentBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The configuration for Social Media Links.
+   * The configuration for Related Content.
    *
    * @var \Drupal\Core\Config\ImmutableConfig
    *
@@ -30,7 +30,7 @@ class RelatedContentBlock extends BlockBase implements ContainerFactoryPluginInt
   protected $config;
 
   /**
-   * SocialMediaLinksBlock constructor.
+   * RelatedContentBlock constructor.
    *
    * @param array $configuration
    *   The configuration.
