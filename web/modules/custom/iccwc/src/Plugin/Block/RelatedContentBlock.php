@@ -3,6 +3,7 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 
@@ -49,9 +50,21 @@ class RelatedContentBlock extends ICCWCBlockBase {
       '#arguments' => [$arg_content_types, $arg_nids],
     ];
 
+    $see_more_page = $this->configuration['see_more_page'];
+    $see_more_text = $this->configuration['see_more_text'];
+    $see_more_link = NULL;
+    if (!empty($see_more_page)) {
+      $node = $this->entityTypeManager->getStorage('node')->load($see_more_page);
+      if ($node instanceof NodeInterface) {
+        $see_more_link = $node->toUrl()->toString();
+      }
+    }
+
     return [
       '#theme' => 'related_content',
       '#related_content_view' => $view,
+      '#see_more_link' => $see_more_link,
+      '#see_more_text' => $see_more_text,
     ];
   }
 
@@ -67,7 +80,7 @@ class RelatedContentBlock extends ICCWCBlockBase {
       ],
       '#required' => TRUE,
       '#title' => $this->t('Reference type'),
-      '#default_value' => $this->configuration['reference_type'],
+      '#default_value' => $this->configuration['reference_type'] ?? 'field_data',
     ];
 
     $form['content_type'] = [
@@ -82,9 +95,25 @@ class RelatedContentBlock extends ICCWCBlockBase {
       '#default_value' => $this->configuration['content_type'],
       '#states' => [
         'visible' => [
-          ':input[name="reference_type"]' => ['value' => 'view_data'],
+          'select[name="settings[reference_type]"]' => ['value' => 'view_data'],
         ],
       ],
+    ];
+
+    $form['see_more_text'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('See more text'),
+      '#default_value' => $this->configuration['see_more_text'],
+    ];
+
+    $form['see_more_page'] = [
+      '#type' => 'entity_autocomplete',
+      '#title' => $this->t('See more page'),
+      '#target_type' => 'node',
+      '#selection_settings' => [
+        'target_bundles' => ['page'],
+      ],
+      '#default_value' => $this->configuration['see_more_page'],
     ];
 
     return $form;
@@ -96,6 +125,8 @@ class RelatedContentBlock extends ICCWCBlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['reference_type'] = $form_state->getValue('reference_type');
     $this->configuration['content_type'] = $form_state->getValue('content_type');
+    $this->configuration['see_more_text'] = $form_state->getValue('see_more_text');
+    $this->configuration['see_more_page'] = $form_state->getValue('see_more_page');
   }
 
 }
