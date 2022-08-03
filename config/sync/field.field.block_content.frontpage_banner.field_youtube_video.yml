@@ -1,0 +1,21 @@
+uuid: d5f3ec5b-d0fd-4f74-a2fc-e1544bedef12
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.frontpage_banner
+    - field.storage.block_content.field_youtube_video
+  module:
+    - youtube
+id: block_content.frontpage_banner.field_youtube_video
+field_name: field_youtube_video
+entity_type: block_content
+bundle: frontpage_banner
+label: 'Youtube video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube
