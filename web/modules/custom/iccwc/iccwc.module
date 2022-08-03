@@ -17,6 +17,20 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'linkedin_link'  => '',
       ],
     ],
+    'more_links' => [
+      'variables' => [
+        'links' => [],
+      ],
+    ],
+    'banner_block' => [
+      'variables' => [
+        'summary' => '',
+        'title' => '',
+        'breadcrumb' => '',
+        'caption' => '',
+        'image' => '',
+      ],
+    ],
     'related_content' => [
       'variables' => [
         'ref_type' => '',
