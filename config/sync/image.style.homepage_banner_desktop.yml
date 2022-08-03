@@ -1,0 +1,15 @@
+uuid: fa94811e-4a5c-442d-b895-a6953a783c0c
+langcode: en
+status: true
+dependencies: {  }
+name: homepage_banner_desktop
+label: 'Homepage banner (desktop)'
+effects:
+  8bc256ac-4232-4b3c-8042-dc33383bbd2a:
+    uuid: 8bc256ac-4232-4b3c-8042-dc33383bbd2a
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 618
+      upscale: false

@@ -31,6 +31,13 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'image' => '',
       ],
     ],
+    'related_content' => [
+      'variables' => [
+        'related_content_view' => '',
+        'see_more_text' => '',
+        'see_more_link' => '',
+      ],
+    ],
   ];
 }
 

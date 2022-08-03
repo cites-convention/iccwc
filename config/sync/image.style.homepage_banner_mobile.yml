@@ -1,0 +1,15 @@
+uuid: 32c086c4-144c-4953-ae37-e9138799ab41
+langcode: en
+status: true
+dependencies: {  }
+name: homepage_banner_mobile
+label: 'Homepage banner (mobile)'
+effects:
+  86d1b561-6bfa-48cf-801f-774390c0738e:
+    uuid: 86d1b561-6bfa-48cf-801f-774390c0738e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 400
+      anchor: center-center
