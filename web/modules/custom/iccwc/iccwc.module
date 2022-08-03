@@ -15,6 +15,7 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'twitter_link' => '',
         'youtube_link' => '',
         'linkedin_link'  => '',
+        'include_print_button' => False,
       ],
     ],
     'more_links' => [

@@ -3,8 +3,11 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use phpDocumentor\Reflection\Types\False_;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -70,14 +73,36 @@ class SocialMediaLinksBlock extends BlockBase implements ContainerFactoryPluginI
       '#twitter_link' => $twitter_link,
       '#youtube_link' => $youtube_link,
       '#linkedin_link' => $linkedin_link,
+      '#include_print_button' => $this->configuration['include_print_button'],
     ];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getCacheContexts() {
-    return ['config:iccwc.social_media.settings'];
+  public function getCacheTags() {
+    return Cache::mergeTags(parent::getCacheTags(), [
+      'config:iccwc.social_media.settings',
+    ]);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockForm($form, FormStateInterface $form_state) {
+    $form['include_print_button'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Include print button'),
+      '#default_value' => False,
+    ];
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration['include_print_button'] = $form_state->getValue('include_print_button');
   }
 
 }
