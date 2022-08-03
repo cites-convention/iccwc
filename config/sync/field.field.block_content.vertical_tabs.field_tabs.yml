@@ -1,0 +1,34 @@
+uuid: de3bdfb1-ea9c-4a68-842f-78bd45edf556
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vertical_tabs
+    - field.storage.block_content.field_tabs
+    - paragraphs.paragraphs_type.vertical_tab
+  module:
+    - entity_reference_revisions
+id: block_content.vertical_tabs.field_tabs
+field_name: field_tabs
+entity_type: block_content
+bundle: vertical_tabs
+label: Tabs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vertical_tab: vertical_tab
+    negate: 0
+    target_bundles_drag_drop:
+      highlight:
+        weight: 3
+        enabled: false
+      vertical_tab:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions
