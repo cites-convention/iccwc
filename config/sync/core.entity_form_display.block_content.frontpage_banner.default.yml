@@ -6,7 +6,6 @@ dependencies:
     - block_content.type.frontpage_banner
     - field.field.block_content.frontpage_banner.field_description
     - field.field.block_content.frontpage_banner.field_highlights
-    - field.field.block_content.frontpage_banner.field_title
     - field.field.block_content.frontpage_banner.field_youtube_video
   module:
     - paragraphs
@@ -41,14 +40,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  field_title:
-    type: string_textfield
-    weight: 27
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_youtube_video:
     type: youtube
