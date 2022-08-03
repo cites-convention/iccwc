@@ -33,7 +33,6 @@ function iccwc_theme($existing, $type, $theme, $path) {
     ],
     'related_content' => [
       'variables' => [
-        'ref_type' => '',
         'related_content_view' => '',
       ],
     ],
