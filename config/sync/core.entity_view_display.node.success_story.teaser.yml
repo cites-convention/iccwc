@@ -18,21 +18,11 @@ targetEntityType: node
 bundle: success_story
 mode: teaser
 content:
-  created:
-    type: timestamp
-    label: hidden
-    settings:
-      date_format: d_f_y
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_banner_text:
+  body:
     type: smart_trim
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 60
       trim_type: chars
       trim_suffix: ''
       wrap_output: false
@@ -40,8 +30,20 @@ content:
       more_link: false
       more_class: more-link
       more_text: More
-      summary_handler: full
-      trim_options: {  }
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  created:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: d_f_y
+      custom_date_format: ''
+      timezone: ''
     third_party_settings: {  }
     weight: 1
     region: content
@@ -54,17 +56,9 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
-  body: true
   field_banner_image: true
+  field_banner_text: true
   field_links: true
   field_related_content: true
   langcode: true

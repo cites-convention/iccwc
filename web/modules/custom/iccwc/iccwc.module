@@ -5,6 +5,8 @@
  * The ICCWC module.
  */
 
+use Drupal\Core\Entity\EntityTypeInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -63,5 +65,28 @@ function iccwc_page_attachments(array &$attachments) {
   // Add custom CSS to admin pages.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $attachments['#attached']['library'][] = 'iccwc/admin';
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function iccwc_entity_base_field_info_alter(&$base_field_definitions, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'node') {
+    $fields = ['created', 'uid'];
+    foreach ($fields as $field) {
+      $base_field_definitions[$field]
+        ->setDisplayConfigurable('view', TRUE)
+        ->setDisplayOptions('view', ['region' => 'hidden']);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function iccwc_entity_type_build(array &$entity_types) {
+  if (isset($entity_types['node'])) {
+    $entity_types['node']->set('enable_base_field_custom_preprocess_skipping', TRUE);
   }
 }
