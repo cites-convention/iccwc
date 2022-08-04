@@ -1,0 +1,11 @@
+uuid: b6a2c0c1-0921-490f-ad71-26246a021ea5
+langcode: en
+status: true
+dependencies: {  }
+id: success_stories
+block_id: iccwc_success_stories
+category: page_content
+label: 'Success stories'
+image_path: ''
+image_alt: ''
+weight: -100
