@@ -1,0 +1,32 @@
+:root {
+  --color-orange: #E87722;
+  --color-orange-darker: #C4661E;
+  --color-yellow: #F5CD26;
+  --color-yellow-darker: #AB901B;
+  --color-black: #1E1E1E;
+  --color-white: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-darker: #999999;
+}
+
+.node--view-mode-teaser img {
+  border: double 6px transparent;
+  border-radius: 20px;
+  background-image: -webkit-linear-gradient(white, white), -webkit-radial-gradient(top left, circle, #C6B362, #F49145);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #C6B362, #F49145);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.node--view-mode-teaser .date-tags {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: solid gray 1px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.node--view-mode-teaser .title-teaser {
+  font-size: 20px;
+}
+/*# sourceMappingURL=../../map/components/content/content-teasers.css.map */
