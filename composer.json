@@ -28,6 +28,18 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/div",
+                "version": "4.11.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/div/releases/div_4.11.0.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -83,6 +95,7 @@
         "drupal/xmlsitemap": "^1.2",
         "drupal/youtube": "^1.2",
         "drush/drush": "^11.0",
+        "ckeditor-plugin/div": "4.11.0",
         "npm-asset/blazy": "^1.8.2",
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -132,6 +145,7 @@
             "web/core": [
                 "type:drupal-core"
             ],
+            "web/libraries/ckeditor/plugins/{$name}": ["vendor:ckeditor-plugin"],
             "web/libraries/{$name}": [
                 "type:drupal-library",
                 "type:bower-asset",
