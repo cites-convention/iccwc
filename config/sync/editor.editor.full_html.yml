@@ -44,7 +44,7 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
+            - quote
             - DrupalImage
             - DrupalMediaLibrary
         -

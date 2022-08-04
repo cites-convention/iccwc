@@ -43,6 +43,7 @@
         }
     ],
     "require": {
+        "ckeditor-plugin/div": "4.11.0",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.1",
@@ -52,6 +53,7 @@
         "drupal/backup_migrate": "5.0.1",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "1.2.0",
+        "drupal/ckeditor_quote": "^1.0",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-recommended": "^9.4",
         "drupal/dark_mode_switch": "^2.0",
@@ -95,7 +97,6 @@
         "drupal/xmlsitemap": "^1.2",
         "drupal/youtube": "^1.2",
         "drush/drush": "^11.0",
-        "ckeditor-plugin/div": "4.11.0",
         "npm-asset/blazy": "^1.8.2",
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
