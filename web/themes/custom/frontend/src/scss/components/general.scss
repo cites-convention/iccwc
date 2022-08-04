@@ -7,10 +7,77 @@ body {
   padding: 0;
 }
 
+.max-6-lines {
+  @include max-lines(6);
+}
+
 .max-3-lines {
   @include max-lines(3);
 }
 
 .max-2-lines {
   @include max-lines(2);
+}
+
+a {
+  color: var(--color-blue);
+
+  &:hover, &:active {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h5 {
+  a {
+    color: var(--color-text);
+
+    &:hover, &:active {
+      color: var(--color-blue);
+    }
+  }
+}
+
+.btn-iccwc {
+  @include small-text;
+  font-weight: bold;
+  color: var(--color-orange);
+  border-radius: 20px;
+  border: 1px solid var(--color-orange);
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+
+  &:hover {
+    color: #FFF;
+    background-color: var(--color-orange);
+    text-decoration: none;
+
+    &.btn-next {
+      &:after {
+        background-image: url('../icons/arrow-white.svg');
+      }
+    }
+  }
+
+  &.btn-next {
+    padding-right: 10px;
+    &:after {
+      content: '';
+      background-image: url('../icons/arrow-orange.svg');
+      transform: rotate(270deg);
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+
+.centered-button {
+  margin-top: 20px;
+  text-align: center;
 }

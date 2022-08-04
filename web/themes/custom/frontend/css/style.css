@@ -6,9 +6,11 @@
   --color-yellow: #F5CD26;
   --color-yellow-darker: #AB901B;
   --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-darker: #999999;
+  --color-blue: #0065FF;
 }
 
 /*
@@ -7497,9 +7499,11 @@ progress {
   --color-yellow: #F5CD26;
   --color-yellow-darker: #AB901B;
   --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-darker: #999999;
+  --color-blue: #0065FF;
 }
 
 html {
@@ -7511,36 +7515,42 @@ html {
 body h1, body .h1 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 56px;
   line-height: 60px;
 }
 body h2, body .h2 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 44px;
   line-height: 50px;
 }
 body h3, body .h3 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 36px;
   line-height: 40px;
 }
 body h4, body .h4 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 26px;
   line-height: 28px;
 }
 body h5, body .h5 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 24px;
   line-height: 26px;
 }
 body h6, body .h6 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 20px;
   line-height: 22px;
 }
@@ -7552,6 +7562,15 @@ body {
 
 .container .container {
   padding: 0;
+}
+
+.max-6-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 
 .max-3-lines {
@@ -7570,6 +7589,71 @@ body {
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+a {
+  color: var(--color-blue);
+}
+a:hover, a:active {
+  color: var(--color-blue);
+  text-decoration: underline;
+}
+
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h5 a {
+  color: var(--color-text);
+}
+h1 a:hover, .h1 a:hover, h1 a:active, .h1 a:active, h2 a:hover, .h2 a:hover, h2 a:active, .h2 a:active, h3 a:hover, .h3 a:hover, h3 a:active, .h3 a:active, h4 a:hover, .h4 a:hover, h4 a:active, .h4 a:active, h5 a:hover, .h5 a:hover, h5 a:active, .h5 a:active, h5 a:hover, h5 a:active {
+  color: var(--color-blue);
+}
+
+.btn-iccwc {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: var(--color-orange);
+  border-radius: 20px;
+  border: 1px solid var(--color-orange);
+  padding: 10px 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.btn-iccwc:hover {
+  color: #FFF;
+  background-color: var(--color-orange);
+  text-decoration: none;
+}
+.btn-iccwc:hover.btn-next:after {
+  background-image: url("../icons/arrow-white.svg");
+}
+.btn-iccwc.btn-next {
+  padding-right: 10px;
+}
+.btn-iccwc.btn-next:after {
+  content: "";
+  background-image: url("../icons/arrow-orange.svg");
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.centered-button {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .block-dark-mode-switch {
@@ -7599,10 +7683,11 @@ body {
   border: none !important;
   outline: 0;
   box-shadow: none !important;
-  font-size: 14px;
   padding: 0;
   -webkit-transition: none;
   transition: none;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .custom-control {
@@ -7646,6 +7731,7 @@ body {
 
 .region-header-right {
   font-size: 14px;
+  line-height: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7699,17 +7785,19 @@ body {
   min-width: 24px;
 }
 .iccwc-search-form input[type=text] {
+  font-size: 14px;
+  line-height: 16px;
   border: none;
   outline: 0;
   box-shadow: none;
   -webkit-transition: none;
   transition: none;
-  font-size: 14px;
   padding: 0;
 }
 
 .navbar-brand {
   font-size: 14px;
+  line-height: 16px;
 }
 .navbar-brand img {
   width: 250px;

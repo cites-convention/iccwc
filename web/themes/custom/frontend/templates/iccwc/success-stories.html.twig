@@ -1,9 +1,11 @@
-<div class="success-stories-wrapper">
-  <div class="featured-story">
+{{ attach_library('frontend/success_stories') }}
+
+<div class="success-stories-wrapper row">
+  <div class="col-md-4 featured-story">
     <div class="subtitle">{{ "Featured" | t }}</div>
     {{ featured_story }}
   </div>
-  <div class="success-stories">
+  <div class="col-md-7 success-stories">
     <div class="subtitle">{{ "More success stories" | t }}</div>
     {{ success_stories }}
   </div>

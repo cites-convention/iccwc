@@ -10,35 +10,23 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
-{{ attach_library('classy/node') }}
 
 <article{{ attributes.addClass(classes) }}>
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content.field_image }}
+    <div class="date-tags">
+      {{ content.field_tags }}
+      {{ content.created }}
+    </div>
     {{ title_prefix }}
     {% if label and not page %}
-      <h2{{ title_attributes }}>
+      <h3{{ title_attributes }}>
         <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
-      </h2>
+      </h3>
     {% endif %}
     {{ title_suffix }}
-    {{ content.label }}
-    {{ content.field_tags }}
-{#    <div class="max-2-lines">{{ content.body }}</div>#}
-    {{ field_links }}
-    <div class="date-tags">
-    {{ content.created }}
+    <div class="max-3-lines">
+      {{ content.body }}
     </div>
   </div>
 

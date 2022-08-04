@@ -10,11 +10,9 @@ dependencies:
     - field.field.node.success_story.field_image
     - field.field.node.success_story.field_links
     - field.field.node.success_story.field_related_content
-    - image.style.large
     - node.type.success_story
   module:
     - layout_builder
-    - media
     - smart_trim
 third_party_settings:
   layout_builder:
@@ -42,32 +40,13 @@ content:
         text: false
         trim_zero: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  created:
-    type: timestamp
-    label: above
-    settings:
-      date_format: d_f_y
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
     weight: 0
     region: content
-  field_image:
-    type: media_thumbnail
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: large
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
+  created: true
   field_banner_image: true
   field_banner_text: true
+  field_image: true
   field_links: true
   field_related_content: true
   langcode: true

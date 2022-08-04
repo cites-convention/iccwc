@@ -266,10 +266,10 @@ display:
           columns: 3
           automatic_width: true
           alignment: horizontal
-          row_class_custom: ''
-          row_class_default: true
-          col_class_custom: ''
-          col_class_default: true
+          row_class_custom: row
+          row_class_default: false
+          col_class_custom: col-md-4
+          col_class_default: false
       row:
         type: 'entity:node'
         options:

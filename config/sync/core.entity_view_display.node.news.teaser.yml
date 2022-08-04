@@ -15,20 +15,11 @@ dependencies:
     - responsive_image.styles.teaser_image
   module:
     - media_responsive_thumbnail
-    - text
 id: node.news.teaser
 targetEntityType: node
 bundle: news
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 60
-    third_party_settings: {  }
-    weight: 1
-    region: content
   created:
     type: timestamp
     label: hidden
@@ -37,7 +28,7 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_image:
     type: media_responsive_thumbnail
@@ -46,7 +37,7 @@ content:
       responsive_image_style: teaser_image
       image_link: content
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_tags:
     type: entity_reference_label
@@ -54,7 +45,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   links:
     settings: {  }
@@ -62,11 +53,11 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
   field_banner_image: true
   field_banner_text: true
   field_links: true
   field_related_content: true
   langcode: true
   search_api_excerpt: true
-  title: true
   uid: true

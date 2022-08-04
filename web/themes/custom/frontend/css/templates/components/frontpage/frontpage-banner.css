@@ -4,60 +4,15 @@
   --color-yellow: #F5CD26;
   --color-yellow-darker: #AB901B;
   --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-darker: #999999;
-}
-
-.slick-next:before {
-  background-image: url("../../../../icons/arrow-white.svg");
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
-  content: "";
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: block;
-  margin-left: -15px;
-}
-
-.slick-prev:before {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  background-image: url("../../../../icons/arrow-white.svg");
-  content: "";
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: block;
+  --color-blue: #0065FF;
 }
 
 .slick--field-highlights {
   width: 600px;
-}
-.slick--field-highlights .slick-list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-.slick--field-highlights .slick__slide {
-  background-color: var(--color-white);
-  border-radius: 10px 10px 0 0;
-  margin-right: 15px;
-  height: 100%;
-}
-.slick--field-highlights .slick__arrow {
-  width: calc(100% + 100px);
-  left: -50px;
-}
-.slick--field-highlights .slick-track {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .block-inline-blockfrontpage-banner {
@@ -109,6 +64,7 @@
 .block-inline-blockfrontpage-banner .left-col > .field--name-field-description {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 36px;
   line-height: 40px;
   color: var(--color-white);
@@ -124,6 +80,7 @@
 .block-inline-blockfrontpage-banner .whats-new {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
   font-size: 20px;
   line-height: 22px;
   margin-bottom: 20px;
@@ -138,6 +95,12 @@
 .paragraph--type--highlight > * {
   margin-bottom: 10px;
   display: block;
+}
+.paragraph--type--highlight > a {
+  color: var(--color-text);
+}
+.paragraph--type--highlight > a:hover, .paragraph--type--highlight > a:focus {
+  color: var(--color-blue);
 }
 .paragraph--type--highlight .field--name-field-title {
   overflow: hidden;

@@ -1,0 +1,17 @@
+:root {
+  --color-orange: #E87722;
+  --color-orange-darker: #C4661E;
+  --color-yellow: #F5CD26;
+  --color-yellow-darker: #AB901B;
+  --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
+  --color-white: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-darker: #999999;
+  --color-blue: #0065FF;
+}
+
+.featured-news {
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=../../map/components/iccwc/latest-news.css.map */
