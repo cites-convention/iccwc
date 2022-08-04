@@ -39,3 +39,5 @@ $config['search_api.server.solr']['backend_config']['connector_config']['host'] 
 $config['search_api.server.solr']['backend_config']['connector_config']['scheme'] = 'http';
 $config['search_api.server.solr']['backend_config']['connector_config']['username'] = FALSE;
 $config['search_api.server.solr']['backend_config']['connector_config']['password'] = FALSE;
+
+$config['advagg.settings']['enabled'] = FALSE;

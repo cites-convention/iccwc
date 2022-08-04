@@ -1,5 +1,6 @@
 body {
   background-color: var(--color-white);
+  overflow-x: hidden;
 }
 
 .container .container {

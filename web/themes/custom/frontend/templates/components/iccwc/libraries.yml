@@ -1,0 +1,4 @@
+social_media_share:
+  js:
+    js/print.min.js: {}
+    js/social-media-share.js: {}

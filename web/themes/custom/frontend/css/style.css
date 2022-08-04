@@ -7547,6 +7547,7 @@ body h6, body .h6 {
 
 body {
   background-color: var(--color-white);
+  overflow-x: hidden;
 }
 
 .container .container {
