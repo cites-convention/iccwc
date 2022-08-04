@@ -47,11 +47,7 @@ function iccwc_theme($existing, $type, $theme, $path) {
     ],
     'success_stories' => [
       'variables' => [
-        'featured_date' => '',
-        'featured_title' => '',
-        'featured_image' => '',
-        'featured_text' => '',
-        'featured_link' => '',
+        'featured_story' => '',
         'success_stories' => '',
       ],
     ],
