@@ -24,14 +24,37 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $story = $this->configuration['story'];
-    $node = Node::load($story);
+    $featured_date = NULL;
+    $featured_title = NULL;
+    $featured_image = NULL;
+    $featured_text = NULL;
+    $featured_link = NULL;
 
-    $featured_date = $node->get('created')->getValue();
-    $featured_title = $node->getTitle();
-    $featured_image = $node->get('field_image')->view('teaser');
-    $featured_text = $node->get('field_banner_text')->view('teaser');
-    $featured_link = $node->toUrl()->toString();
+    $story = $this->configuration['story'];
+
+    if (isset($story)) {
+      // If featured story selected in block
+      $node = Node::load($story);
+    } else {
+      // No featured story selected in block
+      $latest_view = Views::getView('success_stories');
+      $latest_view->setDisplay('latest_success_story');
+      $latest_view->execute();
+      $view_result = $latest_view->result;
+
+      foreach ($view_result as $data) {
+        $node = $data->_entity;
+        $story = $node->id();
+      }
+    }
+
+    if (isset($node)) {
+      $featured_date = $node->get('created')->getValue();
+      $featured_title = $node->getTitle();
+      $featured_image = $node->get('field_image')->view('teaser');
+      $featured_text = $node->get('field_banner_text')->view('teaser');
+      $featured_link = $node->toUrl()->toString();
+    }
 
     $view = [
       '#type' => 'view',
