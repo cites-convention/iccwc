@@ -17,6 +17,11 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'linkedin_link'  => '',
       ],
     ],
+    'social_media_share' => [
+      'variables' => [
+        'link' => '',
+      ],
+    ],
     'more_links' => [
       'variables' => [
         'links' => [],
