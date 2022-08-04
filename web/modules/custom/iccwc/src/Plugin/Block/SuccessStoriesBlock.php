@@ -3,7 +3,6 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 use Drupal\node\Entity\Node;
 
@@ -22,33 +21,18 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $featured_story = NULL;
-    $story_id = $this->configuration['story'];
+    $story_id = $this->configuration['story'] ?? NULL;
 
-    if (isset($story_id)) {
-      // If featured story selected in block.
-      $node = Node::load($story_id);
+    $latest_view = Views::getView('success_stories');
+    $latest_view->setDisplay('latest_success_story');
+    $latest_view->setArguments([$story_id]);
+    $latest_view->execute();
+
+    if (empty($story_id) && !empty($latest_view->result)) {
+      $story_id = $latest_view->result[0]->nid;
     }
 
-    if (!$node instanceof NodeInterface) {
-      // No featured story selected in block.
-      $latest_view = Views::getView('success_stories');
-      $latest_view->setDisplay('latest_success_story');
-      $latest_view->execute();
-      $view_result = $latest_view->result;
-
-      foreach ($view_result as $data) {
-        $node = $data->_entity;
-        $view_builder = $this->entityTypeManager->getViewBuilder('node');
-        $featured_story = $view_builder->view($node, 'featured_teaser');
-        $story_id = $node->id();
-      }
-    }
-
-    if ($node instanceof NodeInterface) {
-      $view_builder = $this->entityTypeManager->getViewBuilder('node');
-      $featured_story = $view_builder->view($node, 'featured_teaser');
-    }
+    $featured_story = $latest_view->render();
 
     $view = [
       '#type' => 'view',
