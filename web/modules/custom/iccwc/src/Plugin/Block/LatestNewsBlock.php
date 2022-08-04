@@ -23,8 +23,8 @@ class LatestNewsBlock extends ICCWCBlockBase {
   public function build() {
     $news_id = $this->configuration['news'] ?? NULL;
 
-    $latest_view = Views::getView('success_stories');
-    $latest_view->setDisplay('latest_success_story');
+    $latest_view = Views::getView('latest_news');
+    $latest_view->setDisplay('latest_one_news');
     $latest_view->setArguments([$news_id]);
     $latest_view->execute();
 
