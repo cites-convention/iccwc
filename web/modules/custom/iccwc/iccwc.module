@@ -53,11 +53,7 @@ function iccwc_theme($existing, $type, $theme, $path) {
     ],
     'latest_news' => [
       'variables' => [
-        'featured_date' => '',
-        'featured_title' => '',
-        'featured_image' => '',
-        'featured_text' => '',
-        'featured_link' => '',
+        'featured_news' => '',
         'latest_news' => '',
       ],
     ],

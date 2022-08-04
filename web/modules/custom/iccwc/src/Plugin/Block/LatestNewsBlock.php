@@ -3,7 +3,6 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 use Drupal\node\Entity\Node;
 
@@ -22,41 +21,20 @@ class LatestNewsBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $featured_date = NULL;
-    $featured_title = NULL;
-    $featured_image = NULL;
-    $featured_text = NULL;
-    $featured_link = NULL;
+    $news_id = $this->configuration['news'] ?? NULL;
 
-    $news_id = $this->configuration['news'];
+    $latest_view = Views::getView('success_stories');
+    $latest_view->setDisplay('latest_success_story');
+    $latest_view->setArguments([$news_id]);
+    $latest_view->execute();
 
-    if (isset($news_id)) {
-      // If featured story selected in block.
-      $node = Node::load($news_id);
+    if (empty($news_id) && !empty($latest_view->result)) {
+      $news_id = $latest_view->result[0]->nid;
     }
 
-    if (!$news_id instanceof NodeInterface) {
-      // No featured story selected in block.
-      $latest_view = Views::getView('latest_news');
-      $latest_view->setDisplay('latest_one_news');
-      $latest_view->execute();
-      $view_result = $latest_view->result;
+    $featured_view = $latest_view->render();
 
-      foreach ($view_result as $data) {
-        $node = $data->_entity;
-        $news_id = $node->id();
-      }
-    }
-
-    if (isset($node)) {
-      $featured_date = $node->get('created')->view('teaser');
-      $featured_title = $node->getTitle();
-      $featured_image = $node->get('field_image')->view('teaser');
-      $featured_text = $node->get('field_banner_text')->view('teaser');
-      $featured_link = $node->toUrl()->toString();
-    }
-
-    $view = [
+    $latest_view = [
       '#type' => 'view',
       '#view' => Views::getView('latest_news'),
       '#display_id' => 'block_latest_news',
@@ -65,12 +43,8 @@ class LatestNewsBlock extends ICCWCBlockBase {
 
     return [
       '#theme' => 'latest_news',
-      '#featured_date' => $featured_date,
-      '#featured_title' => $featured_title,
-      '#featured_image' => $featured_image,
-      '#featured_text' => $featured_text,
-      '#featured_link' => $featured_link,
-      '#latest_news' => $view,
+      '#featured_news' => $featured_view,
+      '#latest_news' => $latest_view,
     ];
   }
 
