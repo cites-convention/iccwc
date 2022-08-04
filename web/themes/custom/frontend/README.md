@@ -15,11 +15,13 @@
 - Create your SCSS or JS files in the same folder
 - Include this library wherever it is needed using Twig files: {{ attach_library('frontend/LIBRARY_NAME') }} (see block--inline-block--frontpage-banner.html.twig)
 
-### CSS compilation.
+### Initial setup.
 
-When starting development, run `npm install`
+1. If `gulp` is not already installed: `npm install -g gulp-cli`
+2. Compile edwt theme (web/modules/contrib/edwt) with `npm install`, `gulp`
+3. Run `npm install` in this theme
+
+### CSS compilation
 
 To compile once, use `gulp`
 To run the watcher, use `gulp watch`
-
-

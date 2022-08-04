@@ -1,22 +1,29 @@
-uuid: f3c2e48e-ea8e-48f8-8a35-0c0a79076d06
+uuid: 636eb659-766c-4d46-b570-8d302d18264f
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.featured_teaser
     - field.field.node.success_story.body
     - field.field.node.success_story.field_banner_image
     - field.field.node.success_story.field_banner_text
     - field.field.node.success_story.field_image
     - field.field.node.success_story.field_links
     - field.field.node.success_story.field_related_content
+    - image.style.large
     - node.type.success_story
   module:
+    - layout_builder
+    - media
     - smart_trim
-id: node.success_story.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.success_story.featured_teaser
 targetEntityType: node
 bundle: success_story
-mode: teaser
+mode: featured_teaser
 content:
   body:
     type: smart_trim
@@ -32,29 +39,31 @@ content:
       more_text: More
       summary_handler: trim
       trim_options:
-        text: true
-        trim_zero: true
+        text: false
+        trim_zero: false
     third_party_settings: {  }
     weight: 2
     region: content
   created:
     type: timestamp
-    label: hidden
+    label: above
     settings:
       date_format: d_f_y
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_banner_image: true

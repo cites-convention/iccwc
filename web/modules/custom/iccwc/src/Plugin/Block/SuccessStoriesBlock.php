@@ -22,17 +22,12 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $featured_date = NULL;
-    $featured_title = NULL;
-    $featured_image = NULL;
-    $featured_text = NULL;
-    $featured_link = NULL;
-
+    $featured_story = NULL;
     $story_id = $this->configuration['story'];
 
-    if (isset($story)) {
+    if (isset($story_id)) {
       // If featured story selected in block.
-      $node = Node::load($story);
+      $node = Node::load($story_id);
     }
 
     if (!$node instanceof NodeInterface) {
@@ -44,16 +39,15 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
 
       foreach ($view_result as $data) {
         $node = $data->_entity;
+        $view_builder = $this->entityTypeManager->getViewBuilder('node');
+        $featured_story = $view_builder->view($node, 'featured_teaser');
         $story_id = $node->id();
       }
     }
 
-    if (isset($node)) {
-      $featured_date = $node->get('created')->view('teaser');
-      $featured_title = $node->getTitle();
-      $featured_image = $node->get('field_image')->view('teaser');
-      $featured_text = $node->get('field_banner_text')->view('teaser');
-      $featured_link = $node->toUrl()->toString();
+    if ($node instanceof NodeInterface) {
+      $view_builder = $this->entityTypeManager->getViewBuilder('node');
+      $featured_story = $view_builder->view($node, 'featured_teaser');
     }
 
     $view = [
@@ -65,11 +59,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
 
     return [
       '#theme' => 'success_stories',
-      '#featured_date' => $featured_date,
-      '#featured_title' => $featured_title,
-      '#featured_image' => $featured_image,
-      '#featured_text' => $featured_text,
-      '#featured_link' => $featured_link,
+      '#featured_story' => $featured_story,
       '#success_stories' => $view,
     ];
   }
