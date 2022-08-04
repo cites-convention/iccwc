@@ -49,7 +49,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
     }
 
     if (isset($node)) {
-      $featured_date = $node->get('created')->value;
+      $featured_date = $node->get('created')->view('teaser');
       $featured_title = $node->getTitle();
       $featured_image = $node->get('field_image')->view('teaser');
       $featured_text = $node->get('field_banner_text')->view('teaser');
@@ -65,7 +65,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
 
     return [
       '#theme' => 'success_stories',
-      '#featured_date' => $this->dateFormatter->format($featured_date, 'd_f_y'),
+      '#featured_date' => $featured_date,
       '#featured_title' => $featured_title,
       '#featured_image' => $featured_image,
       '#featured_text' => $featured_text,

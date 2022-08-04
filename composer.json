@@ -61,6 +61,7 @@
         "drupal/layout_builder_st": "^1.0@alpha",
         "drupal/link_attributes": "^1.11",
         "drupal/mail_login": "^2.6",
+        "drupal/manage_display": "^2.0@beta",
         "drupal/media_library_edit": "^2.3",
         "drupal/media_responsive_thumbnail": "^1.2",
         "drupal/menu_link_attributes": "^1.2",
@@ -85,8 +86,8 @@
         "drush/drush": "^11.0",
         "npm-asset/blazy": "^1.8.2",
         "npm-asset/slick-carousel": "1.8.0",
-        "slick/slick": "^1.9.0",
         "oomphinc/composer-installers-extender": "^2.0",
+        "slick/slick": "^1.9.0",
         "tubalmartin/cssmin": "^4.1"
     },
     "require-dev": {
