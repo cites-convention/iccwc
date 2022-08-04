@@ -7545,6 +7545,10 @@ body h6, body .h6 {
   line-height: 22px;
 }
 
+body {
+  background-color: var(--color-white);
+}
+
 .block-dark-mode-switch {
   display: -webkit-box;
   display: -webkit-flex;
@@ -7716,14 +7720,15 @@ header .navbar > .container.menu {
   margin-top: -40px;
 }
 
-.darkmode {
+.dark-mode {
   --color-orange: #E87722;
   --color-orange-darker: #C4661E;
   --color-yellow: #F5CD26;
   --color-yellow-darker: #AB901B;
-  --color-black: #1E1E1E;
-  --color-white: #FFFFFF;
+  --color-black: #FFFFFF;
+  --color-white: #1E1E1E;
   --color-gray: #E5E5E5;
   --color-gray-darker: #999999;
+  --body-color: #FFF;
 }
 /*# sourceMappingURL=map/style.css.map */
