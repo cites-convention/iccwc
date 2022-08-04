@@ -43,6 +43,7 @@ module:
   honeypot: 0
   image: 0
   image_captcha: 0
+  image_max_size_crop: 0
   inline_entity_form: 0
   lang_dropdown: 0
   language: 0
