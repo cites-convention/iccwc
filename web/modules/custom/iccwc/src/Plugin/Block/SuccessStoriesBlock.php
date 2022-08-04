@@ -3,6 +3,7 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 use Drupal\node\Entity\Node;
 
@@ -16,6 +17,7 @@ use Drupal\node\Entity\Node;
  * )
  */
 class SuccessStoriesBlock extends ICCWCBlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -29,10 +31,12 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
     $story = $this->configuration['story'];
 
     if (isset($story)) {
-      // If featured story selected in block
+      // If featured story selected in block.
       $node = Node::load($story);
-    } else {
-      // No featured story selected in block
+    }
+
+    if (!$story instanceof NodeInterface) {
+      // No featured story selected in block.
       $latest_view = Views::getView('success_stories');
       $latest_view->setDisplay('latest_success_story');
       $latest_view->execute();
@@ -45,7 +49,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
     }
 
     if (isset($node)) {
-      $featured_date = $node->get('created')->getValue();
+      $featured_date = $node->get('created')->value;
       $featured_title = $node->getTitle();
       $featured_image = $node->get('field_image')->view('teaser');
       $featured_text = $node->get('field_banner_text')->view('teaser');
@@ -61,7 +65,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
 
     return [
       '#theme' => 'success_stories',
-      '#featured_date' => $featured_date[0]['value'],
+      '#featured_date' => $this->dateFormatter->format($featured_date, 'd_f_y'),
       '#featured_title' => $featured_title,
       '#featured_image' => $featured_image,
       '#featured_text' => $featured_text,
@@ -73,24 +77,23 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
   /**
    * {@inheritdoc}
    */
-  public function blockForm($form, FormStateInterface $form_state)
-  {
+  public function blockForm($form, FormStateInterface $form_state) {
     $story = $this->configuration['story'];
 
     // Default value for entity_autocomplete needs entities.
     $entity = Node::load($story);
 
-    // Attach extra field to block config form
+    // Attach extra field to block config form.
     $form['story'] = [
       '#type' => 'entity_autocomplete',
       '#description' => $this->t("Leave empty to feature the latest Success Story, or select only one."),
       '#selection_handler' => 'default',
       '#target_type' => 'node',
-      '#title' => $this->t('Featured Success story:'),
+      '#title' => $this->t('Featured Success story'),
       '#default_value' => $entity,
-      '#selection_settings' => array(
-        'target_bundles' => array('success_story'),
-      ),
+      '#selection_settings' => [
+        'target_bundles' => ['success_story'],
+      ],
     ];
 
     return $form;
@@ -102,4 +105,5 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['story'] = $form_state->getValue('story');
   }
+
 }
