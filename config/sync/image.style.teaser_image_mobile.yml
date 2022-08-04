@@ -1,0 +1,15 @@
+uuid: c5547fae-8216-4cfd-8239-2f34c2ea0029
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_image_mobile
+label: 'Teaser image (mobile)'
+effects:
+  bda4ff3f-5f99-4bd2-b6e3-8e5dcf81cd83:
+    uuid: bda4ff3f-5f99-4bd2-b6e3-8e5dcf81cd83
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 400
+      anchor: center-center

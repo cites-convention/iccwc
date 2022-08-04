@@ -6,3 +6,11 @@ body {
 .container .container {
   padding: 0;
 }
+
+.max-3-lines {
+  @include max-lines(3);
+}
+
+.max-2-lines {
+  @include max-lines(2);
+}
