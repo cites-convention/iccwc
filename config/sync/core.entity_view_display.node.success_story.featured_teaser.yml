@@ -1,8 +1,9 @@
-uuid: 944f219d-d078-4b25-a1b4-4784bcc21c24
+uuid: 636eb659-766c-4d46-b570-8d302d18264f
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.featured_teaser
     - field.field.node.success_story.body
     - field.field.node.success_story.field_banner_image
     - field.field.node.success_story.field_banner_text
@@ -11,12 +12,17 @@ dependencies:
     - field.field.node.success_story.field_related_content
     - node.type.success_story
   module:
+    - layout_builder
     - link
     - text
-id: node.success_story.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.success_story.featured_teaser
 targetEntityType: node
 bundle: success_story
-mode: default
+mode: featured_teaser
 content:
   body:
     type: text_default
