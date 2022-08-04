@@ -1,0 +1,22 @@
+uuid: 51574ac4-8a5a-469f-8f86-49a3614e44bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: success_stories
+label: 'Success stories'
+type: 'canonical_entities:node'
+pattern: '/success-stories/[node:title]'
+selection_criteria:
+  1d0416a4-b7f0-4ef5-abfa-ce2f8d75488a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1d0416a4-b7f0-4ef5-abfa-ce2f8d75488a
+    context_mapping:
+      node: node
+    bundles:
+      success_story: success_story
+selection_logic: and
+weight: -5
+relationships: {  }
