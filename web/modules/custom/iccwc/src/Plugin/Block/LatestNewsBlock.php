@@ -8,15 +8,15 @@ use Drupal\views\Views;
 use Drupal\node\Entity\Node;
 
 /**
- * Provides a 'ICCWC Success stories' Block.
+ * Provides a 'ICCWC Latest News' Block.
  *
  * @Block(
- *   id = "iccwc_success_stories",
- *   admin_label = @Translation("ICCWC Success stories"),
+ *   id = "iccwc_latest_news",
+ *   admin_label = @Translation("ICCWC Latest News"),
  *   category = @Translation("ICCWC"),
  * )
  */
-class SuccessStoriesBlock extends ICCWCBlockBase {
+class LatestNewsBlock extends ICCWCBlockBase {
 
   /**
    * {@inheritdoc}
@@ -28,23 +28,23 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
     $featured_text = NULL;
     $featured_link = NULL;
 
-    $story_id = $this->configuration['story'];
+    $news_id = $this->configuration['news'];
 
-    if (isset($story)) {
+    if (isset($news_id)) {
       // If featured story selected in block.
-      $node = Node::load($story);
+      $node = Node::load($news_id);
     }
 
-    if (!$node instanceof NodeInterface) {
+    if (!$news_id instanceof NodeInterface) {
       // No featured story selected in block.
-      $latest_view = Views::getView('success_stories');
-      $latest_view->setDisplay('latest_success_story');
+      $latest_view = Views::getView('latest_news');
+      $latest_view->setDisplay('latest_one_news');
       $latest_view->execute();
       $view_result = $latest_view->result;
 
       foreach ($view_result as $data) {
         $node = $data->_entity;
-        $story_id = $node->id();
+        $news_id = $node->id();
       }
     }
 
@@ -58,19 +58,19 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
 
     $view = [
       '#type' => 'view',
-      '#view' => Views::getView('success_stories'),
-      '#display_id' => 'block_success_stories',
-      '#arguments' => [$story_id],
+      '#view' => Views::getView('latest_news'),
+      '#display_id' => 'block_latest_news',
+      '#arguments' => [$news_id],
     ];
 
     return [
-      '#theme' => 'success_stories',
+      '#theme' => 'latest_news',
       '#featured_date' => $featured_date,
       '#featured_title' => $featured_title,
       '#featured_image' => $featured_image,
       '#featured_text' => $featured_text,
       '#featured_link' => $featured_link,
-      '#success_stories' => $view,
+      '#latest_news' => $view,
     ];
   }
 
@@ -78,21 +78,21 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $story_id = $this->configuration['story'];
+    $news_id = $this->configuration['news'];
 
     // Default value for entity_autocomplete needs entities.
-    $entity = Node::load($story_id);
+    $entity = Node::load($news_id);
 
     // Attach extra field to block config form.
-    $form['story'] = [
+    $form['news'] = [
       '#type' => 'entity_autocomplete',
-      '#description' => $this->t("Leave empty to feature the latest Success Story, or select only one."),
+      '#description' => $this->t("Leave empty to feature the latest News, or select only one."),
       '#selection_handler' => 'default',
       '#target_type' => 'node',
-      '#title' => $this->t('Featured Success story'),
+      '#title' => $this->t('Featured News'),
       '#default_value' => $entity,
       '#selection_settings' => [
-        'target_bundles' => ['success_story'],
+        'target_bundles' => ['news'],
       ],
     ];
 
@@ -103,7 +103,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['story'] = $form_state->getValue('story');
+    $this->configuration['news'] = $form_state->getValue('news');
   }
 
 }
