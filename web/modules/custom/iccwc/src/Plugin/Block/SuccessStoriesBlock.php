@@ -32,12 +32,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
       $story = $latest_view->result[0]->nid;
     }
 
-    $featured_story = [
-      '#type' => 'view',
-      '#view' => $latest_view,
-      '#display_id' => 'latest_success_story',
-      '#arguments' => [$story],
-    ];
+    $featured_story = $latest_view->render();
 
     $view = [
       '#type' => 'view',
