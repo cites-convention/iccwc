@@ -3,6 +3,7 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -76,8 +77,10 @@ class SocialMediaLinksBlock extends BlockBase implements ContainerFactoryPluginI
   /**
    * {@inheritdoc}
    */
-  public function getCacheContexts() {
-    return ['config:iccwc.social_media.settings'];
+  public function getCacheTags() {
+    return Cache::mergeTags(parent::getCacheTags(), [
+      'config:iccwc.social_media.settings',
+    ]);
   }
 
 }

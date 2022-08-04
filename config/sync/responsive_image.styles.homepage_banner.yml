@@ -1,0 +1,19 @@
+uuid: 96f1f220-0e0e-4aa5-be85-408db1b038fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.homepage_banner_desktop
+    - image.style.homepage_banner_mobile
+  theme:
+    - frontend
+id: homepage_banner
+label: 'Homepage banner'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: homepage_banner_desktop
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: homepage_banner_mobile

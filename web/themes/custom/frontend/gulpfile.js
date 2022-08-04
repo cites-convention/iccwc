@@ -46,7 +46,7 @@ function css() {
   .pipe(sass({ outputStyle: "expanded" }, {errLogToConsole: true}))
   .on('error', catchErr)
   .pipe(postcss([autoprefixer]))
-  .pipe(purge())
+  // .pipe(purge())
   .pipe(sourcemaps.write("map"))
   .pipe(gulp.dest(distPath + "css"))
   .pipe(browsersync.stream());
@@ -60,7 +60,7 @@ function cssTemplates() {
   .pipe(sass({ outputStyle: "expanded" }, {errLogToConsole: true}))
   .on('error', catchErr)
   .pipe(postcss([autoprefixer]))
-  .pipe(purge())
+  // .pipe(purge())
   .pipe(sourcemaps.write("map"))
   .pipe(gulp.dest(distPath + "css/templates"))
   .pipe(browsersync.stream());
@@ -72,9 +72,9 @@ function cssMin() {
     .pipe(plumber())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(postcss([autoprefixer]))
-    .pipe(purge({
-      trim : true
-    }))
+    // .pipe(purge({
+    //   trim : true
+    // }))
     .pipe(gulp.dest(distPath + "css"))
 }
 
@@ -84,9 +84,9 @@ function cssMinTemplates() {
     .pipe(plumber())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(postcss([autoprefixer]))
-    .pipe(purge({
-      trim : true
-    }))
+    // .pipe(purge({
+    //   trim : true
+    // }))
     .pipe(gulp.dest(distPath + "css/templates"))
 }
 

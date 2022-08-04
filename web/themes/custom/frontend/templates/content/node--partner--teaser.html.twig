@@ -1,0 +1,11 @@
+<article{{ attributes }}>
+  <div{{ content_attributes }}>
+    {% if node.field_external_url.uri %}
+      <a href="{{ node.field_external_url.uri }}">
+    {% endif %}
+        {{ content.field_image }}
+    {% if node.field_external_url.uri %}
+      </a>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,8 @@
+body {
+  background-color: var(--color-white);
+}
+
+.container .container {
+  padding: 0;
+}
+/*# sourceMappingURL=../map/components/general.css.map */

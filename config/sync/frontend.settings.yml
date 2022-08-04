@@ -8,7 +8,7 @@ logo:
 favicon:
   use_default: 1
 sg__container: container
-sg__status_message_type: toast
+sg__status_message_type: alerts
 sr__clean_branding: 0
 sr__class_branding: ''
 sr__container_branding: none
@@ -71,7 +71,7 @@ sr__container_position_disable_region: before
 sr__extra_class_disable_region: ''
 ns__navbar_position: '0'
 ns__navbar_expand: navbar-expand-sm
-ns__navbar_align: me-auto
+ns__navbar_align: ms-auto
 ns__navbar_color: navbar-light
 ns__navbar_bg: '0'
 ns__navbar_out: '0'
@@ -104,3 +104,13 @@ sl__h_color: '#000000'
 sl__decoration: ''
 sl__h_decoration: ''
 fs__form_input_group: ''
+sr__clean_header_left: 0
+sr__class_header_left: ''
+sr__container_header_left: none
+sr__container_position_header_left: before
+sr__extra_class_header_left: ''
+sr__clean_header_right: 0
+sr__class_header_right: ''
+sr__container_header_right: none
+sr__container_position_header_right: before
+sr__extra_class_header_right: ''

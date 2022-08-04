@@ -31,7 +31,7 @@ class SearchForm extends FormBase {
     $form['#method'] = 'GET';
 
     $form['search'] = [
-      '#type' => 'search',
+      '#type' => 'textfield',
       '#title_display' => 'invisible',
       '#placeholder' => $this->t('Search'),
       '#default_value' => $this->getRequest()->query->get('search') ?? '',

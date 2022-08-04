@@ -6,9 +6,12 @@ dependencies:
     - block_content.type.frontpage_banner
     - field.field.block_content.frontpage_banner.field_description
     - field.field.block_content.frontpage_banner.field_highlights
+    - field.field.block_content.frontpage_banner.field_image
     - field.field.block_content.frontpage_banner.field_youtube_video
+    - responsive_image.styles.homepage_banner
   module:
-    - entity_reference_revisions
+    - iccwc
+    - media_responsive_thumbnail
     - youtube
 id: block_content.frontpage_banner.default
 targetEntityType: block_content
@@ -17,25 +20,51 @@ mode: default
 content:
   field_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
   field_highlights:
-    type: entity_reference_revisions_entity_view
-    label: above
+    type: slick_paragraph
+    label: hidden
     settings:
+      optionset: highlights
+      skin: default
       view_mode: default
-      link: ''
+      cache: '0'
+      override: '1'
+      overridables:
+        arrows: arrows
+        infinite: infinite
+        autoplay: 0
+        dots: 0
+        draggable: 0
+        mouseWheel: 0
+        randomize: 0
+        variableWidth: 0
+      use_theme_field: 0
+      skin_arrows: ''
+      skin_dots: ''
+      lazy: ''
+      style: ''
     third_party_settings: {  }
     weight: 4
     region: content
+  field_image:
+    type: media_responsive_thumbnail
+    label: hidden
+    settings:
+      responsive_image_style: homepage_banner
+      image_link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_youtube_video:
     type: youtube_video
-    label: above
+    label: hidden
     settings:
-      youtube_size: 450x315
+      youtube_size: responsive
       youtube_width: ''
       youtube_height: ''
       youtube_autoplay: false
