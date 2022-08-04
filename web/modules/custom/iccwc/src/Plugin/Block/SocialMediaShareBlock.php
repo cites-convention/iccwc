@@ -2,12 +2,7 @@
 
 namespace Drupal\iccwc\Plugin\Block;
 
-use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\Cache;
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\node\NodeInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'ICCWC Social Media Share' Block.
@@ -19,28 +14,22 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class SocialMediaShareBlock extends ICCWCBlockBase {
+
   /**
    * {@inheritdoc}
    */
   public function build() {
     $node = $this->routeMatch->getParameter('node');
-    if ($node instanceof NodeInterface){
-      $link = $node->toUrl()->setAbsolute()->toString();
+    if (!$node instanceof NodeInterface) {
+      return [];
     }
+
+    $link = $node->toUrl()->setAbsolute()->toString();
 
     return [
       '#theme' => 'social_media_share',
       '#link' => $link,
     ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheTags() {
-    return Cache::mergeTags(parent::getCacheTags(), [
-      'config:iccwc.social_media.settings',
-    ]);
   }
 
 }
