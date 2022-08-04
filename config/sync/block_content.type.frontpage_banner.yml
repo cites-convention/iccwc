@@ -1,0 +1,8 @@
+uuid: 907447a5-bdb1-4aab-8f20-830f86aa186e
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_banner
+label: 'Frontpage banner'
+revision: 0
+description: ''

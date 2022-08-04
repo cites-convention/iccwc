@@ -1,0 +1,4 @@
+frontpage_banner:
+  css:
+    component:
+      css/templates/components/frontpage/frontpage-banner.css: {}

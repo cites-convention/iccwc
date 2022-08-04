@@ -1,18 +1,1 @@
-/**
- * @file
- * ICCWC Frontend JS.
- */
-
-(function ($, Drupal) {
-
-  /**
-   * ICCWC behavior.
-   *
-   * @type {Drupal~behavior}
-   */
-  Drupal.behaviors.iccwc = {
-    attach(context, settings) {
-
-    },
-  };
-})(jQuery, Drupal);
+!function(c,a){a.behaviors.iccwc={attach(c,a){}}}(jQuery,Drupal);

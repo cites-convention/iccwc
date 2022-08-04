@@ -21,11 +21,12 @@
 %}
 
 <nav{{ navbar_attribute.addclass(header_classes) }}>
-  <div class="{{ global.container }}">
+  <div class="upper {{ global.container }}">
     {{ page.header_left }}
 
     {{ page.header_right }}
-
+  </div>
+  <div class="menu {{ global.container }}">
     <button
       class="navbar-toggler"
       type="button"
@@ -44,7 +45,7 @@
       </div>
 
       {{ page.highlighted }}
-      
+
       {{ page.header }}
     </div>
   </div>
