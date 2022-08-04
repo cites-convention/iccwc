@@ -33,16 +33,6 @@ $table-striped-bg: #f9f9f9 !default;
   --color-gray-darker: #999999;
 }
 
-$yellow-to-orange-gradient: linear-gradient(90deg, #CEB64F 0%, #F49145 100%);
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1320px
-) !default;
-
 $font-family-sans-serif:      'Open Sans', sans-serif !default;
 $font-family-headings:        'Source Sans Pro', sans-serif !default;
 

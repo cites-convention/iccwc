@@ -589,7 +589,7 @@ progress {
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 1450px;
   }
 }
 .row {
@@ -7547,6 +7547,10 @@ body h6, body .h6 {
 
 body {
   background-color: var(--color-white);
+}
+
+.container .container {
+  padding: 0;
 }
 
 .block-dark-mode-switch {

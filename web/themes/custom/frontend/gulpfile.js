@@ -72,9 +72,9 @@ function cssMin() {
     .pipe(plumber())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(postcss([autoprefixer]))
-    .pipe(purge({
-      trim : true
-    }))
+    // .pipe(purge({
+    //   trim : true
+    // }))
     .pipe(gulp.dest(distPath + "css"))
 }
 
@@ -84,9 +84,9 @@ function cssMinTemplates() {
     .pipe(plumber())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(postcss([autoprefixer]))
-    .pipe(purge({
-      trim : true
-    }))
+    // .pipe(purge({
+    //   trim : true
+    // }))
     .pipe(gulp.dest(distPath + "css/templates"))
 }
 

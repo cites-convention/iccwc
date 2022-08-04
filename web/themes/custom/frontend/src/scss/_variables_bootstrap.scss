@@ -20,3 +20,16 @@ $blue: #003CC5 !default;
 $form-text-margin-top: 0 !default;
 $legend-font-size: 1rem !default;
 $table-cell-padding-x: .75rem;
+
+
+$yellow-to-orange-gradient: linear-gradient(90deg, #CEB64F 0%, #F49145 100%);
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1450px
+) !default;
+

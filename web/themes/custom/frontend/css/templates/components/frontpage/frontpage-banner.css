@@ -61,11 +61,6 @@
 }
 
 .block-inline-blockfrontpage-banner {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 100vw;
-  position: relative;
   border-top: 4px solid var(--color-orange);
 }
 .block-inline-blockfrontpage-banner .wrapper {
@@ -83,6 +78,18 @@
 }
 .block-inline-blockfrontpage-banner .content-wrapper {
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.block-inline-blockfrontpage-banner .highlights-wrapper {
+  margin-top: auto;
 }
 .block-inline-blockfrontpage-banner .left-col {
   display: -webkit-box;
