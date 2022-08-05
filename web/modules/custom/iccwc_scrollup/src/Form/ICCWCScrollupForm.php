@@ -4,13 +4,22 @@ namespace Drupal\iccwc_scrollup\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Extension\ThemeHandler;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure animated scroll to top settings for this site.
  */
 class ICCWCScrollupForm extends ConfigFormBase {
 
-   /**
+  /**
+   * The theme handler.
+   *
+   * @var \Drupal\Core\Extension\ThemeHandler
+   */
+  protected $themeHandler;
+
+  /**
    * Config settings.
    *
    * @var string
@@ -34,6 +43,25 @@ class ICCWCScrollupForm extends ConfigFormBase {
   }
 
   /**
+   * Constructs the ICCWCScrollupForm.
+   *
+   * @param \Drupal\Core\Extension\ThemeHandler $theme_handler
+   *   The theme handler.
+   */
+  public function __construct(ThemeHandler $theme_handler) {
+    $this->themeHandler = $theme_handler;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('theme_handler')
+    );
+  }
+
+  /**
    * Implements buildForm().
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
@@ -47,7 +75,7 @@ class ICCWCScrollupForm extends ConfigFormBase {
       '#title' => $this->t('Themes Name'),
       '#description' => $this->t('Scroll up button add multiple themes.'),
       '#type' => 'select',
-      '#multiple' => true,
+      '#multiple' => TRUE,
       '#options' => $this->getThemeName(),
       '#default_value' => $config->get('iccwc_scrollup_themename'),
     ];
@@ -56,13 +84,13 @@ class ICCWCScrollupForm extends ConfigFormBase {
       '#type' => 'fieldset',
     ];
     $form['iccwc_scrolling_fieldset']['iccwc_scrollup_title'] = [
-      '#title' => $this->t( 'Scrollup Button Title' ),
+      '#title' => $this->t('Scrollup Button Title'),
       '#description' => $this->t('scrollup button title'),
       '#type' => 'textfield',
       '#default_value' => $config->get('iccwc_scrollup_title'),
     ];
     $form['iccwc_scrolling_fieldset']['iccwc_scrollup_hoover_title'] = [
-      '#title' => $this->t( 'Scrollup Button Hoover Title' ),
+      '#title' => $this->t('Scrollup Button Hoover Title'),
       '#description' => $this->t('scrollup button hoover title'),
       '#type' => 'textfield',
       '#default_value' => $config->get('iccwc_scrollup_hoover_title'),
@@ -71,14 +99,14 @@ class ICCWCScrollupForm extends ConfigFormBase {
       '#title' => $this->t('Window scrollup fadeIn and fadeout position'),
       '#description' => $this->t('Enter the value of fadeIn & fadeout window scrollup in ms.'),
       '#type' => 'number',
-      '#required' => true,
+      '#required' => TRUE,
       '#default_value' => $config->get('iccwc_scrollup_window_position'),
     ];
     $form['iccwc_scrolling_fieldset']['iccwc_scrollup_speed'] = [
       '#title' => $this->t('Scrollup speed'),
       '#description' => $this->t('Enter the value of Scrollup speed in ms.'),
       '#type' => 'number',
-      '#required' => true,
+      '#required' => TRUE,
       '#default_value' => $config->get('iccwc_scrollup_speed'),
     ];
     $form['iccwc_button_fieldset'] = [
@@ -114,12 +142,12 @@ class ICCWCScrollupForm extends ConfigFormBase {
   /**
    * Implement getThemeName().
    */
-  public function getThemeName(){
-    $theme_handler = \Drupal::service('theme_handler');
-    $themes = $theme_handler->listInfo();
-    foreach($themes as $key=> $val){
-      $theme_arr[$key]= $val->info['name'];
+  public function getThemeName() {
+    $themes = $this->themeHandler->listInfo();
+    foreach ($themes as $key => $val) {
+      $theme_arr[$key] = $val->info['name'];
     }
+
     return $theme_arr;
   }
 
