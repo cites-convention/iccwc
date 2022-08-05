@@ -7691,6 +7691,96 @@ h1 a:hover, .h1 a:hover, h1 a:active, .h1 a:active, h2 a:hover, .h2 a:hover, h2 
   position: absolute;
 }
 
+ul li::marker {
+  color: #E87722;
+  line-height: 1.5625;
+  font-size: 1.4em;
+}
+
+ul li {
+  padding-left: 20px;
+}
+
+.section-title {
+  font-size: x-large;
+  font-weight: bold;
+  border-left: 4px solid var(--color-orange);
+  padding-left: 20px;
+  color: var(--color-black);
+  margin-left: 10px;
+}
+
+blockquote {
+  border-top: 3px solid var(--color-orange);
+  border-bottom: 3px solid var(--color-orange);
+  padding: 20px 10px 20px 10px;
+  margin: 20px 0 20px 0;
+}
+blockquote p {
+  padding: 20px 30px 20px 30px;
+  overflow: visible;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  font-style: italic;
+  text-align: justify;
+}
+blockquote p:before {
+  content: "";
+  background-image: url("../icons/quote.svg");
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: auto;
+  position: absolute;
+  margin-left: -45px;
+  opacity: 0.2;
+}
+blockquote p:after {
+  content: " ";
+  background-image: url("../icons/quote.svg");
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  margin-top: -10px;
+  opacity: 0.2;
+}
+
+.image-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 20px;
+  gap: 10px;
+  width: 668px;
+  height: 419px;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+}
+
 .layout-section {
   padding: 80px 0;
 }
