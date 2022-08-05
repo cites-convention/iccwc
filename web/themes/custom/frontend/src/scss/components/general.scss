@@ -103,3 +103,32 @@ h1, h2, h3, h4, h5, h5 {
     position: absolute;
   }
 }
+
+.layout-section {
+  padding: 80px 0;
+}
+
+.layout-section:not(:last-child) {
+  border-bottom: 4px solid var(--color-yellow);
+}
+
+.section-title {
+  border-left: 4px solid var(--color-yellow);
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+
+.layout-section.bs-bg-light {
+  background-color: var(--color-gray-light) !important;
+}
+
+.block-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.block-border {
+  padding: 20px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}

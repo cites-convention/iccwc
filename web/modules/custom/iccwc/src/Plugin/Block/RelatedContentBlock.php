@@ -63,7 +63,8 @@ class RelatedContentBlock extends ICCWCBlockBase {
       '#theme' => 'related_content',
       '#related_content_view' => $view,
       '#see_more_link' => $see_more_link,
-      '#see_more_text' => $see_more_text,
+      // phpcs:ignore
+      '#see_more_text' => $this->t($see_more_text),
     ];
   }
 
