@@ -7844,8 +7844,8 @@ h1 a:hover, .h1 a:hover, h1 a:active, .h1 a:active, h2 a:hover, .h2 a:hover, h2 
   font-size: 14px;
   line-height: 16px;
 }
-.navbar-brand img {
-  width: 250px;
+.navbar-brand svg {
+  height: 80px;
 }
 .navbar-brand .site-slogan {
   width: 220px;
@@ -7886,5 +7886,18 @@ header .navbar > .container.menu {
   --color-gray: #E5E5E5;
   --color-gray-darker: #999999;
   --body-color: #FFF;
+}
+
+.dark-mode .navbar-brand {
+  color: #fff;
+}
+.dark-mode .navbar-brand #darkModeBlack, .dark-mode .navbar-brand #darkModeBlack > * {
+  fill: #fff;
+}
+.dark-mode .navbar-brand #darkModeBlack .st2 {
+  stroke: #fff !important;
+}
+.dark-mode .navbar-brand #darkModeWhite, .dark-mode .navbar-brand #darkModeWhite > * {
+  fill: #000;
 }
 /*# sourceMappingURL=map/style.css.map */

@@ -154,8 +154,8 @@
   font-size: 14px;
   line-height: 16px;
 }
-.navbar-brand img {
-  width: 250px;
+.navbar-brand svg {
+  height: 80px;
 }
 .navbar-brand .site-slogan {
   width: 220px;
