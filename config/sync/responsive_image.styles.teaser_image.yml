@@ -1,0 +1,19 @@
+uuid: ceaacd19-e902-4ff5-932a-9d8d4758318b
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.teaser_image_desktop
+    - image.style.teaser_image_mobile
+  theme:
+    - frontend
+id: teaser_image
+label: 'Teaser image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_image_desktop
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: teaser_image_mobile

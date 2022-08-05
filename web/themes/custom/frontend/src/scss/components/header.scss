@@ -1,3 +1,5 @@
+@import "../variables_drupal";
+
 .block-dark-mode-switch {
   display: flex;
   justify-content: center;
@@ -13,9 +15,10 @@
     border: none !important;
     outline: 0;
     box-shadow: none !important;
-    font-size: 14px;
     padding: 0;
     transition: none;
+
+    @include small-text;
   }
 }
 
@@ -52,7 +55,7 @@
 }
 
 .region-header-right {
-  font-size: 14px;
+  @include small-text;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid;
@@ -91,17 +94,18 @@
   }
 
   input[type="text"] {
+    @include small-text;
+
     border: none;
     outline: 0;
     box-shadow: none;
     transition: none;
-    font-size: 14px;
     padding: 0;
   }
 }
 
 .navbar-brand {
-  font-size: 14px;
+  @include small-text;
 
   img {
     width: 250px;

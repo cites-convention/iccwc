@@ -13,6 +13,10 @@ settings:
     rows:
       -
         -
+          name: Reset
+          items:
+            - RemoveFormat
+        -
           name: Formatting
           items:
             - Undo
@@ -26,8 +30,7 @@ settings:
             - JustifyRight
             - JustifyCenter
             - JustifyLeft
-            - Indent
-            - Outdent
+            - JustifyBlock
         -
           name: Links
           items:
@@ -41,7 +44,7 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
+            - quote
             - DrupalImage
             - DrupalMediaLibrary
         -
@@ -54,9 +57,9 @@ settings:
             - Styles
   plugins:
     stylescombo:
-      styles: ''
+      styles: 'p.section-title|Section Title'
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''

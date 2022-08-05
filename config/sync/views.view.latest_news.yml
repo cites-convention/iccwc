@@ -341,7 +341,7 @@ display:
       tags: {  }
   block_latest_news:
     id: block_latest_news
-    display_title: LatestNewsBlock
+    display_title: 'Latest News Block'
     display_plugin: block
     position: 1
     display_options:
@@ -351,11 +351,16 @@ display:
           offset: 0
           items_per_page: 2
       style:
-        type: default
+        type: grid
         options:
-          row_class: ''
-          default_row_class: true
           uses_fields: false
+          columns: 2
+          automatic_width: true
+          alignment: horizontal
+          row_class_custom: row
+          row_class_default: false
+          col_class_custom: col-md-6
+          col_class_default: false
       row:
         type: 'entity:node'
         options:
@@ -378,7 +383,7 @@ display:
       tags: {  }
   latest_one_news:
     id: latest_one_news
-    display_title: LatestOneNews
+    display_title: 'Latest One News'
     display_plugin: block
     position: 2
     display_options:
