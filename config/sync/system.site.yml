@@ -8,7 +8,7 @@ slogan: 'International Consortium on Combating Wildlife Crime'
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node/15
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

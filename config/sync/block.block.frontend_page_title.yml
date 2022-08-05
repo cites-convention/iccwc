@@ -2,6 +2,8 @@ uuid: 29b80c3d-0b15-4914-a8b8-f14013ea0d2e
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - frontend
 _core:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'
