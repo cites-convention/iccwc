@@ -12,7 +12,19 @@
   --color-blue: #0065FF;
 }
 
-.featured-news {
+.view-partners-and-donors .views-row {
+  display: inline-block;
+  margin-right: 10px;
   margin-bottom: 20px;
 }
-/*# sourceMappingURL=../../map/components/iccwc/latest-news.css.map */
+.view-partners-and-donors .view-content {
+  text-align: center;
+}
+
+.partner-teaser {
+  padding: 20px;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=../../map/components/iccwc/partners.css.map */
