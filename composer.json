@@ -68,8 +68,6 @@
         "drupal/honeypot": "^2.0",
         "drupal/image_max_size_crop": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
-        "drupal/jquery_ui": "^1.4",
-        "drupal/jquery_ui_effects": "^1.2",
         "drupal/lang_dropdown": "^2.0",
         "drupal/layout_builder_browser": "^1.4",
         "drupal/layout_builder_modal": "^1.1",
@@ -103,8 +101,7 @@
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "slick/slick": "^1.9.0",
-        "tubalmartin/cssmin": "^4.1",
-        "wikimedia/composer-merge-plugin": "^2.0"
+        "tubalmartin/cssmin": "^4.1"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
