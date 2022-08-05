@@ -10,4 +10,42 @@
   --color-gray-darker: #999999;
   --color-blue: #0065FF;
 }
+
+.social-media-share-container {
+  width: 120px;
+  height: 191px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0px;
+  border: solid #e5e5e5 1px;
+  border-radius: 10px;
+}
+.social-media-share-container div {
+  width: 100%;
+  height: auto;
+}
+.social-media-share-container div a {
+  margin-left: 10px;
+}
+.social-media-share-container div:hover {
+  background: #e5e5e5;
+}
+.social-media-share-container div:nth-child(3) {
+  overflow: hidden;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+.social-media-share-container div:nth-child(1) {
+  overflow: hidden;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+.social-media-share-container div:nth-child(2) {
+  border-bottom: solid 1px #e5e5e5;
+  border-top: solid 1px #e5e5e5;
+}
+.social-media-share-container svg {
+  margin-left: 37px;
+  margin-top: 18px;
+}
 /*# sourceMappingURL=../../map/components/iccwc/social-media-share.css.map */
