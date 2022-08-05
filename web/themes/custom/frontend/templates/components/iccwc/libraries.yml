@@ -15,3 +15,8 @@ latest_news:
   css:
     component:
       css/templates/components/iccwc/latest-news.css: { }
+
+partners:
+  css:
+    component:
+      css/templates/components/iccwc/partners.css: { }

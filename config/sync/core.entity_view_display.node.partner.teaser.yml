@@ -8,10 +8,11 @@ dependencies:
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
     - field.field.node.partner.field_past_donor
+    - image.style.partner_logo
     - node.type.partner
   module:
     - link
-    - user
+    - media
 id: node.partner.teaser
 targetEntityType: node
 bundle: partner
@@ -30,11 +31,13 @@ content:
     weight: 1
     region: content
   field_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      image_link: ''
+      image_style: partner_logo
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
