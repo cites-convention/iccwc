@@ -2,3 +2,16 @@ social_media_share:
   js:
     js/print.min.js: {}
     js/social-media-share.js: {}
+  css:
+    component:
+      css/templates/components/iccwc/social-media-share.css: { }
+
+success_stories:
+  css:
+    component:
+      css/templates/components/iccwc/success-stories.css: { }
+
+latest_news:
+  css:
+    component:
+      css/templates/components/iccwc/latest-news.css: { }

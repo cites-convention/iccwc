@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.featured_teaser
     - core.entity_view_mode.node.teaser
     - node.type.success_story
   module:
@@ -89,10 +90,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: some
         options:
           offset: 0
-          items_per_page: null
+          items_per_page: 10
       exposed_form:
         type: basic
         options:
@@ -249,7 +250,7 @@ display:
         options:
           caption:
             title: title
-          optionset: default
+          optionset: featured_stories
           class: ''
           id: ''
           image: ''
@@ -310,7 +311,7 @@ display:
       tags: {  }
   block_success_stories:
     id: block_success_stories
-    display_title: SuccessStoriesBlock
+    display_title: 'Success Stories Block'
     display_plugin: block
     position: 1
     display_options:
@@ -327,7 +328,7 @@ display:
       tags: {  }
   latest_success_story:
     id: latest_success_story
-    display_title: LatestSuccessStory
+    display_title: 'Latest Success Story'
     display_plugin: block
     position: 2
     display_options:
@@ -347,7 +348,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: featured_teaser
       defaults:
         pager: false
         style: false

@@ -1,0 +1,80 @@
+:root {
+  --color-orange: #E87722;
+  --color-orange-darker: #C4661E;
+  --color-yellow: #F5CD26;
+  --color-yellow-darker: #AB901B;
+  --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
+  --color-white: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-darker: #999999;
+  --color-blue: #0065FF;
+}
+
+.node--view-mode-teaser {
+  padding: 20px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+.node--view-mode-teaser h3 {
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.node--view-mode-teaser img {
+  border: double 6px transparent;
+  border-radius: 20px;
+  background-image: -webkit-linear-gradient(white, white), -webkit-radial-gradient(top left, circle, #C6B362, #F49145);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #C6B362, #F49145);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
+.node--view-mode-teaser .date-tags {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 15px;
+}
+.node--view-mode-teaser .date-tags .field + .field {
+  border-left: 1px solid var(--color-black);
+  margin-left: 5px;
+  padding-left: 5px;
+}
+.node--view-mode-teaser .title-teaser {
+  font-size: 20px;
+}
+.node--view-mode-teaser .field--name-field-tags {
+  text-transform: uppercase;
+}
+.node--view-mode-teaser .field--name-field-tags > div:not(:first-child) {
+  display: none;
+}
+
+.node--view-mode-featured-teaser .field--name-field-tags {
+  text-transform: uppercase;
+}
+.node--view-mode-featured-teaser .field--name-field-tags > div:not(:first-child) {
+  display: none;
+}
+.node--view-mode-featured-teaser.node--type-success-story {
+  padding: 20px;
+  border: 1px solid var(--color-orange);
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.node--view-mode-featured-teaser.node--type-success-story h3 {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-gray);
+  margin-bottom: 20px;
+}
+.node--view-mode-featured-teaser.node--type-success-story h3 a {
+  color: var(--color-orange);
+}
+/*# sourceMappingURL=../../map/components/content/content-teasers.css.map */

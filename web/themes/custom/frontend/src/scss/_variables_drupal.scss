@@ -28,9 +28,11 @@ $table-striped-bg: #f9f9f9 !default;
   --color-yellow: #F5CD26;
   --color-yellow-darker: #AB901B;
   --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-darker: #999999;
+  --color-blue: #0065FF;
 }
 
 $font-family-sans-serif:      'Open Sans', sans-serif !default;
@@ -39,6 +41,7 @@ $font-family-headings:        'Source Sans Pro', sans-serif !default;
 @mixin heading {
   font-weight: bold;
   font-family: $font-family-headings;
+  color: var(--color-text);
 }
 
 @mixin heading-1 {
@@ -99,4 +102,12 @@ $font-family-headings:        'Source Sans Pro', sans-serif !default;
   -webkit-line-clamp: $n;
   line-clamp: $n;
   -webkit-box-orient: vertical;
+}
+
+@mixin black-link {
+  color: var(--color-text);
+
+  &:hover, &:focus {
+    color: var(--color-blue);
+  }
 }

@@ -51,6 +51,12 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'success_stories' => '',
       ],
     ],
+    'latest_news' => [
+      'variables' => [
+        'featured_news' => '',
+        'latest_news' => '',
+      ],
+    ],
   ];
 }
 

@@ -1,0 +1,15 @@
+uuid: 90776870-f7fb-4c36-b444-8a722e1b1a96
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_image_large_desktop
+label: 'Teaser image large (desktop)'
+effects:
+  4bd63032-4636-48a3-b0e1-d2c524a37772:
+    uuid: 4bd63032-4636-48a3-b0e1-d2c524a37772
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 420
+      height: 245
+      anchor: center-center

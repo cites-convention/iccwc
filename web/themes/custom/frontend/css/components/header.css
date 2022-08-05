@@ -1,3 +1,16 @@
+:root {
+  --color-orange: #E87722;
+  --color-orange-darker: #C4661E;
+  --color-yellow: #F5CD26;
+  --color-yellow-darker: #AB901B;
+  --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
+  --color-white: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-darker: #999999;
+  --color-blue: #0065FF;
+}
+
 .block-dark-mode-switch {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25,10 +38,11 @@
   border: none !important;
   outline: 0;
   box-shadow: none !important;
-  font-size: 14px;
   padding: 0;
   -webkit-transition: none;
   transition: none;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .custom-control {
@@ -72,6 +86,7 @@
 
 .region-header-right {
   font-size: 14px;
+  line-height: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -125,17 +140,19 @@
   min-width: 24px;
 }
 .iccwc-search-form input[type=text] {
+  font-size: 14px;
+  line-height: 16px;
   border: none;
   outline: 0;
   box-shadow: none;
   -webkit-transition: none;
   transition: none;
-  font-size: 14px;
   padding: 0;
 }
 
 .navbar-brand {
   font-size: 14px;
+  line-height: 16px;
 }
 .navbar-brand img {
   width: 250px;

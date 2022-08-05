@@ -21,15 +21,15 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $story = $this->configuration['story'] ?? NULL;
+    $story_id = $this->configuration['story'] ?? NULL;
 
     $latest_view = Views::getView('success_stories');
     $latest_view->setDisplay('latest_success_story');
-    $latest_view->setArguments([$story]);
+    $latest_view->setArguments([$story_id]);
     $latest_view->execute();
 
-    if (empty($story) && !empty($latest_view->result)) {
-      $story = $latest_view->result[0]->nid;
+    if (empty($story_id) && !empty($latest_view->result)) {
+      $story_id = $latest_view->result[0]->nid;
     }
 
     $featured_story = $latest_view->render();
@@ -38,7 +38,7 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
       '#type' => 'view',
       '#view' => Views::getView('success_stories'),
       '#display_id' => 'block_success_stories',
-      '#arguments' => [$story],
+      '#arguments' => [$story_id],
     ];
 
     return [
@@ -52,10 +52,10 @@ class SuccessStoriesBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $story = $this->configuration['story'];
+    $story_id = $this->configuration['story'];
 
     // Default value for entity_autocomplete needs entities.
-    $entity = Node::load($story);
+    $entity = Node::load($story_id);
 
     // Attach extra field to block config form.
     $form['story'] = [
