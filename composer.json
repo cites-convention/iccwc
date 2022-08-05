@@ -69,6 +69,7 @@
         "drupal/paragraphs": "^1.14",
         "drupal/pathauto": "^1.9",
         "drupal/redirect": "^1.7",
+        "drupal/scrollup": "^3.0",
         "drupal/search_api": "^1.23",
         "drupal/search_api_solr": "^4.2",
         "drupal/simple_search_form": "^1.4",
