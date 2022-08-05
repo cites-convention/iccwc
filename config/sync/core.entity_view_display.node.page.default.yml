@@ -41,6 +41,7 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 0
             additional: {  }
+            third_party_settings: {  }
           c98dc11c-f884-4971-add2-a9a0fb0a2460:
             uuid: c98dc11c-f884-4971-add2-a9a0fb0a2460
             region: content
@@ -56,6 +57,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           f750b72a-4d04-4114-96f4-16a310f01465:
             uuid: f750b72a-4d04-4114-96f4-16a310f01465
             region: content
@@ -71,6 +73,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+            third_party_settings: {  }
           3ff19632-3266-4967-a99e-b78e60502719:
             uuid: 3ff19632-3266-4967-a99e-b78e60502719
             region: content
@@ -91,6 +94,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           7ca82970-42eb-43c7-a33c-d464c649dbdf:
             uuid: 7ca82970-42eb-43c7-a33c-d464c649dbdf
             region: content
@@ -107,6 +111,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+            third_party_settings: {  }
           1e343db2-ec85-4ba0-8e3e-6246a92dc64a:
             uuid: 1e343db2-ec85-4ba0-8e3e-6246a92dc64a
             region: content
@@ -123,6 +128,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+            third_party_settings: {  }
           b212166d-c02c-4af3-9711-f9d32864b279:
             uuid: b212166d-c02c-4af3-9711-f9d32864b279
             region: content
@@ -139,6 +145,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 7
             additional: {  }
+            third_party_settings: {  }
           9435ab64-9737-446d-8f5d-8a64bba054d6:
             uuid: 9435ab64-9737-446d-8f5d-8a64bba054d6
             region: content
@@ -154,6 +161,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 8
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

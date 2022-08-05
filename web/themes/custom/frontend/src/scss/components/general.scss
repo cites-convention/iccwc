@@ -104,13 +104,19 @@ h1, h2, h3, h4, h5, h5 {
   }
 }
 
-ul li::marker{
-  color: #E87722;
-  line-height: 1.5625;
-  font-size:1.4em;
-}
-ul li{
-  padding-left: 20px;
+.field--type-text-long,
+.field--type-text-with-summary {
+  display: flex;
+  flex-direction: column;
+
+  ul li::marker {
+    color: #E87722;
+    line-height: 1.5625;
+    font-size: 1.4em;
+  }
+  ul li{
+    padding-left: 20px;
+  }
 }
 
 .section-title{
@@ -170,15 +176,8 @@ blockquote{
 }
 
 .image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
   padding: 20px;
-  gap: 10px;
-  width: 668px;
-  height: 419px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid var(--color-gray);
   border-radius: 10px;
 }
 
@@ -209,4 +208,11 @@ blockquote{
   padding: 20px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
+}
+
+.field--name-field-caption {
+  color: var(--color-gray-darker);
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: right;
 }
