@@ -116,71 +116,68 @@ ul li{
 .section-title{
   font-size: x-large;
   font-weight: bold;
-  border-left: solid #E87722 4px;
+  border-left: 4px solid var(--color-orange);
   padding-left: 20px;
-  color: #231F20;
+  color: var(--color-black);
   margin-left: 10px;
 }
+
 blockquote{
-  border-top: solid #E87722 3px;
-  border-bottom: solid #E87722 3px;
+  border-top: 3px solid var(--color-orange);
+  border-bottom: 3px solid var(--color-orange);
   padding: 20px 10px 20px 10px;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0 20px 0;
+
+  p {
+    padding: 20px 30px 20px 30px;
+    overflow: visible;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    font-style: italic;
+    text-align: justify;
+
+    &:before{
+      content: '';
+      background-image: url('../icons/quote.svg');
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: auto;
+      position: absolute;
+      margin-left: -45px;
+      opacity: 0.2;
+    }
+
+    &:after{
+      content: " ";
+      background-image: url('../icons/quote.svg');
+      transform: rotate(180deg);
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: auto;
+      position: absolute;
+      right: 0;
+      margin-top: -10px;
+      opacity: 0.2;
+    }
+  }
 }
-blockquote p{
-  padding: 20px 30px 20px 30px;
-  overflow: visible;
-  font-weight: bold;
-  font-size: larger;
-  font-style: italic;
-}
-.author{
-  font-style: italic;
-}
-blockquote p:before{
-  content: " ";
-  background-image: url('../icons/quote.svg');
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow: auto;
-  position: absolute;
-  margin-left: -45px;
-  opacity: 0.2;
-}
-blockquote p:after{
-  content: " ";
-  background-image: url('../icons/quote.svg');
-  transform: rotate(180deg);
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  margin-top: -10px;
-  opacity: 0.2;
-}
-p{
-  font-family: "Open Sans", serif;
-}
-.image-container{
+
+.image-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   padding: 20px;
   gap: 10px;
-  //position: absolute;
   width: 668px;
   height: 419px;
-  left: 382px;
-  top: 1036.22px;
   border: 1px solid #E5E5E5;
   border-radius: 10px;
 }
-
