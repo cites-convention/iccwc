@@ -7,6 +7,7 @@
   --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
+  --color-gray-light: #FAFAFA;
   --color-gray-darker: #999999;
   --color-blue: #0065FF;
 }
@@ -154,8 +155,8 @@
   font-size: 14px;
   line-height: 16px;
 }
-.navbar-brand img {
-  width: 250px;
+.navbar-brand svg {
+  height: 80px;
 }
 .navbar-brand .site-slogan {
   width: 220px;

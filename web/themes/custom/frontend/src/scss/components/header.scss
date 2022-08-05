@@ -107,8 +107,8 @@
 .navbar-brand {
   @include small-text;
 
-  img {
-    width: 250px;
+  svg {
+    height: 80px;
   }
 
   .site-slogan {
