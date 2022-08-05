@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Title.
+ * Bootstrap Styles category title.
  *
  * @StylesGroup(
  *   id = "title",

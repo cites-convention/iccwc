@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class SectionTitle.
+ * Bootstrap Styles setting for section title.
  *
  * @Style(
  *   id = "section_title",
@@ -35,7 +35,7 @@ class SectionTitle extends StylePluginBase {
    */
   public function submitStyleFormElements(array $group_elements) {
     return [
-      'section_title' => $group_elements['section_title']
+      'section_title' => $group_elements['section_title'],
     ];
   }
 

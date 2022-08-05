@@ -26,10 +26,10 @@ function iccwc_scrollup_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_preprocess_page().
  */
 function iccwc_scrollup_preprocess_page(&$variables) {
-
   $config = \Drupal::config('iccwc_scrollup.settings');
   $theme_selected = $config->get('iccwc_scrollup_themename');
   $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+
   if (array_keys($theme_selected, $active_theme)) {
     $variables['#attached']['library'][] = 'iccwc_scrollup/iccwc_scrollup';
     $variables['#attached']['drupalSettings']['iccwc_scrollup_position'] = $config->get('iccwc_scrollup_position');
@@ -41,5 +41,4 @@ function iccwc_scrollup_preprocess_page(&$variables) {
     $variables['#attached']['drupalSettings']['iccwc_scrollup_speed'] = $config->get('iccwc_scrollup_speed');
     $variables['#attached']['drupalSettings']['iccwc_scrollup_themename'] = $config->get('iccwc_scrollup_themename');
   }
-
 }

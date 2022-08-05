@@ -6,11 +6,7 @@
  */
 
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\block\BlockInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Entity\EntityFormInterface;
-use Drupal\block\Entity\Block;
-use Drupal\layout_builder\Form\UpdateBlockForm;
 
 /**
  * Implements hook_theme().

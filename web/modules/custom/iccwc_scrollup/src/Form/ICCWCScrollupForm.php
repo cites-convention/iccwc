@@ -62,7 +62,7 @@ class ICCWCScrollupForm extends ConfigFormBase {
   }
 
   /**
-   * Implements buildForm().
+   * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(static::SETTINGS);
@@ -76,7 +76,7 @@ class ICCWCScrollupForm extends ConfigFormBase {
       '#description' => $this->t('Scroll up button add multiple themes.'),
       '#type' => 'select',
       '#multiple' => TRUE,
-      '#options' => $this->getThemeName(),
+      '#options' => $this->getThemeNames(),
       '#default_value' => $config->get('iccwc_scrollup_themename'),
     ];
     $form['iccwc_scrolling_fieldset'] = [
@@ -140,9 +140,12 @@ class ICCWCScrollupForm extends ConfigFormBase {
   }
 
   /**
-   * Implement getThemeName().
+   * Retrieve theme names indexed by ID.
+   *
+   * @return array
+   *   An array with theme names indexed by ID.
    */
-  public function getThemeName() {
+  public function getThemeNames() {
     $themes = $this->themeHandler->listInfo();
     foreach ($themes as $key => $val) {
       $theme_arr[$key] = $val->info['name'];
@@ -152,7 +155,7 @@ class ICCWCScrollupForm extends ConfigFormBase {
   }
 
   /**
-   * Implement submitForm().
+   * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $iccwc_scrollup_position = $form_state->getValue('iccwc_scrollup_position');
