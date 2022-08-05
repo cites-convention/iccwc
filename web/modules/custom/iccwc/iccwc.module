@@ -37,6 +37,9 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'breadcrumb' => '',
         'caption' => '',
         'image' => '',
+        'tag' => '',
+        'date' => '',
+        'bundle' => '',
       ],
     ],
     'related_content' => [

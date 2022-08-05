@@ -2,7 +2,6 @@
 
 namespace Drupal\iccwc\Plugin\Block;
 
-use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -38,8 +37,9 @@ class HeroBannerBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $image = '';
+    $image = NULL;
     $caption = '';
+    $tag = NULL;
 
     $breadcrumb = $this->breadcrumb->build($this->routeMatch)->toRenderable();
 
@@ -60,17 +60,24 @@ class HeroBannerBlock extends ICCWCBlockBase {
     $title = $node->get('title')->value;
 
     /** @var \Drupal\media\MediaInterface $media */
-    $media = $node->get('field_image')->entity;
+    $media = $node->get('field_banner_image')->entity;
 
     if ($media instanceof MediaInterface) {
-      /** @var \Drupal\media\MediaInterface $media */
-      $media = $node->get('field_image')->entity;
+      $image = $node->get('field_banner_image')->view([
+        'type' => 'media_responsive_thumbnail',
+        'label' => 'hidden',
+        'settings' => [
+          'responsive_image_style' => 'hero_banner',
+        ],
+      ]);
       $caption = $media->get('field_caption')->value;
       /** @var \Drupal\file\FileInterface $file */
-      $file = $media->get('field_media_image')->entity;
-      if ($file instanceof FileInterface) {
-        $image = $file->createFileUrl();
-      }
+    }
+
+    if ($node->bundle() == 'news' && !$node->get('field_tags')->isEmpty()) {
+      /** @var \Drupal\taxonomy\TermInterface $tag_term */
+      $tag_term = $node->get('field_tags')->entity;
+      $tag = $tag_term->label();
     }
 
     return [
@@ -80,6 +87,9 @@ class HeroBannerBlock extends ICCWCBlockBase {
       '#breadcrumb' => $breadcrumb,
       '#caption' => $caption,
       '#image' => $image,
+      '#date' => $this->dateFormatter->format($node->getCreatedTime(), 'd_f_y'),
+      '#tag' => $tag,
+      '#bundle' => $node->bundle(),
     ];
   }
 
