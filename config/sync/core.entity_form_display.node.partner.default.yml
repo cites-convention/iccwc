@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.partner.field_amount
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
-    - field.field.node.partner.field_past_donor
+    - field.field.node.partner.field_partner_type
     - node.type.partner
   module:
     - link
+    - media_library
+    - media_library_edit
     - path
 id: node.partner.default
 targetEntityType: node
@@ -39,21 +41,19 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_image:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 122
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_past_donor:
-    type: boolean_checkbox
-    weight: 123
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_partner_type:
+    type: options_select
+    weight: 126
     region: content
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

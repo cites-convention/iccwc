@@ -6,11 +6,11 @@ dependencies:
     - field.field.node.partner.field_amount
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
-    - field.field.node.partner.field_past_donor
+    - field.field.node.partner.field_partner_type
     - node.type.partner
   module:
     - link
-    - user
+    - options
 id: node.partner.default
 targetEntityType: node
 bundle: partner
@@ -44,15 +44,12 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_past_donor:
-    type: boolean
+  field_partner_type:
+    type: list_default
     label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+    settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 106
     region: content
   links:
     settings: {  }

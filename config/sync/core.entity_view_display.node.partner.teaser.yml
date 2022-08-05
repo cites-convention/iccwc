@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.partner.field_amount
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
-    - field.field.node.partner.field_past_donor
+    - field.field.node.partner.field_partner_type
     - image.style.partner_logo
     - node.type.partner
   module:
@@ -44,7 +44,7 @@ content:
 hidden:
   created: true
   field_amount: true
-  field_past_donor: true
+  field_partner_type: true
   langcode: true
   links: true
   search_api_excerpt: true
