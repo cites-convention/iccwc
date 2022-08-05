@@ -1,0 +1,9 @@
+iccwc_scrollup_position: '1'
+iccwc_scrollup_button_bg_color: '#cccccc'
+iccwc_scrollup_button_hover_bg_color: '#000000'
+iccwc_scrollup_title: ''
+iccwc_scrollup_window_position: '200'
+iccwc_scrollup_speed: '0'
+iccwc_scrollup_themename:
+  frontend: frontend
+iccwc_scrollup_hoover_title: 'Scroll up'

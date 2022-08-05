@@ -1,0 +1,5 @@
+iccwc_scrollup.admin:
+  title: 'ICCWC Scrollup'
+  description: 'ICCWC Scrollup Configuration'
+  parent: iccwc.admin_config_iccwc
+  route_name: iccwc_scrollup.form
