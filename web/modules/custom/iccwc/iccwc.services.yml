@@ -1,0 +1,6 @@
+services:
+  iccwc.render_block_component_subscriber:
+    class: Drupal\iccwc\EventSubscriber\BlockComponentRenderArray
+    arguments: []
+    tags:
+      - { name: event_subscriber }

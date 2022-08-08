@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -16,7 +17,7 @@ function iccwc_theme($existing, $type, $theme, $path) {
       'variables' => [
         'twitter_link' => '',
         'youtube_link' => '',
-        'linkedin_link'  => '',
+        'linkedin_link' => '',
       ],
     ],
     'social_media_share' => [
@@ -36,6 +37,9 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'breadcrumb' => '',
         'caption' => '',
         'image' => '',
+        'tag' => '',
+        'date' => '',
+        'bundle' => '',
       ],
     ],
     'related_content' => [
@@ -74,11 +78,11 @@ function iccwc_page_attachments(array &$attachments) {
  * Implements hook_entity_base_field_info_alter().
  */
 function iccwc_entity_base_field_info_alter(&$base_field_definitions, EntityTypeInterface $entity_type) {
+  // Make uid and created fields be visible in Managed display.
   if ($entity_type->id() == 'node') {
     $fields = ['created', 'uid'];
     foreach ($fields as $field) {
-      $base_field_definitions[$field]
-        ->setDisplayConfigurable('view', TRUE)
+      $base_field_definitions[$field]->setDisplayConfigurable('view', TRUE)
         ->setDisplayOptions('view', ['region' => 'hidden']);
     }
   }
@@ -88,7 +92,40 @@ function iccwc_entity_base_field_info_alter(&$base_field_definitions, EntityType
  * Implements hook_entity_type_build().
  */
 function iccwc_entity_type_build(array &$entity_types) {
+  // Make uid and created fields be visible in Managed display.
   if (isset($entity_types['node'])) {
     $entity_types['node']->set('enable_base_field_custom_preprocess_skipping', TRUE);
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for layout_builder_configure_block.
+ */
+function iccwc_form_layout_builder_configure_block_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_object = $form_state->getFormObject();
+  /** @var \Drupal\layout_builder\SectionComponent $component */
+  $component = $form_object->getCurrentComponent();
+  array_unshift($form['#submit'], '_iccwc_form_layout_builder_configure_block_submit');
+
+  $form['settings']['border'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Add a border around the block'),
+    '#default_value' => $component->getThirdPartySetting('iccwc', 'border') ?? FALSE,
+  ];
+
+  $form['settings']['centered'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Centered content'),
+    '#default_value' => $component->getThirdPartySetting('iccwc', 'centered') ?? FALSE,
+  ];
+}
+
+/**
+ * Layout builder configure block submit.
+ */
+function _iccwc_form_layout_builder_configure_block_submit($form, FormStateInterface $form_state) {
+  /** @var \Drupal\layout_builder\SectionComponent $section_component */
+  $section_component = $form_state->getFormObject()->getCurrentComponent();
+  $section_component->setThirdPartySetting('iccwc', 'border', $form_state->getValue('settings')['border'] ?? 0);
+  $section_component->setThirdPartySetting('iccwc', 'centered', $form_state->getValue('settings')['centered'] ?? 0);
 }

@@ -43,7 +43,7 @@ class SocialMediaLinksBlock extends BlockBase implements ContainerFactoryPluginI
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
-    $this->config = $config_factory->get('iccwc_social_media.links');
+    $this->config = $config_factory->get('iccwc.social_media.settings');
   }
 
   /**

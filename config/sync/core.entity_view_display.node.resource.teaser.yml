@@ -33,6 +33,7 @@ content:
     weight: 100
     region: content
 hidden:
+  created: true
   field_files: true
   field_flyer_files: true
   field_flyer_image: true
@@ -40,3 +41,4 @@ hidden:
   field_resource_type: true
   langcode: true
   search_api_excerpt: true
+  uid: true

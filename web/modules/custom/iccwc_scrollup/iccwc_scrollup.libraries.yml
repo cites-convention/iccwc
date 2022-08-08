@@ -1,0 +1,8 @@
+iccwc_scrollup:
+  css:
+    theme:
+      css/iccwc_scrollup_top.css: {}
+  js:
+    js/iccwc_scrollup_top.js: {}
+  dependencies:
+    - core/jquery

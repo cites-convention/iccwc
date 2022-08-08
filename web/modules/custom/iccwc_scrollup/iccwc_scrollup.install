@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the iccwc_scrollup module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function iccwc_scrollup_install() {
+  $defaultThemeName = \Drupal::config('system.theme')->get('default');
+  \Drupal::configFactory()->getEditable('iccwc_scrollup.settings')
+    ->set('iccwc_scrollup_position', 1)
+    ->set('iccwc_scrollup_button_bg_color', '#CCCCCC')
+    ->set('iccwc_scrollup_button_hover_bg_color', '#000000')
+    ->set('iccwc_scrollup_title', 'Scroll up')
+    ->set('iccwc_scrollup_window_position', '600')
+    ->set('iccwc_scrollup_speed', '0')
+    ->set('iccwc_scrollup_themename', [$defaultThemeName])
+    ->save();
+}

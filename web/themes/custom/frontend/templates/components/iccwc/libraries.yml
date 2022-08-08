@@ -11,7 +11,17 @@ success_stories:
     component:
       css/templates/components/iccwc/success-stories.css: { }
 
+banner_block:
+  css:
+    component:
+      css/templates/components/iccwc/banner-block.css: { }
+
 latest_news:
   css:
     component:
       css/templates/components/iccwc/latest-news.css: { }
+
+partners:
+  css:
+    component:
+      css/templates/components/iccwc/partners.css: { }

@@ -1,0 +1,11 @@
+uuid: dda3d01d-9462-4f00-bfa6-9e95d7002dd9
+langcode: en
+status: true
+dependencies: {  }
+id: other_links_news
+block_id: 'field_block:node:news:field_links'
+category: field
+label: 'Other links'
+image_path: ''
+image_alt: ''
+weight: -3

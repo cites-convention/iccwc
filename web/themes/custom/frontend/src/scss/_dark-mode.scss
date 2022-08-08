@@ -10,3 +10,24 @@
 
   --body-color: #FFF;
 }
+
+.dark-mode {
+  .navbar-brand {
+    color: #fff;
+
+    #darkModeBlack {
+      &, > * {
+        fill: #fff;
+      }
+
+      .st2 {
+        stroke: #fff !important;
+      }
+    }
+    #darkModeWhite {
+      &, > * {
+        fill: #000;
+      }
+    }
+  }
+}
