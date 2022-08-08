@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.partner.body
     - field.field.node.partner.field_amount
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
@@ -11,11 +12,19 @@ dependencies:
   module:
     - link
     - options
+    - text
 id: node.partner.default
 targetEntityType: node
 bundle: partner
 mode: default
 content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
   field_amount:
     type: string
     label: above

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.partner.body
     - field.field.node.partner.field_amount
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
@@ -42,6 +43,7 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
   created: true
   field_amount: true
   field_partner_type: true
