@@ -20,7 +20,7 @@
 #}
 {% import _self as menus %}
 
-{{ attach_library('edwt/bc--collapse') }}
+{{ attach_library('edwt/bc--dropdowns') }}
 
 {#
 We call a macro which calls itself to render the full tree.
@@ -56,7 +56,6 @@ We call a macro which calls itself to render the full tree.
     'nav-item',
     'nav-link',
     item.in_active_trail ? 'active',
-    menu_level == 0 and (item.is_expanded or item.is_collapsed) ? 'dropdown-toggle',
   ]
   %}
   {%
@@ -65,7 +64,7 @@ We call a macro which calls itself to render the full tree.
   %}
   <li{{ item.attributes.addClass(list_item_classes) }}>
     {% if menu_level == 0 and item.below %}
-      {{ link(item.title, item.url, { 'class': link_class, 'data-toggle' : 'dropdown', 'title': ('Expand menu' | t) ~ ' ' ~ item.title }) }}
+      {{ link(item.title, item.url, { 'class': link_class, 'data-toggle' : 'dropdown', 'title': ('Expand menu' | t) ~ ' ' ~ item.title, 'data-bs-toggle': 'dropdown'}) }}
       {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
     {% else %}
       {{ link(item.title, item.url, { 'class': link_class }) }}

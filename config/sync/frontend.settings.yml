@@ -75,7 +75,7 @@ ns__navbar_align: ms-auto
 ns__navbar_color: navbar-light
 ns__navbar_bg: '0'
 ns__navbar_out: '0'
-sf__sans_serif: Roboto
+sf__sans_serif: 'Open sans'
 sf__family: ''
 sf__size: ''
 sf__weight: ''
