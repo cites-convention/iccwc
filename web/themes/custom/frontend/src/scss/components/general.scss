@@ -133,7 +133,8 @@ blockquote{
   border-bottom: 3px solid var(--color-orange);
   padding: 20px 10px 20px 10px;
   margin: 20px 0 20px 0;
-
+  position: relative;
+  
   p {
     padding: 20px 30px 20px 30px;
     overflow: visible;
