@@ -8,7 +8,7 @@
 {% set main_container = create_attribute() %}
 {%
   set main_container_classes = [
-    'row',
+    not is_layout_page ? 'container',
   ]
 %}
 

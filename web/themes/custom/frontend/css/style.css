@@ -8044,6 +8044,7 @@ header .menu .navbar-nav .nav-item .dropdown-menu a:hover, header .menu .navbar-
   font-weight: bold;
   font-size: 20px;
   margin-top: -40px;
+  margin-bottom: 40px;
 }
 
 :root {
