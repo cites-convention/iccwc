@@ -17,6 +17,7 @@
   padding: 20px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
+  height: 100%;
 }
 .node--view-mode-teaser h3 {
   line-height: 1;
