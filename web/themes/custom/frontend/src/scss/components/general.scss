@@ -134,7 +134,7 @@ blockquote{
   padding: 20px 10px 20px 10px;
   margin: 20px 0 20px 0;
   position: relative;
-  
+
   p {
     padding: 20px 30px 20px 30px;
     overflow: visible;
@@ -224,13 +224,13 @@ blockquote{
 
 .field--name-field-links{
   display: flex;
-  div a{
+  a {
     display: flex;
-    border: 1px solid #E5E5E5;
+    border: 1px solid var(--color-gray);
     border-radius: 5px;
     padding: 20px 10px 20px 10px;
     margin: 10px;
-    color: #231F20;
+    color: var(--color-black);
     font-family: 'Open Sans', serif;
     font-style: normal;
     font-weight: 700;
@@ -249,7 +249,7 @@ blockquote{
       margin-right: 10px;
     }
     &:hover{
-      background: rgba(229, 229, 229, 0.3);
+      background: var(--color-gray-light-2);
     }
   }
 }
