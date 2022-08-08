@@ -133,13 +133,13 @@ function frontend_preprocess_page(&$variables) {
  */
 function frontend_preprocess_blb_section(&$variables) {
   foreach (range(1, 12) as $i) {
-    if (empty($variables["blb_region_col_$i"])) {
+    if (empty($variables['content']["blb_region_col_$i"])) {
       continue;
     }
 
-    foreach (Element::children($variables["blb_region_col_$i"]) as $key) {
-      foreach (Element::children($variables["blb_region_col_$i"][$key]) as $block_key) {
-        if (!empty($variables["blb_region_col_$i"][$key][$block_key])) {
+    foreach (Element::children($variables['content']["blb_region_col_$i"]) as $key) {
+      foreach (Element::children($variables['content']["blb_region_col_$i"][$key]) as $block_key) {
+        if (!empty($variables['content']["blb_region_col_$i"][$key][$block_key])) {
           return;
         }
       }
