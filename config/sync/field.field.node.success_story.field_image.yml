@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_image
     - media.type.image
     - node.type.success_story
+  content:
+    - 'media:image:f616a840-c816-42b7-83c5-96f57fc465c8'
 id: node.success_story.field_image
 field_name: field_image
 entity_type: node
@@ -14,7 +16,9 @@ label: Image
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: f616a840-c816-42b7-83c5-96f57fc465c8
 default_value_callback: ''
 settings:
   handler: 'default:media'
