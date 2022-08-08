@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.success_story.field_image
     - field.field.node.success_story.field_links
     - field.field.node.success_story.field_related_content
+    - field.field.node.success_story.layout_builder__layout
+    - field.field.node.success_story.layout_builder__translation
     - node.type.success_story
   module:
     - link
@@ -143,4 +145,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true
+  layout_builder__translation: true

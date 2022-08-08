@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.success_story.field_image
     - field.field.node.success_story.field_links
     - field.field.node.success_story.field_related_content
+    - field.field.node.success_story.layout_builder__layout
+    - field.field.node.success_story.layout_builder__translation
     - node.type.success_story
   module:
     - layout_builder
@@ -50,6 +52,8 @@ hidden:
   field_links: true
   field_related_content: true
   langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
   links: true
   search_api_excerpt: true
   uid: true

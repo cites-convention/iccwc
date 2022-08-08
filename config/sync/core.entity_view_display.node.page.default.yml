@@ -13,12 +13,14 @@ dependencies:
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
     - node.type.page
+    - system.menu.main
   module:
     - iccwc
     - layout_builder
     - layout_builder_restrictions
     - link
     - metatag
+    - system
     - text
 third_party_settings:
   layout_builder:
@@ -108,6 +110,24 @@ third_party_settings:
               iccwc:
                 border: 0
                 centered: 0
+          aac2a866-878d-40e4-b77b-21531389cf95:
+            uuid: aac2a866-878d-40e4-b77b-21531389cf95
+            region: blb_region_col_3
+            configuration:
+              id: 'system_menu_block:main'
+              label: 'Main navigation'
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+              level: 2
+              depth: 2
+              expand_all_items: true
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
         third_party_settings: {  }
       -
         layout_id: 'bootstrap_layout_builder:blb_col_1'
@@ -135,7 +155,81 @@ third_party_settings:
           breakpoints: {  }
           layout_regions_classes: {  }
           remove_gutters: '0'
-        components: {  }
+        components:
+          1cb89e99-4b14-4261-b4a8-68a79891783b:
+            uuid: 1cb89e99-4b14-4261-b4a8-68a79891783b
+            region: blb_region_col_1
+            configuration:
+              id: 'field_block:node:page:field_links'
+              label: 'Other links'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: _blank
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
+        third_party_settings: {  }
+      -
+        layout_id: 'bootstrap_layout_builder:blb_col_1'
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          container_wrapper_classes: ''
+          container_wrapper_attributes: null
+          container_wrapper:
+            bootstrap_styles:
+              section_title: 'Related content'
+              background:
+                background_type: color
+              background_color:
+                class: null
+          container_wrapper_bg_color_class: ''
+          container_wrapper_bg_media: null
+          container: container
+          section_classes: ''
+          section_attributes: null
+          regions_classes:
+            blb_region_col_1: ''
+          regions_attributes:
+            blb_region_col_1: {  }
+          breakpoints: {  }
+          layout_regions_classes: {  }
+          remove_gutters: '0'
+        components:
+          7ee9a1da-3cac-4045-a666-2b6ed669ba40:
+            uuid: 7ee9a1da-3cac-4045-a666-2b6ed669ba40
+            region: blb_region_col_1
+            configuration:
+              id: iccwc_related_content
+              label: 'ICCWC Related Content'
+              label_display: '0'
+              provider: iccwc
+              context_mapping: {  }
+              reference_type: view_data
+              content_type: {  }
+              see_more_text: ''
+              see_more_page: null
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
@@ -145,10 +239,11 @@ third_party_settings:
         - 'bootstrap_layout_builder:blb_col_2'
         - 'bootstrap_layout_builder:blb_col_3'
         - 'bootstrap_layout_builder:blb_col_4'
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
       restricted_categories:
         - 'Chaos Tools'
         - Forms
-        - Menus
         - System
       blacklisted_blocks:
         'Content fields':
