@@ -10,6 +10,7 @@
   --color-gray-light: #FAFAFA;
   --color-gray-darker: #999999;
   --color-blue: #0065FF;
+  --body-font-family: "Open Sans", sans-serif, ;
 }
 
 .block-iccwc-hero-banner {
@@ -52,6 +53,9 @@
           flex-direction: column;
   color: #fff;
   height: 100%;
+  background: -webkit-linear-gradient(bottom, rgba(35, 31, 32, 0.6) 29.09%, rgba(35, 31, 32, 0) 93.02%);
+  background: linear-gradient(360deg, rgba(35, 31, 32, 0.6) 29.09%, rgba(35, 31, 32, 0) 93.02%);
+  border-top: 4px solid var(--color-orange);
 }
 .hero-block .caption {
   margin-left: auto;

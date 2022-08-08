@@ -28,6 +28,8 @@
   flex-direction: column;
   color: #fff;
   height: 100%;
+  background: linear-gradient(360deg, rgba(35, 31, 32, 0.6) 29.09%, rgba(35, 31, 32, 0) 93.02%);
+  border-top: 4px solid var(--color-orange);
 
   .caption {
     margin-left: auto;
