@@ -64,6 +64,9 @@
 
       a {
         color: var(--color-orange);
+        &:hover, &:active {
+          text-decoration: none;
+        }
       }
     }
   }

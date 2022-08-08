@@ -80,4 +80,7 @@
 .node--view-mode-featured-teaser.node--type-success-story h3 a {
   color: var(--color-orange);
 }
+.node--view-mode-featured-teaser.node--type-success-story h3 a:hover, .node--view-mode-featured-teaser.node--type-success-story h3 a:active {
+  text-decoration: none;
+}
 /*# sourceMappingURL=../../map/components/content/content-teasers.css.map */

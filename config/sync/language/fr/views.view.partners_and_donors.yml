@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      footer:
+        area_text_custom:
+          admin_label: 'Apprendre encore plus'
+          content: '<a class="btn-iccwc btn-next" href="/fr/partners-and-donors>Learn more</a>'
