@@ -21,24 +21,21 @@ class RelatedContentBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $reference_type = $this->configuration['reference_type'];
     $content_types = $this->configuration['content_type'];
     $arg_content_types = 'all';
     $arg_nids = 'all';
 
-    // Show most recent content of selected content types.
-    if ($reference_type == 'view_data') {
+    // Show data from field from node.
+    $entity = $this->routeMatch->getParameter('node');
+    if ($entity instanceof NodeInterface
+      && !$entity->get('field_related_content')->isEmpty()) {
+      $related_entities = array_column($entity->get('field_related_content')->getValue(), 'target_id');
+      $arg_nids = implode('+', $related_entities);
+    }
+    else {
       $arg_content_types = implode('+', $content_types);
       if (empty($arg_content_types)) {
         $arg_content_types = 'all';
-      }
-    }
-    else {
-      // Show data from field from node.
-      $entity = $this->routeMatch->getParameter('node');
-      if ($entity instanceof NodeInterface) {
-        $related_entities = array_column($entity->get('field_related_content')->getValue(), 'target_id');
-        $arg_nids = implode('+', $related_entities);
       }
     }
 
@@ -72,17 +69,6 @@ class RelatedContentBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    $form['reference_type'] = [
-      '#type' => 'select',
-      '#options' => [
-        'field_data' => $this->t('Display content from current page'),
-        'view_data' => $this->t('Display latest content'),
-      ],
-      '#required' => TRUE,
-      '#title' => $this->t('Reference type'),
-      '#default_value' => $this->configuration['reference_type'] ?? 'field_data',
-    ];
-
     $form['content_type'] = [
       '#type' => 'select',
       '#options' => [
@@ -91,6 +77,7 @@ class RelatedContentBlock extends ICCWCBlockBase {
         'page' => $this->t('Pages'),
       ],
       '#title' => $this->t('Content type'),
+      '#description' => $this->t('If Related content was not set for this content, display content of the selected type'),
       '#multiple' => TRUE,
       '#default_value' => $this->configuration['content_type'],
       '#states' => [
@@ -127,7 +114,6 @@ class RelatedContentBlock extends ICCWCBlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['reference_type'] = $form_state->getValue('reference_type');
     $this->configuration['content_type'] = $form_state->getValue('content_type');
     $this->configuration['see_more_text'] = $form_state->getValue('see_more_text');
     $this->configuration['see_more_page'] = $form_state->getValue('see_more_page');

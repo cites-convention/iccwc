@@ -86,6 +86,24 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.success-stories .views-element-container {
+  height: 100%;
+}
+.success-stories .views-element-container > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * > * > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * > * > * > * {
+  height: 100%;
+}
 .success-stories h3 {
   text-align: center;
 }

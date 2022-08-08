@@ -1,6 +1,11 @@
 @import "../../../src/scss/variables_drupal";
 
 .view-partners-and-donors {
+  .view-footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+
   .views-row {
     display: inline-block;
     margin-right: 10px;

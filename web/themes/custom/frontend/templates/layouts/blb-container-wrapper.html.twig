@@ -1,1 +1,3 @@
-<div {{ attributes.addClass('layout-section') }}>{{ children }}</div>
+{% if children|striptags|trim %}
+  <div {{ attributes.addClass('layout-section') }}>{{ children }}</div>
+{% endif %}

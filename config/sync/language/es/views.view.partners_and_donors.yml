@@ -1,0 +1,6 @@
+display:
+  default:
+    display_options:
+      footer:
+        area_text_custom:
+          content: '<a class="btn-iccwc btn-next" href="/es/partners-and-donors>Aprende más</a>'
