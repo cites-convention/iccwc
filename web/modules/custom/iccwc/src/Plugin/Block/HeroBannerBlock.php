@@ -46,34 +46,28 @@ class HeroBannerBlock extends ICCWCBlockBase {
     $node = $this->routeMatch->getParameter('node');
 
     if (!$node instanceof NodeInterface) {
-      return [
-        '#theme' => 'banner_block',
-        '#title' => $this->t('Title'),
-        '#summary' => $this->t('Subtitle'),
-        '#breadcrumb' => $breadcrumb,
-        '#caption' => $this->t('Image caption'),
-        '#image' => NULL,
-      ];
+      return [];
     }
 
     $summary = $node->get('body')->summary;
     $title = $node->get('title')->value;
 
+    if (!$node->hasField('field_banner_image')) {
+      return [];
+    }
 
-    if ($node->hasField('field_banner_image')) {
-      /** @var \Drupal\media\MediaInterface $media */
-      $media = $node->get('field_banner_image')->entity;
-      if ($media instanceof MediaInterface) {
-        $image = $node->get('field_banner_image')->view([
-          'type' => 'media_responsive_thumbnail',
-          'label' => 'hidden',
-          'settings' => [
-            'responsive_image_style' => 'hero_banner',
-          ],
-        ]);
-        $caption = $media->get('field_caption')->value;
-        /** @var \Drupal\file\FileInterface $file */
-      }
+    /** @var \Drupal\media\MediaInterface $media */
+    $media = $node->get('field_banner_image')->entity;
+    if ($media instanceof MediaInterface) {
+      $image = $node->get('field_banner_image')->view([
+        'type' => 'media_responsive_thumbnail',
+        'label' => 'hidden',
+        'settings' => [
+          'responsive_image_style' => 'hero_banner',
+        ],
+      ]);
+      $caption = $media->get('field_caption')->value;
+      /** @var \Drupal\file\FileInterface $file */
     }
 
     if ($node->bundle() == 'news' && !$node->get('field_tags')->isEmpty()) {
