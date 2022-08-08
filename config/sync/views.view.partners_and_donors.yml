@@ -219,7 +219,8 @@ display:
           plugin_id: list_field
           operator: or
           value:
-            past_donor: past_donor
+            partner: partner
+            donor: donor
           group: 1
           exposed: false
           expose:
