@@ -17,6 +17,7 @@ dependencies:
   module:
     - iccwc
     - layout_builder
+    - layout_builder_restrictions
     - link
     - system
     - text
@@ -253,6 +254,16 @@ third_party_settings:
                 border: 0
                 centered: 0
         third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - 'bootstrap_layout_builder:blb_col_1'
+        - 'bootstrap_layout_builder:blb_col_2'
+        - 'bootstrap_layout_builder:blb_col_3'
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
 id: node.news.default
 targetEntityType: node
 bundle: news
