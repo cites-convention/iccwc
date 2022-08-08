@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
     - field.field.node.partner.field_partner_type
+    - field.field.node.partner.field_weight
     - node.type.partner
   module:
     - link
@@ -66,6 +67,13 @@ content:
     weight: 126
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
