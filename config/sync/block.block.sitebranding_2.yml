@@ -1,0 +1,23 @@
+uuid: 0bc060a5-cc83-4154-a9ea-54dd04927326
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - frontend
+id: sitebranding_2
+theme: frontend
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }
