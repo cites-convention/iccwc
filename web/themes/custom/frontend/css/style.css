@@ -8012,6 +8012,7 @@ header .menu .navbar-nav .nav-item a, header .menu .navbar-nav .nav-item span {
   font-family: "Source Sans Pro", sans-serif;
   color: var(--color-black);
   cursor: pointer;
+  padding: 8px 15px;
 }
 header .menu .navbar-nav .nav-item a:hover, header .menu .navbar-nav .nav-item a:active, header .menu .navbar-nav .nav-item span:hover, header .menu .navbar-nav .nav-item span:active {
   color: var(--color-orange);
@@ -8026,8 +8027,8 @@ header .menu .navbar-nav .nav-item .dropdown-menu {
   border-left: none;
   border-right: none;
   border-bottom: none;
-  border-radius: 0px 0px 10px 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 0;
 }
 header .menu .navbar-nav .nav-item .dropdown-menu li + li {

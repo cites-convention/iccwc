@@ -146,6 +146,7 @@ header {
           font-family: $font-family-headings;
           color: var(--color-black);
           cursor: pointer;
+          padding: 8px 15px;
 
           &:hover, &:active {
             color: var(--color-orange);
@@ -163,8 +164,8 @@ header {
           border-left: none;
           border-right: none;
           border-bottom: none;
-          border-radius: 0px 0px 10px 10px;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 0 0 10px 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           padding: 0;
 
           li + li {
