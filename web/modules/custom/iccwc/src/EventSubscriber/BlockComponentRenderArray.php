@@ -30,7 +30,7 @@ class BlockComponentRenderArray implements EventSubscriberInterface {
    */
   public function onBuildRender(SectionComponentBuildRenderArrayEvent $event) {
     $border = $event->getComponent()->getThirdPartySetting('iccwc', 'border');
-    $centered = $event->getComponent()->getThirdPartySetting('iccwc', 'border');
+    $centered = $event->getComponent()->getThirdPartySetting('iccwc', 'centered');
     $build = $event->getBuild();
 
     if (!empty($border)) {
