@@ -257,4 +257,42 @@ blockquote p:after {
   margin-top: 10px;
   text-align: right;
 }
+
+.field--name-field-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.field--name-field-links div a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+  padding: 20px 10px 20px 10px;
+  margin: 10px;
+  color: #231F20;
+  font-family: "Open Sans", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+}
+.field--name-field-links div a:before {
+  content: "";
+  background-image: url("../icons/open_in_new.svg");
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: auto;
+  margin-right: 10px;
+}
+.field--name-field-links div a:hover {
+  background: rgba(229, 229, 229, 0.3);
+}
 /*# sourceMappingURL=../map/components/general.css.map */

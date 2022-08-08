@@ -220,3 +220,35 @@ blockquote{
 .container {
 
 }
+
+.field--name-field-links{
+  display: flex;
+  div a{
+    display: flex;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 20px 10px 20px 10px;
+    margin: 10px;
+    color: #231F20;
+    font-family: 'Open Sans', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: none;
+    &:before {
+      content: '';
+      background-image: url('../icons/open_in_new.svg');
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: auto;
+      margin-right: 10px;
+    }
+    &:hover{
+      background: rgba(229, 229, 229, 0.3);
+    }
+  }
+}
