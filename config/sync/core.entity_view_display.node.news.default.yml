@@ -19,7 +19,6 @@ dependencies:
     - layout_builder
     - layout_builder_restrictions
     - link
-    - system
     - text
 third_party_settings:
   layout_builder:
@@ -104,24 +103,6 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
-            additional: {  }
-            third_party_settings:
-              iccwc:
-                border: 0
-                centered: 0
-          5ce523da-c5a6-44f4-b321-485ccb75db76:
-            uuid: 5ce523da-c5a6-44f4-b321-485ccb75db76
-            region: blb_region_col_3
-            configuration:
-              id: 'system_menu_block:main'
-              label: 'Main navigation'
-              label_display: '0'
-              provider: system
-              context_mapping: {  }
-              level: 2
-              depth: 2
-              expand_all_items: false
             weight: 0
             additional: {  }
             third_party_settings:
@@ -285,6 +266,24 @@ third_party_settings:
             weight: 7
             additional: {  }
             third_party_settings: {  }
+          538bc2e3-68a6-462b-97ab-05920aa938ec:
+            uuid: 538bc2e3-68a6-462b-97ab-05920aa938ec
+            region: blb_region_col_3
+            configuration:
+              id: 'sidebar_menu:main'
+              label: 'Main navigation'
+              label_display: '0'
+              provider: iccwc
+              context_mapping: {  }
+              level: '2'
+              depth: '2'
+              expand_all_items: 1
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
         third_party_settings: {  }
       -
         layout_id: 'bootstrap_layout_builder:blb_col_1'

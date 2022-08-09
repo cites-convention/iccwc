@@ -1,0 +1,93 @@
+@import "../../../src/scss/variables_drupal";
+
+.sidebar-menu {
+  ul {
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+  > ul {
+    border: 1px solid var(--color-gray);
+    border-radius: 10px;
+  }
+
+  .link-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li {
+    padding: 20px 25px;
+
+    + li {
+      border-top: 1px solid var(--color-gray);
+    }
+
+    &:hover {
+      background: var(--color-gray-light);
+
+      > .link-wrapper > a {
+        color: var(--color-orange);
+
+        &:before {
+          background: var(--color-orange);
+        }
+      }
+    }
+  }
+
+  a {
+    @include large-text;
+    font-weight: bold;
+    color: var(--color-gray-darker);
+
+    &:not(.collapse-arrow):before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--color-gray-darker);
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &:before {
+        background: var(--color-orange);
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: auto;
+    }
+  }
+
+  .collapse {
+    margin-top: 10px;
+
+    a {
+      &:before {
+        display: none;
+      }
+    }
+
+    li {
+      padding: 0 25px;
+
+      + li {
+        border: none;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  a {
+    &:hover {
+      color: var(--color-orange);
+    }
+  }
+}

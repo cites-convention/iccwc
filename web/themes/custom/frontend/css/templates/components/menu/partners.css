@@ -1,0 +1,37 @@
+:root {
+  --color-orange: #E87722;
+  --color-orange-darker: #C4661E;
+  --color-yellow: #F5CD26;
+  --color-yellow-darker: #AB901B;
+  --color-black: #1E1E1E;
+  --color-text: #1E1E1E;
+  --color-white: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
+  --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
+  --color-blue: #0065FF;
+  --body-font-family: "Open Sans", sans-serif, ;
+}
+
+.view-partners-and-donors .view-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+.view-partners-and-donors .views-row {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.view-partners-and-donors .view-content {
+  text-align: center;
+}
+
+.partner-teaser {
+  padding: 20px;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=../../map/components/menu/partners.css.map */
