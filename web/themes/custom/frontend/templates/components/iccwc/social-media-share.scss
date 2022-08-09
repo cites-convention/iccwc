@@ -5,35 +5,31 @@
   height: 191px;
   display: grid;
   grid-template-columns: repeat(1,1fr);
-  gap:0px;
-  border: solid #e5e5e5 1px;
+  gap: 0;
+  border: solid var(--color-gray) 1px;
   border-radius: 10px;
-  div{
+  a{
     width: 100%;
     height: auto;
-    a{
-      margin-left: 10px;
-    }
   }
-  div:hover{
+  a:hover{
     background: #e5e5e5;
   }
-  div:nth-child(3){
+  a:not(:first-child) {
+    border-top: 1px solid var(--color-gray);
+  }
+  a:last-child{
     overflow:hidden;
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
   }
-  div:nth-child(1){
+  a:first-child{
     overflow:hidden;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
   }
-  div:nth-child(2){
-    border-bottom: solid 1px #e5e5e5;
-    border-top: solid 1px #e5e5e5;
-  }
   svg{
-    margin-left: 37px;
+    margin-left: 46px;
     margin-top: 18px;
   }
 
