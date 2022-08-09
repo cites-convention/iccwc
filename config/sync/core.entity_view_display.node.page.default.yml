@@ -20,7 +20,6 @@ dependencies:
     - layout_builder_restrictions
     - link
     - metatag
-    - system
     - text
 third_party_settings:
   layout_builder:
@@ -41,6 +40,7 @@ third_party_settings:
                 background_type: color
               background_color:
                 class: null
+              column_border: 1
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
           container: container
@@ -110,18 +110,18 @@ third_party_settings:
               iccwc:
                 border: 0
                 centered: 0
-          aac2a866-878d-40e4-b77b-21531389cf95:
-            uuid: aac2a866-878d-40e4-b77b-21531389cf95
+          6e179af4-ea0b-43c8-a6f7-992d51326402:
+            uuid: 6e179af4-ea0b-43c8-a6f7-992d51326402
             region: blb_region_col_3
             configuration:
-              id: 'system_menu_block:main'
+              id: 'sidebar_menu:main'
               label: 'Main navigation'
               label_display: '0'
-              provider: system
+              provider: iccwc
               context_mapping: {  }
-              level: 2
-              depth: 2
-              expand_all_items: true
+              level: '2'
+              depth: '2'
+              expand_all_items: 1
             weight: 0
             additional: {  }
             third_party_settings:

@@ -12,7 +12,7 @@ _core:
   default_config_hash: 52G3PSgNgSIRf1SMGe9PxvxSIeYRZwBHg9U6wdJz1M0
 id: frontend_footer
 theme: frontend
-region: footer
+region: footer_left
 weight: -6
 provider: null
 plugin: 'system_menu_block:footer'

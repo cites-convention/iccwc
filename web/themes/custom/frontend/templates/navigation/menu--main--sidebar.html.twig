@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Eau de Web Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+<div class="sidebar-menu">
+  {{ menus.menu_links(items, attributes, 0, 0, 0) }}
+</div>
+
+{{ attach_library('frontend/sidebar_menu') }}
+
+{% macro menu_links(items, attributes, menu_level, idx) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+<ul{{ attributes }}>
+  {% else %}
+  <ul>
+    {% endif %}
+    {% set idx = 0 %}
+    {% for item in items %}
+      <li{{ item.attributes }}>
+
+        {% if menu_level == 0 %}
+          <div class="link-wrapper">
+            {{ link(item.title, item.url) }}
+            {% if item.below %}
+              <a role="button" data-bs-toggle="collapse" class="collapse-arrow" href="#collapse-{{ idx }}"
+                 aria-expanded="false" aria-controls="collapse-{{ idx }}">
+                <svg width="41" height="39" viewBox="0 0 41 39" fill="#E87722" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.6587 13.9425L20.5 21.4013L28.3413 13.9425L30.75 16.25L20.5 26L10.25 16.25L12.6587 13.9425Z"
+                        fill="#E87722"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+        {% if item.below %}
+          {% set prefix = prefix + 1 %}
+          <div class="collapse multi-collapse" id="collapse-{{ idx }}">
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, idx) }}
+          </div>
+        {% endif %}
+      </li>
+      {% set idx = idx + 1 %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endmacro %}

@@ -8,7 +8,9 @@
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
   --color-blue: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
@@ -57,6 +59,8 @@
   background: -webkit-linear-gradient(bottom, rgba(35, 31, 32, 0.6) 29.09%, rgba(35, 31, 32, 0) 93.02%);
   background: linear-gradient(360deg, rgba(35, 31, 32, 0.6) 29.09%, rgba(35, 31, 32, 0) 93.02%);
   border-top: 4px solid var(--color-orange);
+  position: relative;
+  box-sizing: content-box;
 }
 .hero-block .caption {
   margin-left: auto;

@@ -15,12 +15,23 @@
   --body-font-family: "Open Sans", sans-serif, ;
 }
 
-.featured-news {
-  margin-bottom: 20px;
-}
-
-.view-latest-news .view-footer {
+.view-partners-and-donors .view-footer {
   text-align: center;
   margin-top: 30px;
 }
-/*# sourceMappingURL=../../map/components/iccwc/latest-news.css.map */
+.view-partners-and-donors .views-row {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.view-partners-and-donors .view-content {
+  text-align: center;
+}
+
+.partner-teaser {
+  padding: 20px;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=../../map/components/menu/partners.css.map */

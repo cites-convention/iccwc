@@ -10,7 +10,9 @@
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
   --color-blue: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
@@ -7505,7 +7507,9 @@ progress {
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
   --color-blue: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
@@ -7569,7 +7573,9 @@ body h6, body .h6 {
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
   --color-blue: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
@@ -7735,6 +7741,7 @@ blockquote {
   border-bottom: 3px solid var(--color-orange);
   padding: 20px 10px 20px 10px;
   margin: 20px 0 20px 0;
+  position: relative;
 }
 blockquote p {
   padding: 20px 30px 20px 30px;
@@ -7823,6 +7830,48 @@ blockquote p:after {
   text-align: right;
 }
 
+.field--name-field-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.field--name-field-links a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid var(--color-gray);
+  border-radius: 5px;
+  padding: 20px 10px 20px 10px;
+  margin: 10px;
+  color: var(--color-black);
+  font-family: "Open Sans", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+}
+.field--name-field-links a:before {
+  content: "";
+  background-image: url("../icons/open_in_new.svg");
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: auto;
+  margin-right: 10px;
+}
+.field--name-field-links a:hover {
+  background: var(--color-gray-light-2);
+}
+
+.column-border .layout-builder__layout > div + div {
+  border-left: 1px solid var(--color-gray);
+}
+
 :root {
   --color-orange: #E87722;
   --color-orange-darker: #C4661E;
@@ -7833,7 +7882,9 @@ blockquote p:after {
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
   --color-blue: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
@@ -8061,13 +8112,74 @@ header .menu .navbar-nav .nav-item .dropdown-menu a:hover, header .menu .navbar-
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
+  --color-gray-darker-2: #4B4B4B;
   --color-blue: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
 
 .block-iccwc-social-media a + a {
   margin-left: 10px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 60px 0;
+}
+footer .block-iccwc-social-media svg {
+  width: 20px;
+}
+footer .block-iccwc-social-media svg path {
+  fill: var(--color-white);
+}
+footer .block-iccwc-social-media svg.youtube path:last-child {
+  fill: var(--color-black);
+}
+footer .footer-top {
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--color-gray-darker-2);
+}
+footer .footer-bottom {
+  padding-top: 36px;
+}
+footer .nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+}
+footer .nav a {
+  color: var(--color-white);
+}
+footer .nav a:hover, footer .nav a:active {
+  color: var(--color-white);
+}
+footer .navbar-brand {
+  color: #fff;
+}
+footer .navbar-brand svg {
+  width: 220px;
+}
+footer .navbar-brand #darkModeBlack, footer .navbar-brand #darkModeBlack > * {
+  fill: #fff;
+}
+footer .navbar-brand #darkModeBlack .st2 {
+  stroke: #fff !important;
+}
+footer .navbar-brand #darkModeWhite, footer .navbar-brand #darkModeWhite > * {
+  fill: #000;
 }
 
 .dark-mode {
