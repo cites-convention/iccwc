@@ -1,7 +1,8 @@
 {
   "patches": {
     "drupal/core": {
-      "#3015152 - Support third party settings for components within a section": "https://www.drupal.org/files/issues/2022-05-09/3015152-150.patch"
+      "#3015152 - Support third party settings for components within a section": "https://www.drupal.org/files/issues/2022-05-09/3015152-150.patch",
+      "#3027640 - Empty strings (\"\") passed in as contextual filter argument aren't considered missing": "patches/core/views-contextual-filter-empty-query-parameter.patch"
     }
   }
 }
