@@ -294,7 +294,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<a class="btn-iccwc btn-next" href="/partners-and-donors>Learn more</a>'
+          content: '<a class="btn-iccwc btn-next" href="/partners-and-donors">Learn more</a>'
           tokenize: false
       display_extenders: {  }
     cache_metadata:
