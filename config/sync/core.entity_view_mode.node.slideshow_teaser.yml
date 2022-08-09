@@ -1,0 +1,10 @@
+uuid: dacc02e2-5f2a-440f-84df-06cb29440d05
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.slideshow_teaser
+label: 'Slideshow teaser'
+targetEntityType: node
+cache: true

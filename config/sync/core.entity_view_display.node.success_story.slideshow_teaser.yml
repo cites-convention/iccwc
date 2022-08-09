@@ -1,9 +1,9 @@
-uuid: f3c2e48e-ea8e-48f8-8a35-0c0a79076d06
+uuid: 1f90c1f9-b8bc-4b1e-af6f-42ec0682c4cb
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.slideshow_teaser
     - field.field.node.success_story.body
     - field.field.node.success_story.field_banner_image
     - field.field.node.success_story.field_banner_text
@@ -13,19 +13,35 @@ dependencies:
     - field.field.node.success_story.layout_builder__layout
     - field.field.node.success_story.layout_builder__translation
     - node.type.success_story
-    - responsive_image.styles.teaser_image
+    - responsive_image.styles.teaser_image_small
   module:
+    - layout_builder
+    - layout_builder_restrictions
     - media_responsive_thumbnail
-id: node.success_story.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - 'bootstrap_layout_builder:blb_col_1'
+        - 'bootstrap_layout_builder:blb_col_2'
+        - 'bootstrap_layout_builder:blb_col_3'
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: node.success_story.slideshow_teaser
 targetEntityType: node
 bundle: success_story
-mode: teaser
+mode: slideshow_teaser
 content:
   field_image:
     type: media_responsive_thumbnail
     label: hidden
     settings:
-      responsive_image_style: teaser_image
+      responsive_image_style: teaser_image_small
       image_link: content
     third_party_settings: {  }
     weight: 0

@@ -221,7 +221,8 @@ third_party_settings:
               provider: iccwc
               context_mapping: {  }
               reference_type: view_data
-              content_type: {  }
+              content_type:
+                page: page
               see_more_text: ''
               see_more_page: null
             weight: 0

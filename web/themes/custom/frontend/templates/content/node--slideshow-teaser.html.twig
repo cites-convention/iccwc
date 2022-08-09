@@ -1,0 +1,34 @@
+{{ attach_library('frontend/content_teasers') }}
+
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'node--view-mode-teaser',
+]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content.field_image }}
+    <div class="date-tags">
+      {{ content.field_tags }}
+      {{ content.created }}
+    </div>
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h3{{ title_attributes }}>
+        <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+      </h3>
+    {% endif %}
+    {{ title_suffix }}
+    <div class="max-3-lines">
+      {{ content.body }}
+    </div>
+  </div>
+
+</article>
