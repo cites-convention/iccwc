@@ -70,6 +70,8 @@
     margin-top: 10px;
 
     a {
+      @include normal-text;
+
       &:before {
         display: none;
       }

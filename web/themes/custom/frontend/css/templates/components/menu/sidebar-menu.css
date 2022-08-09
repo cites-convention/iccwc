@@ -80,6 +80,10 @@
 .sidebar-menu .collapse {
   margin-top: 10px;
 }
+.sidebar-menu .collapse a {
+  font-size: 16px;
+  line-height: 18px;
+}
 .sidebar-menu .collapse a:before {
   display: none;
 }
