@@ -271,3 +271,52 @@ blockquote{
     }
   }
 }
+
+.block-field-blocknodenewsfield-tags {
+  .field--name-field-tags{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-gray);
+    border-bottom: 1px solid var(--color-gray);
+    padding: 20px 0px 20px 0px;
+
+    .field__label{
+      margin-right: 80px;
+      color: var(--color-gray-darker);
+      font-family: 'Open Sans', serif;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  .field--name-field-tags .field__items{
+    display: flex;
+    .field__item{
+      display: flex;
+    }
+    a{
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 20px 10px;
+      gap: 10px;
+      border: 1px solid var(--color-gray);
+      border-radius: 10px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      text-decoration: none;
+      color: black;
+      font-family: "Open Sans", serif;
+      font-weight: 700;
+      margin-right: 10px;
+      &:hover{
+        background-color: var(--color-gray);
+      }
+    }
+  }
+}
+
