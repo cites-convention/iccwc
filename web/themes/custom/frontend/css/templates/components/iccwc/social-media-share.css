@@ -15,9 +15,20 @@
   --body-font-family: "Open Sans", sans-serif, ;
 }
 
+.block-iccwc-social-media-share {
+  width: 120px;
+  margin-left: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+
+.toolbar-fixed .block-iccwc-social-media-share {
+  top: 90px;
+}
+
 .social-media-share-container {
   width: 120px;
-  height: 191px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 0;
@@ -27,25 +38,25 @@
 .social-media-share-container a {
   width: 100%;
   height: auto;
+  overflow: hidden;
+  padding: 20px 45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .social-media-share-container a:hover {
-  background: #e5e5e5;
+  background: var(--color-gray);
 }
 .social-media-share-container a:not(:first-child) {
   border-top: 1px solid var(--color-gray);
-}
-.social-media-share-container a:last-child {
-  overflow: hidden;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
-}
-.social-media-share-container a:first-child {
-  overflow: hidden;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
-}
-.social-media-share-container svg {
-  margin-left: 46px;
-  margin-top: 18px;
 }
 /*# sourceMappingURL=../../map/components/iccwc/social-media-share.css.map */
