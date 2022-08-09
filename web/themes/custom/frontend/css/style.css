@@ -7794,6 +7794,9 @@ blockquote p:after {
 .layout-section.column-border {
   padding-bottom: 0;
 }
+.layout-section.column-border .row > * {
+  padding: 0 40px;
+}
 .layout-section.column-border .layout-builder__layout > div {
   padding-bottom: 80px;
 }

@@ -188,6 +188,10 @@ blockquote{
   &.column-border {
     padding-bottom: 0;
 
+    .row > * {
+      padding: 0 40px;
+    }
+
     .layout-builder__layout  {
       > div {
         padding-bottom: 80px;
