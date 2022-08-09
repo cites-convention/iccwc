@@ -1,11 +1,15 @@
-<h1>{{ title }}</h1>
-<div class="breadcrumbs">{{ breadcrumb }}</div>
-<div class="summary">{{ summary }}</div>
 {% if image %}
+  <h1>{{ title }}</h1>
+  <div class="breadcrumbs">{{ breadcrumb }}</div>
+  <div class="summary">{{ summary }}</div>
   <div class="image">
-    <img src="{{ image }}">
+    {{ image }}
     <div class="caption">
       {{ caption }}
     </div>
+  </div>
+{% else %}
+  <div class="container">
+    <h1>{{ title }}</h1>
   </div>
 {% endif %}

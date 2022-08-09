@@ -103,3 +103,120 @@ h1, h2, h3, h4, h5, h5 {
     position: absolute;
   }
 }
+
+.field--type-text-long,
+.field--type-text-with-summary {
+  display: flex;
+  flex-direction: column;
+
+  ul li::marker {
+    color: #E87722;
+    line-height: 1.5625;
+    font-size: 1.4em;
+  }
+  ul li{
+    padding-left: 20px;
+  }
+}
+
+.section-title {
+  @include heading-2;
+  font-weight: bold;
+  border-left: 4px solid var(--color-orange);
+  padding-left: 20px;
+  color: var(--color-black);
+  margin-left: 10px;
+}
+
+blockquote{
+  border-top: 3px solid var(--color-orange);
+  border-bottom: 3px solid var(--color-orange);
+  padding: 20px 10px 20px 10px;
+  margin: 20px 0 20px 0;
+
+  p {
+    padding: 20px 30px 20px 30px;
+    overflow: visible;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    font-style: italic;
+    text-align: justify;
+
+    &:before{
+      content: '';
+      background-image: url('../icons/quote.svg');
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: auto;
+      position: absolute;
+      margin-left: -45px;
+      opacity: 0.2;
+    }
+
+    &:after{
+      content: " ";
+      background-image: url('../icons/quote.svg');
+      transform: rotate(180deg);
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: auto;
+      position: absolute;
+      right: 0;
+      margin-top: -10px;
+      opacity: 0.2;
+    }
+  }
+}
+
+.image-container {
+  padding: 20px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+.layout-section {
+  padding: 80px 0;
+}
+
+.layout-section:not(:last-child) {
+  border-bottom: 4px solid var(--color-yellow);
+}
+
+.section-title {
+  border-left: 4px solid var(--color-yellow);
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+
+.layout-section.bs-bg-light {
+  background-color: var(--color-gray-light) !important;
+}
+
+.block-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.block-border {
+  padding: 20px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+.field--name-field-caption {
+  color: var(--color-gray-darker);
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.container {
+
+}

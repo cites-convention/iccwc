@@ -35,6 +35,15 @@
   border-radius: 10px 10px 0 0;
   margin-right: 15px;
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .slick__arrow {
@@ -55,5 +64,29 @@
 
 .slide__caption {
   padding: 0;
+}
+
+.slide__content {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slide__description {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.slide__description > * {
+  height: 100%;
 }
 /*# sourceMappingURL=../../map/components/slick/slick.css.map */

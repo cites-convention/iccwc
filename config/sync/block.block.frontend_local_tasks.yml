@@ -8,7 +8,7 @@ _core:
   default_config_hash: QQv1nvd32hPNaI3oIMMFwMi98sOShVato7mVc_xnZRQ
 id: frontend_local_tasks
 theme: frontend
-region: content
+region: content_container
 weight: -4
 provider: null
 plugin: local_tasks_block

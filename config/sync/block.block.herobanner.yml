@@ -1,0 +1,25 @@
+uuid: 868bfe2a-7dd1-4f0f-99cf-0efa9a4de13b
+langcode: en
+status: true
+dependencies:
+  module:
+    - iccwc
+    - system
+  theme:
+    - frontend
+id: herobanner
+theme: frontend
+region: hero
+weight: 0
+provider: null
+plugin: iccwc_hero_banner
+settings:
+  id: iccwc_hero_banner
+  label: 'Hero banner'
+  label_display: '0'
+  provider: iccwc
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

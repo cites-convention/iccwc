@@ -1,0 +1,11 @@
+uuid: ea63cadc-9d95-46e8-b0b9-55a58d7e6aaf
+langcode: en
+status: true
+dependencies: {  }
+id: partners_and_donors
+block_id: 'views_block:partners_and_donors-block_1'
+category: page_content
+label: 'Partners and donors'
+image_path: ''
+image_alt: ''
+weight: -95

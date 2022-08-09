@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_banner_image
     - media.type.image
     - node.type.news
+  content:
+    - 'media:image:4256c2af-2061-45cf-9237-c4f7fbe596cd'
 id: node.news.field_banner_image
 field_name: field_banner_image
 entity_type: node
@@ -14,7 +16,10 @@ label: 'Banner image'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 4256c2af-2061-45cf-9237-c4f7fbe596cd
+    weight: 0
 default_value_callback: ''
 settings:
   handler: 'default:media'

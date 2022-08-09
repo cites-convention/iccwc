@@ -1,0 +1,17 @@
+uuid: 642f5df2-23b5-4007-b6df-3d81a2ca03f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_max_size_crop
+name: hero_banner_desktop
+label: 'Hero banner (desktop)'
+effects:
+  4dc8ac15-6f9d-46d9-bd0d-3b7feb9f80f9:
+    uuid: 4dc8ac15-6f9d-46d9-bd0d-3b7feb9f80f9
+    id: image_max_size_crop
+    weight: 1
+    data:
+      width: ''
+      height: '400'
+      anchor: center-center

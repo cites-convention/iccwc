@@ -7,14 +7,17 @@
   --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
+  --color-gray-light: #FAFAFA;
   --color-gray-darker: #999999;
   --color-blue: #0065FF;
+  --body-font-family: "Open Sans", sans-serif, ;
 }
 
 .node--view-mode-teaser {
   padding: 20px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
+  height: 100%;
 }
 .node--view-mode-teaser h3 {
   line-height: 1;
@@ -76,5 +79,8 @@
 }
 .node--view-mode-featured-teaser.node--type-success-story h3 a {
   color: var(--color-orange);
+}
+.node--view-mode-featured-teaser.node--type-success-story h3 a:hover, .node--view-mode-featured-teaser.node--type-success-story h3 a:active {
+  text-decoration: none;
 }
 /*# sourceMappingURL=../../map/components/content/content-teasers.css.map */

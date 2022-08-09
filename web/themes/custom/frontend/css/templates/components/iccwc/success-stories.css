@@ -7,8 +7,10 @@
   --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
+  --color-gray-light: #FAFAFA;
   --color-gray-darker: #999999;
   --color-blue: #0065FF;
+  --body-font-family: "Open Sans", sans-serif, ;
 }
 
 .success-stories-wrapper {
@@ -83,6 +85,24 @@
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.success-stories .views-element-container {
+  height: 100%;
+}
+.success-stories .views-element-container > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * > * > * {
+  height: 100%;
+}
+.success-stories .views-element-container > * > * > * > * > * {
+  height: 100%;
 }
 .success-stories h3 {
   text-align: center;

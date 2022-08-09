@@ -1,7 +1,7 @@
 {
   "patches": {
-    "drupal/entity_browser": {
-      "#2721665 - Problems with multilingual entities": "https://www.drupal.org/files/issues/2021-12-23/entity_browser-problems-with-multilingual-2721665-56.patch"
+    "drupal/core": {
+      "#3015152 - Support third party settings for components within a section": "https://www.drupal.org/files/issues/2022-05-09/3015152-150.patch"
     }
   }
 }

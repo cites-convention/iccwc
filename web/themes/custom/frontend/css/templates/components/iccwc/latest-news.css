@@ -7,11 +7,18 @@
   --color-text: #1E1E1E;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
+  --color-gray-light: #FAFAFA;
   --color-gray-darker: #999999;
   --color-blue: #0065FF;
+  --body-font-family: "Open Sans", sans-serif, ;
 }
 
 .featured-news {
   margin-bottom: 20px;
+}
+
+.view-latest-news .view-footer {
+  text-align: center;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=../../map/components/iccwc/latest-news.css.map */

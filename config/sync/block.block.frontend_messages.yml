@@ -10,8 +10,8 @@ _core:
   default_config_hash: 8tCNHgb8qWDcU_Qy9c6o3WZJFqhUVpPjd4joNNpFrCQ
 id: frontend_messages
 theme: frontend
-region: content
-weight: -7
+region: content_container
+weight: -5
 provider: null
 plugin: system_messages_block
 settings:

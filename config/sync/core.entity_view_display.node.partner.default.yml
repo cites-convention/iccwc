@@ -3,19 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.partner.body
     - field.field.node.partner.field_amount
     - field.field.node.partner.field_external_url
     - field.field.node.partner.field_image
-    - field.field.node.partner.field_past_donor
+    - field.field.node.partner.field_partner_type
+    - field.field.node.partner.field_weight
     - node.type.partner
   module:
     - link
-    - user
+    - options
+    - text
 id: node.partner.default
 targetEntityType: node
 bundle: partner
 mode: default
 content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
   field_amount:
     type: string
     label: above
@@ -44,15 +54,21 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_past_donor:
-    type: boolean
+  field_partner_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_weight:
+    type: number_integer
     label: above
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 103
+    weight: 108
     region: content
   links:
     settings: {  }
@@ -60,5 +76,7 @@ content:
     weight: 100
     region: content
 hidden:
+  created: true
   langcode: true
   search_api_excerpt: true
+  uid: true
