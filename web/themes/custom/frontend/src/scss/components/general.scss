@@ -236,7 +236,6 @@ blockquote{
       font-family: 'Open Sans', serif;
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
       line-height: 18px;
     }
   }
@@ -253,7 +252,7 @@ blockquote{
       align-items: flex-start;
       padding: 20px 10px;
       gap: 10px;
-      border: 1px solid #E5E5E5;
+      border: 1px solid var(--color-gray);
       border-radius: 10px;
       flex: none;
       order: 0;

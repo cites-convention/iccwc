@@ -7839,7 +7839,6 @@ blockquote p:after {
   font-family: "Open Sans", serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
   line-height: 18px;
 }
 .block-field-blocknodenewsfield-tags .field--name-field-tags .field__items {
@@ -7871,7 +7870,7 @@ blockquote p:after {
           align-items: flex-start;
   padding: 20px 10px;
   gap: 10px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid var(--color-gray);
   border-radius: 10px;
   -webkit-box-flex: 0;
   -webkit-flex: none;
