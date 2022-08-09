@@ -1,17 +1,1 @@
-:root {
-  --color-orange: #E87722;
-  --color-orange-darker: #C4661E;
-  --color-yellow: #F5CD26;
-  --color-yellow-darker: #AB901B;
-  --color-black: #1E1E1E;
-  --color-text: #1E1E1E;
-  --color-white: #FFFFFF;
-  --color-gray: #E5E5E5;
-  --color-gray-light: #FAFAFA;
-  --color-gray-light-2: #F4F4F4;
-  --color-gray-darker: #999999;
-  --color-gray-darker-2: #4B4B4B;
-  --color-blue: #0065FF;
-  --body-font-family: "Open Sans", sans-serif, ;
-}
-/*# sourceMappingURL=../../map/components/iccwc/social-media-share.css.map */
+:root{--color-orange: #E87722;--color-orange-darker: #C4661E;--color-yellow: #F5CD26;--color-yellow-darker: #AB901B;--color-black: #1E1E1E;--color-text: #1E1E1E;--color-white: #FFFFFF;--color-gray: #E5E5E5;--color-gray-light: #FAFAFA;--color-gray-light-2: #F4F4F4;--color-gray-darker: #999999;--color-gray-darker-2: #4B4B4B;--color-blue: #0065FF;--body-font-family: "Open Sans", sans-serif, }

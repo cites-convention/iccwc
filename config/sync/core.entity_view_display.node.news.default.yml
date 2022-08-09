@@ -40,6 +40,7 @@ third_party_settings:
                 background_type: color
               background_color:
                 class: null
+              column_border: 1
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
           container: container

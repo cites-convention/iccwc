@@ -22,6 +22,8 @@ plugins:
       enabled: 0
     section_border:
       enabled: 0
+    column_border:
+      enabled: 1
   animation:
     scroll_effects:
       enabled: 0

@@ -253,3 +253,11 @@ blockquote{
     }
   }
 }
+
+.column-border {
+  .layout-builder__layout {
+    > div + div {
+      border-left: 1px solid var(--color-gray);
+    }
+  }
+}
