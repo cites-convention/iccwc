@@ -42,7 +42,7 @@ content:
     label: hidden
     settings:
       responsive_image_style: teaser_image_large
-      image_link: ''
+      image_link: content
     third_party_settings: {  }
     weight: 1
     region: content
