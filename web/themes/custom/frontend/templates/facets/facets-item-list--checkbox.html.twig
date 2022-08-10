@@ -18,10 +18,10 @@
   {% endif %}
   {% if items or empty %}
   {%- if title is not empty -%}
-    <a data-bs-toggle="collapse" href="#{{ facet.id }}" role="button" aria-expanded="false" aria-controls="{{ facet.id }}">{{ title }}</a>
+    <a data-bs-toggle="collapse" href="#facet_{{ facet.id }}" role="button" aria-expanded="false" aria-controls="facet_{{ facet.id }}">{{ title }}</a>
   {%- endif -%}
   {%- if items -%}
-    <div class="collapse" id="{{ facet.id }}">
+    <div class="collapse" id="facet_{{ facet.id }}">
     <{{ list_type }}{{ attributes }}>
     {%- for item in items -%}
       <li{{ item.attributes }}>{{ item.value }}</li>
