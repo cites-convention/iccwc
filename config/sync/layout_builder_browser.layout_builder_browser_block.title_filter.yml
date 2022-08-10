@@ -1,0 +1,11 @@
+uuid: a6f377d2-befa-4552-ad4d-4e1f2a4d290a
+langcode: en
+status: true
+dependencies: {  }
+id: title_filter
+block_id: 'facet_block:title'
+category: page_content
+label: 'Title filter'
+image_path: ''
+image_alt: ''
+weight: -100

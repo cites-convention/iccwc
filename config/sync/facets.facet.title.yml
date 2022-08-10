@@ -1,4 +1,4 @@
-uuid: fe7260b2-10c8-4e42-8ac4-626423a91b33
+uuid: 44ec1b00-4f4f-451b-a996-45956826f208
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.search
   module:
     - search_api
-id: tags
-name: Tags
+id: title
+name: Title
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: tags
+url_alias: title
 facet_source_id: 'search_api:views_block__search__block_1'
-field_identifier: field_tags
+field_identifier: title
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -65,11 +65,6 @@ processor_configs:
     processor_id: hierarchy_processor
     weights:
       build: 100
-    settings: {  }
-  translate_entity:
-    processor_id: translate_entity
-    weights:
-      build: 5
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
