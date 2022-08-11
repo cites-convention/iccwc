@@ -377,6 +377,10 @@ blockquote{
       height: 10px;
     }
   }
+  .facets-soft-limit-link::before{
+    content: none;
+  }
+
   a[aria-expanded="true"] + .arrow {
     transform: rotate(225deg);
   }
@@ -418,13 +422,14 @@ blockquote{
   border-top: 1px solid var(--color-gray);
   border-left: 1px solid var(--color-gray);
   border-right: 1px solid var(--color-gray);
-  &:first-child{
+  &:nth-child(2){
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
   &:last-child{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-bottom: 1px solid var(--color-gray);
   }
 }
 
@@ -438,4 +443,29 @@ blockquote{
   top: 15px;
   position: absolute;
   transition: transform 0.5s;
+}
+
+.block-iccwc-clear-filter{
+  position: relative;
+  color: var(--color-gray-darker);
+  margin-bottom: 6px;
+  p{
+    display: inline;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  svg{
+    width: 17px;
+    top: -1px;
+    position: relative;
+    fill: var(--color-gray-darker);
+  }
+  a{
+    position: absolute;
+    color: var(--color-gray-darker);
+    right: 0;
+    &:hover{
+      text-decoration: none;
+    }
+  }
 }

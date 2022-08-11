@@ -455,6 +455,9 @@ blockquote p:after {
   width: 10px;
   height: 10px;
 }
+.facets-widget-checkbox .facets-soft-limit-link::before {
+  content: none;
+}
 .facets-widget-checkbox a[aria-expanded=true] + .arrow {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
@@ -497,13 +500,14 @@ blockquote p:after {
   border-left: 1px solid var(--color-gray);
   border-right: 1px solid var(--color-gray);
 }
-.block-facets:first-child {
+.block-facets:nth-child(2) {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .block-facets:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-bottom: 1px solid var(--color-gray);
 }
 
 .arrow {
@@ -520,5 +524,30 @@ blockquote p:after {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.block-iccwc-clear-filter {
+  position: relative;
+  color: var(--color-gray-darker);
+  margin-bottom: 6px;
+}
+.block-iccwc-clear-filter p {
+  display: inline;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.block-iccwc-clear-filter svg {
+  width: 17px;
+  top: -1px;
+  position: relative;
+  fill: var(--color-gray-darker);
+}
+.block-iccwc-clear-filter a {
+  position: absolute;
+  color: var(--color-gray-darker);
+  right: 0;
+}
+.block-iccwc-clear-filter a:hover {
+  text-decoration: none;
 }
 /*# sourceMappingURL=../map/components/general.css.map */
