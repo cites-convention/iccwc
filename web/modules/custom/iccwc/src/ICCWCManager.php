@@ -10,12 +10,12 @@ class ICCWCManager {
   /**
    * The ID of the news page.
    */
-  const NEWS_PAGE = 5;
+  const NEWS_PAGE = 500;
 
   /**
    * The ID of the search page.
    */
-  const SEARCH_PAGE = 38;
+  const SEARCH_PAGE = 3800;
 
   /**
    * The current route match.
