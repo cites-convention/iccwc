@@ -97,6 +97,7 @@
         "drupal/xmlsitemap": "^1.2",
         "drupal/youtube": "^1.2",
         "drush/drush": "^11.0",
+        "eaudeweb/heavy-lifter": "^2.0",
         "npm-asset/blazy": "^1.8.2",
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
