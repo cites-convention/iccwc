@@ -400,6 +400,9 @@ blockquote p:after {
   margin-top: 20px;
 }
 
+.node--view-mode-search-teaser {
+  margin: 20px 0 20px 0;
+}
 .node--view-mode-search-teaser h3 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
@@ -549,5 +552,28 @@ blockquote p:after {
 }
 .block-iccwc-clear-filter a:hover {
   text-decoration: none;
+}
+
+.hero-block .iccwc-search-form input[type=text] {
+  padding: 10px;
+  width: 300px;
+  height: 45px;
+  border-radius: 20px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 85px;
+}
+
+.hero-block .title-subtitle {
+  position: relative;
+}
+.hero-block .title-subtitle .button.js-form-submit.form-submit.btn.btn-primary {
+  left: 260px;
+  position: absolute;
+}
+.hero-block .title-subtitle .form-text {
+  margin-top: 0;
 }
 /*# sourceMappingURL=../map/components/general.css.map */

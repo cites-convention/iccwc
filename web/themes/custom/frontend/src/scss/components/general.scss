@@ -333,7 +333,7 @@ blockquote{
 }
 
 .node--view-mode-search-teaser{
-
+  margin: 20px 0 20px 0;
   h3{
     @include heading-5;
   }
@@ -469,3 +469,24 @@ blockquote{
     }
   }
 }
+
+.hero-block .iccwc-search-form input[type=text] {
+  padding: 10px;
+  width: 300px;
+  height: 45px;
+  border-radius: 20px;
+  justify-content: space-between;
+  gap: 85px;
+}
+
+.hero-block .title-subtitle {
+  .button.js-form-submit.form-submit.btn.btn-primary{
+    left: 260px;
+    position: absolute;
+  }
+  .form-text{
+    margin-top: 0;
+  }
+  position: relative;
+}
+
