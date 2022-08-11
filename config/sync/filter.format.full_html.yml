@@ -70,6 +70,13 @@ filters:
         img: img
         iframe: iframe
       use_data_uri: '0'
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
   filter_autop:
     id: filter_autop
     provider: filter
@@ -82,13 +89,6 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
   slick_filter:
     id: slick_filter
     provider: slick

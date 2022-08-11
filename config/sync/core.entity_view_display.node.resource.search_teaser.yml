@@ -1,0 +1,74 @@
+uuid: e62a10c3-12f6-4685-8b04-0dbfe5e6ccdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_teaser
+    - field.field.node.resource.body
+    - field.field.node.resource.field_files
+    - field.field.node.resource.field_flyer_files
+    - field.field.node.resource.field_flyer_image
+    - field.field.node.resource.field_images
+    - field.field.node.resource.field_resource_type
+    - node.type.resource
+    - responsive_image.styles.teaser_image_large
+  module:
+    - layout_builder
+    - media_responsive_thumbnail
+    - smart_trim
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.resource.search_teaser
+targetEntityType: node
+bundle: resource
+mode: search_teaser
+content:
+  body:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 100
+      trim_type: words
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  created:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: d_f_y
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_images:
+    type: media_responsive_thumbnail
+    label: hidden
+    settings:
+      responsive_image_style: teaser_image_large
+      image_link: content
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_files: true
+  field_flyer_files: true
+  field_flyer_image: true
+  field_resource_type: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  uid: true

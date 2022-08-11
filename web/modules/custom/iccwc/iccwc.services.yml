@@ -4,3 +4,7 @@ services:
     arguments: []
     tags:
       - { name: event_subscriber }
+
+  iccwc.manager:
+    class: Drupal\iccwc\ICCWCManager
+    arguments: ['@current_route_match', '@entity_type.manager']

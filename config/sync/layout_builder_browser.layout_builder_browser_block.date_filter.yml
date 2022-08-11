@@ -1,0 +1,11 @@
+uuid: 8ac35f8e-5a3b-4a1a-b1ac-d890e72b072e
+langcode: en
+status: true
+dependencies: {  }
+id: date_filter
+block_id: 'facet_block:authored_on'
+category: page_content
+label: 'Date filter'
+image_path: ''
+image_alt: ''
+weight: -100

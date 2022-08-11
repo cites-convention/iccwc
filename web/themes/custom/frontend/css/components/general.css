@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --color-orange: #E87722;
   --color-orange-darker: #C4661E;
@@ -149,7 +150,7 @@ h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:
 }
 .field--type-text-long ul li::marker,
 .field--type-text-with-summary ul li::marker {
-  color: #E87722;
+  color: var(--color-orange);
   line-height: 1.5625;
   font-size: 1.4em;
 }
@@ -188,7 +189,7 @@ blockquote p {
   text-align: justify;
 }
 blockquote p:before {
-  content: "";
+  content: " ";
   background-image: url("../icons/quote.svg");
   width: 40px;
   height: 40px;
@@ -388,5 +389,165 @@ blockquote p:after {
 }
 .block-field-blocknodenewsfield-tags .field--name-field-tags .field__items a:hover {
   background-color: var(--color-gray);
+}
+
+.view-search .views-row {
+  border-top: solid 1px var(--color-gray);
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.node--view-mode-search-teaser h3 {
+  font-weight: bold;
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
+  font-size: 24px;
+  line-height: 26px;
+}
+.node--view-mode-search-teaser img {
+  border: 4px solid var(--color-orange);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+.node--view-mode-search-teaser .row {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.node--view-mode-search-teaser .date-tags {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 15px;
+  margin-top: 35px;
+}
+.node--view-mode-search-teaser .date-tags .field--name-created {
+  border-left: 1px solid var(--color-black);
+  margin-left: 5px;
+  padding-left: 5px;
+}
+.node--view-mode-search-teaser p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.facets-widget-checkbox a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+.facets-widget-checkbox a:before {
+  content: "◼";
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 10px;
+  height: 10px;
+}
+.facets-widget-checkbox .facets-soft-limit-link::before {
+  content: none;
+}
+.facets-widget-checkbox a[aria-expanded=true] + .arrow {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+.facets-widget-checkbox li {
+  margin-top: 12px;
+}
+.facets-widget-checkbox ul {
+  list-style-type: none;
+}
+.facets-widget-checkbox input[type=checkbox] {
+  -webkit-appearance: none;
+  background-color: white;
+  border: 1px solid #999999;
+  padding: 6px;
+  border-radius: 0;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+.facets-widget-checkbox input[type=checkbox]:checked {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+.facets-widget-checkbox input[type=checkbox]:checked:after {
+  content: "✔";
+  position: absolute;
+  top: -7px;
+  left: -1px;
+  color: white;
+  font-size: large;
+}
+.facets-widget-checkbox input[type=checkbox]:checked + label {
+  color: var(--color-orange);
+}
+
+.block-facets {
+  padding: 10px;
+  border-top: 1px solid var(--color-gray);
+  border-left: 1px solid var(--color-gray);
+  border-right: 1px solid var(--color-gray);
+}
+.block-facets:nth-child(2) {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.block-facets:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.block-iccwc-clear-filter {
+  position: relative;
+  color: var(--color-gray-darker);
+  margin-bottom: 6px;
+}
+.block-iccwc-clear-filter p {
+  display: inline;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.block-iccwc-clear-filter svg {
+  width: 17px;
+  top: -1px;
+  position: relative;
+  fill: var(--color-gray-darker);
+}
+.block-iccwc-clear-filter a {
+  position: absolute;
+  color: var(--color-gray-darker);
+  right: 0;
+}
+.block-iccwc-clear-filter a:hover {
+  text-decoration: none;
 }
 /*# sourceMappingURL=../map/components/general.css.map */
