@@ -148,3 +148,12 @@ function frontend_preprocess_blb_section(&$variables) {
 
   $variables['content'] = NULL;
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function frontend_preprocess_node(&$variables) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+  $variables['page'] = ($variables['view_mode'] == 'full' && (node_is_page($node)) || (isset($node->in_preview) && in_array($node->preview_view_mode, ['full', 'default'])));
+}
