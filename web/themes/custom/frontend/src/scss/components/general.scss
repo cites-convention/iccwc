@@ -350,20 +350,16 @@ blockquote{
     display: flex;
     @include small-text;
     margin-bottom: 15px;
-    margin-top: 35px;
-
-    .field--name-created {
-      border-left: 1px solid var(--color-black);
-      margin-left: 5px;
-      padding-left: 5px;
-    }
+  }
+  .date-tags :not(:first-child){
+    border-left: 1px solid var(--color-black);
+    margin-left: 5px;
+    padding-left: 5px;
   }
   p{
     @include max-lines(3);
   }
 }
-
-
 .facets-widget-checkbox {
   a{
     text-decoration: none;
@@ -415,22 +411,8 @@ blockquote{
       color: var(--color-orange);
     }
   }
-}
-
-.block-facets{
   padding: 10px;
-  border-top: 1px solid var(--color-gray);
-  border-left: 1px solid var(--color-gray);
-  border-right: 1px solid var(--color-gray);
-  &:nth-child(2){
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  &:last-child{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom: 1px solid var(--color-gray);
-  }
+  position: relative;
 }
 
 .arrow {
@@ -489,4 +471,11 @@ blockquote{
   }
   position: relative;
 }
+.block-iccwc-sidebar-filters {
+  .facets-widget-checkbox + .facets-widget-checkbox {
+    border-top: 1px solid var(--color-gray);
 
+  }
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
