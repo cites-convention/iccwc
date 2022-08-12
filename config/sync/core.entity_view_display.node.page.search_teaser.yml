@@ -96,7 +96,7 @@ content:
     type: timestamp
     label: hidden
     settings:
-      date_format: medium
+      date_format: d_f_y
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
