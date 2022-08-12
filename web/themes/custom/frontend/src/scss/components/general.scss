@@ -253,9 +253,8 @@ blockquote{
     text-decoration: none;
     &:before {
       content: '';
-      background-image: url('../icons/open_in_new.svg');
-      width: 20px;
-      height: 20px;
+      background-image: url('../icons/open-new.svg');
+      width: 15px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -325,6 +324,9 @@ blockquote{
 }
 .view-search{
   .views-row{
+    &:first-child{
+      margin-top: 0;
+    }
     border-top: solid 1px var(--color-gray);
     align-items: center;
     margin-top: 20px;
@@ -365,6 +367,9 @@ blockquote{
     text-decoration: none;
     color: black;
     font-weight: 700;
+    display: block;
+    width: 100%;
+    padding: 10px;
     &:before {
       content: '◼';
       margin-right: 20px;
@@ -377,7 +382,7 @@ blockquote{
     content: none;
   }
 
-  a[aria-expanded="true"] + .arrow {
+  a[aria-expanded="true"] + a .arrow {
     transform: rotate(225deg);
   }
   li{
@@ -411,11 +416,10 @@ blockquote{
       color: var(--color-orange);
     }
   }
-  padding: 10px;
   position: relative;
 }
 
-.arrow {
+  .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;

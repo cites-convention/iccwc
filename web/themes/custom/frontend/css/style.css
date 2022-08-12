@@ -7864,9 +7864,8 @@ blockquote p:after {
 }
 .field--name-field-links a:before {
   content: "";
-  background-image: url("../icons/open_in_new.svg");
-  width: 20px;
-  height: 20px;
+  background-image: url("../icons/open-new.svg");
+  width: 15px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -7963,6 +7962,9 @@ blockquote p:after {
           align-items: center;
   margin-top: 20px;
 }
+.view-search .views-row:first-child {
+  margin-top: 0;
+}
 
 .node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
@@ -8010,13 +8012,15 @@ blockquote p:after {
 }
 
 .facets-widget-checkbox {
-  padding: 10px;
   position: relative;
 }
 .facets-widget-checkbox a {
   text-decoration: none;
   color: black;
   font-weight: 700;
+  display: block;
+  width: 100%;
+  padding: 10px;
 }
 .facets-widget-checkbox a:before {
   content: "◼";
@@ -8028,7 +8032,7 @@ blockquote p:after {
 .facets-widget-checkbox .facets-soft-limit-link::before {
   content: none;
 }
-.facets-widget-checkbox a[aria-expanded=true] + .arrow {
+.facets-widget-checkbox a[aria-expanded=true] + a .arrow {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
 }

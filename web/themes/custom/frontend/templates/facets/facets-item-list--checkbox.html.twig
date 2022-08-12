@@ -18,8 +18,8 @@
   {% endif %}
   {% if items or empty %}
   {%- if title is not empty -%}
-    <a data-bs-toggle="collapse" href="#facet_{{ facet.id }}" role="button" aria-expanded="false" aria-controls="facet_{{ facet.id }}">{{ title }}</a>
-  <i class="arrow"></i>
+    <a data-bs-toggle="collapse" href="#facet_{{ facet.id }}" role="button" aria-expanded="false" aria-controls="facet_{{ facet.id }}">{{ title }}<i class="arrow"></i></a>
+
   {%- endif -%}
   {%- if items -%}
     <div class="collapse" id="facet_{{ facet.id }}">
