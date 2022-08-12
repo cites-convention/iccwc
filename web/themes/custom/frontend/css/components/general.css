@@ -9,6 +9,7 @@
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
   --color-gray-light: #FAFAFA;
+  --color-gray-light-1: #F2F2F2;
   --color-gray-light-2: #F4F4F4;
   --color-gray-darker: #999999;
   --color-gray-darker-2: #4B4B4B;
@@ -401,6 +402,9 @@ blockquote p:after {
 .view-search .views-row:first-child {
   margin-top: 0;
 }
+.view-search .views-row:last-child {
+  border-bottom: solid 1px var(--color-gray);
+}
 
 .node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
@@ -468,7 +472,7 @@ blockquote p:after {
 .facets-widget-checkbox .facets-soft-limit-link::before {
   content: none;
 }
-.facets-widget-checkbox a[aria-expanded=true] + a .arrow {
+.facets-widget-checkbox a[aria-expanded=true] .arrow {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
 }
@@ -480,25 +484,16 @@ blockquote p:after {
 }
 .facets-widget-checkbox input[type=checkbox] {
   -webkit-appearance: none;
-  background-color: white;
-  border: 1px solid #999999;
-  padding: 6px;
+  padding: 10px;
   border-radius: 0;
   display: inline-block;
   position: relative;
   margin-right: 10px;
+  background-image: url("../icons/checkbox.svg");
+  bottom: -4px;
 }
 .facets-widget-checkbox input[type=checkbox]:checked {
-  background-color: var(--color-orange);
-  border-color: var(--color-orange);
-}
-.facets-widget-checkbox input[type=checkbox]:checked:after {
-  content: "✔";
-  position: absolute;
-  top: -7px;
-  left: -1px;
-  color: white;
-  font-size: large;
+  background-image: url("../icons/checked.svg");
 }
 .facets-widget-checkbox input[type=checkbox]:checked + label {
   color: var(--color-orange);
@@ -574,5 +569,23 @@ blockquote p:after {
 }
 .block-iccwc-sidebar-filters .facets-widget-checkbox + .facets-widget-checkbox {
   border-top: 1px solid var(--color-gray);
+}
+
+.pager {
+  margin-top: 40px;
+}
+.pager li {
+  position: relative;
+  -webkit-appearance: none;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: var(--color-gray-light-1);
+}
+.pager li a {
+  color: #231F20;
+  display: inline-block;
+}
+.pager .active {
+  background-color: var(--color-orange);
 }
 /*# sourceMappingURL=../map/components/general.css.map */
