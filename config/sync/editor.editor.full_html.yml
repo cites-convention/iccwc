@@ -52,7 +52,6 @@ settings:
           items:
             - Table
             - SpecialChar
-            - Format
             - Source
             - Styles
   plugins:
