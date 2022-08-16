@@ -184,6 +184,10 @@ blockquote{
 .layout-section {
   padding: 80px 0;
 
+  &:first-child {
+    padding-top: 10px;
+  }
+
   &.column-border {
     padding-bottom: 0;
 
