@@ -1,17 +1,38 @@
 .dark-mode {
-  --color-orange: #E87722;
+  --color-orange: #FF9443;
   --color-orange-darker: #C4661E;
   --color-yellow: #F5CD26;
   --color-yellow-darker: #AB901B;
   --color-black: #FFFFFF;
-  --color-white: #1E1E1E;
-  --color-gray: #E5E5E5;
+  --color-white: #2E2A2B;
+  --color-gray: #8A8888;
   --color-gray-darker: #999999;
-
   --body-color: #FFF;
+  --color-blue-hover: #8AB4F8;
 }
 
 .dark-mode {
+  a {
+    color: var(--color-blue-hover);
+  }
+
+  h1, h2, h3, h4, h5, h5 {
+    a {
+      color: var(--color-black);
+
+      &:hover, &:active {
+        color: var(--color-blue-hover);
+      }
+    }
+  }
+
+  .btn-iccwc {
+    color: var(--color-orange) !important;
+    &:hover {
+      color: var(--color-black) !important;
+    }
+  }
+
   .navbar-brand {
     color: #fff;
 
@@ -28,6 +49,76 @@
       &, > * {
         fill: #000;
       }
+    }
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+
+  .iccwc-search-form {
+    .form-submit {
+      background: url("../icons/magnify-white.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    input {
+      color: var(--color-black);
+    }
+
+    input[type="text"] {
+      background-color: var(--color-white) !important;
+    }
+  }
+
+  .block-lang-dropdown select {
+    color: var(--color-black) !important;
+    background-color: var(--color-white) !important;
+  }
+
+
+  .custom-control input[type="checkbox"] + label:after {
+    background: url("../icons/toggle-switch-on.svg") no-repeat center;
+  }
+
+  .block-iccwc-social-media {
+    svg.youtube path:last-child {
+      fill: var(--color-white);
+    }
+  }
+
+  .scrollup {
+    background-color: var(--color-black) !important;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.45);
+  }
+
+  .partner-teaser {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.45);
+
+    &:hover{
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.85);
+    }
+  }
+
+  footer {
+    border-top: 1px solid var(--color-gray);
+    background-color: #231F20;
+
+    .block-iccwc-social-media {
+      svg {
+        path {
+          fill: var(--color-black);
+        }
+
+        &.youtube {
+          path:last-child {
+            fill: var(--color-white);
+          }
+        }
+      }
+    }
+
+    nav a, nav a:hover, nav a:focus {
+       color: var(--color-black) !important;
     }
   }
 }

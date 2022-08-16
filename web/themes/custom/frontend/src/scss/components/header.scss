@@ -96,11 +96,16 @@
   input[type="text"] {
     @include small-text;
 
+    color: var(--color-black) !important;
     border: none;
     outline: 0;
     box-shadow: none;
     transition: none;
     padding: 0;
+  }
+
+  input::placeholder {
+    color: var(--color-gray-darker) !important;
   }
 }
 

@@ -25,7 +25,7 @@ a {
   color: var(--color-blue);
 
   &:hover, &:active {
-    color: var(--color-blue);
+    color: var(--color-blue-hover);
     text-decoration: underline;
   }
 }
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h5 {
     color: var(--color-text);
 
     &:hover, &:active {
-      color: var(--color-blue);
+      color: var(--color-blue-hover);
     }
   }
 }
@@ -183,6 +183,10 @@ blockquote{
 
 .layout-section {
   padding: 80px 0;
+
+  &:first-child {
+    padding-top: 0 !important;
+  }
 
   &.column-border {
     padding-bottom: 0;
