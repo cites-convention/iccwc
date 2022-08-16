@@ -21,3 +21,6 @@ regions:
   footer_right: 'Footer right'
   footer_bottom: 'Footer bottom'
   disable_region: 'Disabled Region'
+
+ckeditor_stylesheets:
+  - css/style.css

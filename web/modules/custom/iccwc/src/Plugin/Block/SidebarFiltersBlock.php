@@ -125,7 +125,8 @@ class SidebarFiltersBlock extends ICCWCBlockBase {
     /** @var \Drupal\facets\FacetInterface $facet */
     foreach ($sorted_facets as $facet) {
       $result = $this->facetManager->build($facet);
-      if (empty($facet->getActiveItems()) && count($result[0]['#items']) <= 1) {
+      if (empty($facet->getActiveItems())
+        && (empty($result[0]['#items']) || count($result[0]['#items']) <= 1)) {
         continue;
       }
       $build[] = $result;

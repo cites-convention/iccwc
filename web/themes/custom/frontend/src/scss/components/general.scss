@@ -125,7 +125,6 @@ h1, h2, h3, h4, h5, h5 {
   border-left: 4px solid var(--color-orange);
   padding-left: 20px;
   color: var(--color-black);
-  margin-left: 10px;
 }
 
 blockquote{
@@ -253,9 +252,8 @@ blockquote{
     text-decoration: none;
     &:before {
       content: '';
-      background-image: url('../icons/open_in_new.svg');
-      width: 20px;
-      height: 20px;
+      background-image: url('../icons/open-new.svg');
+      width: 15px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -325,6 +323,12 @@ blockquote{
 }
 .view-search{
   .views-row{
+    &:first-child{
+      margin-top: 0;
+    }
+    &:last-child{
+      border-bottom: solid 1px var(--color-gray);
+    }
     border-top: solid 1px var(--color-gray);
     align-items: center;
     margin-top: 20px;
@@ -333,7 +337,7 @@ blockquote{
 }
 
 .node--view-mode-search-teaser{
-
+  margin: 20px 0 20px 0;
   h3{
     @include heading-5;
   }
@@ -350,25 +354,24 @@ blockquote{
     display: flex;
     @include small-text;
     margin-bottom: 15px;
-    margin-top: 35px;
-
-    .field--name-created {
-      border-left: 1px solid var(--color-black);
-      margin-left: 5px;
-      padding-left: 5px;
-    }
+  }
+  .date-tags :not(:first-child){
+    border-left: 1px solid var(--color-black);
+    margin-left: 5px;
+    padding-left: 5px;
   }
   p{
     @include max-lines(3);
   }
 }
-
-
 .facets-widget-checkbox {
   a{
     text-decoration: none;
     color: black;
     font-weight: 700;
+    display: block;
+    width: 100%;
+    padding: 10px;
     &:before {
       content: '◼';
       margin-right: 20px;
@@ -381,7 +384,7 @@ blockquote{
     content: none;
   }
 
-  a[aria-expanded="true"] + .arrow {
+  a[aria-expanded="true"] .arrow {
     transform: rotate(225deg);
   }
   li{
@@ -392,48 +395,24 @@ blockquote{
   }
   input[type=checkbox]{
     -webkit-appearance: none;
-    background-color: white;
-    border: 1px solid #999999;
-    padding: 6px;
+    padding: 10px;
     border-radius: 0;
     display: inline-block;
     position: relative;
     margin-right: 10px;
+    background-image: url("../icons/checkbox.svg");
+    bottom: -4px;
     &:checked{
-      background-color: var(--color-orange);
-      border-color: var(--color-orange);
-      &:after{
-        content: '\2714';
-        position: absolute;
-        top: -7px;
-        left: -1px;
-        color: white;
-        font-size: large;
-      }
+      background-image: url("../icons/checked.svg");
     }
     &:checked + label {
       color: var(--color-orange);
     }
   }
+  position: relative;
 }
 
-.block-facets{
-  padding: 10px;
-  border-top: 1px solid var(--color-gray);
-  border-left: 1px solid var(--color-gray);
-  border-right: 1px solid var(--color-gray);
-  &:nth-child(2){
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  &:last-child{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom: 1px solid var(--color-gray);
-  }
-}
-
-.arrow {
+  .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -467,5 +446,57 @@ blockquote{
     &:hover{
       text-decoration: none;
     }
+  }
+}
+
+.hero-block .iccwc-search-form input[type=text] {
+  padding: 10px;
+  width: 300px;
+  height: 45px;
+  border-radius: 20px;
+  justify-content: space-between;
+  gap: 85px;
+}
+
+.hero-block .title-subtitle {
+  .button.js-form-submit.form-submit.btn.btn-primary{
+    left: 260px;
+    position: absolute;
+  }
+  .form-text{
+    margin-top: 0;
+  }
+  position: relative;
+}
+.block-iccwc-sidebar-filters {
+  .facets-widget-checkbox + .facets-widget-checkbox {
+    border-top: 1px solid var(--color-gray);
+
+  }
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+.pager {
+  margin-top: 40px;
+  li {
+    -webkit-appearance: none;
+    padding: 0;
+    border-radius: 10px;
+    a {
+      color: #231F20;
+      display: block;
+      padding: 10px 17px;
+      background-color: var(--color-gray-light-1);
+      font-weight: 700;
+      border-radius: 10px;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .active a{
+    background-color: var(--color-orange);
+    color: white;
   }
 }
