@@ -36,7 +36,7 @@ class FilterMediaLinks extends FilterBase {
         continue;
       }
 
-      $text = str_replace($link, '<div>' . $link . '</div>', $text);
+      $text = str_replace($link, '<div class="media-link">' . $link . '</div>', $text);
     }
 
     return new FilterProcessResult($text);
