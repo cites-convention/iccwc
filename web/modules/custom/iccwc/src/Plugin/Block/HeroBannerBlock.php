@@ -66,7 +66,11 @@ class HeroBannerBlock extends ICCWCBlockBase {
       return [];
     }
 
-    $summary = $node->get('body')->summary;
+    $summary = $node->get('field_banner_text')->value;
+    if (empty($summary)) {
+      $summary = $node->get('body')->summary;
+    }
+
     $title = $node->get('title')->value;
 
     if (!$node->hasField('field_banner_image')

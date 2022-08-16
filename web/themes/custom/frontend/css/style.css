@@ -7800,7 +7800,7 @@ blockquote p:after {
   padding: 80px 0;
 }
 .layout-section:first-child {
-  padding-top: 0 !important;
+  padding-top: 10px;
 }
 .layout-section.column-border {
   padding-bottom: 0;
@@ -8167,6 +8167,13 @@ blockquote p:after {
 .pager .active a {
   background-color: var(--color-orange);
   color: white;
+}
+
+.media-link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 :root {
