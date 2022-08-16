@@ -17,7 +17,7 @@
           </div>
         {% endif %}
         <h1>{{ title }}</h1>
-        <div class="summary">{{ summary }}</div>
+        <div class="summary">{{ summary | raw }}</div>
         {{ form }}
       </div>
       <div class="caption">{{ caption }}</div>
