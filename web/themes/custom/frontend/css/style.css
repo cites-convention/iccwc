@@ -8141,18 +8141,24 @@ blockquote p:after {
   margin-top: 40px;
 }
 .pager li {
-  position: relative;
   -webkit-appearance: none;
-  font-weight: 700;
+  padding: 0;
   border-radius: 10px;
-  background-color: var(--color-gray-light-1);
 }
 .pager li a {
   color: #231F20;
-  display: inline-block;
+  display: block;
+  padding: 10px 17px;
+  background-color: var(--color-gray-light-1);
+  font-weight: 700;
+  border-radius: 10px;
 }
-.pager .active {
+.pager li a:hover {
+  text-decoration: none;
+}
+.pager .active a {
   background-color: var(--color-orange);
+  color: white;
 }
 
 :root {

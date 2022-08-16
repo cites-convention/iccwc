@@ -481,17 +481,23 @@ blockquote{
 .pager {
   margin-top: 40px;
   li {
-    position: relative;
     -webkit-appearance: none;
-    font-weight: 700;
+    padding: 0;
     border-radius: 10px;
-    background-color: var(--color-gray-light-1);
     a {
       color: #231F20;
-      display: inline-block;
+      display: block;
+      padding: 10px 17px;
+      background-color: var(--color-gray-light-1);
+      font-weight: 700;
+      border-radius: 10px;
+      &:hover{
+        text-decoration: none;
+      }
     }
   }
-  .active{
+  .active a{
     background-color: var(--color-orange);
+    color: white;
   }
 }
