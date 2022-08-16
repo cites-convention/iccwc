@@ -326,6 +326,9 @@ blockquote{
     &:first-child{
       margin-top: 0;
     }
+    &:last-child{
+      border-bottom: solid 1px var(--color-gray);
+    }
     border-top: solid 1px var(--color-gray);
     align-items: center;
     margin-top: 20px;
@@ -381,7 +384,7 @@ blockquote{
     content: none;
   }
 
-  a[aria-expanded="true"] + a .arrow {
+  a[aria-expanded="true"] .arrow {
     transform: rotate(225deg);
   }
   li{
@@ -392,24 +395,15 @@ blockquote{
   }
   input[type=checkbox]{
     -webkit-appearance: none;
-    background-color: white;
-    border: 1px solid #999999;
-    padding: 6px;
+    padding: 10px;
     border-radius: 0;
     display: inline-block;
     position: relative;
     margin-right: 10px;
+    background-image: url("../icons/checkbox.svg");
+    bottom: -4px;
     &:checked{
-      background-color: var(--color-orange);
-      border-color: var(--color-orange);
-      &:after{
-        content: '\2714';
-        position: absolute;
-        top: -7px;
-        left: -1px;
-        color: white;
-        font-size: large;
-      }
+      background-image: url("../icons/checked.svg");
     }
     &:checked + label {
       color: var(--color-orange);
@@ -481,4 +475,28 @@ blockquote{
   }
   border: 1px solid var(--color-gray);
   border-radius: 10px;
+}
+
+.pager {
+  margin-top: 40px;
+  li {
+    -webkit-appearance: none;
+    padding: 0;
+    border-radius: 10px;
+    a {
+      color: #231F20;
+      display: block;
+      padding: 10px 17px;
+      background-color: var(--color-gray-light-1);
+      font-weight: 700;
+      border-radius: 10px;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .active a{
+    background-color: var(--color-orange);
+    color: white;
+  }
 }
