@@ -7709,18 +7709,6 @@ h1 a:hover, .h1 a:hover, h1 a:active, .h1 a:active, h2 a:hover, .h2 a:hover, h2 
   position: absolute;
 }
 
-.field--type-text-long,
-.field--type-text-with-summary {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
 .field--type-text-long ul li::marker,
 .field--type-text-with-summary ul li::marker {
   color: var(--color-orange);
@@ -7794,6 +7782,11 @@ blockquote p:after {
   padding: 20px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
+  max-width: 100%;
+}
+.image-container img {
+  max-width: 100%;
+  height: auto;
 }
 
 .layout-section {
@@ -7802,13 +7795,13 @@ blockquote p:after {
 .layout-section:first-child {
   padding-top: 10px;
 }
-.layout-section.column-border {
+.layout-section.column-border .container {
   padding-bottom: 0;
 }
-.layout-section.column-border .row > * {
+.layout-section.column-border .container > .row > * {
   padding: 0 40px;
 }
-.layout-section.column-border .layout-builder__layout > div {
+.layout-section.column-border .container .layout-builder__layout > div {
   padding-bottom: 80px;
 }
 
@@ -7826,7 +7819,7 @@ blockquote p:after {
   background-color: var(--color-gray-light) !important;
 }
 
-.block-centered {
+.block-centered .block-content {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7837,7 +7830,7 @@ blockquote p:after {
           justify-content: center;
 }
 
-.block-border {
+.block-border .block-content {
   padding: 20px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
@@ -8174,6 +8167,25 @@ blockquote p:after {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.align-center {
+  margin-left: -50%;
+  -webkit-transform: translate(50%);
+          transform: translate(50%);
+  display: inline-block;
+}
+
+h2.block-title, .block-title.h2 {
+  font-weight: bold;
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.block + .block {
+  margin-top: 15px;
 }
 
 :root {
