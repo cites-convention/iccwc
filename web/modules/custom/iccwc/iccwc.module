@@ -41,7 +41,7 @@ function iccwc_theme($existing, $type, $theme, $path) {
         'tag' => '',
         'date' => '',
         'bundle' => '',
-        'form' => '',
+        'search_form' => '',
       ],
     ],
     'related_content' => [

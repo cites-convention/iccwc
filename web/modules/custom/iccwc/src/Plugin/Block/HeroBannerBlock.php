@@ -40,6 +40,13 @@ class HeroBannerBlock extends ICCWCBlockBase {
   protected $formBuilder;
 
   /**
+   * The renderer service.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
+   */
+  protected $renderer;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -47,6 +54,7 @@ class HeroBannerBlock extends ICCWCBlockBase {
     $instance->breadcrumb = $container->get('breadcrumb');
     $instance->iccwcManager = $container->get('iccwc.manager');
     $instance->formBuilder = $container->get('form_builder');
+    $instance->formBuilder = $container->get('renderer');
     return $instance;
   }
 
@@ -118,7 +126,8 @@ class HeroBannerBlock extends ICCWCBlockBase {
       '#date' => $this->dateFormatter->format($node->getCreatedTime(), 'd_f_y'),
       '#tag' => $tag,
       '#bundle' => $node->bundle(),
-      '#form' => $form,
+      // For some reason, sending this as a renderable array breaks page CSS.
+      '#search_form' => $this->renderer->renderRoot($form),
     ];
   }
 
