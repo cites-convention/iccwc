@@ -53,6 +53,7 @@
         "drupal/backup_migrate": "5.0.1",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "1.2.0",
+        "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/ckeditor_quote": "^1.0",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-recommended": "^9.4",

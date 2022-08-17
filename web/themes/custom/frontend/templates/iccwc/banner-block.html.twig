@@ -17,8 +17,14 @@
           </div>
         {% endif %}
         <h1>{{ title }}</h1>
-        <div class="summary">{{ summary }}</div>
-        {{ form }}
+        {% if summary %}
+          <div class="summary">{{ summary | raw }}</div>
+        {% endif %}
+        {% if search_form %}
+          <div class="form">
+            {{ search_form }}
+          </div>
+        {% endif %}
       </div>
       <div class="caption">{{ caption }}</div>
     </div>

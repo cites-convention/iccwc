@@ -5,6 +5,7 @@ dependencies:
   module:
     - blazy
     - editor
+    - iccwc
     - media
     - slick
     - spamspan
@@ -43,6 +44,7 @@ filters:
       default_view_mode: default
       allowed_view_modes: {  }
       allowed_media_types:
+        file: file
         image: image
   filter_spamspan:
     id: filter_spamspan
@@ -146,4 +148,10 @@ filters:
     provider: filter
     status: false
     weight: -41
+    settings: {  }
+  marine_media_link:
+    id: marine_media_link
+    provider: iccwc
+    status: true
+    weight: -50
     settings: {  }
