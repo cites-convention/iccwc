@@ -526,6 +526,6 @@ h2.block-title {
   @include heading-5;
 }
 
-.block + .block {
+.region--content .block + .block {
   margin-top: 15px;
 }
