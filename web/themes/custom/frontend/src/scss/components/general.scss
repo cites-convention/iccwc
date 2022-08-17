@@ -526,6 +526,10 @@ h2.block-title {
   @include heading-5;
 }
 
+<<<<<<< HEAD
 .block + .block:not(.block-lang-dropdown, .block-dark-mode-switch) {
+=======
+.region--content .block + .block {
+>>>>>>> eb218758b6abb94bb77193bdc84541e28af189de
   margin-top: 15px;
 }
