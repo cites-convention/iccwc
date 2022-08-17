@@ -247,7 +247,7 @@ blockquote p:after {
   background-color: var(--color-gray-light) !important;
 }
 
-.block-centered {
+.block-centered .block-content {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -258,7 +258,7 @@ blockquote p:after {
           justify-content: center;
 }
 
-.block-border {
+.block-border .block-content {
   padding: 20px;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
@@ -602,5 +602,17 @@ blockquote p:after {
   -webkit-transform: translate(50%);
           transform: translate(50%);
   display: inline-block;
+}
+
+h2.block-title {
+  font-weight: bold;
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.block + .block {
+  margin-top: 15px;
 }
 /*# sourceMappingURL=../map/components/general.css.map */

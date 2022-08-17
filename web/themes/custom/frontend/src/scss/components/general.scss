@@ -221,14 +221,18 @@ blockquote{
 }
 
 .block-centered {
-  display: flex;
-  justify-content: center;
+  .block-content {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .block-border {
-  padding: 20px;
-  border: 1px solid var(--color-gray);
-  border-radius: 10px;
+  .block-content {
+    padding: 20px;
+    border: 1px solid var(--color-gray);
+    border-radius: 10px;
+  }
 }
 
 .field--name-field-caption {
@@ -516,4 +520,12 @@ blockquote{
   margin-left: -50%;
   transform: translate(50%);
   display: inline-block;
+}
+
+h2.block-title {
+  @include heading-5;
+}
+
+.block + .block {
+  margin-top: 15px;
 }
