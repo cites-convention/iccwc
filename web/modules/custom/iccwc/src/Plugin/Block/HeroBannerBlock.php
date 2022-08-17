@@ -54,7 +54,7 @@ class HeroBannerBlock extends ICCWCBlockBase {
     $instance->breadcrumb = $container->get('breadcrumb');
     $instance->iccwcManager = $container->get('iccwc.manager');
     $instance->formBuilder = $container->get('form_builder');
-    $instance->formBuilder = $container->get('renderer');
+    $instance->renderer = $container->get('renderer');
     return $instance;
   }
 
