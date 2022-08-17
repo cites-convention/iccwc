@@ -1,9 +1,7 @@
 @charset "UTF-8";
 :root {
   --color-orange: #E87722;
-  --color-orange-darker: #C4661E;
   --color-yellow: #F5CD26;
-  --color-yellow-darker: #AB901B;
   --color-black: #231F20;
   --color-text: #231F20;
   --color-white: #FFFFFF;
@@ -223,7 +221,7 @@ blockquote p:after {
   padding: 80px 0;
 }
 .layout-section:first-child {
-  padding-top: 10px;
+  padding-top: 0;
 }
 .layout-section.column-border .container {
   padding-bottom: 0;
@@ -286,7 +284,7 @@ blockquote p:after {
   display: flex;
   border: 1px solid var(--color-gray);
   border-radius: 5px;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px;
   margin: 10px;
   color: var(--color-black);
   font-family: "Open Sans", serif;
@@ -307,7 +305,7 @@ blockquote p:after {
   margin-right: 10px;
 }
 .field--name-field-links a:hover {
-  background: var(--color-gray-light-2);
+  background: var(--color-gray-light-3);
 }
 
 .column-border .layout-builder__layout > div + div {
@@ -385,7 +383,7 @@ blockquote p:after {
   margin-right: 10px;
 }
 .block-field-blocknodenewsfield-tags .field--name-field-tags .field__items a:hover {
-  background-color: var(--color-gray);
+  background-color: var(--color-gray-light-3);
 }
 
 .view-search .views-row {
@@ -614,7 +612,7 @@ h2.block-title {
   line-height: 26px;
 }
 
-.block + .block {
+.block + .block:not(.block-lang-dropdown, .block-dark-mode-switch) {
   margin-top: 15px;
 }
 /*# sourceMappingURL=../map/components/general.css.map */

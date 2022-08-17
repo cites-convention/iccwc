@@ -188,7 +188,7 @@ blockquote{
   padding: 80px 0;
 
   &:first-child {
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   &.column-border .container {
@@ -252,7 +252,7 @@ blockquote{
     display: flex;
     border: 1px solid var(--color-gray);
     border-radius: 5px;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
     margin: 10px;
     color: var(--color-black);
     font-family: 'Open Sans', serif;
@@ -272,7 +272,7 @@ blockquote{
       margin-right: 10px;
     }
     &:hover{
-      background: var(--color-gray-light-2);
+      background: var(--color-gray-light-3);
     }
   }
 }
@@ -327,7 +327,7 @@ blockquote{
       font-weight: 700;
       margin-right: 10px;
       &:hover{
-        background-color: var(--color-gray);
+        background-color: var(--color-gray-light-3);
       }
     }
   }
@@ -526,6 +526,6 @@ h2.block-title {
   @include heading-5;
 }
 
-.block + .block {
+.block + .block:not(.block-lang-dropdown, .block-dark-mode-switch) {
   margin-top: 15px;
 }
