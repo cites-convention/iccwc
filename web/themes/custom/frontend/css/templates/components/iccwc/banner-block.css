@@ -32,6 +32,9 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
+.block-iccwc-hero-banner img {
+  max-width: none;
+}
 .block-iccwc-hero-banner .tags {
   display: -webkit-box;
   display: -webkit-flex;

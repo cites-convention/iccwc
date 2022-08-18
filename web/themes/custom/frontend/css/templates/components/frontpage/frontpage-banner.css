@@ -39,6 +39,9 @@
   background: var(--color-orange);
   z-index: -1;
 }
+.block-inline-blockfrontpage-banner img {
+  max-width: none;
+}
 .block-inline-blockfrontpage-banner .background-image {
   position: absolute;
   top: 0;

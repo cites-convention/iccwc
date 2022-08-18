@@ -1,0 +1,24 @@
+.vertical-tabs {
+  .nav-pills {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .nav-pills {
+      display: flex;
+    }
+    .tab-pane .border {
+      display: none;
+    }
+    .tab-pane .collapse {
+      display: block;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .tab-content > .tab-pane {
+      display: block !important;
+      opacity: 1;
+    }
+  }
+}

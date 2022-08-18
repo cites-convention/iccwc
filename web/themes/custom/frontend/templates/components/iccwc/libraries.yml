@@ -25,3 +25,8 @@ partners:
   css:
     component:
       css/templates/components/iccwc/partners.css: { }
+
+vertical_tabs:
+  css:
+    component:
+      css/templates/components/iccwc/vertical-tabs.css: { }

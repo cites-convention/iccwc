@@ -505,6 +505,14 @@ h2.block-title {
   @include heading-5;
 }
 
-.region--content .block + .block {
-  margin-top: 15px;
+.region-content {
+  .block + .block {
+    margin-top: 15px;
+  }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+

@@ -37,36 +37,56 @@
  * @see template_preprocess_field()
  */
 #}
+{{ attach_library('frontend/vertical_tabs') }}
 
 {% if titles %}
-  <div class="d-flex align-items-start">
+  <div class="vertical-tabs d-flex align-items-start">
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       {% for title in titles %}
+        {% set selected = 'false' %}
         {% if loop.index == 1 %}
-          <button class="nav-link active" id="v-pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{ loop.index }}"
-                  type="button" role="tab" aria-controls="v-pills-{{ loop.index }}" aria-selected="true">
-            {{ title }}
-          </button>
-        {% else %}
-          <button class="nav-link" id="v-pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{ loop.index }}"
-                  type="button" role="tab" aria-controls="v-pills-{{ loop.index }}" aria-selected="false">
-            {{ title }}
-          </button>
+          {% set selected = 'true' %}
         {% endif %}
+
+        <button class="nav-link {% if loop.index == 1 %}active{% endif %}" id="v-pills-{{ loop.index }}-tab" data-bs-toggle="pill"
+                data-bs-target="#v-pills-{{ loop.index }}"
+                type="button" role="tab" aria-controls="v-pills-{{ loop.index }}" aria-selected="{{ selected }}">
+          {{ title }}
+        </button>
       {% endfor %}
     </div>
 
-    <div class="tab-content" id="v-pills-tabContent">
-      {% for item in items %}
+    <div id="content" class="tab-content" role="tablist">
+      {% for idx, item in items %}
+        {% set classes = [
+          'tab-pane',
+          'fade',
+          loop.index == 1 ? 'show',
+          loop.index == 1 ? 'active',
+        ] %}
+
+        {% set expanded = 'false' %}
         {% if loop.index == 1 %}
-          <div{{ item.attributes.addClass('tab-pane fade show active') }} id="v-pills-{{ loop.index }}" role="tabpanel" aria-labelledby="v-pills-{{ loop.index }}-tab">
-            {{ item.content }}
-          </div>
-        {% else %}
-          <div{{ item.attributes.addClass('tab-pane fade') }} id="v-pills-{{ loop.index }}" role="tabpanel" aria-labelledby="v-pills-{{ loop.index }}-tab">
-            {{ item.content }}
-          </div>
+          {% set expanded = 'true' %}
         {% endif %}
+
+        <div {{ item.attributes.addClass(classes) }} id="v-pills-{{ loop.index }}" role="tabpanel"
+                                                     aria-labelledby="v-pills-{{ loop.index }}-tab">
+          <div class="border rounded p-2" role="tab" id="heading-A">
+            <h5 class="mb-0">
+              <a data-bs-toggle="collapse" href="#collapse-acc-{{ loop.index }}" aria-expanded="{{ expanded }}"
+                 aria-controls="collapse-acc-{{ loop.index }}">
+                {{ titles[idx] }}
+              </a>
+            </h5>
+          </div>
+          <div id="collapse-acc-{{ loop.index }}" class="collapse {% if loop.index == 1 %}show{% endif %}" data-bs-parent="#content" role="tabpanel"
+               aria-labelledby="collapse-acc-{{ loop.index }}">
+            <div class="card-body">
+              {{ item.content }}
+            </div>
+          </div>
+        </div>
       {% endfor %}
     </div>
   </div>
