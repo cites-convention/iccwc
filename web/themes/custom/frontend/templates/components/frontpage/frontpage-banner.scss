@@ -58,6 +58,7 @@
   .whats-new {
     @include heading-6;
 
+    text-transform: uppercase;
     margin-bottom: 20px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     color: var(--color-white);

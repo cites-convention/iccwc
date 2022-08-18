@@ -25,7 +25,7 @@ a {
   color: var(--color-blue);
 
   &:hover, &:active {
-    color: var(--color-blue);
+    color: var(--color-blue-hover);
     text-decoration: underline;
   }
 }
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h5 {
     color: var(--color-text);
 
     &:hover, &:active {
-      color: var(--color-blue);
+      color: var(--color-blue-hover);
     }
   }
 }
@@ -188,7 +188,7 @@ blockquote{
   padding: 80px 0;
 
   &:first-child {
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   &.column-border .container {
@@ -252,7 +252,7 @@ blockquote{
     display: flex;
     border: 1px solid var(--color-gray);
     border-radius: 5px;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
     margin: 10px;
     color: var(--color-black);
     font-family: 'Open Sans', serif;
@@ -272,7 +272,7 @@ blockquote{
       margin-right: 10px;
     }
     &:hover{
-      background: var(--color-gray-light-2);
+      background: var(--color-gray-light-3);
     }
   }
 }
@@ -327,7 +327,7 @@ blockquote{
       font-weight: 700;
       margin-right: 10px;
       &:hover{
-        background-color: var(--color-gray);
+        background-color: var(--color-gray-light-3);
       }
     }
   }
@@ -526,6 +526,10 @@ h2.block-title {
   @include heading-5;
 }
 
+<<<<<<< HEAD
+.block + .block:not(.block-lang-dropdown, .block-dark-mode-switch) {
+=======
 .region--content .block + .block {
+>>>>>>> eb218758b6abb94bb77193bdc84541e28af189de
   margin-top: 15px;
 }
