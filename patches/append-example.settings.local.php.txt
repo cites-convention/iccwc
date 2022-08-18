@@ -7,6 +7,7 @@ $settings['file_private_path'] = realpath($app_root . '/../private');
 
 /** Customize to your local configuration */
 $databases['default']['default'] = array (
+  'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],
   'database' => 'iccwc',
   'username' => 'root',
   'password' => 'root',

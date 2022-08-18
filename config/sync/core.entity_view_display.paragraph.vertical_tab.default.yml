@@ -22,7 +22,7 @@ mode: default
 content:
   field_button_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -34,7 +34,7 @@ content:
     region: content
   field_button_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -42,14 +42,14 @@ content:
     region: content
   field_description:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   field_image:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
@@ -60,7 +60,7 @@ content:
     region: content
   field_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -68,7 +68,7 @@ content:
     region: content
   field_video:
     type: youtube_video
-    label: above
+    label: hidden
     settings:
       youtube_size: 450x315
       youtube_width: ''

@@ -157,3 +157,16 @@ function frontend_preprocess_node(&$variables) {
   $node = $variables['node'];
   $variables['page'] = ($variables['view_mode'] == 'full' && (node_is_page($node)) || (isset($node->in_preview) && in_array($node->preview_view_mode, ['full', 'default'])));
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for field__block_content__field_tabs.
+ */
+function frontend_preprocess_field__block_content__field_tabs(&$variables) {
+  $titles = [];
+
+  foreach ($variables['items'] as $tab) {
+    $titles[] = $tab['content']['#paragraph']->get('field_title')->value;
+  }
+
+  $variables['titles'] = $titles;
+}
