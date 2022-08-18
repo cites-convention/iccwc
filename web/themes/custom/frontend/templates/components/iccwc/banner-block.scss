@@ -38,6 +38,17 @@
   position: relative;
   box-sizing: content-box;
 
+  &:after {
+    content: '';
+    background: var(--color-orange);
+    z-index: -2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .title-subtitle {
     .button.js-form-submit.form-submit.btn.btn-primary{
       left: 260px;

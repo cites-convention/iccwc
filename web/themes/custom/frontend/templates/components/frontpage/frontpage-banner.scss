@@ -12,11 +12,14 @@
     padding: 38px 93px 0 93px;
     height: 620px;
     margin-top: -1px;
+    display: flex;
+    justify-content: center;
+    background: var(--color-orange);
+    z-index: -1;
   }
 
   .background-image {
     position: absolute;
-    left: 0;
     top: 0;
     z-index: -1;
     max-width: 100%;
