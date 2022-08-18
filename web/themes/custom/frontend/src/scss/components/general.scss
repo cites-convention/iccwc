@@ -242,11 +242,7 @@ blockquote{
   text-align: right;
 }
 
-.container {
-
-}
-
-.field--name-field-links{
+.field--name-field-links {
   display: flex;
   a {
     display: flex;
@@ -332,7 +328,8 @@ blockquote{
     }
   }
 }
-.view-search{
+
+.view-search {
   .views-row{
     &:first-child{
       margin-top: 0;
@@ -347,7 +344,7 @@ blockquote{
 
 }
 
-.node--view-mode-search-teaser{
+.node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
   h3{
     @include heading-5;
@@ -375,6 +372,7 @@ blockquote{
     @include max-lines(3);
   }
 }
+
 .facets-widget-checkbox {
   a{
     text-decoration: none;
@@ -423,7 +421,7 @@ blockquote{
   position: relative;
 }
 
-  .arrow {
+.arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -460,25 +458,6 @@ blockquote{
   }
 }
 
-.hero-block .iccwc-search-form input[type=text] {
-  padding: 10px;
-  width: 300px;
-  height: 45px;
-  border-radius: 20px;
-  justify-content: space-between;
-  gap: 85px;
-}
-
-.hero-block .title-subtitle {
-  .button.js-form-submit.form-submit.btn.btn-primary{
-    left: 260px;
-    position: absolute;
-  }
-  .form-text{
-    margin-top: 0;
-  }
-  position: relative;
-}
 .block-iccwc-sidebar-filters {
   .facets-widget-checkbox + .facets-widget-checkbox {
     border-top: 1px solid var(--color-gray);
