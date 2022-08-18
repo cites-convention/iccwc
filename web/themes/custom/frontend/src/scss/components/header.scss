@@ -3,6 +3,10 @@
 .block-dark-mode-switch {
   display: flex;
   justify-content: center;
+
+  .block-content {
+    display: flex;
+  }
 }
 
 .block-lang-dropdown {
