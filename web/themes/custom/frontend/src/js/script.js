@@ -12,6 +12,7 @@
    */
   Drupal.behaviors.iccwc = {
     attach(context, settings) {
+      $('.slideshow-flipster').flipster();
     },
   };
 })(jQuery, Drupal);

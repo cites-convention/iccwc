@@ -14,3 +14,9 @@ js-latest:
   dependencies:
     - core/popperjs
 
+flipster:
+  js:
+    js/jquery.flipster.min.js: {}
+  css:
+    theme:
+      css/jquery.flipster.min.css: {}
