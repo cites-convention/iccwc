@@ -125,17 +125,17 @@ filters:
       thumbnail_effect: ''
       thumbnail_position: ''
       override: false
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: true
-    weight: -50
-    settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: false
     weight: -40
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -41
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
@@ -143,11 +143,11 @@ filters:
     status: false
     weight: -37
     settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: false
-    weight: -41
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: true
+    weight: -50
     settings: {  }
   marine_media_link:
     id: marine_media_link
