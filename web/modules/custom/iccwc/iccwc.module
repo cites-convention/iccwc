@@ -142,4 +142,3 @@ function iccwc_search_api_query_alter(QueryInterface $query) {
     $query->addCondition('type', 'news');
   }
 }
-

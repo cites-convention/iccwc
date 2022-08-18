@@ -25,7 +25,7 @@ a {
   color: var(--color-blue);
 
   &:hover, &:active {
-    color: var(--color-blue);
+    color: var(--color-blue-hover);
     text-decoration: underline;
   }
 }
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h5 {
     color: var(--color-text);
 
     &:hover, &:active {
-      color: var(--color-blue);
+      color: var(--color-blue-hover);
     }
   }
 }
@@ -188,7 +188,7 @@ blockquote{
   padding: 80px 0;
 
   &:first-child {
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   &.column-border .container {
@@ -242,17 +242,13 @@ blockquote{
   text-align: right;
 }
 
-.container {
-
-}
-
-.field--name-field-links{
+.field--name-field-links {
   display: flex;
   a {
     display: flex;
     border: 1px solid var(--color-gray);
     border-radius: 5px;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
     margin: 10px;
     color: var(--color-black);
     font-family: 'Open Sans', serif;
@@ -272,7 +268,7 @@ blockquote{
       margin-right: 10px;
     }
     &:hover{
-      background: var(--color-gray-light-2);
+      background: var(--color-gray-light-3);
     }
   }
 }
@@ -327,12 +323,13 @@ blockquote{
       font-weight: 700;
       margin-right: 10px;
       &:hover{
-        background-color: var(--color-gray);
+        background-color: var(--color-gray-light-3);
       }
     }
   }
 }
-.view-search{
+
+.view-search {
   .views-row{
     &:first-child{
       margin-top: 0;
@@ -347,7 +344,7 @@ blockquote{
 
 }
 
-.node--view-mode-search-teaser{
+.node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
   &.node--type-partner{
     p{
@@ -392,6 +389,7 @@ blockquote{
   }
 
 }
+
 .facets-widget-checkbox {
   a{
     text-decoration: none;
@@ -440,7 +438,7 @@ blockquote{
   position: relative;
 }
 
-  .arrow {
+.arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -477,25 +475,6 @@ blockquote{
   }
 }
 
-.hero-block .iccwc-search-form input[type=text] {
-  padding: 10px;
-  width: 300px;
-  height: 45px;
-  border-radius: 20px;
-  justify-content: space-between;
-  gap: 85px;
-}
-
-.hero-block .title-subtitle {
-  .button.js-form-submit.form-submit.btn.btn-primary{
-    left: 260px;
-    position: absolute;
-  }
-  .form-text{
-    margin-top: 0;
-  }
-  position: relative;
-}
 .block-iccwc-sidebar-filters {
   .facets-widget-checkbox + .facets-widget-checkbox {
     border-top: 1px solid var(--color-gray);
@@ -543,6 +522,14 @@ h2.block-title {
   @include heading-5;
 }
 
-.region--content .block + .block {
-  margin-top: 15px;
+.region-content {
+  .block + .block {
+    margin-top: 15px;
+  }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+

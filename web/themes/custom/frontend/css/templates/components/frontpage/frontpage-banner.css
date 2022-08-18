@@ -1,18 +1,18 @@
 :root {
   --color-orange: #E87722;
-  --color-orange-darker: #C4661E;
   --color-yellow: #F5CD26;
-  --color-yellow-darker: #AB901B;
-  --color-black: #1E1E1E;
-  --color-text: #1E1E1E;
+  --color-black: #231F20;
+  --color-text: #231F20;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
-  --color-gray-light: #FAFAFA;
-  --color-gray-light-1: #F2F2F2;
-  --color-gray-light-2: #F4F4F4;
+  --color-gray-light-1: #FAFAFA;
+  --color-gray-light-2: #F7F7F7;
+  --color-gray-light-3: #F2F2F2;
+  --color-gray-light-4: #EAEAEA;
   --color-gray-darker: #999999;
-  --color-gray-darker-2: #4B4B4B;
-  --color-blue: #0065FF;
+  --color-gray-darker-2: #848283;
+  --color-blue: #0051CC;
+  --color-blue-hover: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
 
@@ -28,10 +28,22 @@
   padding: 38px 93px 0 93px;
   height: 620px;
   margin-top: -1px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: var(--color-orange);
+  z-index: -1;
+}
+.block-inline-blockfrontpage-banner img {
+  max-width: none;
 }
 .block-inline-blockfrontpage-banner .background-image {
   position: absolute;
-  left: 0;
   top: 0;
   z-index: -1;
   max-width: 100%;
@@ -89,6 +101,7 @@
   color: var(--color-text);
   font-size: 20px;
   line-height: 22px;
+  text-transform: uppercase;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
   color: var(--color-white);

@@ -769,6 +769,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  */
 
 $databases['default']['default'] = array (
+  'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],
   'database' => 'iccwc',
   'username' => 'root',
   'password' => 'root',

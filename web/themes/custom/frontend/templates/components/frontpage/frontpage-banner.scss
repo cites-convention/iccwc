@@ -12,11 +12,18 @@
     padding: 38px 93px 0 93px;
     height: 620px;
     margin-top: -1px;
+    display: flex;
+    justify-content: center;
+    background: var(--color-orange);
+    z-index: -1;
+  }
+
+  img {
+    max-width: none;
   }
 
   .background-image {
     position: absolute;
-    left: 0;
     top: 0;
     z-index: -1;
     max-width: 100%;
@@ -58,6 +65,7 @@
   .whats-new {
     @include heading-6;
 
+    text-transform: uppercase;
     margin-bottom: 20px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     color: var(--color-white);

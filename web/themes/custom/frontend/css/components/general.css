@@ -1,19 +1,19 @@
 @charset "UTF-8";
 :root {
   --color-orange: #E87722;
-  --color-orange-darker: #C4661E;
   --color-yellow: #F5CD26;
-  --color-yellow-darker: #AB901B;
-  --color-black: #1E1E1E;
-  --color-text: #1E1E1E;
+  --color-black: #231F20;
+  --color-text: #231F20;
   --color-white: #FFFFFF;
   --color-gray: #E5E5E5;
-  --color-gray-light: #FAFAFA;
-  --color-gray-light-1: #F2F2F2;
-  --color-gray-light-2: #F4F4F4;
+  --color-gray-light-1: #FAFAFA;
+  --color-gray-light-2: #F7F7F7;
+  --color-gray-light-3: #F2F2F2;
+  --color-gray-light-4: #EAEAEA;
   --color-gray-darker: #999999;
-  --color-gray-darker-2: #4B4B4B;
-  --color-blue: #0065FF;
+  --color-gray-darker-2: #848283;
+  --color-blue: #0051CC;
+  --color-blue-hover: #0065FF;
   --body-font-family: "Open Sans", sans-serif, ;
 }
 
@@ -57,7 +57,7 @@ a {
   color: var(--color-blue);
 }
 a:hover, a:active {
-  color: var(--color-blue);
+  color: var(--color-blue-hover);
   text-decoration: underline;
 }
 
@@ -65,7 +65,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h5 a {
   color: var(--color-text);
 }
 h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:hover, h4 a:active, h5 a:hover, h5 a:active, h5 a:hover, h5 a:active {
-  color: var(--color-blue);
+  color: var(--color-blue-hover);
 }
 
 .btn-iccwc {
@@ -221,7 +221,7 @@ blockquote p:after {
   padding: 80px 0;
 }
 .layout-section:first-child {
-  padding-top: 10px;
+  padding-top: 0;
 }
 .layout-section.column-border .container {
   padding-bottom: 0;
@@ -284,7 +284,7 @@ blockquote p:after {
   display: flex;
   border: 1px solid var(--color-gray);
   border-radius: 5px;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px;
   margin: 10px;
   color: var(--color-black);
   font-family: "Open Sans", serif;
@@ -305,7 +305,7 @@ blockquote p:after {
   margin-right: 10px;
 }
 .field--name-field-links a:hover {
-  background: var(--color-gray-light-2);
+  background: var(--color-gray-light-3);
 }
 
 .column-border .layout-builder__layout > div + div {
@@ -383,7 +383,7 @@ blockquote p:after {
   margin-right: 10px;
 }
 .block-field-blocknodenewsfield-tags .field--name-field-tags .field__items a:hover {
-  background-color: var(--color-gray);
+  background-color: var(--color-gray-light-3);
 }
 
 .view-search .views-row {
@@ -404,21 +404,6 @@ blockquote p:after {
 .node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
 }
-.node--view-mode-search-teaser.node--type-partner p {
-  line-clamp: none;
-  display: block;
-  border-radius: 0;
-}
-.node--view-mode-search-teaser.node--type-partner .image-container {
-  border: none;
-}
-.node--view-mode-search-teaser.node--type-partner img {
-  border: none;
-  width: 100%;
-}
-.node--view-mode-search-teaser.node--type-partner h3, .node--view-mode-search-teaser.node--type-partner p {
-  text-align: left;
-}
 .node--view-mode-search-teaser h3 {
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
@@ -429,6 +414,8 @@ blockquote p:after {
 .node--view-mode-search-teaser img {
   border: 4px solid var(--color-orange);
   border-radius: 10px;
+  width: 100%;
+  height: auto;
 }
 .node--view-mode-search-teaser .row {
   -webkit-box-align: center;
@@ -548,29 +535,6 @@ blockquote p:after {
   text-decoration: none;
 }
 
-.hero-block .iccwc-search-form input[type=text] {
-  padding: 10px;
-  width: 300px;
-  height: 45px;
-  border-radius: 20px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 85px;
-}
-
-.hero-block .title-subtitle {
-  position: relative;
-}
-.hero-block .title-subtitle .button.js-form-submit.form-submit.btn.btn-primary {
-  left: 260px;
-  position: absolute;
-}
-.hero-block .title-subtitle .form-text {
-  margin-top: 0;
-}
-
 .block-iccwc-sidebar-filters {
   border: 1px solid var(--color-gray);
   border-radius: 10px;
@@ -625,7 +589,12 @@ h2.block-title {
   line-height: 26px;
 }
 
-.region--content .block + .block {
+.region-content .block + .block {
   margin-top: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=../map/components/general.css.map */
