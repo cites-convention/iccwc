@@ -497,6 +497,9 @@ blockquote{
 
 .align-center {
   display: inline-block;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
 }
 
 h2.block-title {
