@@ -10,11 +10,15 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
-
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
     <div class="col-md-4">
-      {{ content.field_image }}</div>
+      {% if content.field_external_url['0']["#title"]  %}
+      <a href="{{ content.field_external_url['0']["#title"]}}"> {{ content.field_image }}</a>
+        {% else %}
+      {{ content.field_image }}
+        {% endif %}
+      </div>
     <div class="col-md-8">
       {{ title_prefix }}
       {% if label and not page %}
@@ -23,8 +27,6 @@
         </h3>
       {% endif %}
       {{ title_suffix }}
-
-      {#      <div class="max-3-lines">#}
       <div>
         {{ content.body }}
       </div>
