@@ -1,0 +1,33 @@
+{{ attach_library('frontend/content_teasers') }}
+
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="row" {{ content_attributes.addClass('node__content') }}>
+    <div class="col-md-4">
+      {{ content.field_image }}</div>
+    <div class="col-md-8">
+      {{ title_prefix }}
+      {% if label and not page %}
+        <h3{{ title_attributes }}>
+          {{ label }}{{ content.field_amount }}
+        </h3>
+      {% endif %}
+      {{ title_suffix }}
+
+      {#      <div class="max-3-lines">#}
+      <div>
+        {{ content.body }}
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,11 @@
+uuid: a51813bc-1e0f-48b5-af7a-a6f13ae2188c
+langcode: en
+status: true
+dependencies: {  }
+id: donor_block
+block_id: 'views_block:partners_and_donors-block_3'
+category: page_content
+label: 'Donor block'
+image_path: ''
+image_alt: ''
+weight: -100

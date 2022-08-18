@@ -37,6 +37,11 @@
     line-height: 1;
     margin-bottom: 10px;
   }
+  &.node--type-partner{
+    img{
+      border: none;
+    }
+  }
   img {
     border: 4px solid var(--color-orange);
     border-radius: 10px;
