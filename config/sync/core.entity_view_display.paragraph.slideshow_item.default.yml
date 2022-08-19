@@ -8,8 +8,10 @@ dependencies:
     - field.field.paragraph.slideshow_item.field_media_image
     - field.field.paragraph.slideshow_item.field_title
     - paragraphs.paragraphs_type.slideshow_item
+    - responsive_image.styles.slideshow
   module:
     - link
+    - media_responsive_thumbnail
     - text
 id: paragraph.slideshow_item.default
 targetEntityType: paragraph
@@ -36,11 +38,11 @@ content:
     weight: 2
     region: content
   field_media_image:
-    type: entity_reference_entity_view
+    type: media_responsive_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      responsive_image_style: slideshow
+      image_link: ''
     third_party_settings: {  }
     weight: 3
     region: content
