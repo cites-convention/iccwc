@@ -9,7 +9,7 @@ _core:
 id: frontend_local_actions
 theme: frontend
 region: content_container
-weight: -3
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:
