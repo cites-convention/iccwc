@@ -149,12 +149,6 @@ filters:
     status: true
     weight: -50
     settings: {  }
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: true
-    weight: -50
-    settings: {  }
   marine_media_link:
     id: marine_media_link
     provider: iccwc
