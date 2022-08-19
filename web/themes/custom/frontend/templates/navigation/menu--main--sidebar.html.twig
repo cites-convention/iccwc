@@ -36,8 +36,10 @@
     {% endif %}
     {% set idx = 0 %}
     {% for item in items %}
-      <li{{ item.attributes }}>
-
+      {% set classes = [
+        item.in_active_trail ? 'is-active'
+      ] %}
+      <li{{ item.attributes.addClass(classes) }}>
         {% if menu_level == 0 %}
           <div class="link-wrapper">
             {{ link(item.title, item.url) }}
