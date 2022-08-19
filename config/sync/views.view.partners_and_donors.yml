@@ -308,10 +308,11 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Frontpage partners/donors'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
@@ -323,7 +324,7 @@ display:
       tags: {  }
   block_2:
     id: block_2
-    display_title: Partner
+    display_title: Partners
     display_plugin: block
     position: 2
     display_options:
@@ -485,18 +486,18 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
   block_3:
     id: block_3
-    display_title: Donor
+    display_title: Donors
     display_plugin: block
     position: 3
     display_options:
@@ -658,18 +659,18 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
   block_4:
     id: block_4
-    display_title: 'Past donor'
+    display_title: 'Past donors'
     display_plugin: block
     position: 4
     display_options:
@@ -831,11 +832,11 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
