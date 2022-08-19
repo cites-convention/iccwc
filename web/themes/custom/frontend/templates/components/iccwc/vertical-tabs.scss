@@ -1,17 +1,77 @@
+@import "../../../src/scss/variables_drupal";
 .vertical-tabs {
+  padding: 20px;
   .nav-pills {
     display: none;
   }
-
   @media (min-width: 768px) {
     .nav-pills {
+      //margin-left: 15%;
+      //width: 20%;
       display: flex;
+      .nav-link{
+        text-decoration: none;
+        color: var(--color-gray-darker);
+        font-weight: 700;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        &:before {
+          content: '◼';
+          margin-right: 20px;
+          margin-top: 20px;
+          width: 10px;
+          height: 10px;
+        }
+        &.active{
+          color: var(--color-orange);
+          background-color: white;
+        }
+      }
     }
     .tab-pane .border {
       display: none;
     }
     .tab-pane .collapse {
       display: block;
+    }
+    .tab-pane{
+      .image-container{
+        border: none;
+        img{
+          //max-width: none;
+        }
+      }
+      .col-md-8{
+        position: relative;
+        a{
+          bottom: 0;
+          position: absolute;
+          //margin-top: 30px;
+        }
+      }
+      .col-md-4{
+        position: relative;
+      }
+      p{
+        @include max-lines(8);
+        //padding-right: 10%;
+        margin-top: 20px;
+      }
+      .card-body{
+        position: relative;
+        padding: 20px;
+        display: flex;
+        padding-right: 10px;
+        border: 1px solid var(--color-gray);
+        border-radius: 10px;
+        iframe{
+          width: 100%;
+          //height: auto;
+          padding: 20px;
+        }
+      }
     }
   }
 

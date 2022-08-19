@@ -1,1 +1,104 @@
-.vertical-tabs .nav-pills{display:none}@media(min-width: 768px){.vertical-tabs .nav-pills{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.vertical-tabs .tab-pane .border{display:none}.vertical-tabs .tab-pane .collapse{display:block}}@media(max-width: 767px){.vertical-tabs .tab-content>.tab-pane{display:block !important;opacity:1}}
+@charset "UTF-8";
+:root {
+  --color-orange: #E87722;
+  --color-yellow: #F5CD26;
+  --color-black: #231F20;
+  --color-text: #231F20;
+  --color-white: #FFFFFF;
+  --color-gray: #E5E5E5;
+  --color-gray-light: #FAFAFA;
+  --color-gray-light-1: #FAFAFA;
+  --color-gray-light-2: #F7F7F7;
+  --color-gray-light-3: #F2F2F2;
+  --color-gray-light-4: #EAEAEA;
+  --color-gray-darker: #999999;
+  --color-gray-darker-2: #848283;
+  --color-blue: #0051CC;
+  --color-blue-hover: #0065FF;
+  --body-font-family: "Open Sans", sans-serif, ;
+}
+
+.vertical-tabs {
+  padding: 20px;
+}
+.vertical-tabs .nav-pills {
+  display: none;
+}
+@media (min-width: 768px) {
+  .vertical-tabs .nav-pills {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .vertical-tabs .nav-pills .nav-link {
+    text-decoration: none;
+    color: var(--color-gray-darker);
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+  .vertical-tabs .nav-pills .nav-link:before {
+    content: "◼";
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 10px;
+    height: 10px;
+  }
+  .vertical-tabs .nav-pills .nav-link.active {
+    color: var(--color-orange);
+    background-color: white;
+  }
+  .vertical-tabs .tab-pane .border {
+    display: none;
+  }
+  .vertical-tabs .tab-pane .collapse {
+    display: block;
+  }
+  .vertical-tabs .tab-pane .image-container {
+    border: none;
+  }
+  .vertical-tabs .tab-pane .col-md-8 {
+    position: relative;
+  }
+  .vertical-tabs .tab-pane .col-md-8 a {
+    bottom: 0;
+    position: absolute;
+  }
+  .vertical-tabs .tab-pane .col-md-4 {
+    position: relative;
+  }
+  .vertical-tabs .tab-pane p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
+    -webkit-box-orient: vertical;
+    margin-top: 20px;
+  }
+  .vertical-tabs .tab-pane .card-body {
+    position: relative;
+    padding: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 10px;
+    border: 1px solid var(--color-gray);
+    border-radius: 10px;
+  }
+  .vertical-tabs .tab-pane .card-body iframe {
+    width: 100%;
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .vertical-tabs .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=../../map/components/iccwc/vertical-tabs.css.map */
