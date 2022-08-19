@@ -1,1 +1,1 @@
-!function(i,c){c.behaviors.iccwc={attach(c,e){i(".slideshow-flipster").flipster()}}}(jQuery,Drupal);
+!function(c,a){a.behaviors.iccwc={attach(c,a){}}}(jQuery,Drupal);
