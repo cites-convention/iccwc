@@ -8,10 +8,7 @@
 %}
 {% block paragraph %}
   {% block content %}
-  <div class="col-md-8" >{{ content.field_description.0}}
-    <a href="{{ content.field_button_link.0["#title"] }}">{{ content.field_button_text }}</a>
-  </div>
-  <div class="col-md-4" >
+  <div class="col-md-6 order-md-last" >
     {% if content.field_video.0 %}
     {{ content.field_video.0 }}
   {% elseif content.field_media_image.0 %}
@@ -19,5 +16,8 @@
   {% endif %}
 {#        {{ dump(content) }}#}
   {% endblock %}
+  </div>
+  <div class="col-md-6" >{{ content.field_description.0}}
+    <a href="{{ content.field_button_link.0["#title"] }}" class="btn-iccwc btn-next">{{ content.field_button_text }}</a>
   </div>
 {% endblock paragraph %}

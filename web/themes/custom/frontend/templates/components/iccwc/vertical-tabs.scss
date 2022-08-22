@@ -1,76 +1,87 @@
 @import "../../../src/scss/variables_drupal";
 .vertical-tabs {
   padding: 20px;
+
   .nav-pills {
     display: none;
   }
+
+  .card-body {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--color-gray);
+    border-radius: 10px;
+  }
+
   @media (min-width: 768px) {
     .nav-pills {
-      //margin-left: 15%;
-      //width: 20%;
       display: flex;
-      .nav-link{
+      align-self: center;
+
+      .nav-link {
+        position: relative;
         text-decoration: none;
         color: var(--color-gray-darker);
         font-weight: 700;
-        display: block;
         width: 100%;
         padding: 10px;
         text-align: left;
+        display: flex;
+
         &:before {
           content: '◼';
-          margin-right: 20px;
-          margin-top: 20px;
           width: 10px;
           height: 10px;
+          position: absolute;
+          top: 8px;
+          left: -20px;
         }
-        &.active{
+
+        &.active {
           color: var(--color-orange);
           background-color: white;
         }
       }
     }
-    .tab-pane .border {
+    .tab-content .tab-pane h5 a {
       display: none;
     }
-    .tab-pane .collapse {
-      display: block;
-    }
-    .tab-pane{
-      .image-container{
+
+    .tab-pane {
+      & .collapse {
+        display: block;
+      }
+
+      .image-container {
         border: none;
-        img{
-          //max-width: none;
-        }
       }
-      .col-md-8{
-        position: relative;
-        a{
-          bottom: 0;
-          position: absolute;
-          //margin-top: 30px;
-        }
-      }
-      .col-md-4{
-        position: relative;
-      }
-      p{
-        @include max-lines(8);
-        //padding-right: 10%;
-        margin-top: 20px;
-      }
-      .card-body{
-        position: relative;
-        padding: 20px;
+
+      .col-md-6 {
         display: flex;
-        padding-right: 10px;
-        border: 1px solid var(--color-gray);
-        border-radius: 10px;
-        iframe{
-          width: 100%;
-          //height: auto;
-          padding: 20px;
+        flex-direction: column;
+        &:nth-child(2) {
+          padding: 15px;
         }
+        .btn-iccwc.btn-next{
+          margin-top: auto;
+          margin-right: auto;
+        }
+      }
+
+      p {
+        @include max-lines(7);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: var(--color-black);
+      }
+      iframe {
+        height: 100%;
+        width: 100%;
+      }
+      figure {
+        margin: 21.5px 14.5px;
       }
     }
   }
@@ -79,6 +90,37 @@
     .tab-content > .tab-pane {
       display: block !important;
       opacity: 1;
+    }
+    .tab-pane h5 a {
+      position: relative;
+      text-decoration: none;
+      color: var(--color-gray-darker);
+      font-weight: 700;
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      display: flex;
+      margin-left: 20px;
+      &:before {
+        content: '◼';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 9px;
+        left: -20px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      &[aria-expanded="true"] {
+        color: var(--color-orange);
+      }
+    }
+    .card-body {
+      padding: 16px 5px;
+    }
+    p {
+      @include max-lines(8);
     }
   }
 }
