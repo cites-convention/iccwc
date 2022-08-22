@@ -1,0 +1,32 @@
+@import "../../../src/scss/variables_drupal";
+
+.slideshow-item {
+  position: relative;
+  background: #E7C7C7;
+  opacity: 0.9;
+  border: 2px solid var(--color-white);
+
+  .info {
+    position: absolute;
+    padding: 30px 60px;
+    bottom: 0;
+    left: 0;
+    color: #FFF;
+
+    .title, .title a {
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      @include heading-4;
+      color: #FFF;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.flipster--coverflow .flipster__item__content {
+  -webkit-box-reflect: unset !important;
+  box-reflect: unset !important;
+}

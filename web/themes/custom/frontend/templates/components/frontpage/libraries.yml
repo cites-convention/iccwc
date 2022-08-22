@@ -2,3 +2,10 @@ frontpage_banner:
   css:
     component:
       css/templates/components/frontpage/frontpage-banner.css: {}
+
+slideshow:
+  css:
+    component:
+      css/templates/components/frontpage/slideshow.css: { }
+  js:
+    js/slideshow.js: { }
