@@ -8,6 +8,7 @@
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\search_api\Query\QueryInterface;
+use Drupal\Core\Language\LanguageInterface;
 
 /**
  * Implements hook_theme().
@@ -140,5 +141,16 @@ function iccwc_search_api_query_alter(QueryInterface $query) {
   $iccwc_manager = \Drupal::service('iccwc.manager');
   if ($iccwc_manager->isNewsPage()) {
     $query->addCondition('type', 'news');
+  }
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function iccwc_pathauto_pattern_alter(&$pattern, array $context) {
+  if ($context['module'] == 'node') {
+    if(!$context['data']['node']->path->getFieldDefinition()->isTranslatable()){
+      $context['language'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
+    }
   }
 }
