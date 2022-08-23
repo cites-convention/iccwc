@@ -244,6 +244,9 @@ blockquote p:after {
   padding-left: 20px;
   margin-bottom: 40px;
 }
+.section-title:not(:first-child) {
+  margin-top: 40px;
+}
 
 .layout-section.bs-bg-light {
   background-color: var(--color-gray-light) !important;
