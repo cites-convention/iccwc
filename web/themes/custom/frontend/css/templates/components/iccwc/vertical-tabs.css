@@ -33,6 +33,13 @@
   border: 1px solid var(--color-gray);
   border-radius: 10px;
 }
+.vertical-tabs .nav-link {
+  font-weight: bold;
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-text);
+  font-size: 26px;
+  line-height: 28px;
+}
 .vertical-tabs iframe {
   position: absolute;
   top: 0;
@@ -74,7 +81,7 @@
     width: 10px;
     height: 10px;
     position: absolute;
-    top: 8px;
+    top: 11px;
     left: -20px;
   }
   .vertical-tabs .nav-pills .nav-link.active {

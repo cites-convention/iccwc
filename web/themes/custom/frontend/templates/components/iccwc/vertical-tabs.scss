@@ -13,6 +13,10 @@
     border-radius: 10px;
   }
 
+  .nav-link {
+    @include heading-4;
+  }
+
   iframe {
     position: absolute;
     top: 0;
@@ -48,7 +52,7 @@
           width: 10px;
           height: 10px;
           position: absolute;
-          top: 8px;
+          top: 11px;
           left: -20px;
         }
 
