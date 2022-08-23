@@ -12,6 +12,7 @@
   --color-gray-light-3: #F2F2F2;
   --color-gray-light-4: #EAEAEA;
   --color-gray-darker: #999999;
+  --color-gray-darker-to-white: #999999;
   --color-gray-darker-2: #848283;
   --color-blue: #0051CC;
   --color-blue-hover: #0065FF;
@@ -66,7 +67,7 @@
   .vertical-tabs .nav-pills .nav-link {
     position: relative;
     text-decoration: none;
-    color: var(--color-gray-darker);
+    color: var(--color-gray-darker-to-white);
     font-weight: 700;
     width: 100%;
     padding: 10px;
@@ -86,7 +87,7 @@
   }
   .vertical-tabs .nav-pills .nav-link.active {
     color: var(--color-orange);
-    background-color: white;
+    background-color: transparent;
   }
   .vertical-tabs .tab-content .tab-pane h5 a {
     display: none;
@@ -140,7 +141,7 @@
   .vertical-tabs .tab-pane h5 a {
     position: relative;
     text-decoration: none;
-    color: var(--color-gray-darker);
+    color: var(--color-gray-darker-to-white);
     font-weight: 700;
     width: 100%;
     padding: 10px;
