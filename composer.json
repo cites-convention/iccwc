@@ -57,7 +57,6 @@
         "drupal/ckeditor_quote": "^1.0",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-recommended": "^9.4",
-        "drupal/countries_import": "^1.0",
         "drupal/dark_mode_switch": "^2.0",
         "drupal/devel": "^4.1",
         "drupal/drimage": "^2.0",
