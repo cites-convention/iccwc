@@ -1,0 +1,10 @@
+bundle: countries
+entity_type_id: taxonomy_term
+fields:
+  name: name
+  code2l: field_iso2
+  code3l: field_iso3
+  name_official: field_official_name
+  flag: field_flag
+flag_format: svg
+translate: 1
