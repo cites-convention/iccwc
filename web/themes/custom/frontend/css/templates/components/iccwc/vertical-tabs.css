@@ -109,7 +109,6 @@
     color: var(--color-black);
   }
   .vertical-tabs .tab-pane iframe {
-    height: 100%;
     width: 100%;
   }
   .vertical-tabs .tab-pane figure {
