@@ -131,17 +131,17 @@ filters:
     status: false
     weight: -40
     settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: false
-    weight: -37
-    settings: {  }
   filter_html_escape:
     id: filter_html_escape
     provider: filter
     status: false
     weight: -41
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -37
     settings: {  }
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
