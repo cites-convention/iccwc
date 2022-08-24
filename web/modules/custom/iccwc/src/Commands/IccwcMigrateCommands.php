@@ -245,6 +245,8 @@ class IccwcMigrateCommands extends DrushCommands {
     $body = $row['body'] ?? '';
     $body = $this->prepareMarkup($body);
 
+    $image = $this->getImage($body);
+
     $this->logger->info(sprintf('Importing report %s', $row['title']));
 
     $query = $this->entityTypeManager
@@ -273,6 +275,10 @@ class IccwcMigrateCommands extends DrushCommands {
       'field_tags' => $tags,
     ];
 
+    if (!empty($image)) {
+      $values += ['field_image' => $image];
+    }
+
     if (!empty($existing_node)) {
       $existing_node = reset($existing_node);
       $existing_node->delete();
@@ -298,6 +304,51 @@ class IccwcMigrateCommands extends DrushCommands {
     }
 
     $node->save();
+  }
+
+  protected function getImage($markup) {
+    $htmlDom = new \DOMDocument();
+    @$htmlDom->loadHTML($markup);
+    $xpath = new \DOMXPath($htmlDom);
+    $images = $xpath->query('//img');
+
+    $max = 0;
+    $media_image = NULL;
+
+    foreach ($images as $image) {
+      /** @var \DOMElement $image */
+      $src = $image->getAttribute('src');
+      if (empty($src)) {
+        continue;
+      }
+
+      if (!file_exists(DRUPAL_ROOT . $src)) {
+        continue;
+      }
+
+      list($width, $height) = getimagesize(DRUPAL_ROOT . $src);
+      if ($width * $height > $max) {
+        $max = $width * $height;
+        $media_image = $this->getMediaImage($src);
+      }
+    }
+
+    return $media_image;
+  }
+
+  public function getMediaImage($src) {
+    $src = str_replace('/sites/default/files', 'public:/', $src);
+    $file = \Drupal::entityTypeManager()->getStorage('file')->loadByProperties([
+      'uri' => $src,
+    ]);
+
+    $file = reset($file);
+
+    $media_image = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties([
+      'field_media_image' => $file->id(),
+    ]);
+    $media_image = reset($media_image);
+    return $media_image;
   }
 
   /**
