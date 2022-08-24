@@ -668,11 +668,11 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_4:
-    id: block_4
+  past_donors:
+    id: past_donors
     display_title: 'Past donors'
     display_plugin: block
-    position: 4
+    position: 5
     display_options:
       filters:
         status:
@@ -815,28 +815,15 @@ display:
         operator: AND
         groups:
           1: AND
-      style:
-        type: default
-        options:
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: search_teaser
       defaults:
-        style: false
-        row: false
         filters: false
         filter_groups: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions

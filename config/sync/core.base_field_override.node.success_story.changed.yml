@@ -1,0 +1,18 @@
+uuid: 482f0b30-3141-47d0-9941-12ae99afc7e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.success_story
+id: node.success_story.changed
+field_name: changed
+entity_type: node
+bundle: success_story
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

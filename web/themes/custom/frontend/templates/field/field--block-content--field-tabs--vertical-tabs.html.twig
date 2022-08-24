@@ -40,8 +40,8 @@
 {{ attach_library('frontend/vertical_tabs') }}
 
 {% if titles %}
-  <div class="vertical-tabs d-flex align-items-start">
-    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <div class="vertical-tabs d-flex align-items-start row">
+    <div class="nav flex-column nav-pills col-md-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       {% for title in titles %}
         {% set selected = 'false' %}
         {% if loop.index == 1 %}
@@ -56,7 +56,7 @@
       {% endfor %}
     </div>
 
-    <div id="content" class="tab-content" role="tablist">
+    <div id="content" class="tab-content col-md-9" role="tablist">
       {% for idx, item in items %}
         {% set classes = [
           'tab-pane',
@@ -72,7 +72,7 @@
 
         <div {{ item.attributes.addClass(classes) }} id="v-pills-{{ loop.index }}" role="tabpanel"
                                                      aria-labelledby="v-pills-{{ loop.index }}-tab">
-          <div class="border rounded p-2" role="tab" id="heading-A">
+          <div  role="tab" id="heading-A">
             <h5 class="mb-0">
               <a data-bs-toggle="collapse" href="#collapse-acc-{{ loop.index }}" aria-expanded="{{ expanded }}"
                  aria-controls="collapse-acc-{{ loop.index }}">
@@ -82,7 +82,7 @@
           </div>
           <div id="collapse-acc-{{ loop.index }}" class="collapse {% if loop.index == 1 %}show{% endif %}" data-bs-parent="#content" role="tabpanel"
                aria-labelledby="collapse-acc-{{ loop.index }}">
-            <div class="card-body">
+            <div class="card-body row">
               {{ item.content }}
             </div>
           </div>
