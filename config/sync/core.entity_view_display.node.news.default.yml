@@ -121,9 +121,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: tags_facet_link
+                type: entity_reference_label
                 label: inline
-                settings: {  }
+                settings:
+                  link: true
                 third_party_settings: {  }
             weight: 1
             additional: {  }

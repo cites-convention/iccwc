@@ -485,7 +485,9 @@ display:
         row: false
         filters: false
         filter_groups: false
+        footer: false
       display_description: ''
+      footer: {  }
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
@@ -658,7 +660,9 @@ display:
         row: false
         filters: false
         filter_groups: false
+        footer: false
       display_description: ''
+      footer: {  }
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
@@ -818,7 +822,9 @@ display:
       defaults:
         filters: false
         filter_groups: false
+        footer: false
       display_description: ''
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
