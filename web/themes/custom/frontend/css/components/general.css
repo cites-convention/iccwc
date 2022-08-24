@@ -255,6 +255,12 @@ blockquote p:after {
   padding-bottom: 80px;
   padding-top: 40px;
 }
+@media (max-width: 991px) {
+  .layout-section.column-border .container .layout-builder__layout > div {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+}
 
 .layout-section:not(:last-child) {
   border-bottom: 4px solid var(--color-yellow);
@@ -337,8 +343,10 @@ blockquote p:after {
 .column-border {
   padding-bottom: 0;
 }
-.column-border .layout-builder__layout > div + div {
-  border-left: 1px solid var(--color-gray);
+@media (min-width: 992px) {
+  .column-border .layout-builder__layout > div + div {
+    border-left: 1px solid var(--color-gray);
+  }
 }
 
 .block-field-blocknodenewsfield-tags .field--name-field-tags {

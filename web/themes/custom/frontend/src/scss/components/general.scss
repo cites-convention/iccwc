@@ -235,6 +235,11 @@ blockquote{
       > div {
         padding-bottom: 80px;
         padding-top: 40px;
+
+        @media (max-width: 991px) {
+          padding-bottom: 40px;
+          padding-top: 40px;
+        }
       }
     }
   }
@@ -316,7 +321,9 @@ blockquote{
 
   .layout-builder__layout {
     > div + div {
-      border-left: 1px solid var(--color-gray);
+      @media (min-width: 992px) {
+        border-left: 1px solid var(--color-gray);
+      }
     }
   }
 }
