@@ -201,6 +201,7 @@ blockquote{
     .layout-builder__layout  {
       > div {
         padding-bottom: 80px;
+        padding-top: 40px;
       }
     }
   }
@@ -353,7 +354,7 @@ blockquote{
 .node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
   &.node--type-partner{
-    p{
+    p {
       line-clamp: none;
       display: block ;
       border-radius: 0;
@@ -376,9 +377,6 @@ blockquote{
   img {
     border: 4px solid var(--color-orange);
     border-radius: 10px;
-  }
-  .row{
-    align-items: center;
   }
   .date-tags{
     display: flex;

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf97e9ee53691bc83ed7245aa5e73377",
+    "content-hash": "a6f25d0afcbcf0c5b814de6e76cb9549",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3293,6 +3293,56 @@
             "homepage": "https://www.drupal.org/project/edwt",
             "support": {
                 "source": "https://git.drupalcode.org/project/edwt"
+            }
+        },
+        {
+            "name": "drupal/entity_reference_facet_link",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_reference_facet_link.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_facet_link-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "3354beb67b8fdce05df16f1dd9f16160fe8ce3a7"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "conflict": {
+                "drupal/facets": "<1.0.0-beta1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1656723985",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "David Cameron (dcam)",
+                    "homepage": "https://www.drupal.org/u/dcam",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a display plugin for Entity Reference fields that links terms to faceted search pages.",
+            "homepage": "https://www.drupal.org/project/entity_reference_facet_link",
+            "support": {
+                "source": "https://cgit.drupalcode.org/entity_reference_facet_link",
+                "issues": "https://drupal.org/project/issues/entity_reference_facet_link",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -15597,5 +15647,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }

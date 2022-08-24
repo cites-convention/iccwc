@@ -17,6 +17,65 @@ use GuzzleHttp\ClientInterface;
  */
 class IccwcMigrateCommands extends DrushCommands {
 
+  /**
+   * Mapping old news URLs to new ones.
+   *
+   * @var array
+   */
+  protected $urlMapping = [
+    '/eng/prog/iccwc_new.php' => '',
+    '/fra/prog/iccwc_new.php' => '',
+    '/esp/prog/iccwc_new.php' => '',
+    '/eng/prog/ICCWC.php' => '',
+    '/fra/prog/ICCWC.php' => '',
+    '/esp/prog/ICCWC.php' => '',
+    '/eng/prog/iccwc.php' => '',
+    '/fra/prog/iccwc.php' => '',
+    '/esp/prog/iccwc.php' => '',
+
+    '/eng/prog/iccwc.php/Partners' => '/partners-and-donors',
+    '/fra/prog/iccwc.php/Partners' => '/fr/partners-and-donors',
+    '/esp/prog/iccwc.php/Partners' => '/es/partners-and-donors',
+
+    '/eng/prog/iccwc/donors.php' => '/partners-and-donors',
+    '/fra/prog/iccwc/donors.php' => '/fr/partners-and-donors',
+    '/esp/prog/iccwc/donors.php' => '/es/partners-and-donors',
+
+    '/eng/prog/iccwc.php/Donors' => '/partners-and-donors',
+    '/fra/prog/iccwc.php/Donors' => '/fr/partners-and-donors',
+    '/esp/prog/iccwc.php/Donors' => '/es/partners-and-donors',
+
+    '/eng/prog/iccwc/goals.php' => '/our-approach',
+    '/fra/prog/iccwc/goals.php' => '/fr/our-approach',
+    '/esp/prog/iccwc/goals.php' => '/es/our-approach',
+
+    '/eng/prog/iccwc.php/Strategy' => '/our-approach',
+    '/fra/prog/iccwc.php/Strategy' => '/fr/our-approach',
+    '/esp/prog/iccwc.php/Strategy' => '/esp/our-approach',
+
+    '/esp/prog/iccwc/crime.php' => '',
+    '/fra/prog/iccwc/crime.php' => '',
+    '/eng/prog/iccwc/crime.php' => '',
+    '/esp/prog/iccwc.php/Wildlife-Crime' => '',
+    '/fra/prog/iccwc.php/Wildlife-Crime' => '',
+    '/eng/prog/iccwc.php/Wildlife-Crime' => '',
+
+    '/eng/prog/iccwc.php/Tools' => '/tools-and-services',
+    '/fra/prog/iccwc.php/Tools' => '/fr/tools-and-services',
+    '/esp/prog/iccwc.php/Tools' => '/es/tools-and-services',
+
+    '/eng/prog/iccwc/mou.php' => '/letter-of-understanding',
+    '/fra/prog/iccwc/mou.php' => '/fr/letter-of-understanding',
+    '/esp/prog/iccwc/mou.php' => '/es/letter-of-understanding',
+
+    '/eng/prog/iccwc.php/Action' => '/success-stories',
+    '/fra/prog/iccwc.php/Action' => '/fr/success-stories',
+    '/esp/prog/iccwc.php/Action' => '/es/success-stories',
+    '/eng/prog/iccwc/action.php' => '/success-stories',
+    '/fra/prog/iccwc/action.php' => '/fr/success-stories',
+    '/esp/prog/iccwc/action.php' => '/es/success-stories',
+  ];
+
   use StringTranslationTrait;
 
   /**
@@ -39,6 +98,8 @@ class IccwcMigrateCommands extends DrushCommands {
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
+
+  protected $replacedLinks;
 
   /**
    * {@inheritdoc}
@@ -95,8 +156,31 @@ class IccwcMigrateCommands extends DrushCommands {
 
     // @todo Replace with Drupal API.
     $data = json_decode(file_get_contents($file), TRUE);
+
+    /** @var \Drupal\pathauto\AliasCleanerInterface $alias_cleaner */
+    $alias_cleaner = \Drupal::service('pathauto.alias_cleaner');
+
+    foreach ($data as $row) {
+      $old_url = $row['url'];
+      $old_url = str_replace('/eng/', '', $old_url);
+
+      $title = $row['title'];
+      $title = $alias_cleaner->cleanString($title);
+      $new_url = '/news/' . $title;
+      $new_url = $alias_cleaner->cleanAlias($new_url);
+
+      $this->urlMapping[$old_url] = $new_url;
+      $this->urlMapping["/eng$old_url"] = $new_url;
+      $this->urlMapping["/fra$old_url"] = "/fr$new_url";
+      $this->urlMapping["/esp$old_url"] = "/es$new_url";
+    }
+
     foreach ($data as $row) {
       $this->migrateRow($row, 'news');
+    }
+
+    foreach ($this->replacedLinks as $old => $new) {
+      echo "\"$old\",\"$new\"\n";
     }
   }
 
@@ -158,7 +242,7 @@ class IccwcMigrateCommands extends DrushCommands {
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   protected function migrateRow(array $row, $content_type) {
-    $body = $row['body'];
+    $body = $row['body'] ?? '';
     $body = $this->prepareMarkup($body);
 
     $this->logger->info(sprintf('Importing report %s', $row['title']));
@@ -173,7 +257,8 @@ class IccwcMigrateCommands extends DrushCommands {
 
     $tags = $row['tags'];
     foreach ($tags as &$tag) {
-      $tag = $this->getTermByName($tag, 'tags')->id();
+      $term = $this->getTermByName($tag, 'tags', TRUE);
+      $tag = $term->id();
     }
 
     $values = [
@@ -185,7 +270,7 @@ class IccwcMigrateCommands extends DrushCommands {
         'value' => $body,
         'format' => 'full_html',
       ],
-      'tags' => $tags,
+      'field_tags' => $tags,
     ];
 
     if (!empty($existing_node)) {
@@ -213,7 +298,6 @@ class IccwcMigrateCommands extends DrushCommands {
     }
 
     $node->save();
-    die;
   }
 
   /**
@@ -239,6 +323,7 @@ class IccwcMigrateCommands extends DrushCommands {
     $dirname = dirname($destination);
     $this->fileSystem->prepareDirectory($dirname, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
     $destination = $this->fileSystem->realpath($dirname) . '/' . basename($destination);
+    $destination = str_replace('%20', ' ', $destination);
     fopen($destination, 'w') or die('Problems');
 
     try {
@@ -271,7 +356,7 @@ class IccwcMigrateCommands extends DrushCommands {
   }
 
   /**
-   * Prepare Wordpress markup for Drupal.
+   * Prepare markup for Drupal.
    *
    * This includes fixing absolute URLs, downloading remote images, replacing
    * [caption] tags with <figure> tags.
@@ -289,7 +374,6 @@ class IccwcMigrateCommands extends DrushCommands {
    */
   protected function prepareMarkup(string $markup) {
     $markup = $this->getProductionUrl($markup);
-    $markup = utf8_decode($markup);
 
     // Replace [caption] tags with <figure>.
     preg_match_all('/(\[caption.*?\[\/caption\])/', $markup, $matches);
@@ -313,9 +397,9 @@ class IccwcMigrateCommands extends DrushCommands {
         $markup = str_replace($figure, $figure_html, $markup);
       }
     }
-    $this->fixInternalUrls($markup);
-    $this->downloadFilesFromMarkup($markup);
     $this->removeBackLinks($markup);
+    $this->downloadFilesFromMarkup($markup);
+    $this->fixInternalUrls($markup);
     $markup = $this->getRelativeUrl($markup);
 
     return $markup;
@@ -328,6 +412,56 @@ class IccwcMigrateCommands extends DrushCommands {
    *   The markup.
    */
   protected function fixInternalUrls(string &$markup) {
+    $markup = str_replace('https://cites.org', '', $markup);
+    $markup = str_replace('http://cites.org', '', $markup);
+    $markup = str_replace('https://www.cites.org', '', $markup);
+    $markup = str_replace('http://www.cites.org', '', $markup);
+
+    $htmlDom = new \DOMDocument();
+    @$htmlDom->loadHTML($markup);
+    $xpath = new \DOMXPath($htmlDom);
+    $links = $xpath->query('//a');
+
+    foreach ($links as $link) {
+      /** @var \DOMElement $link */
+      $src = $link->getAttribute('href');
+      if (empty($src)) {
+        continue;
+      }
+
+      if (strpos($src, 'sites/default/files') !== FALSE) {
+        continue;
+      }
+
+      if (strpos($src, '/') !== 0) {
+        continue;
+      }
+
+      if (isset($this->urlMapping[$src])) {
+        if ($this->urlMapping[$src] == '') {
+          $src = preg_quote($src, '/');
+          $markup = preg_replace("/<a href=\"$src\">(.*?)<\/a>/m", '$1', $markup);
+          continue;
+        }
+
+        $newSrc = $this->urlMapping[$src];
+        $this->replaceLinks($markup, $src, $newSrc);
+        continue;
+      }
+
+      if (in_array($src, $this->urlMapping)) {
+        continue;
+      }
+
+      $newSrc = 'https://cites.org' . $src;
+      $this->replaceLinks($markup, $src, $newSrc);
+    }
+  }
+
+  protected function replaceLinks(&$markup, $old_link, $new_link) {
+    $this->replacedLinks[$old_link] = $new_link;
+    $markup = str_replace("\"$old_link\"", "\"$new_link\"", $markup);
+    $markup = str_replace(">$old_link<", ">$new_link<", $markup);
   }
 
   /**
@@ -357,6 +491,7 @@ class IccwcMigrateCommands extends DrushCommands {
   protected function downloadFilesFromMarkup(string &$markup) {
     $extensions = [
       'png',
+      'jfif',
       'jpg',
       'doc',
       'docx',
@@ -406,8 +541,7 @@ class IccwcMigrateCommands extends DrushCommands {
       }
 
       $newSrc = str_replace('public://', '/sites/default/files/', $destination);
-
-      $markup = str_replace($src, $newSrc, $markup);
+      $this->replaceLinks($markup, $src, $newSrc);
     }
   }
 
@@ -418,25 +552,7 @@ class IccwcMigrateCommands extends DrushCommands {
    *   A HTML source markup.
    */
   protected function removeBackLinks(string &$markup) {
-    $markup = str_replace(PHP_EOL, '', $markup);
-    $markup = str_replace(array("\n","\r"), '', $markup);
-
-    $htmlDom = new \DOMDocument();
-    @$htmlDom->loadHTML($markup);
-
-    $markup = utf8_decode($markup);
-    $markup = $htmlDom->saveHTML();
-    $markup = html_entity_decode($markup);
-
-    $xpath = new \DOMXPath($htmlDom);
-    $paragraphs = $xpath->query('//p');
-
-    foreach ($paragraphs as $paragraph) {
-      $outerHtml = $paragraph->ownerDocument->saveHTML($paragraph);
-      if (strpos($outerHtml, 'arrow_orange.gif') !== FALSE) {
-        $markup = str_replace($outerHtml, '', $markup);
-      }
-    }
+    $markup = preg_replace('/<p><img.*?src="\/sites\/default\/files\/i\/arrow_orange\.gif".*?<\/p>/m', '', $markup);
   }
 
   /**
