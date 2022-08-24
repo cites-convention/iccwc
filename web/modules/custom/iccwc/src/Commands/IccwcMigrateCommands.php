@@ -542,8 +542,13 @@ class IccwcMigrateCommands extends DrushCommands {
   protected function downloadFilesFromMarkup(string &$markup) {
     $extensions = [
       'png',
+      'PNG',
       'jfif',
+      'JFIF',
       'jpg',
+      'jpeg',
+      'JPG',
+      'JPEG',
       'doc',
       'docx',
       'gif',
