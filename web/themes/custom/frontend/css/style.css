@@ -7993,7 +7993,7 @@ blockquote p:after {
 }
 .node--view-mode-search-teaser.node--type-partner img {
   border: none;
-  width: 100%;
+  max-width: 100%;
 }
 .node--view-mode-search-teaser.node--type-partner h3, .node--view-mode-search-teaser.node--type-partner .h3, .node--view-mode-search-teaser.node--type-partner p {
   text-align: left;
@@ -8180,6 +8180,13 @@ h2.block-title, .block-title.h2 {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.view-id-partners_and_donors.view-display-id-past_donors .views-row {
+  max-width: 130px;
+}
+.view-id-partners_and_donors.view-display-id-past_donors .views-row .node--type-partner {
+  padding: 10px;
 }
 
 :root {
