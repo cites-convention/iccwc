@@ -74,11 +74,20 @@ class ICCWCManager {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getSearchPage() {
-    $node = $this->routeMatch->getParameter('node');
-    if (is_numeric($node)) {
-      $node = $this->entityTypeManager->getStorage('node')->load($node);
-    }
-    return $node;
+    return $this->entityTypeManager->getStorage('node')->load(static::SEARCH_PAGE);
+  }
+
+  /**
+   * Get the news page node.
+   *
+   * @return \Drupal\node\NodeInterface
+   *   The news page node.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getNewsPage() {
+    return $this->entityTypeManager->getStorage('node')->load(static::NEWS_PAGE);
   }
 
 }
