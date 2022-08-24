@@ -15,6 +15,14 @@
   .view-content {
     text-align: center;
   }
+
+  &.view-id-partners_and_donors {
+    .views-row {
+      @media (max-width: 991px) {
+        max-width: 100px;
+      }
+    }
+  }
 }
 
 .partner-teaser {

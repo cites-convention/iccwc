@@ -13,7 +13,7 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: homepage_banner_desktop
-    breakpoint_id: edwt.screen.md-min
+    breakpoint_id: edwt.screen.lg-min
     multiplier: 1x
 breakpoint_group: screen
 fallback_image_style: homepage_banner_mobile

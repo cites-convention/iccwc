@@ -22,26 +22,6 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
 
 $table-striped-bg: #f9f9f9 !default;
 
-:root {
-  --color-orange: #E87722;
-  --color-yellow: #F5CD26;
-  --color-black: #231F20;
-  --color-text: #231F20;
-  --color-white: #FFFFFF;
-  --color-gray: #E5E5E5;
-  --color-gray-light: #FAFAFA;
-  --color-gray-light-1: #FAFAFA;
-  --color-gray-light-2: #F7F7F7;
-  --color-gray-light-3: #F2F2F2;
-  --color-gray-light-4: #EAEAEA;
-  --color-gray-darker: #999999;
-  --color-gray-darker-to-white: #999999;
-  --color-gray-darker-2: #848283;
-  --color-blue: #0051CC;
-  --color-blue-hover: #0065FF;
-  --body-font-family: 'Open Sans', sans-serif,
-}
-
 $font-family-sans-serif:      'Open Sans', sans-serif !default;
 $font-family-headings:        'Source Sans Pro', sans-serif !default;
 
@@ -55,18 +35,33 @@ $font-family-headings:        'Source Sans Pro', sans-serif !default;
   @include heading;
   font-size: 56px;
   line-height: 60px;
+
+  @media (max-width: 991px) {
+    font-size: 26px;
+    line-height: 28px;
+  }
 }
 
 @mixin heading-2 {
   @include heading;
   font-size: 44px;
   line-height: 50px;
+
+  @media (max-width: 991px) {
+    font-size: 24px;
+    line-height: 26px;
+  }
 }
 
 @mixin heading-3 {
   @include heading;
   font-size: 36px;
   line-height: 40px;
+
+  @media (max-width: 991px) {
+    font-size: 20px;
+    line-height: 22px;
+  }
 }
 
 @mixin heading-4 {
@@ -85,6 +80,10 @@ $font-family-headings:        'Source Sans Pro', sans-serif !default;
   @include heading;
   font-size: 20px;
   line-height: 22px;
+
+  @media (max-width: 991px) {
+    font-size: 18px;
+  }
 }
 
 @mixin large-text {

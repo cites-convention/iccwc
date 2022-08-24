@@ -16,7 +16,16 @@
   --color-gray-darker-2: #848283;
   --color-blue: #0051CC;
   --color-blue-hover: #0065FF;
-  --body-font-family: "Open Sans", sans-serif, ;
+  --body-font-family: "Open Sans", sans-serif;
+  --gutter-x: 20px;
+  --gutter-y: 20px;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -161,6 +170,12 @@ h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:
   padding-left: 20px;
   color: var(--color-black);
 }
+@media (max-width: 991px) {
+  .section-title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
 
 blockquote {
   border-top: 3px solid var(--color-orange);
@@ -221,6 +236,11 @@ blockquote p:after {
 
 .layout-section {
   padding: 80px 0;
+}
+@media (max-width: 991px) {
+  .layout-section {
+    padding: 40px 0;
+  }
 }
 .layout-section:first-child {
   padding-top: 0;
@@ -617,5 +637,11 @@ img {
 }
 .view-id-partners_and_donors.view-display-id-past_donors .views-row .node--type-partner {
   padding: 10px;
+}
+
+@media (max-width: 991px) {
+  .row > * {
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=../map/components/general.css.map */

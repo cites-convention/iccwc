@@ -14,6 +14,7 @@
     attach(context, settings) {
       $('.slideshow-flipster').flipster({
         loop: true,
+        touch: true,
       });
     },
   };

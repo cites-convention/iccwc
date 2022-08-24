@@ -1,1 +1,9 @@
-:root{--color-orange: #E87722;--color-yellow: #F5CD26;--color-black: #231F20;--color-text: #231F20;--color-white: #FFFFFF;--color-gray: #E5E5E5;--color-gray-light: #FAFAFA;--color-gray-light-1: #FAFAFA;--color-gray-light-2: #F7F7F7;--color-gray-light-3: #F2F2F2;--color-gray-light-4: #EAEAEA;--color-gray-darker: #999999;--color-gray-darker-to-white: #999999;--color-gray-darker-2: #848283;--color-blue: #0051CC;--color-blue-hover: #0065FF;--body-font-family: "Open Sans", sans-serif, }.featured-news{margin-bottom:20px}.view-latest-news .view-footer{text-align:center;margin-top:30px}
+.featured-news {
+  margin-bottom: 20px;
+}
+
+.view-latest-news .view-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=../../map/components/iccwc/latest-news.css.map */

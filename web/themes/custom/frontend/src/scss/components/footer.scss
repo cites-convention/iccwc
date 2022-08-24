@@ -45,6 +45,11 @@ footer {
     flex-direction: row;
     gap: 30px;
 
+    @media (max-width: 991px) {
+      font-size: 14px;
+      gap: 20PX;
+    }
+
     a {
       color: var(--color-white);
 
