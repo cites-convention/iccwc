@@ -129,6 +129,9 @@ class SidebarFiltersBlock extends ICCWCBlockBase {
         && (empty($result[0]['#items']) || count($result[0]['#items']) <= 1)) {
         continue;
       }
+      if (in_array('facet-active', $result[0]['#attributes']['class'])) {
+        $result[0]['#attributes']['data-active'] = 'active';
+      }
       $build[] = $result;
     }
 
