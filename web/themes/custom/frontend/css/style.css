@@ -7997,6 +7997,7 @@ blockquote p:after {
 .node--view-mode-search-teaser.node--type-partner img {
   border: none;
   max-width: 100%;
+  border-radius: 0;
 }
 .node--view-mode-search-teaser.node--type-partner h3, .node--view-mode-search-teaser.node--type-partner .h3, .node--view-mode-search-teaser.node--type-partner p {
   text-align: left;

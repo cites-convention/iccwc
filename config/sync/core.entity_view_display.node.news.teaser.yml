@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - facets.facet.tags
     - field.field.node.news.body
     - field.field.node.news.field_banner_image
     - field.field.node.news.field_banner_text
@@ -16,7 +17,7 @@ dependencies:
     - node.type.news
     - responsive_image.styles.teaser_image
   module:
-    - iccwc
+    - entity_reference_facet_link
     - media_responsive_thumbnail
 id: node.news.teaser
 targetEntityType: node
@@ -43,11 +44,12 @@ content:
     weight: 1
     region: content
   field_tags:
-    type: tags_facet_link
+    type: entity_reference_facet_link
     label: hidden
-    settings: {  }
+    settings:
+      facet: tags
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
   links:
     settings: {  }
