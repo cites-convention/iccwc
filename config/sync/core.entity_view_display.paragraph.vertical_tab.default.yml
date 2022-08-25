@@ -11,7 +11,6 @@ dependencies:
     - field.field.paragraph.vertical_tab.field_video
     - paragraphs.paragraphs_type.vertical_tab
   module:
-    - image
     - link
     - text
     - youtube
@@ -21,7 +20,7 @@ bundle: vertical_tab
 mode: default
 content:
   field_button_link:
-    type: link
+    type: link_separate
     label: hidden
     settings:
       trim_length: 80
@@ -48,13 +47,11 @@ content:
     weight: 1
     region: content
   field_image:
-    type: image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: colorbox
+      link: false
     third_party_settings: {  }
     weight: 5
     region: content

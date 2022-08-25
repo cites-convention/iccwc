@@ -32,6 +32,18 @@
         {
             "type": "package",
             "package": {
+                "name": "jackmoore/colorbox",
+                "version": "1.6.4",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "ckeditor-plugin/div",
                 "version": "4.11.0",
                 "type": "drupal-library",
@@ -55,6 +67,7 @@
         "drupal/captcha": "1.2.0",
         "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/ckeditor_quote": "^1.0",
+        "drupal/colorbox": "1.x-dev@dev",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-recommended": "^9.4",
         "drupal/dark_mode_switch": "^2.0",
@@ -101,6 +114,7 @@
         "drupal/youtube": "^1.2",
         "drush/drush": "^11.0",
         "eaudeweb/heavy-lifter": "^2.0",
+        "jackmoore/colorbox": "^1.6",
         "npm-asset/blazy": "^1.8.2",
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
