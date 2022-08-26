@@ -1,0 +1,16 @@
+uuid: d6198e0d-d61a-484b-aede-2990125e8f17
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.map_datasets
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.map_datasets
+target_entity_type_id: taxonomy_term
+target_bundle: map_datasets
+default_langcode: site_default
+language_alterable: true
