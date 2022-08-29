@@ -1,7 +1,7 @@
 (function ($, Drupal, drupalSettings) {
   Drupal.behaviors.partyListMap = {
     attach: function attach(context) {
-      // $('.parties-map-overview').once('partiesMap').each(function () {
+      $('.parties-map-overview').once('partiesMap').each(function () {
 
         // Find and color parties
         var matchExpression = ['match', ['get', 'ISO3CD']];
@@ -28,9 +28,7 @@
           // renderWorldCopies: false,
           maxZoom: 3,
           zoom: 1.1,
-          // fitBounds: true,
-          center: [-10, 10],
-          // center: [1, 1],
+          center: [0, 10],
           style: {
             version: 8,
             sources: {
@@ -39,16 +37,14 @@
                 tiles: ['https://UN-Geospatial.github.io/cartotile-plain-design/data/cartotile_v01/{z}/{x}/{y}.pbf'],
                 attribution: '<table><tr><td style="font-size: 7pt; line-height: 100%">The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations.​ Final boundary between the Republic of Sudan and the Republic of South Sudan has not yet been determined.​<br>* Non-Self Governing Territories<br>** Dotted line represents approximately the Line of Control in Jammu and Kashmir agreed upon by India and Pakistan. The final status of Jammu and Kashmir has not yet been agreed upon by the parties.​<br>*** A dispute exists between the Governments of Argentina and the United Kingdom of Great Britain and Northern Ireland concerning sovereignty over the Falkland Islands (Malvinas).</td><td  style="font-size: 5pt; color: #009EDB" valign="bottom">Powered by<br><img src="https://unopengis.github.io/watermark/watermark.png" alt="UN OpenGIS logo" width="50" height="50"></td></tr></table>',
                 maxzoom: 3,
-                zoom:1.1,
-                center: [-10, 10],
                 minzoom: 0
               }
             },
-            // glyphs: 'https://UN-Geospatial.github.io/cartotile-plain-design/font/{fontstack}/{range}.pbf',
-            // transition: {
-            //   duration: 0,
-            //   delay: 0
-            // },
+            glyphs: 'https://UN-Geospatial.github.io/cartotile-plain-design/font/{fontstack}/{range}.pbf',
+            transition: {
+              duration: 0,
+              delay: 0
+            },
             layers: [
               {
                 id: 'background',
@@ -193,39 +189,39 @@
             return el.id === 'current_country'
           });
 
-          // if (is_party.length > 0) {
-          //   if (typeof current_country_layer !== "undefined" && current_country_layer.length <= 0) {
-          //     map.addLayer(
-          //       {
-          //         id: 'current_country',
-          //         type: 'fill',
-          //         source: 'v',
-          //         'source-layer': 'bnda',
-          //         maxzoom: 4,
-          //         minzoom: 0,
-          //         filter: [
-          //           'all',
-          //           ['==', 'ISO3CD', e.features[0].properties.ISO3CD]
-          //         ],
-          //         paint: {
-          //           "fill-color": "#00757D",
-          //         }
-          //       },
-          //     );
-          //   }
-          //   map.getCanvas().style.cursor = 'pointer';
-          //   // a temporary fix for issue #11129
-          //   if (e.features[0].properties.ISO3CD === 'TWN' || e.features[0].properties.ISO3CD === "CHN") {
-          //     map.setFilter('current_country', [
-          //       "in",
-          //       "ISO3CD",
-          //       'CHN',
-          //       'TWN'
-          //     ])
-          //   } else {
-          //     map.setFilter('current_country', ['all', ['==', 'ISO3CD', e.features[0].properties.ISO3CD]]);
-          //   }
-          // }
+          if (is_party.length > 0) {
+            if (typeof current_country_layer !== "undefined" && current_country_layer.length <= 0) {
+              map.addLayer(
+                {
+                  id: 'current_country',
+                  type: 'fill',
+                  source: 'v',
+                  'source-layer': 'bnda',
+                  maxzoom: 4,
+                  minzoom: 0,
+                  filter: [
+                    'all',
+                    ['==', 'ISO3CD', e.features[0].properties.ISO3CD]
+                  ],
+                  paint: {
+                    "fill-color": "#00757D",
+                  }
+                },
+              );
+            }
+            map.getCanvas().style.cursor = 'pointer';
+            // a temporary fix for issue #11129
+            if (e.features[0].properties.ISO3CD === 'TWN' || e.features[0].properties.ISO3CD === "CHN") {
+              map.setFilter('current_country', [
+                "in",
+                "ISO3CD",
+                'CHN',
+                'TWN'
+              ])
+            } else {
+              map.setFilter('current_country', ['all', ['==', 'ISO3CD', e.features[0].properties.ISO3CD]]);
+            }
+          }
 
           if(e.features[0].properties.STSCOD === 1 && is_party.length > 0){
             var html = "<span class='stscod1'><b>" + e.features[0].properties.MAPLAB + "</b></span><br/>";
@@ -329,7 +325,98 @@
           popup.remove();
         });
 
-      // });
+        // Fly to region
+        // Global
+        document.getElementById('global').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              0, 10
+            ],
+            essential: true,
+            zoom: 1.1
+          });
+        });
+        // Africa
+        document.getElementById('region-africa').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              8.7832, 1.5085
+            ],
+            essential: true,
+            zoom: 2
+          });
+        });
+
+        // Asia
+        document.getElementById('region-asia').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              100.9851, 10.5344
+            ],
+            essential: true,
+            zoom: 2
+          });
+        });
+
+        // Central and Eastern Europe
+        document.getElementById('region-europe').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              -5.6569, 50.6569
+            ],
+            essential: true,
+            zoom: 2.9
+          });
+        });
+
+        // Central and South America and the Caribbean
+        document.getElementById('region-latin_america').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              -78.6569, 20.6569
+            ],
+            essential: true,
+            zoom: 2
+          });
+        });
+
+        // North America
+        document.getElementById('region-north_america').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              -99.7084, 35.3804
+            ],
+            essential: true,
+            zoom: 2
+          });
+        });
+
+        // Oceania
+        document.getElementById('region-oceania').addEventListener('click', function () {
+          removeClass();
+          $(this).addClass('active');
+          map.flyTo({
+            center: [
+              121.8771, -24.5965
+            ],
+            essential: true,
+            zoom: 2
+          });
+        });
+
+      });
 
       function removeClass() {
         $('.parties-map-menu h3.active').removeClass('active');

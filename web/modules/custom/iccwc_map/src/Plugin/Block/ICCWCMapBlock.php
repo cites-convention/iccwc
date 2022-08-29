@@ -37,17 +37,30 @@ class ICCWCMapBlock extends ICCWCBlockBase {
       }
       $mapDisclaimer['#markup'] = $entity->getDescription();
 
-      $partiesList = $iccwcUtils->partiesMapOverview($entity);
-      $categoriesList = $iccwcUtils->categoriesMapOverview($entity);
+      $partiesList = $iccwcUtils->getPartiesMapOverview($entity);
+      $categoriesList = $iccwcUtils->getCategoriesMapOverview($entity);
+    }
+
+    $regions = $this->configuration['regions'] ?? NULL;
+    $options = [
+      'africa' => 'Africa',
+      'asia' => 'Asia',
+      'latin_america' => 'Central and South America and the Caribbean',
+      'europe' => 'Europe',
+      'north_america' => 'North America',
+      'oceania' => 'Oceania',
+    ];
+
+    if ($regions != NULL) {
+      foreach ($regions as $region) {
+        $regionsSelected[$region] = $options[$region];
+      }
     }
 
     $build = [
       '#theme' => 'iccwc_map_overview',
       '#list_of_parties' => [],
       '#categories' => $categoriesList,
-      '#attributes' => [
-        'class' => ['parties-map-overview'],
-      ],
       '#attached' => [
         'library' => [
           'iccwc_map/map',
@@ -60,6 +73,7 @@ class ICCWCMapBlock extends ICCWCBlockBase {
       '#disclaimer' => [
         $mapDisclaimer,
       ],
+      '#regions' => $regionsSelected,
     ];
 
     return $build;
@@ -83,7 +97,7 @@ class ICCWCMapBlock extends ICCWCBlockBase {
     // Attach extra field to block config form.
     $form['dataset'] = [
       '#type' => 'entity_autocomplete',
-      '#description' => $this->t("Select first level term"),
+      '#description' => $this->t("Select first level term, and only one value."),
       '#selection_handler' => 'default',
       '#target_type' => 'taxonomy_term',
       '#title' => $this->t('Map dataset'),
@@ -91,6 +105,22 @@ class ICCWCMapBlock extends ICCWCBlockBase {
       '#selection_settings' => [
         'target_bundles' => ['map_datasets'],
       ],
+    ];
+
+    $form['regions'] = [
+      '#title' => $this->t('Regions'),
+      '#description' => $this->t('Leave empty for no regions.'),
+      '#type' => 'select',
+      '#multiple' => TRUE,
+      '#options' => [
+        'africa' => $this->t('Africa'),
+        'asia' => $this->t('Asia'),
+        'latin_america' => $this->t('Central and South America and the Caribbean'),
+        'europe' => $this->t('Europe'),
+        'north_america' => $this->t('North America'),
+        'oceania' => $this->t('Oceania'),
+      ],
+      '#default_value' => $this->configuration['regions'] ?? NULL,
     ];
 
     return $form;
@@ -101,6 +131,7 @@ class ICCWCMapBlock extends ICCWCBlockBase {
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['dataset'] = $form_state->getValue('dataset');
+    $this->configuration['regions'] = $form_state->getValue('regions');
   }
 
 }

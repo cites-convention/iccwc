@@ -63,7 +63,7 @@ class ICCWCMapBaseUtils {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function partiesMapOverview(Term $parent_term) {
+  public function getPartiesMapOverview(Term $parent_term) {
     $parties = [];
     $fill = [];
     $language = $this->languageManager->getCurrentLanguage()->getId();
@@ -136,7 +136,7 @@ class ICCWCMapBaseUtils {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function categoriesMapOverview(Term $parent_term) {
+  public function getCategoriesMapOverview(Term $parent_term) {
     $language = $this->languageManager->getCurrentLanguage()->getId();
     $parent_tid = $parent_term->id();
     $depth = 1;
