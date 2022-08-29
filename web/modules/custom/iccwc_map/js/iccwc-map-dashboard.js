@@ -139,9 +139,8 @@
           var default_color = 'rgb(232,188,5)';
           var color = row['color'];
           let marker;
-          const coordinate = [row['long'], row['lat']];
-          const point = map.project(coordinate); console.log(point);
-          const point_coordinate = [point.y, point.x];
+          const coordinate = [row['long']-10, row['lat']];
+
           if (color) {
             var rgb_color = hexToRgb(color);
             marker = new mapboxgl.Marker({color: rgb_color})
@@ -160,11 +159,6 @@
               )
               .addTo(map);
           }
-        });
-        map.on('click', (e) => {
-          const marker = new mapboxgl.Marker();
-          marker.setLngLat(e.lngLat).addTo(map);
-          console.log(e.lngLat);
         });
 
         map.on('load', ()=> {
