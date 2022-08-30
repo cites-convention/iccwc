@@ -6,9 +6,11 @@ dependencies:
     - field.field.taxonomy_term.map_datasets.field_color
     - field.field.taxonomy_term.map_datasets.field_country
     - field.field.taxonomy_term.map_datasets.field_latitude
+    - field.field.taxonomy_term.map_datasets.field_link
     - field.field.taxonomy_term.map_datasets.field_longitude
     - taxonomy.vocabulary.map_datasets
   module:
+    - link
     - path
     - text
 id: taxonomy_term.map_datasets.default
@@ -50,6 +52,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 9
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_longitude:
     type: string_textfield
     weight: 3
@@ -81,7 +91,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true

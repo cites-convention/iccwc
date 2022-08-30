@@ -174,7 +174,134 @@
 
         var popup = new mapboxgl.Popup({
           closeButton: false,
-          closeOnClick: false
+          closeOnClick: true
+        });
+
+        map.on('click', 'bnda', function(e) {
+          if (data != null && data.length > 0) {
+            var is_party = data.filter(function (el) {
+              return el.iso === e.features[0].properties.ISO3CD;
+            });
+
+
+            var layers = map.getStyle().layers;
+            var current_country_layer = layers.filter(function (el) {
+              return el.id === 'current_country'
+            });
+
+            if (is_party.length > 0) {
+              if (typeof current_country_layer !== "undefined" && current_country_layer.length <= 0) {
+                map.addLayer(
+                  {
+                    id: 'current_country',
+                    type: 'fill',
+                    source: 'v',
+                    'source-layer': 'bnda',
+                    maxzoom: 4,
+                    minzoom: 0,
+                    filter: [
+                      'all',
+                      ['==', 'ISO3CD', e.features[0].properties.ISO3CD]
+                    ],
+                    paint: {
+                      "fill-color": "#00757D",
+                    }
+                  },
+                );
+              }
+              map.getCanvas().style.cursor = 'pointer';
+              // a temporary fix for issue #11129
+              if (e.features[0].properties.ISO3CD === 'TWN' || e.features[0].properties.ISO3CD === "CHN") {
+                map.setFilter('current_country', [
+                  "in",
+                  "ISO3CD",
+                  'CHN',
+                  'TWN'
+                ])
+              } else {
+                map.setFilter('current_country', ['all', ['==', 'ISO3CD', e.features[0].properties.ISO3CD]]);
+              }
+            }
+
+            if (e.features[0].properties.STSCOD === 1 && is_party.length > 0) {
+              var html = "<span class='stscod1'></span>";
+              html = partyInformation(e, data, html);
+
+              popup
+                .setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map);
+            } else if (e.features[0].properties.STSCOD === 2 && is_party.length > 0) {
+              var html = "<span class='stscod2'></span>";
+              html = partyInformation(e, data, html);
+
+              popup
+                .setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map)
+            } else if (e.features[0].properties.STSCOD === 3 && is_party.length > 0) {
+
+              if (e.features[0].properties.MAPLAB === "Falkland Islands (Malvinas) ***") {
+
+                var html = "<span class='stscod3'></span>";
+                html = partyInformation(e, data, html);
+
+              } else {
+                var html = "<span class='stscod3'></span>";
+                html = partyInformation(e, data, html);
+
+              }
+
+              popup
+                .setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map)
+            } else if (e.features[0].properties.STSCOD === 4 && is_party.length > 0) {
+              var html = "<span class='stscod4'></span>";
+              html = partyInformation(e, data, html);
+
+              popup
+                .setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map)
+            } else if (e.features[0].properties.STSCOD === 5 && is_party.length > 0) {
+              var html = "<span class='stscod5'></span>";
+              // a temporary fix for issue #11129
+              if (e.features[0].properties.ISO3CD === 'TWN') {
+                var html = "<span class='stscod1'><b>CHINA</b></span><br/>";
+              }
+              html = partyInformation(e, data, html);
+
+              popup
+                .setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map)
+            } else if (e.features[0].properties.STSCOD === 6 && is_party.length > 0) {
+              var html = "<span class='stscod6'></span>";
+              html = partyInformation(e, data, html);
+
+              popup
+                .setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map)
+            } else if (e.features[0].properties.STSCOD === 99 && is_party.length > 0) {
+
+              if (e.features[0].properties.MAPLAB === "Jammu and Kashmir **") {
+                var html = "<span class='stscod6'></span>";
+                html = partyInformation(e, data, html);
+
+                popup
+                  .setLngLat(e.lngLat)
+                  .setHTML(html)
+                  .addTo(map)
+              } else {
+                popup.remove();
+                if (map.getLayer("current_country")) {
+                  map.removeLayer("current_country");
+                }
+              }
+            }
+          }
         });
 
         map.on('mousemove', 'bnda', function(e) {
@@ -222,85 +349,6 @@
                 map.setFilter('current_country', ['all', ['==', 'ISO3CD', e.features[0].properties.ISO3CD]]);
               }
             }
-
-            if (e.features[0].properties.STSCOD === 1 && is_party.length > 0) {
-              var html = "<span class='stscod1'><b>" + e.features[0].properties.MAPLAB + "</b></span><br/>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map);
-            } else if (e.features[0].properties.STSCOD === 2 && is_party.length > 0) {
-              var html = "<span class='stscod2'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 3 && is_party.length > 0) {
-
-              if (e.features[0].properties.MAPLAB === "Falkland Islands (Malvinas) ***") {
-
-                var html = "<span class='stscod3'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-                html = partyInformation(e, data, html);
-
-              } else {
-                var html = "<span class='stscod3'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-                html = partyInformation(e, data, html);
-
-              }
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 4 && is_party.length > 0) {
-              var html = "<span class='stscod4'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 5 && is_party.length > 0) {
-              var html = "<span class='stscod5'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-              // a temporary fix for issue #11129
-              if (e.features[0].properties.ISO3CD === 'TWN') {
-                var html = "<span class='stscod1'><b>CHINA</b></span><br/>";
-              }
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 6 && is_party.length > 0) {
-              var html = "<span class='stscod6'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 99 && is_party.length > 0) {
-
-              if (e.features[0].properties.MAPLAB === "Jammu and Kashmir **") {
-                var html = "<span class='stscod6'>" + e.features[0].properties.MAPLAB + "</span><br/>";
-                html = partyInformation(e, data, html);
-
-                popup
-                  .setLngLat(e.lngLat)
-                  .setHTML(html)
-                  .addTo(map)
-              } else {
-                popup.remove();
-                if (map.getLayer("current_country")) {
-                  map.removeLayer("current_country");
-                }
-              }
-            }
           }
         });
 
@@ -323,7 +371,7 @@
           }
 
           map.getCanvas().style.cursor = '';
-          popup.remove();
+          // popup.remove();
         });
 
         // Fly to region
@@ -444,7 +492,11 @@
 
         if (party.length !== 0) {
           if (party[0]['name']) {
-            html += Drupal.t('Party name') + ': ' + party[0]['name'] + "<br/>";
+            var name = '<b>' + party[0]['name'] + '</b>';
+            if (party[0]['link']) {
+              name = '<a target="_blank" href="' + party[0]['link'] + '">' + name + '</a>';
+            }
+            html += name + "<br/>";
           }
           if (party[0]['description']) {
             html += party[0]['description'] + "<br/>";
@@ -456,7 +508,11 @@
 
       function pointInformation(row, html) {
         if (row['name']) {
-          html += '<span class="stscod5">' + Drupal.t('Party name') + ': ' + row['name'] + "</span><br/>";
+          var name = row['name'];
+          if (row['link']) {
+            name = '<a target="_blank" href="' + row['link'] + '">' + name + '</a>';
+          }
+          html += '<span class="stscod5"><b>' + name + "</b></span><br/>";
         }
         if (row['description']) {
           html += row['description'] + "<br/>";

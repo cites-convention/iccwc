@@ -3,6 +3,7 @@ map:
   css:
     theme:
       css/iccwc-mapbox-gl.css: { }
+      css/iccwc-map.css: { }
   js:
     js/iccwc-mapbox-gl.js: {}
     js/iccwc-map-dashboard.js: {}

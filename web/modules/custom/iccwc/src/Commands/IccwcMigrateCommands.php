@@ -185,6 +185,109 @@ class IccwcMigrateCommands extends DrushCommands {
   }
 
   /**
+   * Migrate pins from CSV.
+   *
+   * @param string $csv_path
+   *   Path to the CSV file containing the pins.
+   * @param false[] $options
+   *   Command options.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   *
+   * @command import:pins
+   * @aliases im-pins
+   * @options delete-existing Whether or not to delete existing pins
+   * @usage import:pins pins.csv
+   *   Migrate pins from pins.csv.
+   */
+  public function migratePins(string $csv_path, array $options = ['delete-existing' => FALSE]) {
+    $term_storage = $this->entityTypeManager
+      ->getStorage('taxonomy_term');
+
+    if ($options['delete-existing']) {
+      $existing_pins = $term_storage
+        ->getQuery()
+        ->condition('vid', 'map_datasets')
+        ->condition('name', 'ICCWC Activities', '!=')
+        ->execute();
+
+      $existing_pins = $term_storage->loadMultiple($existing_pins);
+
+      if (count($existing_pins)) {
+        $term_storage->delete($existing_pins);
+
+        $this->logger->info(
+          $this->t('Successfully deleted @count existing pins', [
+            '@count' => count($existing_pins),
+          ])
+        );
+      }
+    }
+
+    $file = realpath($csv_path);
+    if (empty($file)) {
+      $this->logger->error('Invalid path to file');
+      return;
+    }
+
+    $row = 1;
+    $rows = [];
+    if (($handle = fopen($file, "r")) !== FALSE) {
+      while (($data = fgetcsv($handle, 0, ",")) !== FALSE) {
+        if ($row == 1) {
+          $header = $data;
+        }
+        else {
+          $data = array_combine($header, $data);
+          $rows[] = $data;
+        }
+        $row++;
+      }
+    }
+
+    foreach ($rows as $row) {
+      $this->importPin($row);
+    }
+  }
+
+  /**
+   * Import pin as taxonomy term.
+   *
+   * @param array $row
+   *   The pin data.
+   */
+  protected function importPin(array $row) {
+    $link = $row['url'];
+
+    $group = $this->getTermByName($row['group'], 'map_datasets', TRUE, [
+      'field_color' => $row['color'],
+      'parent' => $this->getTermByName('ICCWC Activities', 'map_datasets', TRUE),
+    ]);
+
+    $description = $row['description'] ?? '';
+    $description = nl2br($description);
+
+    $term = Term::create([
+      'vid' => 'map_datasets',
+      'parent' => $group,
+      'name' => $row['title'],
+      'description' => [
+        'value' => $description,
+        'format' => 'full_html',
+      ],
+      'field_link' => [
+        ['uri' => $link],
+      ],
+      'field_latitude' => $row['latitude'],
+      'field_longitude' => $row['longitude'],
+    ]);
+    $term->save();
+  }
+
+  /**
    * Get a term by its name and vid.
    *
    * @param string $name
@@ -193,6 +296,8 @@ class IccwcMigrateCommands extends DrushCommands {
    *   The vocabulary ID.
    * @param bool $create
    *   If true and the term does not exist, create it.
+   * @param array $extra_values
+   *   Extra values for the created term.
    *
    * @return \Drupal\taxonomy\TermInterface
    *   The term.
@@ -201,7 +306,7 @@ class IccwcMigrateCommands extends DrushCommands {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  protected function getTermByName(string $name, string $vid, $create = FALSE) {
+  protected function getTermByName(string $name, string $vid, $create = FALSE, $extra_values = []) {
     if ($name == 'News and highlights') {
       $name = 'News & Highlights';
     }
@@ -216,10 +321,11 @@ class IccwcMigrateCommands extends DrushCommands {
         return FALSE;
       }
 
-      $term = Term::create([
+      $data = [
         'vid' => $vid,
         'name' => $name,
-      ]);
+      ] + $extra_values;
+      $term = Term::create($data);
       $term->save();
       return $term;
     }
@@ -326,7 +432,7 @@ class IccwcMigrateCommands extends DrushCommands {
         continue;
       }
 
-      list($width, $height) = getimagesize(DRUPAL_ROOT . $src);
+      [$width, $height] = getimagesize(DRUPAL_ROOT . $src);
       if ($width * $height > $max) {
         $max = $width * $height;
         $media_image = $this->getMediaImage($src);
