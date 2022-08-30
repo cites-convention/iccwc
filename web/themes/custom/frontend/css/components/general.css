@@ -251,6 +251,11 @@ blockquote p:after {
 .layout-section.column-border .container > .row > * {
   padding: 0 40px;
 }
+@media (max-width: 767px) {
+  .layout-section.column-border .container > .row > * {
+    padding: 0 10px;
+  }
+}
 .layout-section.column-border .container .layout-builder__layout > div {
   padding-bottom: 80px;
   padding-top: 40px;
@@ -639,13 +644,6 @@ h2.block-title {
 img {
   max-width: 100%;
   height: auto;
-}
-
-.view-id-partners_and_donors.view-display-id-past_donors .views-row {
-  max-width: 130px;
-}
-.view-id-partners_and_donors.view-display-id-past_donors .views-row .node--type-partner {
-  padding: 10px;
 }
 
 @media (max-width: 991px) {

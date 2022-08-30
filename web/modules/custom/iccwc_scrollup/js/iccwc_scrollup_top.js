@@ -24,9 +24,9 @@
         var scroll_speed = parseInt(drupalSettings.iccwc_scrollup_speed);
 
         if (position == 1) {
-          $('.scrollup').css({"right":"100px","background-color":button_bg_color});
+          $('.scrollup').css({"right":"3%","background-color":button_bg_color});
         } else {
-          $('.scrollup').css({"left":"100px","background-color":button_bg_color});
+          $('.scrollup').css({"left":"3%","background-color":button_bg_color});
         }
 
         $(".scrollup").hover(function(){

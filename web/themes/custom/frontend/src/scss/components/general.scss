@@ -229,6 +229,10 @@ blockquote{
 
     > .row > * {
       padding: 0 40px;
+
+      @media (max-width: 767px) {
+        padding: 0 10px;
+      }
     }
 
     .layout-builder__layout  {
@@ -577,12 +581,6 @@ h2.block-title {
 img {
   max-width: 100%;
   height: auto;
-}
-.view-id-partners_and_donors.view-display-id-past_donors .views-row{
-  max-width: 130px;
-  .node--type-partner{
-    padding: 10px;
-  }
 }
 
 .row > * {
