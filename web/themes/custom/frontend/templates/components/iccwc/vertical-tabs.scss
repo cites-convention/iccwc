@@ -3,7 +3,35 @@
   .nav-pills {
     display: none;
   }
-
+  .field--name-field-media-image {
+    picture {
+      position: relative;
+      display: block;
+      &:after {
+        content: " ";
+        background-color: var(--color-orange);
+        background-image: url("../../../../icons/plus.svg");
+        color: white;
+        width: 41px;
+        height: 38px;
+        overflow: visible;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      img {
+        border: solid 4px var(--color-orange);
+        border-radius: 10px;
+        width: 100%;
+      }
+    }
+  }
   .card-body {
     position: relative;
     display: flex;

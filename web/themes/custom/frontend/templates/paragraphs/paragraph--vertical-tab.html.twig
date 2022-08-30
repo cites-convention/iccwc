@@ -1,23 +1,20 @@
-{%
-  set classes = [
+{% set classes = [
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
-]
-%}
+] %}
 {% block paragraph %}
   {% block content %}
-  <div class="col-md-6 order-md-last" >
-    {% if content.field_video.0 %}
-    {{ content.field_video.0 }}
-  {% elseif content.field_media_image.0 %}
-    {{ content.field_media_image.0 }}
-  {% endif %}
-{#        {{ dump(content) }}#}
+    <div class="col-md-6 order-md-last">
+      {% if not paragraph.field_video.isEmpty %}
+        {{ content.field_video }}
+      {% elseif not paragraph.field_image.isEmpty %}
+        {{ content.field_image }}
+      {% endif %}
+    </div>
   {% endblock %}
-  </div>
-  <div class="col-md-6" >{{ content.field_description.0}}
-    <a href="{{ content.field_button_link.0["#title"] }}" class="btn-iccwc btn-next">{{ content.field_button_text }}</a>
+  <div class="col-md-6">{{ content.field_description }}
+    <a href="{{ content.field_button_link.0["#url"].toString }}" class="btn-iccwc btn-next">{{ content.field_button_text }}</a>
   </div>
 {% endblock paragraph %}

@@ -16,8 +16,10 @@
     text-align: center;
   }
 
-  &.view-id-partners_and_donors {
+  &.view-display-id-past_donors {
     .views-row {
+      max-width: 130px;
+
       @media (max-width: 991px) {
         max-width: 100px;
       }
