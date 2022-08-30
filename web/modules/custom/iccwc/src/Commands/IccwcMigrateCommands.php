@@ -254,6 +254,49 @@ class IccwcMigrateCommands extends DrushCommands {
   }
 
   /**
+   * Get news by old URL.
+   *
+   * @param $old_url
+   *   The old URL.
+   *
+   * @return \Drupal\node\NodeInterface
+   *   The node.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  protected function getNewsByOldUrl($old_url) {
+    $json_path = \Drupal::service('extension.list.module')->getPath('iccwc') . '/data/news.json';
+    $data = json_decode(file_get_contents($json_path), TRUE);
+
+    $title = NULL;
+
+    foreach ($data as $row) {
+      $url = $row['url'];
+      if ($url == $old_url || "https://cites.org$url" == $old_url) {
+        $title = $row['title'];
+        break;
+      }
+    }
+
+    if (empty($title)) {
+      return NULL;
+    }
+
+    /** @var \Drupal\node\NodeInterface[] $node */
+    $node = $this->entityTypeManager->getStorage('node')->loadByProperties([
+      'title' => $title,
+    ]);
+
+    if (empty($node)) {
+      return NULL;
+    }
+
+    $node = reset($node);
+    return $node;
+  }
+
+  /**
    * Import pin as taxonomy term.
    *
    * @param array $row
@@ -269,6 +312,11 @@ class IccwcMigrateCommands extends DrushCommands {
 
     $description = $row['description'] ?? '';
     $description = nl2br($description);
+
+    $related_news = $this->getNewsByOldUrl($link);
+    if (!empty($related_news)) {
+      $link = 'entity:node/' . $related_news->id();
+    }
 
     $term = Term::create([
       'vid' => 'map_datasets',
