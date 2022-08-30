@@ -7,7 +7,7 @@
         var matchExpression = ['match', ['get', 'ISO3CD']];
         var data = drupalSettings.parties;
         var coords = drupalSettings.coordinates;
-        if (data != null) {
+        if (data != null && data.length > 0) {
           data.forEach(function (row) {
             var default_color = 'rgb(232,188,5)';
             var color = row['color'];
@@ -139,7 +139,7 @@
           }
         });
 
-        if (coords != null) {
+        if (coords != null && coords.length > 0) {
           coords.forEach(function (row) {
             var default_color = 'rgb(232,188,5)';
             var color = row['color'];
@@ -178,7 +178,7 @@
         });
 
         map.on('mousemove', 'bnda', function(e) {
-          if (data != null) {
+          if (data != null && data.length > 0) {
             var is_party = data.filter(function (el) {
               return el.iso === e.features[0].properties.ISO3CD;
             });
