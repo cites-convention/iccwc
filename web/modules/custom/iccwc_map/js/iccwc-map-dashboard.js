@@ -30,8 +30,8 @@
           // attributionControl: false,
           hash: false,
           // renderWorldCopies: false,
-          maxZoom: 3,
-          zoom: 1.1,
+          maxZoom: 2,
+          zoom: 0.8,
           center: [0, 10],
           style: {
             version: 8,
@@ -40,7 +40,7 @@
                 type: 'vector',
                 tiles: ['https://UN-Geospatial.github.io/cartotile-plain-design/data/cartotile_v01/{z}/{x}/{y}.pbf'],
                 attribution: '<table><tr><td style="font-size: 7pt; line-height: 100%">The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations.​ Final boundary between the Republic of Sudan and the Republic of South Sudan has not yet been determined.​<br>* Non-Self Governing Territories<br>** Dotted line represents approximately the Line of Control in Jammu and Kashmir agreed upon by India and Pakistan. The final status of Jammu and Kashmir has not yet been agreed upon by the parties.​<br>*** A dispute exists between the Governments of Argentina and the United Kingdom of Great Britain and Northern Ireland concerning sovereignty over the Falkland Islands (Malvinas).</td><td  style="font-size: 5pt; color: #009EDB" valign="bottom">Powered by<br><img src="https://unopengis.github.io/watermark/watermark.png" alt="UN OpenGIS logo" width="50" height="50"></td></tr></table>',
-                maxzoom: 3,
+                maxzoom: 2,
                 minzoom: 0
               }
             },
@@ -63,10 +63,10 @@
                 type: 'fill',
                 source: 'v',
                 'source-layer': 'bnda',
-                maxzoom: 3,
+                maxZoom: 2,
                 minzoom: 0,
                 paint: {
-                  'fill-color': matchExpression,
+                  'fill-color': '#E87722',
                   'fill-opacity': 0.8
                 }
               },
@@ -75,7 +75,7 @@
                 type: 'line',
                 source: 'v',
                 'source-layer': 'bndl',
-                maxzoom: 3,
+                maxZoom: 2,
                 minzoom: 0,
                 filter: [
                   'any',
@@ -93,7 +93,7 @@
                 type: 'line',
                 source: 'v',
                 'source-layer': 'bndl',
-                maxzoom: 3,
+                maxZoom: 2,
                 minzoom: 0,
                 filter: [
                   'all',
@@ -110,7 +110,7 @@
                 type: 'line',
                 source: 'v',
                 'source-layer': 'bndl',
-                maxzoom: 3,
+                maxZoom: 2,
                 minzoom: 0,
                 filter: [
                   'all',
@@ -127,7 +127,7 @@
                 type: 'fill',
                 source: 'v',
                 'source-layer': 'bnda',
-                maxzoom: 3,
+                maxZoom: 2,
                 minzoom: 0,
                 filter: ['==', 'ISO3CD', 'ATA'],
                 paint: {
@@ -144,7 +144,7 @@
             var default_color = 'rgb(232,188,5)';
             var color = row['color'];
             let marker;
-            const coordinate = [row['long'] - 10, row['lat']];
+            const coordinate = [row['long'], row['lat']];
 
             if (color) {
               var rgb_color = hexToRgb(color);

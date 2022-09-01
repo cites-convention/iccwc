@@ -154,3 +154,62 @@ function iccwc_pathauto_pattern_alter(&$pattern, array $context) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Modify the configuration form for layout builder sections (layouts).
+ */
+function iccwc_form_layout_builder_configure_section_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\layout_builder\Form\ConfigureSectionForm $form_object */
+  $form_object = $form_state->getFormObject();
+  $config = $form_object->getCurrentLayout()->getConfiguration();
+  $column_count = count($config['regions_classes']);
+
+  $form['layout_settings']['ui']['tab_content']['layout']['has_container']['#access'] = FALSE;
+  $form['layout_settings']['ui']['tab_content']['layout']['remove_gutters']['#access'] = FALSE;
+  $form['layout_settings']['ui']['tab_content']['layout']['container_type']['#access'] = FALSE;
+
+  if ($column_count == 2) {
+    $form['layout_settings']['ui']['tab_content']['layout']['invert_column_order'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Invert column order on tablet/mobile'),
+      '#default_value' => $config['invert_column_order'] ?? FALSE,
+      '#weight' => -2,
+    ];
+  }
+  elseif ($column_count == 3) {
+    $form['layout_settings']['ui']['tab_content']['layout']['right_sidebar_position'] = [
+      '#type' => 'select',
+      '#title' => t('Right sidebar position on tablet/mobile'),
+      '#default_value' => $config['right_sidebar_position'] ?? '3',
+      '#options' => [
+        '3' => t('After main content'),
+        '2' => t('Between first sidebar and content'),
+        '1' => t('Before first sidebar'),
+      ],
+      '#weight' => -2,
+    ];
+  }
+
+
+  array_unshift($form['#submit'], '_iccwc_submit_section_form');
+}
+
+/**
+ * Submit callback for layout_builder_configure_section form.
+ */
+function _iccwc_submit_section_form(array $form, FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+  $config = $form_object->getCurrentLayout()->getConfiguration();
+  if (!$config) {
+    $config = [];
+  }
+  $layout_tab = ['layout_settings', 'ui', 'tab_content', 'layout'];
+  $config = array_merge($config, ['invert_column_order' => $form_state->getValue(array_merge($layout_tab, ['invert_column_order']))]);
+  $config = array_merge($config, ['right_sidebar_position' => $form_state->getValue(array_merge($layout_tab, ['right_sidebar_position']))]);
+
+  $form_object
+    ->getCurrentLayout()
+    ->setConfiguration($config);
+}

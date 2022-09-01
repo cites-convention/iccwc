@@ -1,9 +1,5 @@
 @import "../../../src/scss/variables_drupal";
-@media (min-width: 992px) and (max-width: 1199px){
-  .layout.row .col-lg-2.col-md-12.col-12{
-    padding: 40px 10px;
-  }
-}
+
 @media (max-width: 991px) {
   .social-media-share-container{
     display: flex;

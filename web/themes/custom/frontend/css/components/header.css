@@ -230,6 +230,14 @@ header .navbar > .container.menu {
 header .menu .navbar-nav > .nav-item {
   padding: 0;
 }
+header .menu .navbar-nav > .nav-item.dropdown > .nav-link:after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  background: var(--icon-expand-more) no-repeat center;
+  width: 15px;
+  height: 10px;
+}
 header .menu .navbar-nav > .nav-item > .nav-item {
   padding: 8px 15px;
 }
@@ -248,8 +256,10 @@ header .menu .navbar-nav .nav-item a:hover, header .menu .navbar-nav .nav-item a
   color: var(--color-orange);
   text-decoration: none;
 }
+header .menu .navbar-nav .nav-item a:hover:after, header .menu .navbar-nav .nav-item a:active:after, header .menu .navbar-nav .nav-item span:hover:after, header .menu .navbar-nav .nav-item span:active:after {
+  background-image: var(--icon-expand-more-orange) !important;
+}
 header .menu .navbar-nav .nav-item a.show, header .menu .navbar-nav .nav-item span.show {
-  color: var(--color-gray-darker);
   text-decoration: none;
 }
 header .menu .navbar-nav .nav-item.active {

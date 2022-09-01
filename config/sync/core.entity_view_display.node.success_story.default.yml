@@ -69,7 +69,9 @@ third_party_settings:
               - col-lg-3
               - col-md-12
               - col-12
-          remove_gutters: '0'
+          remove_gutters: 0
+          invert_column_order: null
+          right_sidebar_position: '2'
         components:
           9f0f21d3-fb53-45f5-acd3-71588b5e6e45:
             uuid: 9f0f21d3-fb53-45f5-acd3-71588b5e6e45

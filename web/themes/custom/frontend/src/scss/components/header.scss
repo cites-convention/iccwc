@@ -178,6 +178,15 @@ header {
       > .nav-item {
         padding: 0;
 
+        &.dropdown > .nav-link:after {
+          content:  '';
+          display: inline-block;
+          margin-left: 10px;
+          background: var(--icon-expand-more) no-repeat center;
+          width: 15px;
+          height: 10px;
+        }
+
         > .nav-item {
           padding: 8px 15px;
 
@@ -197,10 +206,14 @@ header {
           &:hover, &:active {
             color: var(--color-orange);
             text-decoration: none;
+
+            &:after {
+              background-image: var(--icon-expand-more-orange) !important;
+            }
           }
 
           &.show {
-            color: var(--color-gray-darker);
+            //color: var(--color-gray-darker);
             text-decoration: none;
           }
         }

@@ -14,6 +14,8 @@
   'layout',
   'row',
   content['#settings']['remove_gutters'] is same as('1') ? 'no-gutters' : '',
+  content['#settings']['invert_column_order'] ? 'mobile-invert-column-order',
+  content['#settings']['right_sidebar_position'] ? 'mobile-right-sidebar-position-' ~ content['#settings']['right_sidebar_position'],
   'layout-builder__layout'
 ] %}
 
