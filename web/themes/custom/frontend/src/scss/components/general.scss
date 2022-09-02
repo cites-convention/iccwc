@@ -436,7 +436,19 @@ blockquote {
   }
 
 }
+.view-resources .views-row {
+  &:first-child {
+    margin-top: 0;
+  }
 
+  &:last-child {
+    border-bottom: solid 1px var(--color-gray);
+  }
+
+  border-top: solid 1px var(--color-gray);
+  align-items: center;
+  margin-top: 20px;
+}
 .node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
 
@@ -445,6 +457,7 @@ blockquote {
       line-clamp: none;
       display: block;
       border-radius: 0;
+      color: red;
     }
 
     .image-container {
@@ -461,7 +474,13 @@ blockquote {
       text-align: left;
     }
   }
-
+  .youtube-container {
+    margin: 0;
+    iframe {
+      width: auto;
+      height: auto;
+    }
+  }
   h3 {
     @include heading-5;
   }

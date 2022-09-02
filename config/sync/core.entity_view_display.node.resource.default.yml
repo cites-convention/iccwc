@@ -9,11 +9,12 @@ dependencies:
     - field.field.node.resource.field_flyer_image
     - field.field.node.resource.field_images
     - field.field.node.resource.field_resource_type
+    - field.field.node.resource.field_video
     - node.type.resource
   module:
     - options
     - text
-    - user
+    - youtube
 id: node.resource.default
 targetEntityType: node
 bundle: resource
@@ -68,6 +69,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_video:
+    type: youtube_video
+    label: above
+    settings:
+      youtube_size: 450x315
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_mute: false
+      youtube_loop: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    weight: 107
     region: content
   links:
     settings: {  }

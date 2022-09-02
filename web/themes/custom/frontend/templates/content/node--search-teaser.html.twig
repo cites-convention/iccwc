@@ -10,7 +10,29 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
-
+{% if node.field_resource_type.value == 'video' %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="row" {{ content_attributes.addClass('node__content') }}>
+      <div class="col-md-8">
+        <div class="date-tags">
+          {{ content.created }}
+        </div>
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h3{{ title_attributes }}>
+            <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+          </h3>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="max-3-lines">
+          {{ content.body }}
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ content.field_video }}</div>
+    </div>
+  </article>
+{% else %}
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
     <div class="col-md-8">
@@ -33,3 +55,4 @@
       {{ content.field_image }}</div>
   </div>
 </article>
+{% endif %}

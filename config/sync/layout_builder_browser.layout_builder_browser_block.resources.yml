@@ -1,0 +1,11 @@
+uuid: e608713f-3ce3-4b6d-b1ea-10ded0afd56d
+langcode: en
+status: true
+dependencies: {  }
+id: resources
+block_id: 'views_block:resources-videos'
+category: page_content
+label: Resources
+image_path: ''
+image_alt: ''
+weight: -100

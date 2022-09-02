@@ -9,11 +9,13 @@ dependencies:
     - field.field.node.resource.field_flyer_image
     - field.field.node.resource.field_images
     - field.field.node.resource.field_resource_type
+    - field.field.node.resource.field_video
     - node.type.resource
   module:
     - media_library
     - path
     - text
+    - youtube
 id: node.resource.default
 targetEntityType: node
 bundle: resource
@@ -68,6 +70,13 @@ content:
     weight: 126
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_video:
+    type: youtube
+    weight: 127
+    region: content
+    settings:
+      placeholder_url: ''
     third_party_settings: {  }
   langcode:
     type: language_select
