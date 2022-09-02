@@ -12,11 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: video
+      label: Video
+    -
       value: publication
       label: 'ICCWC publication'
     -
       value: partner_resource
       label: 'ICCWC Partner resource'
+    -
+      value: infographic
+      label: Infographic
   allowed_values_function: ''
 module: options
 locked: false
