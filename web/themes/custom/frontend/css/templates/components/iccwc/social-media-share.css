@@ -38,7 +38,8 @@
     top: 90px;
   }
   .social-media-share-container {
-    width: 120px;
+    max-width: 120px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
@@ -50,7 +51,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 20px 45px;
+    padding: 20px 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

@@ -28,7 +28,7 @@
   opacity: 0.4;
 }
 .node--view-mode-teaser h3 {
-  line-height: 1;
+  line-height: initial;
   margin-bottom: 10px;
 }
 .node--view-mode-teaser.node--type-partner img {

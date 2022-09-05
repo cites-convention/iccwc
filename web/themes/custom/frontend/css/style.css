@@ -7572,6 +7572,7 @@ body h6, body .h6 {
   --body-font-family: "Open Sans", sans-serif;
   --gutter-x: 20px;
   --gutter-y: 20px;
+  --icon-document: url("../icons/file.svg");
   --icon-expand-more: url("../icons/expand-more.svg");
   --icon-expand-more-orange: url("../icons/expand-more-orange.svg");
 }
@@ -8639,6 +8640,7 @@ footer .navbar-brand #darkModeWhite, footer .navbar-brand #darkModeWhite > * {
   --color-text: #FFF;
   --color-gray-darker-to-white: #FFF;
   --icon-expand-more: url("../icons/expand-more-white.svg");
+  --icon-document: url("../icons/file-white.svg");
 }
 
 .dark-mode a {
