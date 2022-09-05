@@ -132,21 +132,32 @@ function frontend_preprocess_page(&$variables) {
  * Implements hook_preprocess_blb_section().
  */
 function frontend_preprocess_blb_section(&$variables) {
+  $empty_section = TRUE;
+
   foreach (range(1, 12) as $i) {
     if (empty($variables['content']["blb_region_col_$i"])) {
       continue;
     }
 
     foreach (Element::children($variables['content']["blb_region_col_$i"]) as $key) {
+      $empty_region = TRUE;
       foreach (Element::children($variables['content']["blb_region_col_$i"][$key]) as $block_key) {
         if (!empty($variables['content']["blb_region_col_$i"][$key][$block_key])) {
-          return;
+          $empty_section = FALSE;
+          $empty_region = FALSE;
+          break;
         }
+      }
+
+      if ($empty_region) {
+        $variables['region_attributes']["blb_region_col_$i"]['class'][] = 'empty-region';
       }
     }
   }
 
-  $variables['content'] = NULL;
+  if ($empty_section) {
+    $variables['content'] = NULL;
+  }
 }
 
 /**

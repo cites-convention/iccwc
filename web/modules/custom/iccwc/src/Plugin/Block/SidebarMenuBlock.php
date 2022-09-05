@@ -25,6 +25,11 @@ class SidebarMenuBlock extends SystemMenuBlock {
    */
   public function build() {
     $build = parent::build();
+
+    if (empty($build)) {
+      return [];
+    }
+
     $build['#theme'] = 'menu__main__sidebar';
     return $build;
   }

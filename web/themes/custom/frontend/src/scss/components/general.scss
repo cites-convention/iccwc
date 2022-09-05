@@ -668,3 +668,11 @@ img {
   padding: 20px;
   margin-bottom: 10px;
 }
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.empty-region {
+  padding: 0 !important;
+}

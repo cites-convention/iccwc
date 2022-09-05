@@ -8245,6 +8245,14 @@ img {
   margin-bottom: 10px;
 }
 
+p:last-child {
+  margin-bottom: 0;
+}
+
+.empty-region {
+  padding: 0 !important;
+}
+
 .block-dark-mode-switch {
   display: -webkit-box;
   display: -webkit-flex;

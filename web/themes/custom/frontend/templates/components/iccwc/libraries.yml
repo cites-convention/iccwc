@@ -30,3 +30,10 @@ vertical_tabs:
   css:
     component:
       css/templates/components/iccwc/vertical-tabs.css: { }
+
+horizontal_tabs:
+  js:
+    js/horizontal-tabs.js: { }
+  css:
+    component:
+      css/templates/components/iccwc/horizontal-tabs.css: { }

@@ -1,0 +1,10 @@
+uuid: 5a7d563f-3c1c-4f45-ba22-1a7eba013122
+langcode: en
+status: true
+dependencies: {  }
+id: horizontal_tab
+label: 'Horizontal tab'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
