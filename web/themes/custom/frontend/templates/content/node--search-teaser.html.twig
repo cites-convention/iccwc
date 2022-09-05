@@ -32,6 +32,28 @@
         {{ content.field_video }}</div>
     </div>
   </article>
+{% elseif node.field_resource_type.value != 'publication' %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="row" {{ content_attributes.addClass('node__content') }}>
+      <div class="col-md-8">
+        <div class="date-tags">
+          {{ content.created }}
+        </div>
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h3{{ title_attributes }}>
+            <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+          </h3>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="max-3-lines">
+          {{ content.body }}
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ content.field_image }}</div>
+    </div>
+  </article>
 {% else %}
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
@@ -52,7 +74,16 @@
       </div>
     </div>
     <div class="col-md-4">
-      {{ content.field_image }}</div>
+      {{ content.field_image }}
+    </div>
+    <div class="download-resource-block col-md-12">
+      <p>Download</p><a href="#">English</a><a href="#">English</a><a href="#">English</a>
+    </div>
+    {% for key,file in content.field_files %}
+      {% if key is not defined %}
+      {{ dump(file) }}
+      {% endif %}
+    {% endfor %}
   </div>
 </article>
 {% endif %}

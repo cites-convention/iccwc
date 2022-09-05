@@ -5,17 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_teaser
     - field.field.node.resource.body
+    - field.field.node.resource.field_additional_materials
+    - field.field.node.resource.field_brochure
     - field.field.node.resource.field_files
-    - field.field.node.resource.field_flyer_files
-    - field.field.node.resource.field_flyer_image
-    - field.field.node.resource.field_images
+    - field.field.node.resource.field_image
+    - field.field.node.resource.field_organization
     - field.field.node.resource.field_resource_type
     - field.field.node.resource.field_video
     - node.type.resource
-    - responsive_image.styles.teaser_image_large
   module:
     - layout_builder
-    - media_responsive_thumbnail
     - smart_trim
     - youtube
 third_party_settings:
@@ -56,14 +55,22 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_images:
-    type: media_responsive_thumbnail
+  field_files:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      responsive_image_style: teaser_image_large
-      image_link: content
+      view_mode: default
+      link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_video:
     type: youtube_video
@@ -79,12 +86,12 @@ content:
       youtube_autohide: false
       youtube_iv_load_policy: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
-  field_files: true
-  field_flyer_files: true
-  field_flyer_image: true
+  field_additional_materials: true
+  field_brochure: true
+  field_organization: true
   field_resource_type: true
   langcode: true
   links: true

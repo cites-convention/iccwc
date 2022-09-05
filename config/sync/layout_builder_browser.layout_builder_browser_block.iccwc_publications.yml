@@ -1,0 +1,11 @@
+uuid: 847f0bd8-0783-4116-b0c9-eea2ab7d553c
+langcode: en
+status: true
+dependencies: {  }
+id: iccwc_publications
+block_id: 'views_block:resources-iccwc_publications'
+category: page_content
+label: 'ICCWC Publications'
+image_path: ''
+image_alt: ''
+weight: -100

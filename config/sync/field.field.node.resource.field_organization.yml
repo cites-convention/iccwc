@@ -1,29 +1,29 @@
-uuid: ca49de79-c1cc-40a8-8c11-9aef565b6d35
+uuid: 290e3a85-22c9-446b-a60b-6c6a16dffc71
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_flyer_image
-    - media.type.image
+    - field.storage.node.field_organization
     - node.type.resource
-id: node.resource.field_flyer_image
-field_name: field_flyer_image
+    - taxonomy.vocabulary.organizations
+id: node.resource.field_organization
+field_name: field_organization
 entity_type: node
 bundle: resource
-label: 'Flyer image'
+label: Organization
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      image: image
+      organizations: organizations
     sort:
-      field: _none
-      direction: ASC
+      field: name
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

@@ -7,6 +7,7 @@ dependencies:
     - node.type.resource
   module:
     - node
+    - options
     - user
 id: resources
 label: Resources
@@ -22,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Videos
+      title: 'Partner tools & resources'
       fields:
         title:
           id: title
@@ -181,12 +182,321 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  iccwc_publications:
+    id: iccwc_publications
+    display_title: 'ICCWC Publications'
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'ICCWC Publications'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            resource: resource
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_resource_type_value:
+          id: field_resource_type_value
+          table: node__field_resource_type
+          field: field_resource_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            publication: publication
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  infographics:
+    id: infographics
+    display_title: Infographics
+    display_plugin: block
+    position: 4
+    display_options:
+      title: Infographics
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            resource: resource
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_resource_type_value:
+          id: field_resource_type_value
+          table: node__field_resource_type
+          field: field_resource_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            infographic: infographic
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  partner_tools_resources:
+    id: partner_tools_resources
+    display_title: 'Partner tools & resources'
+    display_plugin: block
+    position: 3
+    display_options:
+      title: 'Partner tools & resources'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            resource: resource
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_resource_type_value:
+          id: field_resource_type_value
+          table: node__field_resource_type
+          field: field_resource_type_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            partner_resource: partner_resource
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   videos:
     id: videos
     display_title: Videos
     display_plugin: block
     position: 1
     display_options:
+      title: Videos
+      defaults:
+        title: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

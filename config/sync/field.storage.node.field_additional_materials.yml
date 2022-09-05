@@ -1,19 +1,19 @@
-uuid: ea050a58-abf4-4659-b79a-6595f46bcbad
+uuid: 42dd6702-adc4-42f0-a3f8-ef7e2eef8540
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - node
-id: node.field_flyer_image
-field_name: field_flyer_image
+id: node.field_additional_materials
+field_name: field_additional_materials
 entity_type: node
 type: entity_reference
 settings:
   target_type: media
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

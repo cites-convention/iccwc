@@ -1,16 +1,16 @@
-uuid: 9eb8e587-14ff-4a8f-a47b-ba316c18a3d8
+uuid: 309705af-b7db-4f75-9c2c-31af32886a4c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_flyer_files
+    - field.storage.node.field_additional_materials
     - media.type.file
     - node.type.resource
-id: node.resource.field_flyer_files
-field_name: field_flyer_files
+id: node.resource.field_additional_materials
+field_name: field_additional_materials
 entity_type: node
 bundle: resource
-label: 'Flyer files'
+label: 'Additional materials'
 description: ''
 required: false
 translatable: false

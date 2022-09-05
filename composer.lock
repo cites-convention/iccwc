@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e4b1973b8163ac75b966879be5d63b6",
+    "content-hash": "f576a5706b9e077c4add41d487fbacf9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3880,6 +3880,64 @@
             "homepage": "https://www.drupal.org/project/lang_dropdown",
             "support": {
                 "source": "https://git.drupalcode.org/project/lang_dropdown"
+            }
+        },
+        {
+            "name": "drupal/languagefield",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/languagefield.git",
+                "reference": "8.x-1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/languagefield-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "b8a0caafb0bdffdc813ef02920bdf996c210a554"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.8",
+                    "datestamp": "1657799214",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Alan D.",
+                    "homepage": "https://www.drupal.org/user/198838",
+                    "role": "Founder"
+                },
+                {
+                    "name": "John Voskuilen",
+                    "homepage": "https://www.drupal.org/user/591042",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Deji Akala",
+                    "email": "dejiakala@gmail.com",
+                    "homepage": "https://github.com/dakala",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Creates a language field with widgets and formatters.",
+            "homepage": "http://drupal.org/project/languagefield",
+            "support": {
+                "source": "http://cgit.drupalcode.org/languagefield",
+                "issues": "http://drupal.org/project/languagefield",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {

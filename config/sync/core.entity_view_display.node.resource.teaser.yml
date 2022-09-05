@@ -5,10 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.resource.body
+    - field.field.node.resource.field_additional_materials
+    - field.field.node.resource.field_brochure
     - field.field.node.resource.field_files
-    - field.field.node.resource.field_flyer_files
-    - field.field.node.resource.field_flyer_image
-    - field.field.node.resource.field_images
+    - field.field.node.resource.field_image
+    - field.field.node.resource.field_organization
     - field.field.node.resource.field_resource_type
     - field.field.node.resource.field_video
     - node.type.resource
@@ -34,10 +35,11 @@ content:
     region: content
 hidden:
   created: true
+  field_additional_materials: true
+  field_brochure: true
   field_files: true
-  field_flyer_files: true
-  field_flyer_image: true
-  field_images: true
+  field_image: true
+  field_organization: true
   field_resource_type: true
   field_video: true
   langcode: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.file.field_language
     - field.field.media.file.field_media_file
     - media.type.file
 id: media.file.media_library
@@ -18,6 +19,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_language: true
   field_media_file: true
   langcode: true
   name: true

@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.file.field_language
     - field.field.media.file.field_media_file
     - media.type.file
   module:
     - file
+    - languagefield
     - path
 id: media.file.default
 targetEntityType: media
@@ -18,6 +20,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_language:
+    type: languagefield_select
+    weight: 101
+    region: content
+    settings:
+      format:
+        name: name
     third_party_settings: {  }
   field_media_file:
     type: file_generic
