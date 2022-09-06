@@ -1,8 +1,0 @@
-uuid: 198033ea-bcec-4da2-b6bb-0f69913c0aa8
-langcode: en
-status: true
-dependencies: {  }
-id: horizontal_tabs
-label: 'Horizontal tabs'
-revision: 0
-description: ''

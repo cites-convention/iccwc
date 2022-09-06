@@ -77,13 +77,13 @@
       {{ content.field_image }}
     </div>
     <div class="download-resource-block col-md-12">
-      <p>Download</p><a href="#">English</a><a href="#">English</a><a href="#">English</a>
+      <p>Download</p>
+      {% for file in content.field_files %}
+        {% if file["#type"] == "link" %}
+          <a href="{{ file["#url"] }}" download>{{ file["#language"].label }}</a>
+        {% endif %}
+      {% endfor %}
     </div>
-    {% for key,file in content.field_files %}
-      {% if key is not defined %}
-      {{ dump(file) }}
-      {% endif %}
-    {% endfor %}
   </div>
 </article>
 {% endif %}
