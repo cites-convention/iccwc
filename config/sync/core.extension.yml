@@ -21,6 +21,7 @@ module:
   ckeditor: 0
   ckeditor_bs_grid: 0
   ckeditor_quote: 0
+  ckeditor_timeline: 0
   color: 0
   colorbox: 0
   config_translation: 0

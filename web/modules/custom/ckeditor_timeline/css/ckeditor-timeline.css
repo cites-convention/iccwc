@@ -1,0 +1,41 @@
+.ckeditor-timeline {
+  display: grid;
+  grid-template-columns: 80px auto;
+  position: relative;
+}
+
+.ckeditor-timeline span {
+  background: #F5CD26;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+}
+
+.ckeditor-timeline:before {
+  width: 6px;
+  height: 100%;
+  content: '';
+  position: absolute;
+  left: 27px;
+  background: #E5E5E5;
+  z-index: -2;
+  top: 0;
+}
+
+.ckeditor-timeline:after {
+  content: '';
+  position: absolute;
+  background: #F5CD26;
+  z-index: -1;
+  bottom: 0;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

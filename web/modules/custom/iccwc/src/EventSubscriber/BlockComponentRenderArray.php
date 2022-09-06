@@ -31,6 +31,7 @@ class BlockComponentRenderArray implements EventSubscriberInterface {
   public function onBuildRender(SectionComponentBuildRenderArrayEvent $event) {
     $border = $event->getComponent()->getThirdPartySetting('iccwc', 'border');
     $centered = $event->getComponent()->getThirdPartySetting('iccwc', 'centered');
+    $horizontal_tab_id = $event->getComponent()->getThirdPartySetting('iccwc', 'horizontal_tab_id');
     $build = $event->getBuild();
 
     if (!empty($border)) {
@@ -38,6 +39,9 @@ class BlockComponentRenderArray implements EventSubscriberInterface {
     }
     if (!empty($centered)) {
       $build['#attributes']['class'][] = 'block-centered';
+    }
+    if (!empty($horizontal_tab_id)) {
+      $build['#attributes']['data-horizontal-tab-parent-id'] = $horizontal_tab_id;
     }
 
     $event->setBuild($build);

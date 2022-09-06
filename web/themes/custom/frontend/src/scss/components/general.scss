@@ -20,6 +20,7 @@
   --body-font-family: 'Open Sans', sans-serif;
   --gutter-x: 20px;
   --gutter-y: 20px;
+  --icon-document: url("../icons/file.svg");
   --icon-expand-more: url('../icons/expand-more.svg');
   --icon-expand-more-orange: url('../icons/expand-more-orange.svg');
 }
@@ -224,6 +225,11 @@ blockquote {
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  &.align-right, &.align-left {
+    max-width: 180px;
+    padding: 10px;
   }
 }
 
@@ -704,9 +710,26 @@ img {
     margin-bottom: 20px;
   }
 }
+<<<<<<< HEAD
 .download-resource-block{
   border: 1px solid var(--color-gray);
   border-radius: 10px;
   margin-top: 10px;
 
+=======
+
+.box-shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.empty-region {
+  padding: 0 !important;
+>>>>>>> 026e00818b88604724c4d48a2f792dff584d8cc4
 }

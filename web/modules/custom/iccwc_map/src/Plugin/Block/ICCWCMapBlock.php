@@ -86,6 +86,7 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
     $map_disclaimer = NULL;
     $parties_list = NULL;
     $categories_list = NULL;
+    $selected_regions = [];
 
     if (isset($this->configuration['dataset'])) {
       $term_id = $this->configuration['dataset'];

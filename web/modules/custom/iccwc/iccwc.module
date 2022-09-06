@@ -121,6 +121,13 @@ function iccwc_form_layout_builder_configure_block_alter(&$form, FormStateInterf
     '#title' => t('Centered content'),
     '#default_value' => $component->getThirdPartySetting('iccwc', 'centered') ?? FALSE,
   ];
+
+  $form['settings']['horizontal_tab_id'] = [
+    '#type' => 'textfield',
+    '#title' => t('Horizontal tab ID'),
+    '#description' => t('If added, this block will be moved inside the horizontal tab with the same ID. Ignore this if the page does not contain any horizontal tabs.'),
+    '#default_value' => $component->getThirdPartySetting('iccwc', 'horizontal_tab_id') ?? '',
+  ];
 }
 
 /**
@@ -131,6 +138,7 @@ function _iccwc_form_layout_builder_configure_block_submit($form, FormStateInter
   $section_component = $form_state->getFormObject()->getCurrentComponent();
   $section_component->setThirdPartySetting('iccwc', 'border', $form_state->getValue('settings')['border'] ?? 0);
   $section_component->setThirdPartySetting('iccwc', 'centered', $form_state->getValue('settings')['centered'] ?? 0);
+  $section_component->setThirdPartySetting('iccwc', 'horizontal_tab_id', $form_state->getValue('settings')['horizontal_tab_id'] ?? '');
 }
 
 /**
