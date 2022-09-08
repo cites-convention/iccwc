@@ -67,7 +67,7 @@
                   'fill-color': matchExpression,
                   'fill-opacity': 0.8,
                 },
-                filter: ['==', ['get', 'adm0_name'], null]
+                filter: ['!=', ['get', 'iso3'], null]
               },
               {
                 id: 'countries-lines',
