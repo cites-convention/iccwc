@@ -1,6 +1,8 @@
 <div class="row">
   <div class="parties-map-menu col-3">
-    <h3 class="region active" id="global"> {{ 'Global'|t }} </h3>
+    {% if categories %}
+      <h3 class="region active" id="global"> {{ 'Global'|t }} </h3>
+    {% endif %}
     {% for id, region in regions %}
       <h3 class="region" id="region-{{ id }}"> {{ region }} </h3>
     {% endfor %}

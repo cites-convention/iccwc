@@ -369,10 +369,10 @@
             $(this).addClass('active');
             map.flyTo({
               center: [
-                -99.7084, 35.3804
+                -99.7084, 55.3804
               ],
               essential: true,
-              zoom: 2
+              zoom: 1.5
             });
           });
         }
