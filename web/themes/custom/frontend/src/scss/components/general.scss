@@ -492,27 +492,74 @@ blockquote {
   &.node--type-resource{
     .image-container{
       border: 0;
+      padding-right: 0;
     }
-    .download-resource-block{
-      display: flex;
+    .field--name-body p {
+      @include max-lines(7);
+    }
+    .download-resource-block {
+      div:first-child{
+        display: flex;
+        margin-bottom: 10px;
+      }
+      div a {
+        &:hover{text-decoration: none;}
+        p {
+          color: var(--color-black);
+        }
+      }
+      a[aria-expanded="false"] .arrow {
+        transform: rotate(-180deg);
+      }
+      .arrow{
+        position: relative;
+        border:none;
+        transform: rotate(0);
+        top: -5px;
+        left: 0;
+        display: inline-flex;
+      }
+      .card-body{
+        display: flex;
+        flex-direction: column;
+      }
       padding: 20px 10px;
-      background: var(--color-gray-light);
-      p,a{
+      width: 97%;
+      margin-left:auto;
+      margin-right:auto;
+      border: 1px solid var(--color-gray);
+      border-radius: 10px;
+      .lang-download{
         display: inline-block;
         align-self: center;
         margin: 0 10px 0 0;
-      }
-      a{
+        font-weight: 700;
         text-decoration: none;
         padding: 20px 10px 20px 10px;
         border: 1px solid var(--color-orange);
         border-radius: 10px;
         color: var(--color-orange);
-        font-weight: 700;
         &:hover{
           background: var(--color-orange);
           color: white;
         }
+      }
+      #brochure{
+        margin-right: 0;
+        margin-left: auto;
+        border-color: var(--color-yellow);
+        color: var(--color-black);
+        &:hover{
+          background-color: var(--color-yellow);
+          color: white;
+        }
+      }
+      p{
+        color: var(--color-gray-darker);
+        display: inline-block;
+        align-self: center;
+        margin: 0 10px 0 0;
+        font-weight: 700;
       }
     }
   }
@@ -710,13 +757,11 @@ img {
     margin-bottom: 20px;
   }
 }
-<<<<<<< HEAD
+
 .download-resource-block{
   border: 1px solid var(--color-gray);
   border-radius: 10px;
   margin-top: 10px;
-
-=======
 
 .box-shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

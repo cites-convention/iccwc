@@ -8067,33 +8067,99 @@ blockquote p:after {
 }
 .node--view-mode-search-teaser.node--type-resource .image-container {
   border: 0;
+  padding-right: 0;
+}
+.node--view-mode-search-teaser.node--type-resource .field--name-body p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
 }
 .node--view-mode-search-teaser.node--type-resource .download-resource-block {
+  padding: 20px 10px;
+  width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block div:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px 10px;
-  background: var(--color-gray-light);
+  margin-bottom: 10px;
 }
-.node--view-mode-search-teaser.node--type-resource .download-resource-block p, .node--view-mode-search-teaser.node--type-resource .download-resource-block a {
+.node--view-mode-search-teaser.node--type-resource .download-resource-block div a:hover {
+  text-decoration: none;
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block div a p {
+  color: var(--color-black);
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block a[aria-expanded=false] .arrow {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block .arrow {
+  position: relative;
+  border: none;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  top: -5px;
+  left: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block .card-body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block .lang-download {
   display: inline-block;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
   margin: 0 10px 0 0;
-}
-.node--view-mode-search-teaser.node--type-resource .download-resource-block a {
+  font-weight: 700;
   text-decoration: none;
   padding: 20px 10px 20px 10px;
   border: 1px solid var(--color-orange);
   border-radius: 10px;
   color: var(--color-orange);
-  font-weight: 700;
 }
-.node--view-mode-search-teaser.node--type-resource .download-resource-block a:hover {
+.node--view-mode-search-teaser.node--type-resource .download-resource-block .lang-download:hover {
   background: var(--color-orange);
   color: white;
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block #brochure {
+  margin-right: 0;
+  margin-left: auto;
+  border-color: var(--color-yellow);
+  color: var(--color-black);
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block #brochure:hover {
+  background-color: var(--color-yellow);
+  color: white;
+}
+.node--view-mode-search-teaser.node--type-resource .download-resource-block p {
+  color: var(--color-gray-darker);
+  display: inline-block;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin: 0 10px 0 0;
+  font-weight: 700;
 }
 .node--view-mode-search-teaser h3, .node--view-mode-search-teaser .h3 {
   font-weight: bold;
@@ -8292,26 +8358,22 @@ img {
   }
 }
 
-<<<<<<< HEAD
 .download-resource-block {
   border: 1px solid var(--color-gray);
   border-radius: 10px;
   margin-top: 10px;
-=======
-.box-shadow {
+}
+.download-resource-block .box-shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
 }
-
-p:last-child {
+.download-resource-block p:last-child {
   margin-bottom: 0;
 }
-
-.empty-region {
+.download-resource-block .empty-region {
   padding: 0 !important;
->>>>>>> 026e00818b88604724c4d48a2f792dff584d8cc4
 }
 
 .block-dark-mode-switch {

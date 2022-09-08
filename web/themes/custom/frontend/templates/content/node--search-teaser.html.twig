@@ -32,7 +32,66 @@
         {{ content.field_video }}</div>
     </div>
   </article>
-{% elseif node.field_resource_type.value != 'publication' %}
+
+{% elseif node.field_resource_type.value == 'publication' %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="row" {{ content_attributes.addClass('node__content') }}>
+      <div class="col-md-8">
+        <div class="date-tags">
+          {{ content.field_tags[0] }}
+          {{ content.created }}
+        </div>
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h3{{ title_attributes }}>
+            <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+          </h3>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="max-3-lines">
+          {{ content.body }}
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ content.field_image }}
+      </div>
+      <div class="download-resource-block">
+
+        <div>
+        <p>{{ "Download"|t }}</p>
+        {% for file in content.field_files %}
+          {% if file["#type"] == "link" %}
+            <a href="{{ file["#url"] }}" class="lang-download" download>{{ file["#language"].label }}</a>
+          {% endif %}
+        {% endfor %}
+        <a href="{{ content.field_brochure[0]['#url']}}" class="lang-download" id="brochure" target="_blank">{{ "See brochure"|t }}</a><br>
+        </div>
+
+        {% if content.field_additional_materials[0] is not null %}
+        <div>
+          <a data-bs-toggle="collapse" href="#additionalMaterials" role="button" aria-expanded="true" aria-controls="additionalMaterials">
+            <p>{{ "Aditional materials"|t }}</p>
+            <i class="arrow"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.59 7.42004L6 2.83004L1.41 7.42004L0 6.00004L6 4.3869e-05L12 6.00004L10.59 7.42004Z" fill="#231F20"/>
+              </svg></i>
+          </a>
+          <div class="collapse show" id="additionalMaterials">
+            <div class="card card-body">
+              {% for file in content.field_additional_materials %}
+                {% if file["#type"] == "link" %}
+                  <a href="{{ file["#url"] }}" >{{ file["#title"] }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+{#    {{ dump(content.field_additional_materials) }}#}
+  </article>
+{% elseif node.field_resource_type.value == 'partner_resource' %}
   <article{{ attributes.addClass(classes) }}>
     <div class="row" {{ content_attributes.addClass('node__content') }}>
       <div class="col-md-8">
@@ -54,12 +113,11 @@
         {{ content.field_image }}</div>
     </div>
   </article>
-{% else %}
+{% elseif node.field_resource_type.value == 'infographic' %}
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
     <div class="col-md-8">
       <div class="date-tags">
-        {{ content.field_tags[0] }}
         {{ content.created }}
       </div>
       {{ title_prefix }}
@@ -74,16 +132,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      {{ content.field_image }}
-    </div>
-    <div class="download-resource-block col-md-12">
-      <p>Download</p>
-      {% for file in content.field_files %}
-        {% if file["#type"] == "link" %}
-          <a href="{{ file["#url"] }}" download>{{ file["#language"].label }}</a>
-        {% endif %}
-      {% endfor %}
-    </div>
+      {{ content.field_image }}</div>
   </div>
 </article>
 {% endif %}
