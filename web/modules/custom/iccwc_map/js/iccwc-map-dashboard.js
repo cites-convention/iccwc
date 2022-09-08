@@ -4,7 +4,7 @@
       $('.parties-map-overview').once('partiesMap').each(function () {
 
         // Find and color parties
-        var matchExpression = ['match', ['get', 'ISO3CD']];
+        var matchExpression = ['match', ['get', 'iso3']];
         var data = drupalSettings.parties;
         var coords = drupalSettings.coordinates;
         if (data != null && data.length > 0) {
@@ -30,18 +30,19 @@
           // attributionControl: false,
           hash: false,
           // renderWorldCopies: false,
-          maxZoom: 2,
+          maxZoom: 3,
           zoom: 0.8,
           center: [0, 10],
           style: {
             version: 8,
             sources: {
-              v: {
-                type: 'vector',
-                tiles: ['https://UN-Geospatial.github.io/cartotile-plain-design/data/cartotile_v01/{z}/{x}/{y}.pbf'],
-                attribution: '<table><tr><td style="font-size: 7pt; line-height: 100%">The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations.​ Final boundary between the Republic of Sudan and the Republic of South Sudan has not yet been determined.​<br>* Non-Self Governing Territories<br>** Dotted line represents approximately the Line of Control in Jammu and Kashmir agreed upon by India and Pakistan. The final status of Jammu and Kashmir has not yet been agreed upon by the parties.​<br>*** A dispute exists between the Governments of Argentina and the United Kingdom of Great Britain and Northern Ireland concerning sovereignty over the Falkland Islands (Malvinas).</td><td  style="font-size: 5pt; color: #009EDB" valign="bottom">Powered by<br><img src="https://unopengis.github.io/watermark/watermark.png" alt="UN OpenGIS logo" width="50" height="50"></td></tr></table>',
-                maxzoom: 2,
-                minzoom: 0
+              polygons: {
+                data: 'https://geonode.wfp.org/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Aica_countries&maxFeatures=200&outputFormat=application%2Fjson',
+                type: 'geojson'
+              },
+              lines: {
+                data: 'https://geonode.wfp.org/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Aworld_lines_simplified&maxFeatures=1000&outputFormat=application%2Fjson',
+                type: 'geojson'
               }
             },
             glyphs: 'https://UN-Geospatial.github.io/cartotile-plain-design/font/{fontstack}/{range}.pbf',
@@ -59,77 +60,54 @@
                 }
               },
               {
-                id: 'bnda',
+                id: 'countries-all',
                 type: 'fill',
-                source: 'v',
-                'source-layer': 'bnda',
-                maxZoom: 2,
-                minzoom: 0,
+                source: 'polygons',
                 paint: {
-                  'fill-color': '#E87722',
-                  'fill-opacity': 0.8
-                }
+                  'fill-color': matchExpression,
+                  'fill-opacity': 0.8,
+                },
+                filter: ['==', ['get', 'adm0_name'], null]
               },
               {
-                id: 'bndl_solid',
+                id: 'countries-lines',
                 type: 'line',
-                source: 'v',
-                'source-layer': 'bndl',
-                maxZoom: 2,
-                minzoom: 0,
-                filter: [
-                  'any',
-                  ['==', 'BDYTYP', 1],
-                  ['==', 'BDYTYP', 0],
-                  ['==', 'BDYTYP', 2]
-                ],
+                source: 'lines',
                 paint: {
-                  'line-color': ['rgb', 255, 255, 255],
-                  'line-width': 0.8
-                }
+                  'line-color': '#fff',
+                  'line-width': 1,
+                },
+                filter: ['any', ['==', ['get', 'bdytyp'], 1], ['==', ['get', 'bdytyp'], 99]]
               },
               {
-                id: 'bndl_dashed',
+                id: 'countries-lines-dashed',
                 type: 'line',
-                source: 'v',
-                'source-layer': 'bndl',
-                maxZoom: 2,
-                minzoom: 0,
-                filter: [
-                  'all',
-                  ['==', 'BDYTYP', 3]
-                ],
+                source: 'lines',
                 paint: {
-                  'line-color': ['rgb', 255, 255, 255],
-                  'line-dasharray': [3,2],
-                  'line-width': 0.8
-                }
+                  'line-color': '#fff',
+                  'line-width': 2,
+                  'line-dasharray': [6, 6],
+                },
+                filter: ['==', ['get', 'bdytyp'], 3]
               },
               {
-                id: 'bndl_dotted',
+                id: 'countries-lines-dotted',
                 type: 'line',
-                source: 'v',
-                'source-layer': 'bndl',
-                maxZoom: 2,
-                minzoom: 0,
-                filter: [
-                  'all',
-                  ['==', 'BDYTYP', 4]
-                ],
+                source: 'lines',
                 paint: {
-                  'line-color': ['rgb', 255, 255, 255],
-                  'line-dasharray': [1,2],
-                  'line-width': 0.8
-                }
+                  'line-color': '#fff',
+                  'line-width': 2,
+                  'line-dasharray': [0.5, 0.5],
+                },
+                filter: ['==', ['get', 'bdytyp'], 4]
               },
               {
                 id: 'hide_ata',
                 type: 'fill',
-                source: 'v',
-                'source-layer': 'bnda',
+                source: 'polygons',
                 maxZoom: 2,
                 minzoom: 0,
-                filter: ['==', 'ISO3CD', 'ATA'],
+                filter: ['==', 'iso3', 'ATA'],
                 paint: {
                   'fill-color': ['rgb', 255, 255, 255],
                   'fill-opacity': 1
@@ -177,12 +155,11 @@
           closeOnClick: true
         });
 
-        map.on('click', 'bnda', function(e) {
+        map.on('click', 'countries-all', function(e) {
           if (data != null && data.length > 0) {
             var is_party = data.filter(function (el) {
-              return el.iso === e.features[0].properties.ISO3CD;
+              return el.iso === e.features[0].properties.iso3;
             });
-
 
             var layers = map.getStyle().layers;
             var current_country_layer = layers.filter(function (el) {
@@ -195,13 +172,12 @@
                   {
                     id: 'current_country',
                     type: 'fill',
-                    source: 'v',
-                    'source-layer': 'bnda',
+                    source: 'polygons',
                     maxzoom: 4,
                     minzoom: 0,
                     filter: [
                       'all',
-                      ['==', 'ISO3CD', e.features[0].properties.ISO3CD]
+                      ['==', 'iso3', e.features[0].properties.iso3]
                     ],
                     paint: {
                       "fill-color": "#00757D",
@@ -211,90 +187,29 @@
               }
               map.getCanvas().style.cursor = 'pointer';
               // a temporary fix for issue #11129
-              if (e.features[0].properties.ISO3CD === 'TWN' || e.features[0].properties.ISO3CD === "CHN") {
+              if (e.features[0].properties.iso3 === 'TWN' || e.features[0].properties.iso3 === "CHN") {
                 map.setFilter('current_country', [
                   "in",
-                  "ISO3CD",
+                  "iso3",
                   'CHN',
                   'TWN'
                 ])
               } else {
-                map.setFilter('current_country', ['all', ['==', 'ISO3CD', e.features[0].properties.ISO3CD]]);
+                map.setFilter('current_country', ['all', ['==', 'iso3', e.features[0].properties.iso3]]);
               }
             }
 
-            if (e.features[0].properties.STSCOD === 1 && is_party.length > 0) {
-              var html = "<span class='stscod1'></span>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map);
-            } else if (e.features[0].properties.STSCOD === 2 && is_party.length > 0) {
-              var html = "<span class='stscod2'></span>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 3 && is_party.length > 0) {
-
-              if (e.features[0].properties.MAPLAB === "Falkland Islands (Malvinas) ***") {
-
-                var html = "<span class='stscod3'></span>";
-                html = partyInformation(e, data, html);
-
-              } else {
-                var html = "<span class='stscod3'></span>";
-                html = partyInformation(e, data, html);
-
-              }
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 4 && is_party.length > 0) {
-              var html = "<span class='stscod4'></span>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 5 && is_party.length > 0) {
-              var html = "<span class='stscod5'></span>";
-              // a temporary fix for issue #11129
-              if (e.features[0].properties.ISO3CD === 'TWN') {
-                var html = "<span class='stscod1'><b>CHINA</b></span><br/>";
-              }
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 6 && is_party.length > 0) {
-              var html = "<span class='stscod6'></span>";
-              html = partyInformation(e, data, html);
-
-              popup
-                .setLngLat(e.lngLat)
-                .setHTML(html)
-                .addTo(map)
-            } else if (e.features[0].properties.STSCOD === 99 && is_party.length > 0) {
-
-              if (e.features[0].properties.MAPLAB === "Jammu and Kashmir **") {
-                var html = "<span class='stscod6'></span>";
+            if (is_party.length > 0) {
+              if (e.features[0].properties.iso3) {
+                var html = "<span class='stscod1'></span>";
                 html = partyInformation(e, data, html);
 
                 popup
                   .setLngLat(e.lngLat)
                   .setHTML(html)
-                  .addTo(map)
-              } else {
+                  .addTo(map);
+              }
+              else {
                 popup.remove();
                 if (map.getLayer("current_country")) {
                   map.removeLayer("current_country");
@@ -304,12 +219,11 @@
           }
         });
 
-        map.on('mousemove', 'bnda', function(e) {
+        map.on('mousemove', 'countries-all', function(e) {
           if (data != null && data.length > 0) {
             var is_party = data.filter(function (el) {
-              return el.iso === e.features[0].properties.ISO3CD;
+              return el.iso === e.features[0].properties.iso3;
             });
-
 
             var layers = map.getStyle().layers;
             var current_country_layer = layers.filter(function (el) {
@@ -322,13 +236,13 @@
                   {
                     id: 'current_country',
                     type: 'fill',
-                    source: 'v',
-                    'source-layer': 'bnda',
+                    source: 'polygons',
+
                     maxzoom: 4,
                     minzoom: 0,
                     filter: [
                       'all',
-                      ['==', 'ISO3CD', e.features[0].properties.ISO3CD]
+                      ['==', 'iso3', e.features[0].properties.iso3]
                     ],
                     paint: {
                       "fill-color": "#00757D",
@@ -338,21 +252,21 @@
               }
               map.getCanvas().style.cursor = 'pointer';
               // a temporary fix for issue #11129
-              if (e.features[0].properties.ISO3CD === 'TWN' || e.features[0].properties.ISO3CD === "CHN") {
+              if (e.features[0].properties.iso3 === 'TWN' || e.features[0].properties.iso3 === "CHN") {
                 map.setFilter('current_country', [
                   "in",
-                  "ISO3CD",
+                  "iso3",
                   'CHN',
                   'TWN'
                 ])
               } else {
-                map.setFilter('current_country', ['all', ['==', 'ISO3CD', e.features[0].properties.ISO3CD]]);
+                map.setFilter('current_country', ['all', ['==', 'iso3', e.features[0].properties.iso3]]);
               }
             }
           }
         });
 
-        map.on('mouseleave', 'bnda', function(e){
+        map.on('mouseleave', 'countries-all', function(e){
           var layers = map.getStyle().layers;
           for(var i=0; i < layers.length; i++) {
             if(layers[i].id === 'current_country') {
@@ -487,7 +401,7 @@
 
       function partyInformation(e, data, html) {
         var party = data.filter(function(el) {
-          return el.iso === e.features[0].properties.ISO3CD;
+          return el.iso === e.features[0].properties.iso3;
         });
 
         if (party.length !== 0) {
