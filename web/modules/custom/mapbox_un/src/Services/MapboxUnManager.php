@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iccwc_map\Services;
+namespace Drupal\mapbox_un\Services;
 
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -8,11 +8,9 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\TermInterface;
 
 /**
- * Class ICCWCMapBaseUtils custom functions to be used in block.
- *
- * @package Drupal\iccwc_map
+ * Class MapboxUnManager custom functions to be used in block.
  */
-class ICCWCMapBaseUtils {
+class MapboxUnManager {
 
   /**
    * The entity type manager.
@@ -29,7 +27,7 @@ class ICCWCMapBaseUtils {
   protected $entityRepository;
 
   /**
-   * ICCWCMapBaseUtils constructor.
+   * MapboxUnManager constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   Entity Type Manager Interface.

@@ -1,12 +1,12 @@
 (function ($, Drupal, drupalSettings) {
-  Drupal.behaviors.partyListMap = {
+  Drupal.behaviors.mapboxUn = {
     attach: function attach(context) {
       $('.parties-map-overview').once('partiesMap').each(function () {
 
         // Find and color parties
         var matchExpression = ['match', ['get', 'iso3']];
-        var data = drupalSettings.parties;
-        var coords = drupalSettings.coordinates;
+        var data = drupalSettings.mapbox_un.parties;
+        var coords = drupalSettings.mapbox_un.coordinates;
         if (data != null && data.length > 0) {
           data.forEach(function (row) {
             var default_color = 'rgb(232,188,5)';
@@ -37,15 +37,14 @@
             version: 8,
             sources: {
               polygons: {
-                data: 'https://geonode.wfp.org/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Aica_countries&maxFeatures=200&outputFormat=application%2Fjson',
+                data: drupalSettings.mapbox_un.module_path + '/data/polygons.json',
                 type: 'geojson'
               },
               lines: {
-                data: 'https://geonode.wfp.org/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Aworld_lines_simplified&maxFeatures=1000&outputFormat=application%2Fjson',
+                data: drupalSettings.mapbox_un.module_path + '/data/lines.json',
                 type: 'geojson'
               }
             },
-            glyphs: 'https://UN-Geospatial.github.io/cartotile-plain-design/font/{fontstack}/{range}.pbf',
             transition: {
               duration: 0,
               delay: 0

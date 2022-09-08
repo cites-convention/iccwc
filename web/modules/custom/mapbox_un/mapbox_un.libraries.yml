@@ -1,0 +1,12 @@
+map:
+  version: 1.0
+  css:
+    theme:
+      css/mapbox-gl.css: { }
+      css/map.css: { }
+  js:
+    js/mapbox-gl.js: {}
+    js/map-dashboard.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

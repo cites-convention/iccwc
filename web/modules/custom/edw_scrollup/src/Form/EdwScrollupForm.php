@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iccwc_scrollup\Form;
+namespace Drupal\edw_scrollup\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Configure animated scroll to top settings for this site.
  */
-class ICCWCScrollupForm extends ConfigFormBase {
+class EdwScrollupForm extends ConfigFormBase {
 
   /**
    * The theme handler.
@@ -24,7 +24,7 @@ class ICCWCScrollupForm extends ConfigFormBase {
    *
    * @var string
    */
-  const SETTINGS = 'iccwc_scrollup.settings';
+  const SETTINGS = 'edw_scrollup.settings';
 
   /**
    * Implements getEditableConfigNames().
@@ -39,11 +39,11 @@ class ICCWCScrollupForm extends ConfigFormBase {
    * Implements getFormId().
    */
   public function getFormId() {
-    return 'iccwc_scrollup_form';
+    return 'edw_scrollup_form';
   }
 
   /**
-   * Constructs the ICCWCScrollupForm.
+   * Constructs the EdwScrollupForm.
    *
    * @param \Drupal\Core\Extension\ThemeHandler $theme_handler
    *   The theme handler.
@@ -67,53 +67,53 @@ class ICCWCScrollupForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(static::SETTINGS);
 
-    $form['iccwc_themename_fieldset'] = [
+    $form['edw_themename_fieldset'] = [
       '#title' => $this->t('Theme Visibility Configuration'),
       '#type' => 'fieldset',
     ];
-    $form['iccwc_themename_fieldset']['iccwc_scrollup_themename'] = [
+    $form['edw_themename_fieldset']['edw_scrollup_themename'] = [
       '#title' => $this->t('Themes Name'),
       '#description' => $this->t('Scroll up button add multiple themes.'),
       '#type' => 'select',
       '#multiple' => TRUE,
       '#options' => $this->getThemeNames(),
-      '#default_value' => $config->get('iccwc_scrollup_themename'),
+      '#default_value' => $config->get('edw_scrollup_themename'),
     ];
-    $form['iccwc_scrolling_fieldset'] = [
+    $form['edw_scrolling_fieldset'] = [
       '#title' => $this->t('Scrolling behaviour Configuration'),
       '#type' => 'fieldset',
     ];
-    $form['iccwc_scrolling_fieldset']['iccwc_scrollup_title'] = [
+    $form['edw_scrolling_fieldset']['edw_scrollup_title'] = [
       '#title' => $this->t('Scrollup Button Title'),
       '#description' => $this->t('scrollup button title'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('iccwc_scrollup_title'),
+      '#default_value' => $config->get('edw_scrollup_title'),
     ];
-    $form['iccwc_scrolling_fieldset']['iccwc_scrollup_hoover_title'] = [
-      '#title' => $this->t('Scrollup Button Hoover Title'),
-      '#description' => $this->t('scrollup button hoover title'),
+    $form['edw_scrolling_fieldset']['edw_scrollup_hover_title'] = [
+      '#title' => $this->t('Scrollup Button hover Title'),
+      '#description' => $this->t('scrollup button hover title'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('iccwc_scrollup_hoover_title'),
+      '#default_value' => $config->get('edw_scrollup_hover_title'),
     ];
-    $form['iccwc_scrolling_fieldset']['iccwc_scrollup_window_position'] = [
+    $form['edw_scrolling_fieldset']['edw_scrollup_window_position'] = [
       '#title' => $this->t('Window scrollup fadeIn and fadeout position'),
       '#description' => $this->t('Enter the value of fadeIn & fadeout window scrollup in ms.'),
       '#type' => 'number',
       '#required' => TRUE,
-      '#default_value' => $config->get('iccwc_scrollup_window_position'),
+      '#default_value' => $config->get('edw_scrollup_window_position'),
     ];
-    $form['iccwc_scrolling_fieldset']['iccwc_scrollup_speed'] = [
+    $form['edw_scrolling_fieldset']['edw_scrollup_speed'] = [
       '#title' => $this->t('Scrollup speed'),
       '#description' => $this->t('Enter the value of Scrollup speed in ms.'),
       '#type' => 'number',
       '#required' => TRUE,
-      '#default_value' => $config->get('iccwc_scrollup_speed'),
+      '#default_value' => $config->get('edw_scrollup_speed'),
     ];
-    $form['iccwc_button_fieldset'] = [
+    $form['edw_button_fieldset'] = [
       '#title' => $this->t('Scrollup Button Configuration'),
       '#type' => 'fieldset',
     ];
-    $form['iccwc_button_fieldset']['iccwc_scrollup_position'] = [
+    $form['edw_button_fieldset']['edw_scrollup_position'] = [
       '#title' => $this->t('Button Position'),
       '#description' => $this->t('Scrollup button position.'),
       '#type' => 'select',
@@ -121,19 +121,19 @@ class ICCWCScrollupForm extends ConfigFormBase {
         1 => $this->t('right'),
         2 => $this->t('left'),
       ],
-      '#default_value' => $config->get('iccwc_scrollup_position'),
+      '#default_value' => $config->get('edw_scrollup_position'),
     ];
-    $form['iccwc_button_fieldset']['iccwc_scrollup_button_bg_color'] = [
+    $form['edw_button_fieldset']['edw_scrollup_button_bg_color'] = [
       '#title' => $this->t('Scrollup button background color'),
       '#description' => $this->t('Scrollup button background color.'),
       '#type' => 'color',
-      '#default_value' => $config->get('iccwc_scrollup_button_bg_color'),
+      '#default_value' => $config->get('edw_scrollup_button_bg_color'),
     ];
-    $form['iccwc_button_fieldset']['iccwc_scrollup_button_hover_bg_color'] = [
+    $form['edw_button_fieldset']['edw_scrollup_button_hover_bg_color'] = [
       '#title' => $this->t('Scrollup button hover background color'),
       '#description' => $this->t('Scrollup button hover background color.'),
       '#type' => 'color',
-      '#default_value' => $config->get('iccwc_scrollup_button_hover_bg_color'),
+      '#default_value' => $config->get('edw_scrollup_button_hover_bg_color'),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -158,24 +158,24 @@ class ICCWCScrollupForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $iccwc_scrollup_position = $form_state->getValue('iccwc_scrollup_position');
-    $iccwc_scrollup_button_bg_color = $form_state->getValue('iccwc_scrollup_button_bg_color');
-    $iccwc_scrollup_button_hover_bg_color = $form_state->getValue('iccwc_scrollup_button_hover_bg_color');
-    $iccwc_scrollup_title = $form_state->getValue('iccwc_scrollup_title');
-    $iccwc_scrollup_hoover_title = $form_state->getValue('iccwc_scrollup_hoover_title');
-    $iccwc_scrollup_window_position = $form_state->getValue('iccwc_scrollup_window_position');
-    $iccwc_scrollup_speed = $form_state->getValue('iccwc_scrollup_speed');
-    $iccwc_scrollup_themename = $form_state->getValue('iccwc_scrollup_themename');
+    $edw_scrollup_position = $form_state->getValue('edw_scrollup_position');
+    $edw_scrollup_button_bg_color = $form_state->getValue('edw_scrollup_button_bg_color');
+    $edw_scrollup_button_hover_bg_color = $form_state->getValue('edw_scrollup_button_hover_bg_color');
+    $edw_scrollup_title = $form_state->getValue('edw_scrollup_title');
+    $edw_scrollup_hover_title = $form_state->getValue('edw_scrollup_hover_title');
+    $edw_scrollup_window_position = $form_state->getValue('edw_scrollup_window_position');
+    $edw_scrollup_speed = $form_state->getValue('edw_scrollup_speed');
+    $edw_scrollup_themename = $form_state->getValue('edw_scrollup_themename');
 
     $this->config(static::SETTINGS)
-      ->set('iccwc_scrollup_position', $iccwc_scrollup_position)
-      ->set('iccwc_scrollup_button_bg_color', $iccwc_scrollup_button_bg_color)
-      ->set('iccwc_scrollup_button_hover_bg_color', $iccwc_scrollup_button_hover_bg_color)
-      ->set('iccwc_scrollup_title', $iccwc_scrollup_title)
-      ->set('iccwc_scrollup_hoover_title', $iccwc_scrollup_hoover_title)
-      ->set('iccwc_scrollup_window_position', $iccwc_scrollup_window_position)
-      ->set('iccwc_scrollup_speed', $iccwc_scrollup_speed)
-      ->set('iccwc_scrollup_themename', $iccwc_scrollup_themename)
+      ->set('edw_scrollup_position', $edw_scrollup_position)
+      ->set('edw_scrollup_button_bg_color', $edw_scrollup_button_bg_color)
+      ->set('edw_scrollup_button_hover_bg_color', $edw_scrollup_button_hover_bg_color)
+      ->set('edw_scrollup_title', $edw_scrollup_title)
+      ->set('edw_scrollup_hover_title', $edw_scrollup_hover_title)
+      ->set('edw_scrollup_window_position', $edw_scrollup_window_position)
+      ->set('edw_scrollup_speed', $edw_scrollup_speed)
+      ->set('edw_scrollup_themename', $edw_scrollup_themename)
       ->save();
 
     parent::submitForm($form, $form_state);

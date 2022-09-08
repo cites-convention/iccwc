@@ -1,25 +1,26 @@
 <?php
 
-namespace Drupal\iccwc_map\Plugin\Block;
+namespace Drupal\mapbox_un\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\iccwc_map\Services\ICCWCMapBaseUtils;
+use Drupal\mapbox_un\Services\MapboxUnManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a 'ICCWCMapBlock' Block.
+ * Provides a 'MapboxUnMapBlock' Block.
  *
  * @Block(
- *   id = "iccwc_dashboard_map",
- *   admin_label = @Translation("ICCWC Map"),
- *   category = @Translation("ICCWC"),
+ *   id = "mapbox_un_map",
+ *   admin_label = @Translation("Mapbox Map"),
+ *   category = @Translation("Mapbox UN"),
  * )
  */
-class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class MapboxUnMapBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * The entity type manager.
@@ -36,14 +37,21 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
   protected $entityRepository;
 
   /**
-   * The ICCWC Map Utils.
+   * The module extension list.
    *
-   * @var \Drupal\iccwc_map\Services\ICCWCMapBaseUtils
+   * @var \Drupal\Core\Extension\ModuleExtensionList
    */
-  protected $iccwcMapUtils;
+  protected $moduleExtensionList;
 
   /**
-   * ICCWCMapBlock constructor.
+   * The Mapbox UN manager.
+   *
+   * @var \Drupal\mapbox_un\Services\MapboxUnManager
+   */
+  protected $mapboxManager;
+
+  /**
+   * MapboxUnMapBlock constructor.
    *
    * @param array $configuration
    *   The configuration.
@@ -55,14 +63,17 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
    *   The entity type manager.
    * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
    *   The entity repository.
-   * @param \Drupal\iccwc_map\Services\ICCWCMapBaseUtils $iccwc_map_utils
-   *   The ICCWC Map Utils.
+   * @param \Drupal\Core\Extension\ModuleExtensionList $module_extension_list
+   *   The module extension list.
+   * @param \Drupal\mapbox_un\Services\MapboxUnManager $mapbox_manager
+   *   The Mapbox UN manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository, ICCWCMapBaseUtils $iccwc_map_utils) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository, ModuleExtensionList $module_extension_list, MapboxUnManager $mapbox_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityTypeManager = $entity_type_manager;
     $this->entityRepository = $entity_repository;
-    $this->iccwcMapUtils = $iccwc_map_utils;
+    $this->moduleExtensionList =  $module_extension_list;
+    $this->mapboxManager = $mapbox_manager;
   }
 
   /**
@@ -75,7 +86,8 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
       $plugin_definition,
       $container->get('entity_type.manager'),
       $container->get('entity.repository'),
-      $container->get('iccwc_map_utils.utils')
+      $container->get('extension.list.module'),
+      $container->get('mapbox_un.manager')
     );
   }
 
@@ -99,8 +111,8 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
       $entity = $this->entityRepository->getTranslationFromContext($entity);
       $map_disclaimer['#markup'] = $entity->getDescription();
 
-      $parties_list = $this->iccwcMapUtils->getPartiesMapOverview($entity);
-      $categories_list = $this->iccwcMapUtils->getCategoriesMapOverview($entity);
+      $parties_list = $this->mapboxManager->getPartiesMapOverview($entity);
+      $categories_list = $this->mapboxManager->getCategoriesMapOverview($entity);
     }
 
     $regions = $this->configuration['regions'] ?? NULL;
@@ -120,16 +132,19 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
     }
 
     $build = [
-      '#theme' => 'iccwc_map_overview',
+      '#theme' => 'mapbox_un_map_overview',
       '#list_of_parties' => [],
       '#categories' => $categories_list,
       '#attached' => [
         'library' => [
-          'iccwc_map/map',
+          'mapbox_un/map',
         ],
         'drupalSettings' => [
-          'parties' => $parties_list['fill'],
-          'coordinates' => $parties_list['coordinates'],
+          'mapbox_un' => [
+            'parties' => $parties_list['fill'],
+            'coordinates' => $parties_list['coordinates'],
+            'module_path' => $this->moduleExtensionList->getPath('mapbox_un'),
+          ],
         ],
       ],
       '#disclaimer' => [
@@ -145,33 +160,32 @@ class ICCWCMapBlock extends BlockBase implements ContainerFactoryPluginInterface
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
-    if (isset($this->configuration['dataset'])) {
-      $term_id = $this->configuration['dataset'];
+    $options = [];
 
-      // Default value for entity_autocomplete needs entities.
-      $entity = $this->entityTypeManager->getStorage('taxonomy_term')->load($term_id);
-      if (!empty($entity)) {
-        $entity = $this->entityRepository->getTranslationFromContext($entity);
-      }
+    $terms = $this->entityTypeManager->getStorage('taxonomy_term')
+      ->getQuery()
+      ->condition('vid', 'map_datasets')
+      ->condition('parent', 0)
+      ->execute();
+
+    $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadMultiple($terms);
+
+    foreach ($terms as $term) {
+      $options[$term->id()] = $term->label();
     }
 
     // Attach extra field to block config form.
     $form['dataset'] = [
-      '#type' => 'entity_autocomplete',
-      '#description' => $this->t('Select first level term, and only one value.'),
-      '#selection_handler' => 'default',
-      '#target_type' => 'taxonomy_term',
+      '#type' => 'select',
+      '#options' => $options,
       '#title' => $this->t('Map dataset'),
-      '#default_value' => $entity ?? NULL,
-      '#selection_settings' => [
-        'target_bundles' => ['map_datasets'],
-      ],
+      '#default_value' => $this->configuration['dataset'] ?? '',
     ];
 
     $form['regions'] = [
-      '#title' => $this->t('Regions'),
-      '#description' => $this->t('Leave empty for no regions.'),
-      '#type' => 'select',
+      '#title' => $this->t('Region filters'),
+      '#description' => $this->t('Leave empty for no region filters.'),
+      '#type' => 'checkboxes',
       '#multiple' => TRUE,
       '#options' => [
         'africa' => $this->t('Africa'),

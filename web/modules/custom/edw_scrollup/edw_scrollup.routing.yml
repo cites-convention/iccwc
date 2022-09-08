@@ -1,0 +1,7 @@
+edw_scrollup.form:
+  path: '/admin/config/user-interface/edw_scrollup'
+  defaults:
+    _form: '\Drupal\edw_scrollup\Form\EdwScrollupForm'
+    _title: 'EDW Scrollup'
+  requirements:
+    _permission: 'administer site configuration'
