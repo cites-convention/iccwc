@@ -37,6 +37,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   edw_healthcheck: 0
+  edw_scrollup: 0
   entity_reference_revisions: 0
   facets: 0
   field: 0
@@ -45,8 +46,6 @@ module:
   file: 0
   filter: 0
   honeypot: 0
-  iccwc_map: 0
-  iccwc_scrollup: 0
   image: 0
   image_captcha: 0
   image_max_size_crop: 0
@@ -64,6 +63,7 @@ module:
   link_attributes: 0
   locale: 0
   mail_login: 0
+  mapbox_un: 0
   media: 0
   media_library: 0
   media_library_edit: 0

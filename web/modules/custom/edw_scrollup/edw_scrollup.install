@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the EDW Scrollup module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function edw_scrollup_install() {
+  $defaultThemeName = \Drupal::config('system.theme')->get('default');
+  \Drupal::configFactory()->getEditable('edw_scrollup.settings')
+    ->set('edw_scrollup_position', 1)
+    ->set('edw_scrollup_button_bg_color', '#CCCCCC')
+    ->set('edw_scrollup_button_hover_bg_color', '#000000')
+    ->set('edw_scrollup_title', '')
+    ->set('edw_scrollup_window_position', '600')
+    ->set('edw_scrollup_speed', '0')
+    ->set('edw_scrollup_themename', [$defaultThemeName])
+    ->save();
+}

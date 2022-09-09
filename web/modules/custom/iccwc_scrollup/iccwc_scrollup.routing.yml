@@ -1,7 +1,0 @@
-iccwc_scrollup.form:
-  path: '/admin/config/iccwc/iccwc_scrollup'
-  defaults:
-    _form: '\Drupal\iccwc_scrollup\Form\ICCWCScrollupForm'
-    _title: 'ICCWC Scrollup'
-  requirements:
-    _permission: 'administer site configuration'

@@ -1,0 +1,5 @@
+name: Mapbox UN
+description: Provides a customizable block used to display maps
+type: module
+core_version_requirement: ^8.8 || ^9
+package: Mapbox

@@ -1,4 +1,0 @@
-services:
-  iccwc_map_utils.utils:
-    class: Drupal\iccwc_map\Services\ICCWCMapBaseUtils
-    arguments: [ '@entity_type.manager', '@entity.repository']

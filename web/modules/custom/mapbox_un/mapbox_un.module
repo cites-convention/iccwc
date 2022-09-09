@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * The Mapbox UN module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function mapbox_un_theme($existing, $type, $theme, $path) {
+  return [
+    'mapbox_un_map_overview' => [
+      'variables' => [
+        'list_of_parties' => [],
+        'categories' => [],
+        'regions' => [],
+        'disclaimer' => [],
+      ],
+    ],
+  ];
+}

@@ -1,5 +1,0 @@
-name: ICCWC Map
-description: Cuatom module used to render a map with parties.
-type: module
-core_version_requirement: ^8.8 || ^9
-package: custom
