@@ -1,8 +1,0 @@
-edw_scrollup_position: 1
-edw_scrollup_button_bg_color: '#CCCCCC'
-edw_scrollup_button_hover_bg_color: '#000000'
-edw_scrollup_title: ''
-edw_scrollup_window_position: '600'
-edw_scrollup_speed: '0'
-edw_scrollup_themename:
-  - frontend

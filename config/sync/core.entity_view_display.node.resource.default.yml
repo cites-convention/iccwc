@@ -29,11 +29,9 @@ content:
     weight: 101
     region: content
   field_additional_materials:
-    type: entity_reference_entity_view
+    type: entity_reference_entity_id
     label: above
-    settings:
-      view_mode: default
-      link: false
+    settings: {  }
     third_party_settings: {  }
     weight: 109
     region: content

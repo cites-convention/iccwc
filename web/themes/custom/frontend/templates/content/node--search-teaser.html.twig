@@ -11,7 +11,7 @@
 ]
 %}
 {% if node.field_resource_type.value == 'video' %}
-  <article{{ attributes.addClass(classes) }}>
+  <article{{ attributes.addClass(classes) }} xmlns="http://www.w3.org/1999/html">
     <div class="row" {{ content_attributes.addClass('node__content') }}>
       <div class="col-md-8">
         <div class="date-tags">
@@ -20,7 +20,7 @@
         {{ title_prefix }}
         {% if label and not page %}
           <h3{{ title_attributes }}>
-            <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+            <p class="title-teaser" rel="bookmark" >{{ label }}</p>
           </h3>
         {% endif %}
         {{ title_suffix }}
@@ -37,14 +37,14 @@
   <article{{ attributes.addClass(classes) }}>
     <div class="row" {{ content_attributes.addClass('node__content') }}>
       <div class="col-md-8">
-        <div class="date-tags">
-          {{ content.field_tags[0] }}
-          {{ content.created }}
-        </div>
+{#        <div class="date-tags">#}
+{#          {{ content.field_tags[0] }}#}
+{#          {{ content.created }}#}
+{#        </div>#}
         {{ title_prefix }}
         {% if label and not page %}
           <h3{{ title_attributes }}>
-            <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+            <p class="title-teaser" rel="bookmark" >{{ label }}</p>
           </h3>
         {% endif %}
         {{ title_suffix }}
@@ -95,13 +95,13 @@
   <article{{ attributes.addClass(classes) }}>
     <div class="row" {{ content_attributes.addClass('node__content') }}>
       <div class="col-md-8">
-        <div class="date-tags">
-          {{ content.created }}
+        <div class="submitted-by">
+          {{ "Submitted by "|t}} {{  content.field_organization }}
         </div>
         {{ title_prefix }}
         {% if label and not page %}
           <h3{{ title_attributes }}>
-            <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+            <p class="title-teaser" rel="bookmark" >{{ label }}</p>
           </h3>
         {% endif %}
         {{ title_suffix }}
@@ -110,29 +110,59 @@
         </div>
       </div>
       <div class="col-md-4">
-        {{ content.field_image }}</div>
+        {{ content.field_image }}
+      </div>
+      <div class="download-resource-block">
+
+        <div>
+          <p>{{ "Download"|t }}</p>
+          {% for file in content.field_files %}
+            {% if file["#type"] == "link" %}
+              <a href="{{ file["#url"] }}" class="lang-download" download>{{ file["#language"].label }}</a>
+            {% endif %}
+          {% endfor %}
+          <a href="{{ content.field_brochure[0]['#url']}}" class="lang-download" id="brochure" target="_blank">{{ "See brochure"|t }}</a><br>
+        </div>
+
+        {% if content.field_additional_materials[0] is not null %}
+          <div>
+            <a data-bs-toggle="collapse" href="#additionalMaterials" role="button" aria-expanded="true" aria-controls="additionalMaterials">
+              <p>{{ "Aditional materials"|t }}</p>
+              <i class="arrow"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.59 7.42004L6 2.83004L1.41 7.42004L0 6.00004L6 4.3869e-05L12 6.00004L10.59 7.42004Z" fill="#231F20"/>
+                </svg></i>
+            </a>
+            <div class="collapse show" id="additionalMaterials">
+              <div class="card card-body">
+                {% for file in content.field_additional_materials %}
+                  {% if file["#type"] == "link" %}
+                    <a href="{{ file["#url"] }}" >{{ file["#title"] }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
     </div>
   </article>
 {% elseif node.field_resource_type.value == 'infographic' %}
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
-    <div class="col-md-8">
-      <div class="date-tags">
-        {{ content.created }}
-      </div>
+    <div class="col-md-12">
       {{ title_prefix }}
       {% if label and not page %}
         <h3{{ title_attributes }}>
-          <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>
+          <p class="title-teaser" rel="bookmark" >{{ label }}</p>
+{#          <a class="title-teaser max-2-lines" href="{{ url }}" rel="bookmark" >{{ label }}</a>#} 
         </h3>
       {% endif %}
       {{ title_suffix }}
       <div class="max-3-lines">
         {{ content.body }}
       </div>
-    </div>
-    <div class="col-md-4">
-      {{ content.field_image }}</div>
+      {{ content.field_image }}
   </div>
+</div>
 </article>
 {% endif %}

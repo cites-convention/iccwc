@@ -56,6 +56,20 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_additional_materials:
+    type: media_file_link
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_brochure:
+    type: media_file_link
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_files:
     type: media_file_link
     label: hidden
@@ -71,6 +85,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_video:
     type: youtube_video
@@ -98,9 +120,6 @@ content:
     weight: 5
     region: content
 hidden:
-  field_additional_materials: true
-  field_brochure: true
-  field_organization: true
   field_resource_type: true
   links: true
   search_api_excerpt: true
