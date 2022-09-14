@@ -1,0 +1,29 @@
+uuid: 9eb8e587-14ff-4a8f-a47b-ba316c18a3d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_flyer_files
+    - media.type.file
+    - node.type.resource
+id: node.resource.field_flyer_files
+field_name: field_flyer_files
+entity_type: node
+bundle: resource
+label: 'Flyer files'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

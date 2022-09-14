@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: map
-block_id: iccwc_dashboard_map
+block_id: mapbox_un_map
 category: page_content
 label: Map
 image_path: ''

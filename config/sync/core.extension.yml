@@ -21,6 +21,7 @@ module:
   ckeditor: 0
   ckeditor_bs_grid: 0
   ckeditor_quote: 0
+  ckeditor_timeline: 0
   color: 0
   colorbox: 0
   config_translation: 0
@@ -37,6 +38,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   edw_healthcheck: 0
+  edw_scrollup: 0
   entity_reference_revisions: 0
   facets: 0
   field: 0
@@ -64,6 +66,7 @@ module:
   link_attributes: 0
   locale: 0
   mail_login: 0
+  mapbox_un: 0
   media: 0
   media_library: 0
   media_library_edit: 0
