@@ -47,8 +47,6 @@ module:
   file: 0
   filter: 0
   honeypot: 0
-  iccwc_map: 0
-  iccwc_scrollup: 0
   image: 0
   image_captcha: 0
   image_max_size_crop: 0
