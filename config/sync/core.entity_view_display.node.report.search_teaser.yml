@@ -9,7 +9,7 @@ dependencies:
     - node.type.report
   module:
     - layout_builder
-    - text
+    - smart_trim
 third_party_settings:
   layout_builder:
     enabled: false
@@ -20,9 +20,21 @@ bundle: report
 mode: search_teaser
 content:
   body:
-    type: text_default
+    type: smart_trim
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 60
+      trim_type: words
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
     third_party_settings: {  }
     weight: 1
     region: content

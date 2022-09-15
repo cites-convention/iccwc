@@ -8,7 +8,10 @@ dependencies:
     - field.field.node.resource.field_additional_materials
     - field.field.node.resource.field_brochure
     - field.field.node.resource.field_files
+    - field.field.node.resource.field_flyer_files
+    - field.field.node.resource.field_flyer_image
     - field.field.node.resource.field_image
+    - field.field.node.resource.field_images
     - field.field.node.resource.field_organization
     - field.field.node.resource.field_resource_type
     - field.field.node.resource.field_video
@@ -33,7 +36,7 @@ content:
     settings:
       trim_length: 100
       trim_type: words
-      trim_suffix: ''
+      trim_suffix: ...
       wrap_output: false
       wrap_class: trimmed
       more_link: false

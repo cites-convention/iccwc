@@ -20,7 +20,7 @@ dependencies:
     - layout_builder
     - layout_builder_restrictions
     - media_responsive_thumbnail
-    - text
+    - smart_trim
 third_party_settings:
   layout_builder:
     enabled: false
@@ -86,10 +86,21 @@ bundle: page
 mode: search_teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: smart_trim
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 60
+      trim_type: words
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
     third_party_settings: {  }
     weight: 1
     region: content
