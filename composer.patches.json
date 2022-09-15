@@ -9,6 +9,9 @@
     },
     "drupal/colorbox": {
       "#2808883 - Support Responsive Image module in D8": "patches/colorbox/colorbox-responsive-image-2808883-34.patch"
+    },
+    "drupal/smart_trim": {
+      "Text formatters should run before stripping html": "patches/smart_trim/run-formatters-before-strip-html.patch"
     }
   }
 }

@@ -314,8 +314,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: boolean
-          operator: '='
-          value: '0'
+          operator: '!='
+          value: '1'
           group: 1
           exposed: false
           expose:
