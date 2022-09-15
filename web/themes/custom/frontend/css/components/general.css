@@ -492,7 +492,6 @@ blockquote p:after {
   line-clamp: none;
   display: block;
   border-radius: 0;
-  color: red;
 }
 .node--view-mode-search-teaser.node--type-partner .image-container {
   border: none;

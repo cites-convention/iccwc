@@ -30,8 +30,8 @@ content:
     label: hidden
     settings:
       trim_length: 60
-      trim_type: chars
-      trim_suffix: ''
+      trim_type: words
+      trim_suffix: ...
       wrap_output: false
       wrap_class: trimmed
       more_link: false
