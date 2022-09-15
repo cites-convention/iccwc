@@ -31,17 +31,17 @@
           hash: false,
           // renderWorldCopies: false,
           maxZoom: 3,
-          zoom: 0.8,
+          zoom: 0.5,
           center: [0, 10],
           style: {
             version: 8,
             sources: {
               polygons: {
-                data: drupalSettings.mapbox_un.module_path + '/data/polygons.json',
+                data: '/' + drupalSettings.mapbox_un.module_path + '/data/polygons.json',
                 type: 'geojson'
               },
               lines: {
-                data: drupalSettings.mapbox_un.module_path + '/data/lines.json',
+                data: '/' + drupalSettings.mapbox_un.module_path + '/data/lines.json',
                 type: 'geojson'
               }
             },

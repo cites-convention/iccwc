@@ -16,6 +16,7 @@ function mapbox_un_theme($existing, $type, $theme, $path) {
         'categories' => [],
         'regions' => [],
         'disclaimer' => [],
+        'legend_position' => 'hidden',
       ],
     ],
   ];

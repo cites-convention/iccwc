@@ -99,6 +99,9 @@ content:
     region: content
 hidden:
   created: true
+  field_flyer_files: true
+  field_flyer_image: true
+  field_images: true
   langcode: true
   search_api_excerpt: true
   uid: true

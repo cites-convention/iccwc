@@ -1,4 +1,4 @@
-.parties-map-menu h3 {
+.mapbox-un-map h3 {
   font-size: 22px;
   border-bottom: 1px solid rgba(165,163,157,.25);
   padding: 13px 0;
@@ -7,17 +7,20 @@
   cursor: pointer;
 }
 
-.parties-map-menu h3:not(.active) {
+.mapbox-un-map h3:not(.active) {
   color: #a5a39d;
 }
 
-.parties-map-menu .legend {
-  margin-top: 20px;
+.mapbox-un-map .legend {
   list-style-type: none;
   padding: 0;
 }
 
-.parties-map-menu .legend span {
+.mapbox-un-map .legend:not(:last-child) {
+  margin-top: 20px;
+}
+
+.mapbox-un-map .legend span {
   width: 10px;
   height: 10px;
   display: inline-block;

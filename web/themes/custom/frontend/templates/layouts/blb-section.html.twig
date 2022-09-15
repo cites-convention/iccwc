@@ -18,10 +18,9 @@
   content['#settings']['right_sidebar_position'] ? 'mobile-right-sidebar-position-' ~ content['#settings']['right_sidebar_position'],
   'layout-builder__layout'
 ] %}
-
 {% if content %}
-  {% if content.section_title %}
-    <h2 class="section-title">{{ content.section_title }}</h2>
+  {% if content['#section_title'] %}
+    <h2 class="section-title">{{ content['#section_title'] }}</h2>
   {% endif %}
 
   <div {{ attributes.addClass(classes) }}>

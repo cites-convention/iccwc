@@ -45,9 +45,7 @@ class SectionTitle extends StylePluginBase {
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     // phpcs:ignore
     if (!empty($storage['section_title'])) {
-      $build['section_title'] = [
-        '#markup' => $this->t($storage['section_title']),
-      ];
+      $build['#section_title'] = $this->t($storage['section_title']);
     }
     return $build;
   }

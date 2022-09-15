@@ -1,21 +1,42 @@
-<div class="row">
-  <div class="parties-map-menu col-3">
-    {% if categories %}
-      <h3 class="region active" id="global"> {{ 'Global'|t }} </h3>
+{% if legend_position == 'left' or regions %}
+  {% set right_column_class = 'col-sm-9' %}
+{% else %}
+  {% set right_column_class = 'col-sm-12' %}
+{% endif %}
+
+<div class="mapbox-un-map">
+  <div class="row top-row">
+    {% if legend_position == 'left' or regions %}
+      <div class="parties-map-menu col-3">
+        {% if regions %}
+          <h3 class="region active" id="global"> {{ 'Global'|t }} </h3>
+        {% endif %}
+        {% for id, region in regions %}
+          <h3 class="region" id="region-{{ id }}"> {{ region }} </h3>
+        {% endfor %}
+        {% if legend_position == 'left' %}
+          <ul class="legend">
+            {% for id, category in categories %}
+              <li><span style="background-color: {{ category.color }}"></span>{{ category.name }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
     {% endif %}
-    {% for id, region in regions %}
-      <h3 class="region" id="region-{{ id }}"> {{ region }} </h3>
-    {% endfor %}
-    <ul class="legend">
-      {% for id, category in categories %}
-        <li><span style="background-color: {{ category.color }}"></span>{{ category.name }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="col-9">
-    <div class="parties-map-overview" id="parties-map-overview" style="min-height: 500px">
-      {#    JS will render here the map #}
+    <div class="{{ right_column_class }}">
+      <div class="parties-map-overview" id="parties-map-overview" style="min-height: 500px">
+        {#    JS will render here the map #}
+      </div>
+      <div class="disclaimer-block">{{ disclaimer }}</div>
     </div>
-    <div class="disclaimer-block">{{ disclaimer }}</div>
   </div>
+  {% if legend_position == 'below' %}
+    <div class="bottom-row">
+      <ul class="legend">
+        {% for id, category in categories %}
+          <li><span style="background-color: {{ category.color }}"></span>{{ category.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
 </div>

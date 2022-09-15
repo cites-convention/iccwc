@@ -125,8 +125,11 @@ class MapboxUnMapBlock extends BlockBase implements ContainerFactoryPluginInterf
       'oceania' => 'Oceania',
     ];
 
-    if ($regions != NULL) {
+    if (!empty($regions)) {
       foreach ($regions as $region) {
+        if (empty($options[$region])) {
+          continue;
+        }
         $selected_regions[$region] = $options[$region];
       }
     }
@@ -151,6 +154,7 @@ class MapboxUnMapBlock extends BlockBase implements ContainerFactoryPluginInterf
         $map_disclaimer,
       ],
       '#regions' => $selected_regions,
+      '#legend_position' => $this->configuration['legend_position'] ?? 'hidden',
     ];
 
     return $build;
@@ -198,6 +202,17 @@ class MapboxUnMapBlock extends BlockBase implements ContainerFactoryPluginInterf
       '#default_value' => $this->configuration['regions'] ?? NULL,
     ];
 
+    $form['legend_position'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Legend position'),
+      '#options' => [
+        'left' => $this->t('Left column'),
+        'below' => $this->t('Below map'),
+        'hidden' => $this->t('Hidden'),
+      ],
+      '#default_value' => $this->configuration['legend_position'] ?? 'hidden',
+    ];
+
     return $form;
   }
 
@@ -207,6 +222,7 @@ class MapboxUnMapBlock extends BlockBase implements ContainerFactoryPluginInterf
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['dataset'] = $form_state->getValue('dataset');
     $this->configuration['regions'] = $form_state->getValue('regions');
+    $this->configuration['legend_position'] = $form_state->getValue('legend_position');
   }
 
 }

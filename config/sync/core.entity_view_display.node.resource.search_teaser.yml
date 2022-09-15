@@ -120,6 +120,9 @@ content:
     weight: 5
     region: content
 hidden:
+  field_flyer_files: true
+  field_flyer_image: true
+  field_images: true
   field_resource_type: true
   links: true
   search_api_excerpt: true
