@@ -132,7 +132,6 @@ function frontend_preprocess_page(&$variables) {
  * Implements hook_preprocess_blb_section().
  */
 function frontend_preprocess_blb_section(&$variables) {
-  return;
   $empty_section = TRUE;
 
   foreach (range(1, 12) as $i) {
