@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f576a5706b9e077c4add41d487fbacf9",
+    "content-hash": "69bca6613b2ee7cc4c7a07a278ac69f1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3357,26 +3357,23 @@
         },
         {
             "name": "drupal/edwt",
-            "version": "1.0.0-beta2",
+            "version": "dev-1.1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edwt.git",
-                "reference": "1.0.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/edwt-1.0.0-beta2.zip",
-                "reference": "1.0.0-beta2",
-                "shasum": "0373851f26bdb5bc5ece068e81e5bb9288f61d06"
+                "reference": "8e4763e9a60ce837249e1683b67c86cd1b86a563"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9.0"
             },
             "type": "drupal-theme",
             "extra": {
+                "branch-alias": {
+                    "dev-1.1.x": "1.1.x-dev"
+                },
                 "drupal": {
-                    "version": "1.0.0-beta2",
-                    "datestamp": "1646696305",
+                    "version": "1.1.x-dev",
+                    "datestamp": "1663248787",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3395,6 +3392,10 @@
                 {
                     "name": "jonsecret",
                     "homepage": "https://www.drupal.org/user/932520"
+                },
+                {
+                    "name": "stefan.butura",
+                    "homepage": "https://www.drupal.org/user/3535177"
                 }
             ],
             "description": "Theme with Bootstrap 5 css library",
@@ -15761,7 +15762,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/colorbox": 20,
-        "drupal/edwt": 10,
+        "drupal/edwt": 20,
         "drupal/inline_entity_form": 5,
         "drupal/layout_builder_st": 15
     },
@@ -15769,5 +15770,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }
