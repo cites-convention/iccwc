@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_banner_image
     - field.field.node.page.field_banner_text
+    - field.field.node.page.field_exclude_related
     - field.field.node.page.field_image
     - field.field.node.page.field_links
     - field.field.node.page.field_metatags
@@ -114,6 +115,7 @@ content:
 hidden:
   field_banner_image: true
   field_banner_text: true
+  field_exclude_related: true
   field_links: true
   field_metatags: true
   field_related_content: true
