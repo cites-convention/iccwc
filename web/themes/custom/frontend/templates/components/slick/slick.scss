@@ -1,5 +1,5 @@
 .slick-next:before {
-  background-image: url('../../../../icons/arrow-white.svg');
+  background-image: url('../../../../icons/arrow-orange.svg');
   transform: rotate(270deg);
   content: '';
   width: 40px;
@@ -12,7 +12,7 @@
 
 .slick-prev:before {
   transform: rotate(90deg);
-  background-image: url('../../../../icons/arrow-white.svg');
+  background-image: url('../../../../icons/arrow-orange.svg');
   content: '';
   width: 40px;
   height: 40px;
@@ -40,8 +40,8 @@
 }
 
 .slick__arrow {
-  width: calc(100% + 100px);
-  left: -50px;
+  width: calc(100% + 85px);
+  left: -40px;
 
   @media (max-width: 991px) {
     width: calc(100% + 64px);
@@ -53,9 +53,9 @@
   display: flex;
 }
 
-.block-iccwc-success-stories {
+.highlights-wrapper {
   .slick-prev:before, .slick-next:before {
-    background-image: url('../../../../icons/arrow-orange.svg');
+    background-image: url('../../../../icons/arrow-white.svg');
   }
 }
 
