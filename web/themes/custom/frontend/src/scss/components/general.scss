@@ -25,6 +25,23 @@
   --icon-expand-more-orange: url('../icons/expand-more-orange.svg');
 }
 
+.btn-primary {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: var(--color-white);
+  }
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgb(218 127 52 / 20%);
+  border-color: #da7f34;
+}
+
 html {
   width: 100vw;
   height: 100vh;
