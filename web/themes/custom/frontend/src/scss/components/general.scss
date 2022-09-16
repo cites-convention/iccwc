@@ -30,11 +30,25 @@
   color: var(--color-white);
   border-color: var(--color-white);
 
-  &:hover {
+  &:hover, &:active, &:focus {
     background-color: var(--color-yellow);
     border-color: var(--color-yellow);
     color: var(--color-white);
+    outline: 0;
+    box-shadow: none !important;
   }
+}
+
+.region-content {
+  .form-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.nav-tabs {
+  margin-bottom: 30px;
 }
 
 .form-control:focus {

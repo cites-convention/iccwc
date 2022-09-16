@@ -7627,10 +7627,20 @@ body h6, body .h6 {
   color: var(--color-white);
   border-color: var(--color-white);
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background-color: var(--color-yellow);
   border-color: var(--color-yellow);
   color: var(--color-white);
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.region-content .form-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.nav-tabs {
+  margin-bottom: 30px;
 }
 
 .form-control:focus {
@@ -8871,6 +8881,18 @@ footer .navbar-brand #darkModeWhite, footer .navbar-brand #darkModeWhite > * {
   --icon-document: url("../icons/file-white.svg");
 }
 
+.dark-mode .form-control {
+  background-color: #565455;
+}
+.dark-mode .nav-tabs .nav-item .nav-link {
+  color: var(--color-orange);
+}
+.dark-mode .nav-tabs .nav-link.active, .dark-mode .nav-tabs .nav-item.show .nav-link {
+  background-color: var(--color-orange);
+}
+.dark-mode .nav-tabs .nav-link.active a, .dark-mode .nav-tabs .nav-item.show .nav-link a {
+  color: var(--color-white);
+}
 .dark-mode a {
   color: var(--color-blue-hover);
 }
