@@ -342,6 +342,10 @@ blockquote p:after {
   border-bottom: 4px solid var(--color-yellow);
 }
 
+.path-frontpage .layout-section:first-child {
+  border-bottom: none;
+}
+
 .layout-section.bs-bg-light {
   background-color: var(--color-gray-light) !important;
 }

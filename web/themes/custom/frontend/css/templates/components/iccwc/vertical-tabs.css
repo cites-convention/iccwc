@@ -80,18 +80,25 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .vertical-tabs .nav-pills .nav-link:before {
-    content: "◼";
+    content: "";
     width: 10px;
     height: 10px;
     position: absolute;
-    top: 11px;
     left: -20px;
+    background-color: var(--color-gray-darker-to-white);
   }
   .vertical-tabs .nav-pills .nav-link.active {
     color: var(--color-orange);
     background-color: transparent;
+  }
+  .vertical-tabs .nav-pills .nav-link.active:before {
+    background-color: var(--color-orange);
   }
   .vertical-tabs .tab-content .tab-pane h5 a {
     display: none;
