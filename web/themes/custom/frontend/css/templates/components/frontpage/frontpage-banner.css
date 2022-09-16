@@ -46,6 +46,17 @@
   z-index: -1;
   max-width: 100%;
   overflow: hidden;
+  height: 100%;
+}
+.block-inline-blockfrontpage-banner .field--name-field-image {
+  height: 100%;
+}
+.block-inline-blockfrontpage-banner picture {
+  display: block;
+  height: 100%;
+}
+.block-inline-blockfrontpage-banner picture img {
+  height: 100%;
 }
 .block-inline-blockfrontpage-banner .content-wrapper {
   height: 100%;
@@ -58,7 +69,6 @@
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 100%;
 }
 .block-inline-blockfrontpage-banner .highlights-wrapper {
   margin-top: auto;
