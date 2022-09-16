@@ -8883,6 +8883,7 @@ footer .navbar-brand #darkModeWhite, footer .navbar-brand #darkModeWhite > * {
 
 .dark-mode .form-control {
   background-color: #565455;
+  color: var(--color-black);
 }
 .dark-mode .nav-tabs .nav-item .nav-link {
   color: var(--color-orange);
