@@ -344,6 +344,7 @@ blockquote p:after {
 
 .path-frontpage .layout-section:first-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .layout-section.bs-bg-light {
