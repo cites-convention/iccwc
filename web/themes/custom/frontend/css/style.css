@@ -7943,6 +7943,7 @@ blockquote p:after {
 .path-frontpage .layout-section:first-child {
   border-bottom: none;
   padding-bottom: 0;
+  padding-top: 0 !important;
 }
 
 .layout-section.bs-bg-light {
