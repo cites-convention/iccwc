@@ -52,6 +52,7 @@ content:
       more_link: false
       more_class: more-link
       more_text: More
+      more_aria_label: 'Read more about [node:title]'
       summary_handler: trim
       trim_options:
         text: true
@@ -75,6 +76,8 @@ content:
     settings:
       responsive_image_style: teaser_image_large
       image_link: content
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 105
     region: content
