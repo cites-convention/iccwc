@@ -8535,6 +8535,8 @@ img {
   }
 }
 .block-lang-dropdown select {
+  font-size: 14px;
+  line-height: 16px;
   width: 165px;
   border: none !important;
   outline: 0;
@@ -8543,8 +8545,7 @@ img {
   -webkit-transition: none;
   transition: none;
   margin-right: -70px;
-  font-size: 14px;
-  line-height: 16px;
+  line-height: 17px;
 }
 .block-lang-dropdown .form-select {
   background: url("../icons/expand-more.svg") no-repeat center;
