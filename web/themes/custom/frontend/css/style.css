@@ -8845,7 +8845,7 @@ footer .nav {
 footer .nav a {
   color: var(--color-white);
 }
-footer .nav a:hover, footer .nav a:active {
+footer .nav a:hover, footer .nav a:active, footer .nav a:focus {
   color: var(--color-white);
 }
 footer .navbar-brand {
