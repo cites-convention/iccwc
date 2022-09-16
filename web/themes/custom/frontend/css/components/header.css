@@ -252,11 +252,11 @@ header .menu .navbar-nav .nav-item a, header .menu .navbar-nav .nav-item span {
   cursor: pointer;
   padding: 8px 15px;
 }
-header .menu .navbar-nav .nav-item a:hover, header .menu .navbar-nav .nav-item a:active, header .menu .navbar-nav .nav-item span:hover, header .menu .navbar-nav .nav-item span:active {
+header .menu .navbar-nav .nav-item a:hover, header .menu .navbar-nav .nav-item a:active, header .menu .navbar-nav .nav-item a.active, header .menu .navbar-nav .nav-item span:hover, header .menu .navbar-nav .nav-item span:active, header .menu .navbar-nav .nav-item span.active {
   color: var(--color-orange);
   text-decoration: none;
 }
-header .menu .navbar-nav .nav-item a:hover:after, header .menu .navbar-nav .nav-item a:active:after, header .menu .navbar-nav .nav-item span:hover:after, header .menu .navbar-nav .nav-item span:active:after {
+header .menu .navbar-nav .nav-item a:hover:after, header .menu .navbar-nav .nav-item a:active:after, header .menu .navbar-nav .nav-item a.active:after, header .menu .navbar-nav .nav-item span:hover:after, header .menu .navbar-nav .nav-item span:active:after, header .menu .navbar-nav .nav-item span.active:after {
   background-image: var(--icon-expand-more-orange) !important;
 }
 header .menu .navbar-nav .nav-item a.show, header .menu .navbar-nav .nav-item span.show {

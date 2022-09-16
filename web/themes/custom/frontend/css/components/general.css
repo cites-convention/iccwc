@@ -820,6 +820,10 @@ blockquote p:after {
 .pager {
   margin-top: 40px;
 }
+.pager ul {
+  margin: 0;
+  padding: 0;
+}
 .pager li {
   -webkit-appearance: none;
   padding: 0;

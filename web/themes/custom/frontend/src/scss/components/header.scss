@@ -203,7 +203,7 @@ header {
           cursor: pointer;
           padding: 8px 15px;
 
-          &:hover, &:active {
+          &:hover, &:active, &.active {
             color: var(--color-orange);
             text-decoration: none;
 

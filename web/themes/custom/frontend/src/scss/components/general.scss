@@ -792,6 +792,11 @@ blockquote {
 .pager {
   margin-top: 40px;
 
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
   li {
     -webkit-appearance: none;
     padding: 0;
