@@ -1,17 +1,17 @@
-uuid: 1eb141c4-d8c5-40aa-941a-5c3f067b6a73
+uuid: 56d24637-d169-411b-829c-c1400758ce8e
 langcode: en
 status: true
 dependencies:
-  module:
-    - menu_link_content
-id: menu_link_content.menu_link_content.metatag
+  config:
+    - taxonomy.vocabulary.topics
+id: taxonomy_term.topics.metatag
 field_name: metatag
-entity_type: menu_link_content
-bundle: menu_link_content
+entity_type: taxonomy_term
+bundle: topics
 label: 'Metatags (Hidden field for JSON support)'
 description: 'The meta tags for the entity.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

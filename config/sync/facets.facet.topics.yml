@@ -1,4 +1,4 @@
-uuid: fe7260b2-10c8-4e42-8ac4-626423a91b33
+uuid: eda561f5-1e3a-4781-8b42-341a9706f979
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.search
   module:
     - search_api
-id: tags
-name: 'Publication type'
+id: topics
+name: Topics
 weight: 0
-min_count: 1
+min_count: 0
 missing: false
 missing_label: others
-url_alias: tags
+url_alias: topics
 facet_source_id: 'search_api:views_block__search__block_1'
-field_identifier: field_tags
+field_identifier: field_topics
 query_operator: or
 hard_limit: 0
 exclude: false

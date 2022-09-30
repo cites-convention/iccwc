@@ -1,9 +1,9 @@
-uuid: 0c34f84b-1412-4ca4-ac9d-ec2349e3683b
+uuid: e7734545-1f5d-4679-8ba6-a16bbe886d5a
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.organizations
+    - taxonomy.vocabulary.topics
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.organizations
+id: taxonomy_term.topics
 target_entity_type_id: taxonomy_term
-target_bundle: organizations
+target_bundle: topics
 default_langcode: site_default
 language_alterable: false

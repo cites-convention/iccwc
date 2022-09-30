@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news.field_links
     - field.field.node.news.field_related_content
     - field.field.node.news.field_tags
+    - field.field.node.news.field_topics
     - field.field.node.news.layout_builder__layout
     - field.field.node.news.layout_builder__translation
     - node.type.news
@@ -285,6 +286,23 @@ third_party_settings:
               iccwc:
                 border: 0
                 centered: 0
+          19542738-ac1c-4046-a310-f3a46c3748f9:
+            uuid: 19542738-ac1c-4046-a310-f3a46c3748f9
+            region: blb_region_col_1
+            configuration:
+              id: 'field_block:node:news:field_topics'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: 'bootstrap_layout_builder:blb_col_1'
@@ -464,6 +482,14 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_topics:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: blb_region_col_1
   links:
     settings: {  }
     third_party_settings: {  }
