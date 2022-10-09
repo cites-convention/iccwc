@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: g3XYqcXbSKPVBDODwnT6pq7oqhCFkPryj4vVqrl_Kfc
-label: 'http://recommended-project.localhost'
+label: Sitemap
 context:
   language: en

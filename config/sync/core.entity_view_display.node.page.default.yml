@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_banner_image
     - field.field.node.page.field_banner_text
+    - field.field.node.page.field_exclude_related
     - field.field.node.page.field_image
     - field.field.node.page.field_links
     - field.field.node.page.field_metatags
@@ -322,6 +323,16 @@ content:
     third_party_settings: {  }
     weight: 108
     region: content
+  field_exclude_related:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 109
+    region: blb_region_col_1
   field_image:
     type: entity_reference_label
     label: above

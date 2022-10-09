@@ -1,1 +1,100 @@
-.sidebar-menu ul{padding:0;list-style-type:none;overflow:hidden}.sidebar-menu>ul{border:1px solid var(--color-gray);border-radius:10px}.sidebar-menu .link-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;overflow-wrap:anywhere}.sidebar-menu li{padding:20px 20px}.sidebar-menu li+li{border-top:1px solid var(--color-gray)}.sidebar-menu li .link-wrapper>a.is-active{color:var(--color-orange)}.sidebar-menu li .link-wrapper>a.is-active:before{background:var(--color-orange)}.sidebar-menu li:hover{background:var(--color-gray-light)}.sidebar-menu li:hover>.link-wrapper>a{color:var(--color-orange)}.sidebar-menu li:hover>.link-wrapper>a:before{background:var(--color-orange)}.sidebar-menu a{font-size:18px;line-height:20px;font-weight:bold;color:var(--color-gray-darker);position:relative;padding-left:20px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.sidebar-menu a:not(.collapse-arrow):before{content:"";width:10px;height:10px;background:var(--color-gray-darker);position:absolute;left:0}.sidebar-menu a:hover{text-decoration:none}.sidebar-menu a:hover:before{background:var(--color-orange)}.sidebar-menu a svg{width:24px;height:auto}.sidebar-menu .collapse{margin-top:10px}.sidebar-menu .collapse a{font-size:16px;line-height:18px}.sidebar-menu .collapse a:before{display:none}.sidebar-menu .collapse li{padding:0 25px}.sidebar-menu .collapse li+li{border:none;margin-top:10px}.sidebar-menu a:hover{color:var(--color-orange)}
+.sidebar-menu ul {
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+.sidebar-menu > ul {
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+.sidebar-menu .link-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-wrap: anywhere;
+}
+.sidebar-menu li {
+  padding: 20px 20px;
+}
+.sidebar-menu li + li {
+  border-top: 1px solid var(--color-gray);
+}
+.sidebar-menu li .link-wrapper > a.is-active {
+  color: var(--color-orange);
+}
+.sidebar-menu li .link-wrapper > a.is-active:before {
+  background: var(--color-orange);
+}
+.sidebar-menu li:hover {
+  background: var(--color-gray-light);
+}
+.sidebar-menu li:hover > .link-wrapper > a {
+  color: var(--color-orange);
+}
+.sidebar-menu li:hover > .link-wrapper > a:before {
+  background: var(--color-orange);
+}
+.sidebar-menu a {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--color-gray-darker);
+  position: relative;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sidebar-menu a:not(.collapse-arrow):before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--color-gray-darker);
+  position: absolute;
+  left: 0;
+}
+.sidebar-menu a:hover {
+  text-decoration: none;
+}
+.sidebar-menu a:hover:before {
+  background: var(--color-orange);
+}
+.sidebar-menu a svg {
+  width: 24px;
+  height: auto;
+}
+.sidebar-menu .collapse {
+  margin-top: 10px;
+}
+.sidebar-menu .collapse a {
+  font-size: 16px;
+  line-height: 18px;
+}
+.sidebar-menu .collapse a:before {
+  display: none;
+}
+.sidebar-menu .collapse li {
+  padding: 0 25px;
+}
+.sidebar-menu .collapse li + li {
+  border: none;
+  margin-top: 10px;
+}
+.sidebar-menu a:hover {
+  color: var(--color-orange);
+}
+/*# sourceMappingURL=../../map/components/menu/sidebar-menu.css.map */

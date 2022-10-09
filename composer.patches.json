@@ -5,10 +5,15 @@
       "#3027640 - Empty strings (\"\") passed in as contextual filter argument aren't considered missing": "patches/core/views-contextual-filter-empty-query-parameter.patch",
       "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2022-02-01/2689459-147.patch",
       "#3044117 - Add getter for layout object in Layout Builder's ConfigureSectionForm": "https://www.drupal.org/files/issues/2021-10-18/expose-properties-config-section-form-3044117-34.patch",
-      "#3101231 - Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given": "https://www.drupal.org/files/issues/2022-02-16/layout-builder-translation-issue-3101231-34.patch"
+      "#3101231 - Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given": "https://www.drupal.org/files/issues/2022-02-16/layout-builder-translation-issue-3101231-34.patch",
+      "#3267870 - Order image mappings by breakpoint ID and numeric multiplier": "https://www.drupal.org/files/issues/2022-05-19/3267870-9.5.x-47.patch",
+      "#3192234 - Apply width and height attributes to allow responsive image tag use loading=lazy": "https://www.drupal.org/files/issues/2022-05-10/3192234-191.patch"
     },
     "drupal/colorbox": {
       "#2808883 - Support Responsive Image module in D8": "patches/colorbox/colorbox-responsive-image-2808883-34.patch"
+    },
+    "drupal/smart_trim": {
+      "Text formatters should run before stripping html": "patches/smart_trim/run-formatters-before-strip-html.patch"
     }
   }
 }

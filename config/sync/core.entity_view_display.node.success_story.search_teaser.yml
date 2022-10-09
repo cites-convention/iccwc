@@ -44,12 +44,13 @@ content:
     settings:
       trim_length: 80
       trim_type: words
-      trim_suffix: ''
+      trim_suffix: ...
       wrap_output: false
       wrap_class: trimmed
       more_link: false
       more_class: more-link
       more_text: More
+      more_aria_label: 'Read more about [node:title]'
       summary_handler: full
       trim_options:
         text: true
@@ -73,6 +74,8 @@ content:
     settings:
       responsive_image_style: teaser_image_large
       image_link: content
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content

@@ -1,0 +1,23 @@
+uuid: e258abd2-c6e1-4222-a6f6-a29fc7d6e1f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_related
+    - node.type.page
+id: node.page.field_exclude_related
+field_name: field_exclude_related
+entity_type: node
+bundle: page
+label: 'Exclude from "Related content" blocks'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

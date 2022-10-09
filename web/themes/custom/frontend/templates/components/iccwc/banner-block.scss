@@ -124,6 +124,11 @@
   padding: 5px 10px;
 
   .breadcrumb-item {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
     + .breadcrumb-item {
       &:before {
         content: '/';

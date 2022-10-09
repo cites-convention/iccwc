@@ -16,6 +16,27 @@
 }
 
 .dark-mode {
+  .form-control {
+    background-color: #565455;
+    color: var(--color-black);
+  }
+
+  .nav-tabs {
+    .nav-item {
+      .nav-link {
+        color: var(--color-orange);
+      }
+    }
+  }
+
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background-color: var(--color-orange);
+
+    a {
+      color: var(--color-white);
+    }
+  }
+
   a {
     color: var(--color-blue-hover);
   }

@@ -53,7 +53,7 @@ footer {
     a {
       color: var(--color-white);
 
-      &:hover, &:active {
+      &:hover, &:active, &:focus {
         color: var(--color-white);
       }
     }

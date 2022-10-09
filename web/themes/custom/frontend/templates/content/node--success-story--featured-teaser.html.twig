@@ -91,7 +91,9 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+    <div class="max-4-lines">
+      {{ content.body }}
+    </div>
   </div>
 
   <div class="text-align-center">

@@ -25,6 +25,37 @@
   --icon-expand-more-orange: url('../icons/expand-more-orange.svg');
 }
 
+.btn-primary {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-color: var(--color-white);
+
+  &:hover, &:active, &:focus {
+    background-color: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: var(--color-white);
+    outline: 0;
+    box-shadow: none !important;
+  }
+}
+
+.region-content {
+  .form-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.nav-tabs {
+  margin-bottom: 30px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgb(218 127 52 / 20%);
+  border-color: #da7f34;
+}
+
 html {
   width: 100vw;
   height: 100vh;
@@ -315,6 +346,14 @@ blockquote {
   border-bottom: 4px solid var(--color-yellow);
 }
 
+.path-frontpage {
+  .layout-section:first-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-top: 0 !important;
+  }
+}
+
 .layout-section.bs-bg-light {
   background-color: var(--color-gray-light) !important;
 }
@@ -465,7 +504,6 @@ blockquote {
       line-clamp: none;
       display: block;
       border-radius: 0;
-      color: red;
     }
 
     .image-container {
@@ -761,6 +799,11 @@ blockquote {
 
 .pager {
   margin-top: 40px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
   li {
     -webkit-appearance: none;

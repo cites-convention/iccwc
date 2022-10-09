@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_banner_image
     - field.field.node.page.field_banner_text
+    - field.field.node.page.field_exclude_related
     - field.field.node.page.field_image
     - field.field.node.page.field_links
     - field.field.node.page.field_metatags
@@ -29,12 +30,13 @@ content:
     settings:
       trim_length: 50
       trim_type: words
-      trim_suffix: ''
+      trim_suffix: ...
       wrap_output: false
       wrap_class: trimmed
       more_link: false
       more_class: more-link
       more_text: More
+      more_aria_label: 'Read more about [node:title]'
       summary_handler: trim
       trim_options:
         text: true
@@ -58,6 +60,8 @@ content:
     settings:
       responsive_image_style: teaser_image
       image_link: content
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content
@@ -69,6 +73,7 @@ content:
 hidden:
   field_banner_image: true
   field_banner_text: true
+  field_exclude_related: true
   field_links: true
   field_metatags: true
   field_related_content: true
