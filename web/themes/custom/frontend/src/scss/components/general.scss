@@ -181,6 +181,14 @@ h1, h2, h3, h4, h5, h5 {
   }
 }
 
+.section-title-wrapper {
+  display: flex;
+
+  .block-iccwc-social-media {
+    margin-left: auto;
+  }
+}
+
 .section-title {
   @include heading-4;
   font-weight: bold;

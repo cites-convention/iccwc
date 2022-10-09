@@ -20,7 +20,10 @@
 ] %}
 {% if content %}
   {% if content['#section_title'] %}
-    <h2 class="section-title">{{ content['#section_title'] }}</h2>
+    <div class="section-title-wrapper">
+      <h2 class="section-title">{{ content['#section_title'] }}</h2>
+      {{ content.social_media }}
+    </div>
   {% endif %}
 
   <div {{ attributes.addClass(classes) }}>
