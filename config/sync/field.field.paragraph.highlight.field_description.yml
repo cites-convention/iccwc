@@ -17,7 +17,7 @@ field_name: field_description
 entity_type: paragraph
 bundle: highlight
 label: Description
-description: ''
+description: 'Use a description of around 85 characters.'
 required: false
 translatable: true
 default_value: {  }
