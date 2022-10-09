@@ -2,3 +2,6 @@ _core:
   default_config_hash: 09_A_Xk1BM0caZvcfbwSrahykcA06S7DI6xE3z1nYeU
 dark_class: dark-mode
 parent_element: body
+respect_browser: 0
+respect_browser_settings: 0
+default_mode: dark
