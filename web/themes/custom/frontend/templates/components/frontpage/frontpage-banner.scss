@@ -5,7 +5,6 @@
 }
 
 .block-inline-blockfrontpage-banner {
-  border-top: 4px solid var(--color-orange);
   overflow: hidden;
 
   .youtube-container {
@@ -20,7 +19,6 @@
     margin-top: -1px;
     display: flex;
     justify-content: center;
-    background: var(--color-orange);
     z-index: 0;
     max-height: 650px;
 
@@ -48,6 +46,7 @@
 
   .field--name-field-image {
     height: 100%;
+    border-top: 4px solid var(--color-orange);
   }
 
   picture {

@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: authored_on
-name: 'Authored on'
+name: 'Publication year'
 weight: 0
 min_count: 1
 missing: false

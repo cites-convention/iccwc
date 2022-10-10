@@ -1,0 +1,20 @@
+uuid: 6ea4969c-c0a6-4378-8b04-ce63e84f374a
+langcode: en
+status: true
+dependencies:
+  module:
+    - iccwc
+  theme:
+    - frontend
+id: iccwcsocialmedialinks_2
+theme: frontend
+region: disable_region
+weight: 0
+provider: null
+plugin: iccwc_social_media
+settings:
+  id: iccwc_social_media
+  label: 'ICCWC Social Media Links'
+  label_display: '0'
+  provider: iccwc
+visibility: {  }
