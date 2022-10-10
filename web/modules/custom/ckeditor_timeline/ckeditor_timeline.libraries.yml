@@ -3,6 +3,8 @@ timeline:
   css:
     theme:
       css/ckeditor-timeline.css: {}
+  js:
+    js/timeline.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

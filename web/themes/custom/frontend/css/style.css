@@ -7657,7 +7657,6 @@ html {
 
 body {
   background-color: var(--color-white);
-  overflow-x: hidden;
 }
 
 .container .container {
@@ -8500,16 +8499,17 @@ img {
   }
 }
 
-.download-resource-block {
-  border: 1px solid var(--color-gray);
-  border-radius: 10px;
-  margin-top: 10px;
-}
-.download-resource-block .box-shadow {
+.box-shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
+}
+
+.download-resource-block {
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+  margin-top: 10px;
 }
 .download-resource-block p:last-child {
   margin-bottom: 0;
