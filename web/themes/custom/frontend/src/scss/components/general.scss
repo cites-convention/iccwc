@@ -507,6 +507,10 @@ blockquote {
 .node--view-mode-search-teaser {
   margin: 20px 0 20px 0;
 
+  .content-type {
+    margin-bottom: 10px;
+  }
+
   &.node--type-partner {
     p {
       line-clamp: none;
@@ -540,6 +544,10 @@ blockquote {
   }
 
   &.node--type-resource {
+    .submitted-by {
+      margin-bottom: 20px;
+    }
+
     .image-container {
       border: 0;
       padding-right: 0;
@@ -656,7 +664,7 @@ blockquote {
     }
 
     .title-teaser {
-      margin: 20px 0 20px 0;
+      margin-bottom: 20px;
     }
   }
 
@@ -889,4 +897,16 @@ img {
   .empty-region {
     padding: 0 !important;
   }
+}
+
+#cboxLoadedContent, #cboxContent {
+  background: transparent;
+}
+
+#cboxOverlay {
+  background: #5a5a5a;
+}
+
+.cboxPhoto {
+  border-radius: 10px;
 }

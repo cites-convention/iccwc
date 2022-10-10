@@ -1,0 +1,51 @@
+uuid: 5b91005d-1faa-4db2-ba00-91eb407739f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.colorbox_with_caption
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.teaser_image_large
+  module:
+    - colorbox
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.colorbox_with_caption
+targetEntityType: media
+bundle: image
+mode: colorbox_with_caption
+content:
+  field_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_image:
+    type: colorbox_responsive
+    label: hidden
+    settings:
+      colorbox_responsive_node_style: teaser_image_large
+      colorbox_image_style: ''
+      colorbox_responsive_image_style: teaser_image_large
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: none
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

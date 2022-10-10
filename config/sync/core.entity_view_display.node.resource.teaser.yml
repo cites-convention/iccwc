@@ -8,7 +8,10 @@ dependencies:
     - field.field.node.resource.field_additional_materials
     - field.field.node.resource.field_brochure
     - field.field.node.resource.field_files
+    - field.field.node.resource.field_flyer_files
+    - field.field.node.resource.field_flyer_image
     - field.field.node.resource.field_image
+    - field.field.node.resource.field_images
     - field.field.node.resource.field_organization
     - field.field.node.resource.field_resource_type
     - field.field.node.resource.field_video
@@ -26,12 +29,21 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: colorbox_with_caption
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   created: true
@@ -40,7 +52,6 @@ hidden:
   field_files: true
   field_flyer_files: true
   field_flyer_image: true
-  field_image: true
   field_images: true
   field_organization: true
   field_resource_type: true

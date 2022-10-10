@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\search_api\Query\QueryInterface;
 use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_theme().
@@ -220,4 +221,13 @@ function _iccwc_submit_section_form(array $form, FormStateInterface $form_state)
   $form_object
     ->getCurrentLayout()
     ->setConfiguration($config);
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function iccwc_entity_view_mode_alter(&$view_mode, $entity, $context) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'resource' && $view_mode == 'teaser' && $entity->get('field_resource_type')->value != 'infographic') {
+    $view_mode = 'search_teaser';
+  }
 }

@@ -1,0 +1,10 @@
+uuid: b5eac772-654f-4abb-818b-75df40c174f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.colorbox_with_caption
+label: 'Colorbox with caption'
+targetEntityType: media
+cache: true
