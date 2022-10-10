@@ -5,7 +5,7 @@ dependencies: {  }
 id: content_body_success_story
 block_id: 'field_block:node:success_story:body'
 category: field
-label: 'Content body'
+label: 'Success Story - Content body'
 image_path: ''
 image_alt: ''
-weight: -5
+weight: -11

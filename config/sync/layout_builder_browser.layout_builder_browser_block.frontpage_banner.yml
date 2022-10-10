@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: frontpage_banner
 block_id: 'inline_block:frontpage_banner'
-category: page_content
+category: frontpage
 label: 'Frontpage banner'
 image_path: ''
 image_alt: ''
-weight: -98
+weight: -16

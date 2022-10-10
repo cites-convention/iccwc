@@ -11,7 +11,7 @@ field_name: field_topics
 entity_type: node
 bundle: news
 label: Topics
-description: ''
+description: 'Separate multiple topics with a comma. If the topic does not already exist, it will be created.'
 required: false
 translatable: false
 default_value: {  }
@@ -24,6 +24,6 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

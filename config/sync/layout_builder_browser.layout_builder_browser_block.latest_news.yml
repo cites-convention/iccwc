@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: latest_news
 block_id: iccwc_latest_news
-category: page_content
+category: frontpage
 label: 'Latest news'
 image_path: ''
 image_alt: ''
-weight: -96
+weight: -14

@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: resources
 block_id: 'views_block:resources-videos'
-category: page_content
-label: Resources
+category: resources_tools
+label: Videos
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -15

@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: clear_filter
 block_id: iccwc_clear_filter
-category: page_content
-label: 'Clear filter'
+category: search_pages
+label: 'Clear filters link'
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -15

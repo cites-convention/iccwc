@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: sidebar_filters
 block_id: iccwc_sidebar_filters
-category: page_content
+category: search_pages
 label: 'Sidebar filters'
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -16

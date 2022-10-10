@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: vertical_tabs
 block_id: 'inline_block:vertical_tabs'
-category: page_content
+category: frontpage
 label: 'Vertical tabs'
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -15

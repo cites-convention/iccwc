@@ -5,7 +5,7 @@ dependencies: {  }
 id: tags
 block_id: 'field_block:node:news:field_tags'
 category: field
-label: Tags
+label: 'News - Publication type'
 image_path: ''
 image_alt: ''
-weight: -1
+weight: -14

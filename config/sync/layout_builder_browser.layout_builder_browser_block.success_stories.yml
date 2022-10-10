@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: success_stories
 block_id: iccwc_success_stories
-category: page_content
+category: frontpage
 label: 'Success stories (frontpage)'
 image_path: ''
 image_alt: ''
-weight: -91
+weight: -12

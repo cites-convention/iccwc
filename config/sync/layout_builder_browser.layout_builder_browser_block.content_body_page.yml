@@ -5,7 +5,7 @@ dependencies: {  }
 id: content_body_page
 block_id: 'field_block:node:page:body'
 category: field
-label: 'Content body'
+label: 'Page - Content body'
 image_path: ''
 image_alt: ''
-weight: -6
+weight: -13

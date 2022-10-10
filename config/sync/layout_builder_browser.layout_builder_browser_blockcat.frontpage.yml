@@ -1,0 +1,7 @@
+uuid: 27f6451a-06c6-4a56-acef-165c66e28365
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage
+label: Frontpage
+weight: null

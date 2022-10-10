@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: partners_and_donors
 block_id: 'views_block:partners_and_donors-block_1'
-category: page_content
+category: frontpage
 label: 'Partners and donors'
 image_path: ''
 image_alt: ''
-weight: -95
+weight: -11

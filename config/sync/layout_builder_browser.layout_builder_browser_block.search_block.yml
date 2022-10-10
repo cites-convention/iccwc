@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: search_block
 block_id: 'views_block:search-block_1'
-category: page_content
+category: search_pages
 label: 'Search block'
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -14

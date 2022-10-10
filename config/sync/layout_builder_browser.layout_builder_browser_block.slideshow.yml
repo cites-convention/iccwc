@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: slideshow
 block_id: 'inline_block:slideshow'
-category: page_content
+category: frontpage
 label: Slideshow
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -13

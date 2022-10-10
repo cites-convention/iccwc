@@ -5,7 +5,7 @@ dependencies: {  }
 id: other_links
 block_id: 'field_block:node:page:field_links'
 category: field
-label: 'Other links'
+label: 'Page - Other links'
 image_path: ''
 image_alt: ''
-weight: -4
+weight: -12

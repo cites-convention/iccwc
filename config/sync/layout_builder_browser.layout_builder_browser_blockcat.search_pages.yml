@@ -1,0 +1,7 @@
+uuid: de3c9fab-32bb-46fb-889f-49f5bff4a120
+langcode: en
+status: true
+dependencies: {  }
+id: search_pages
+label: 'Search pages'
+weight: null

@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: iccwc_publications
 block_id: 'views_block:resources-iccwc_publications'
-category: page_content
+category: resources_tools
 label: 'ICCWC Publications'
 image_path: ''
 image_alt: ''
-weight: -100
+weight: -16
