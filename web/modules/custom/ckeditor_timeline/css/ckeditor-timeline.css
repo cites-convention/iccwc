@@ -110,10 +110,12 @@
   margin-bottom: 20px;
   width: 100%;
   text-align: right;
+  color: #999999;
 }
 
 .timeline-select-wrapper select {
   margin-left: 3px;
   border: none;
   outline: none !important;
+  font-weight: bold;
 }
