@@ -494,17 +494,16 @@ blockquote {
     margin-top: 0;
   }
 
-  &:last-child {
+  &:not(:first-child) {
     border-bottom: solid 1px var(--color-gray);
   }
 
-  border-top: solid 1px var(--color-gray);
   align-items: center;
   margin-top: 20px;
 }
 
 .node--view-mode-search-teaser {
-  margin: 20px 0 20px 0;
+  margin: 30px 0;
 
   .content-type {
     margin-bottom: 10px;
@@ -537,8 +536,7 @@ blockquote {
 
     iframe {
       max-width: 100%;
-      height: auto;
-
+      height: 100%;
     }
   }
 
@@ -553,7 +551,7 @@ blockquote {
     }
 
     .field--name-body p {
-      @include max-lines(7);
+      display: block;
     }
 
     .download-resource-block {
@@ -616,7 +614,7 @@ blockquote {
         margin: 0 7px 0 0;
         font-weight: 700;
         text-decoration: none;
-        padding: 20px 10px 20px 10px;
+        padding: 12px 10px;
         border: 1px solid var(--color-orange);
         border-radius: 10px;
         color: var(--color-orange);

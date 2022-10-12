@@ -13,7 +13,7 @@
 {% if node.field_resource_type.value == 'video' %}
   <article{{ attributes.addClass(classes) }}>
     <div class="row" {{ content_attributes.addClass('node__content') }}>
-      <div class="col-md-8">
+      <div class="col-md-7">
         <div class="date-tags">
           {{ content.created }}
         </div>
@@ -28,7 +28,7 @@
           {{ content.body }}
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         {{ content.field_video }}</div>
     </div>
   </article>
@@ -55,10 +55,12 @@
       <div class="col-md-4">
         {{ content.field_image }}
       </div>
-      {% if not node.field_files.isEmpty %}
+      {% if not node.field_files.isEmpty or not node.field_additional_materials.isEmpty or not node.field_brochure.isEmpty %}
         <div class="download-resource-block">
           <div class="top">
-            <p>{{ "Download"|t }}</p>
+            {% if not node.field_files.isEmpty %}
+              <p>{{ "Download"|t }}</p>
+            {% endif %}
             {% for file in content.field_files %}
               {% if file["#type"] == "link" %}
                 {% set language = file["#language"].label %}
@@ -71,7 +73,7 @@
             <a href="{{ content.field_brochure[0]['#url']}}" class="lang-download" id="brochure" target="_blank">{{ "See brochure"|t }}</a><br>
           </div>
 
-          {% if content.field_additional_materials[0] is not null %}
+          {% if not node.field_additional_materials.isEmpty or not node.field_additional_materials_links.isEmpty %}
             <div class="bottom">
               <a class="additional-materials" data-bs-toggle="collapse" href="#additionalMaterials-{{ node.id }}" role="button" aria-expanded="true" aria-controls="additionalMaterials-{{ node.id }}">
                 <p>{{ "Additional materials"|t }}</p>
@@ -86,6 +88,7 @@
                       <div class="file"><a href="{{ file["#url"] }}" >{{ file["#title"] }}</a></div>
                     {% endif %}
                   {% endfor %}
+                  {{ content.field_additional_materials_links }}
                 </div>
               </div>
             </div>

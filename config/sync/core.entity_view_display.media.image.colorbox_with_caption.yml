@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.media.colorbox_with_caption
     - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
+    - image.style.infographics
     - media.type.image
-    - responsive_image.styles.teaser_image_large
   module:
     - colorbox
     - layout_builder
@@ -29,12 +29,12 @@ content:
     weight: 1
     region: content
   field_media_image:
-    type: colorbox_responsive
+    type: colorbox
     label: hidden
     settings:
-      colorbox_responsive_node_style: teaser_image_large
+      colorbox_node_style: infographics
+      colorbox_node_style_first: ''
       colorbox_image_style: ''
-      colorbox_responsive_image_style: teaser_image_large
       colorbox_gallery: post
       colorbox_gallery_custom: ''
       colorbox_caption: none

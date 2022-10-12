@@ -20,7 +20,8 @@ dependencies:
   module:
     - iccwc
     - layout_builder
-    - smart_trim
+    - link
+    - text
     - youtube
 third_party_settings:
   layout_builder:
@@ -32,21 +33,9 @@ bundle: resource
 mode: search_teaser
 content:
   body:
-    type: smart_trim
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 100
-      trim_type: words
-      trim_suffix: ...
-      wrap_output: false
-      wrap_class: trimmed
-      more_link: false
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-      trim_options:
-        text: true
-        trim_zero: false
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
@@ -66,6 +55,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_additional_materials_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_brochure:
     type: media_file_link
@@ -102,7 +103,7 @@ content:
     type: youtube_video
     label: hidden
     settings:
-      youtube_size: 450x315
+      youtube_size: responsive
       youtube_width: ''
       youtube_height: ''
       youtube_autoplay: false
@@ -124,7 +125,6 @@ content:
     weight: 5
     region: content
 hidden:
-  field_additional_materials_links: true
   field_flyer_files: true
   field_flyer_image: true
   field_images: true
