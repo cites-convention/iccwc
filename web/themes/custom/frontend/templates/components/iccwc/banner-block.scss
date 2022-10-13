@@ -55,6 +55,7 @@
   height: 100%;
   position: relative;
   box-sizing: content-box;
+  overflow-x: hidden;
 
   .title-subtitle {
     .button.js-form-submit.form-submit.btn.btn-primary{
