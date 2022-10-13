@@ -2,6 +2,7 @@
 
 :root {
   --color-orange: #E87722;
+  --color-orange-light: #FDE6D4;
   --color-yellow: #F5CD26;
   --color-black: #231F20;
   --color-text: #231F20;
@@ -176,7 +177,7 @@ h1, h2, h3, h4, h5, h5 {
   }
 
   ul li {
-    padding-left: 20px;
+    padding-left: 5px;
   }
 }
 
@@ -547,7 +548,15 @@ blockquote {
 
     .image-container {
       border: 0;
-      padding-right: 0;
+
+      @media (min-width: 768px) {
+        padding-right: 0;
+      }
+    }
+
+    .field--name-field-media-image {
+      display: flex;
+      justify-content: center;
     }
 
     .field--name-body p {
@@ -560,6 +569,7 @@ blockquote {
       .files {
         display: flex;
         margin-bottom: 10px;
+        flex-direction: column;
 
         a {
           color: var(--color-black);
@@ -567,9 +577,27 @@ blockquote {
         }
       }
 
+      .bottom {
+        .card-body {
+          padding: 0;
+        }
+      }
+
       .top {
         display: flex;
         margin-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 7px;
+
+        @media (max-width: 767px) {
+          p {
+            display: none;
+          }
+
+          #brochure {
+            margin-left: 0;
+          }
+        }
       }
 
       .additional-materials {
@@ -611,7 +639,6 @@ blockquote {
       .lang-download {
         display: inline-block;
         align-self: center;
-        margin: 0 7px 0 0;
         font-weight: 700;
         text-decoration: none;
         padding: 12px 10px;
@@ -906,4 +933,11 @@ img {
 
 .cboxPhoto {
   border-radius: 10px;
+}
+
+.highlights {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--color-gray-light);
+  border: 1px solid var(--color-orange-light);
 }

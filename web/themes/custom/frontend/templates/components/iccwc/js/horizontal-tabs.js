@@ -7,7 +7,7 @@
 
   Drupal.behaviors.horizontal_tabs = {
     attach: function (context, settings) {
-      $("[data-horizontal-tab-parent-id]").once('moveHorizontalTabContent').each(function () {
+      $(".node--view-mode-full [data-horizontal-tab-parent-id]").once('moveHorizontalTabContent').each(function () {
         var parent_id = $(this).attr('data-horizontal-tab-parent-id');
         var parent = $('[data-tab-content-id="' + parent_id + '"]');
         var element = $(this).detach();

@@ -59,7 +59,7 @@ settings:
             - Styles
   plugins:
     stylescombo:
-      styles: "p.section-title|Section Title\r\ndiv.box-shadow|Box shadow"
+      styles: "p.section-title|Section Title\r\ndiv.box-shadow|Box shadow\r\ndiv.highlights|Highlights"
     bs_grid:
       use_cdn: true
       cdn_url: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap-grid.min.css'

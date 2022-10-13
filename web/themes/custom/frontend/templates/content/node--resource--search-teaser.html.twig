@@ -82,7 +82,7 @@
                   </svg></i>
               </a>
               <div class="collapse show" id="additionalMaterials-{{ node.id }}">
-                <div class="files card card-body">
+                <div class="files">
                   {% for file in content.field_additional_materials %}
                     {% if file["#type"] == "link" %}
                       <div class="file"><a href="{{ file["#url"] }}" >{{ file["#title"] }}</a></div>
