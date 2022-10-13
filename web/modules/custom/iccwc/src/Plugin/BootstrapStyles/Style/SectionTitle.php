@@ -102,7 +102,7 @@ class SectionTitle extends StylePluginBase {
         ->getStorage('block')
         ->load('iccwcsocialmedialinks_2');
 
-      $build['social_media'] = $this->entityTypeManager
+      $build['#social_media'] = $this->entityTypeManager
         ->getViewBuilder('block')
         ->view($block);
     }
