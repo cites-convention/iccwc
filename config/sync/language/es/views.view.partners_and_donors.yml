@@ -1,6 +1,14 @@
 display:
   default:
+    display_title: 'Por defecto'
     display_options:
-      footer:
-        area_text_custom:
-          content: '<a class="btn-iccwc btn-next" href="/es/partners-and-donors>Aprende más</a>'
+      fields:
+        title:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc

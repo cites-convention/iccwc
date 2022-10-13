@@ -1,0 +1,4 @@
+name: 'Type de contenu'
+widget:
+  config:
+    reset_text: 'Tout afficher'

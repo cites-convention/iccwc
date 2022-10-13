@@ -1,0 +1,23 @@
+display:
+  default:
+    display_title: 'Par défaut'
+    display_options:
+      fields:
+        title:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      arguments:
+        type:
+          exception:
+            title: Tout
+        nid:
+          exception:
+            title: Tout
+  block_related_content:
+    display_title: Bloc

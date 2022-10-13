@@ -104,6 +104,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  translate_config: 0
   twig_tweak: 0
   twig_vardumper: 0
   twitter_feed: 0

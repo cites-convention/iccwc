@@ -4,4 +4,14 @@ display:
       footer:
         area_text_custom:
           admin_label: 'Apprendre encore plus'
-          content: '<a class="btn-iccwc btn-next" href="/fr/partners-and-donors>Learn more</a>'
+      fields:
+        title:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+    display_title: 'Par défaut'

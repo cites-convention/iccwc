@@ -1,0 +1,4 @@
+services:
+  translate_config.config_manager:
+    class: Drupal\translate_config\Service\TranslateConfigLocaleConfigManager
+    arguments: ['@config.storage', '@locale.storage', '@config.factory', '@config.typed', '@language_manager', '@locale.default.config.storage', '@config.manager']

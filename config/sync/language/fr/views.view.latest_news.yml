@@ -4,8 +4,25 @@ display:
       empty:
         area:
           content:
-            value: "<p>No results!</p>\r\n"
             format: full_html
-      footer:
-        area_text_custom:
-          content: '<a class="btn-iccwc btn-next" href="/fr/news">More news</a>'
+      fields:
+        title:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      arguments:
+        nid_1:
+          exception:
+            title: Tout
+    display_title: 'Par défaut'
+  latest_one_news:
+    display_options:
+      arguments:
+        nid:
+          exception:
+            title: Tout
