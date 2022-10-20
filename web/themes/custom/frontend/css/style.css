@@ -7468,7 +7468,8 @@ progress {
   height: 100vh;
 }
 .img-fit img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -8703,6 +8704,15 @@ img {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+}
+.region-header-right .block-iccwc-social-media {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin-left: 29px;
+}
+.region-header-right .block-iccwc-social-media a svg {
+  height: 15px;
 }
 
 .iccwc-search-form {

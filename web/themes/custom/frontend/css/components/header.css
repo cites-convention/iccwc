@@ -137,6 +137,15 @@
             justify-content: flex-end;
   }
 }
+.region-header-right .block-iccwc-social-media {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin-left: 29px;
+}
+.region-header-right .block-iccwc-social-media a svg {
+  height: 15px;
+}
 
 .iccwc-search-form {
   width: 180px;
