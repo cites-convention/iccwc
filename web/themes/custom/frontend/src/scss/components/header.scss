@@ -111,6 +111,19 @@
     margin-left: 29px;
     a svg{
       height: 15px;
+      &.linkedin{
+        height: 18px;
+      }
+    }
+    @media (max-width: 767px) {
+      margin-left: 10px;
+      .block-content{
+        width: max-content;
+      a{
+        margin-left: 0;
+      }
+      }
+
     }
   }
 }

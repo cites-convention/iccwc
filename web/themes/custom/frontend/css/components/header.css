@@ -146,6 +146,22 @@
 .region-header-right .block-iccwc-social-media a svg {
   height: 15px;
 }
+.region-header-right .block-iccwc-social-media a svg.linkedin {
+  height: 18px;
+}
+@media (max-width: 767px) {
+  .region-header-right .block-iccwc-social-media {
+    margin-left: 10px;
+  }
+  .region-header-right .block-iccwc-social-media .block-content {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .region-header-right .block-iccwc-social-media .block-content a {
+    margin-left: 0;
+  }
+}
 
 .iccwc-search-form {
   width: 180px;
