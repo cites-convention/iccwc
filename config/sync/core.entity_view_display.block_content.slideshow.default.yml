@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.slideshow
+    - field.field.block_content.slideshow.field_portrait
     - field.field.block_content.slideshow.field_slides
   module:
     - entity_reference_revisions
@@ -22,5 +23,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_portrait: true
   langcode: true
   search_api_excerpt: true
