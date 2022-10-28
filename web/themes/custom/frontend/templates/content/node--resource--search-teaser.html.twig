@@ -85,7 +85,7 @@
                 <div class="files">
                   {% for file in content.field_additional_materials %}
                     {% if file["#type"] == "link" %}
-                      <div class="file"><a href="{{ file["#url"] }}" >{{ file["#title"] }}</a></div>
+                      <div class="file"><a href="{{ file["#url"].toString }}" >{{ file["#title"] }}</a></div>
                     {% endif %}
                   {% endfor %}
                   {{ content.field_additional_materials_links }}

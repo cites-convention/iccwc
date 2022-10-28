@@ -3,20 +3,31 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: report
 label: Report
 type: 'canonical_entities:node'
 pattern: '/reports/[node:title]'
 selection_criteria:
-  4bfdcf39-2aa1-45da-9e58-2c64f56c9e0a:
+  4f57acb4-3528-45bf-8454-80c1b6fbb2e4:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 4bfdcf39-2aa1-45da-9e58-2c64f56c9e0a
+    uuid: 4f57acb4-3528-45bf-8454-80c1b6fbb2e4
     context_mapping:
       node: node
     bundles:
       report: report
+  1b0356ad-35ae-4596-bbba-e6f6e17d8176:
+    id: language
+    negate: false
+    uuid: 1b0356ad-35ae-4596-bbba-e6f6e17d8176
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -45,8 +45,8 @@
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 {% block paragraph %}
-  {% if paragraph.field_link.uri %}
-    <a href="{{ content.field_link[0]["#title"] }}" target="_blank">
+  {% if not paragraph.field_link.isEmpty %}
+    <a href="{{ content.field_link[0]["#url"].toString }}" target="_blank">
   {% endif %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
@@ -63,7 +63,7 @@
       </div>
     {% endblock %}
   </div>
-  {% if paragraph.field_link.uri %}
+  {% if not paragraph.field_link.isEmpty %}
     </a>
   {% endif %}
 {% endblock paragraph %}

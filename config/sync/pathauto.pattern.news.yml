@@ -3,20 +3,31 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: news
 label: News
 type: 'canonical_entities:node'
 pattern: '/news/[node:title]'
 selection_criteria:
-  672e43aa-1853-4f09-910c-f1e0612798c2:
+  4b4d977b-4759-4c07-b570-a2838e5c0221:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 672e43aa-1853-4f09-910c-f1e0612798c2
+    uuid: 4b4d977b-4759-4c07-b570-a2838e5c0221
     context_mapping:
       node: node
     bundles:
       news: news
+  727c05d6-dfb4-4c09-95d5-adfb243a4945:
+    id: language
+    negate: false
+    uuid: 727c05d6-dfb4-4c09-95d5-adfb243a4945
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships:
+  'node:langcode:language':
+    label: Language

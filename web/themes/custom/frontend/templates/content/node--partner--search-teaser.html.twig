@@ -13,8 +13,8 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
     <div class="col-xl-3 col-md-4">
-      {% if content.field_external_url['0']["#title"]  %}
-      <a href="{{ content.field_external_url['0']["#title"]}}"> {{ content.field_image }}</a>
+      {% if content.field_external_url['0']["#url"].toString  %}
+      <a href="{{ content.field_external_url['0']["#url"].toString }}"> {{ content.field_image }}</a>
         {% else %}
       {{ content.field_image }}
         {% endif %}
