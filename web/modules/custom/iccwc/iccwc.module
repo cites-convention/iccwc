@@ -231,3 +231,15 @@ function iccwc_entity_view_mode_alter(&$view_mode, $entity, $context) {
     $view_mode = 'search_teaser';
   }
 }
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function iccwc_preprocess_paragraph__slideshow_item(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['elements']['#paragraph'];
+  $block = $paragraph->getParentEntity();
+  if ($block->get('field_portrait')->value) {
+    $variables['content']['field_media_image'][0]['#responsive_image_style_id']='slideshow_portrait';
+  }
+}

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.slideshow
+    - field.field.block_content.slideshow.field_portrait
     - field.field.block_content.slideshow.field_slides
   module:
     - paragraphs
@@ -12,6 +13,13 @@ targetEntityType: block_content
 bundle: slideshow
 mode: default
 content:
+  field_portrait:
+    type: boolean_checkbox
+    weight: 27
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_slides:
     type: paragraphs
     weight: 26

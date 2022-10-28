@@ -1,0 +1,15 @@
+uuid: 8b4e3b9a-08c7-49ea-805f-16f0fa3112df
+langcode: en
+status: true
+dependencies: {  }
+name: slideshow_portrait
+label: 'Slideshow portrait'
+effects:
+  a6910370-2050-403c-bab6-859ab11ed44c:
+    uuid: a6910370-2050-403c-bab6-859ab11ed44c
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 415
+      upscale: true
