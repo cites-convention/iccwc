@@ -18,8 +18,8 @@
 .block-lang-dropdown {
   margin-right: 30px;
 
-  @media (max-width: 991px) {
-    margin-right: 15px;
+  @media (max-width: 767px) {
+    margin-right: 5px;
   }
 
   display: flex;
@@ -46,6 +46,14 @@
     display: inline-block;
     margin-left: 10px;
     padding-left: 20px;
+
+    @media (max-width: 767px) {
+      padding-left: 0;
+      width: auto !important;
+      margin: 0;
+      background-position: right;
+      padding-right: 20px;
+    }
   }
 }
 
@@ -75,7 +83,7 @@
   input[type="checkbox"]:checked {
     + label {
       &:after {
-        background: url("../icons/toggle-switch-on.svg") no-repeat center ;
+        background: url("../icons/toggle-switch-on.svg") no-repeat center;
       }
     }
   }
@@ -84,7 +92,7 @@
 .region-header-right {
   @include small-text;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   border-bottom: 1px solid;
   border-bottom-color: var(--color-gray);
   padding-bottom: 10px;
@@ -104,24 +112,42 @@
     order: -1;
     width: 100%;
     margin-bottom: 20px;
-    justify-content: flex-end;
+    flex-wrap: wrap;
   }
-  .block-iccwc-social-media{
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    .iccwc-search-form {
+      width: 100%;
+      border: none;
+      margin-bottom: 10px;
+      padding: 0;
+    }
+  }
+
+  .block-iccwc-social-media {
     align-self: center;
     margin-left: 29px;
-    a svg{
+
+    a svg {
       height: 15px;
-      &.linkedin{
+
+      &.linkedin {
         height: 18px;
       }
     }
+
     @media (max-width: 767px) {
       margin-left: 10px;
-      .block-content{
+      .block-content {
         width: max-content;
-      a{
-        margin-left: 0;
-      }
+
+        a {
+          margin-left: 0;
+        }
       }
 
     }
@@ -141,7 +167,7 @@
   }
 
   .form-submit {
-    background: url("../icons/magnify.svg") no-repeat center ;
+    background: url("../icons/magnify.svg") no-repeat center;
     font-size: 0;
     border: none;
     width: 24px;
@@ -201,7 +227,7 @@ header {
         padding: 0;
 
         &.dropdown > .nav-link:after {
-          content:  '';
+          content: '';
           display: inline-block;
           margin-left: 10px;
           background: var(--icon-expand-more) no-repeat center;

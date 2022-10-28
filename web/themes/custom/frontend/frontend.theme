@@ -181,3 +181,4 @@ function frontend_preprocess_field__block_content__field_tabs(&$variables) {
 
   $variables['titles'] = $titles;
 }
+
