@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\search_api\Query\QueryInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_theme().
@@ -239,6 +240,21 @@ function iccwc_preprocess_paragraph__slideshow_item(&$variables) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['elements']['#paragraph'];
   $block = $paragraph->getParentEntity();
+  /** @var \Drupal\media\MediaInterface $media_file */
+  $media_file = $paragraph->get('field_file')->entity;
+
+  if (!empty($media_file)) {
+    /** @var \Drupal\file\FileInterface $file */
+    $file = $media_file->get('field_media_file')->entity;
+    if (!empty($file)) {
+      $variables['slide_link'] = $file->createFileUrl();
+    }
+  }
+
+  if (empty($variables['slide_link']) && !$paragraph->get('field_link')->isEmpty()) {
+    $variables['slide_link'] = Url::fromUri($paragraph->get('field_link')->uri)->toString();
+  }
+
   if (!empty($block->get('field_portrait')->value)) {
     $variables['content']['field_media_image'][0]['#responsive_image_style_id'] = 'slideshow_portrait';
   }
