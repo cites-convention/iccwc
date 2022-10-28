@@ -941,3 +941,42 @@ img {
   background-color: var(--color-gray-light);
   border: 1px solid var(--color-orange-light);
 }
+
+.media-library-widget-modal {
+  .media-library-item__attributes:hover .media-library-item__name,
+  .media-library-item--grid.is-focus .media-library-item__name,
+  .media-library-item--grid.checked .media-library-item__name {
+    overflow-wrap: anywhere;
+  }
+}
+
+.ui-layout-builder-modal {
+
+  h4.label {
+    color: #FFF;
+  }
+
+  #layout-builder-modal button.link.tabledrag-toggle-weight {
+    background: transparent;
+  }
+
+  .media-library-edit__link {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    padding: 0;
+    transition: 0.2s border-color;
+    color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background: url(/modules/contrib/media_library_edit/icons/pencil.svg) #fff center no-repeat !important;
+    background-size: 16px 16px;
+    text-shadow: none;
+    box-sizing: border-box;
+    font-size: 0 !important;
+  }
+}
