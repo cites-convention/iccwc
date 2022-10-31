@@ -249,7 +249,7 @@ $settings['config_sync_directory'] = '../config/sync';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'YAn6X615uVtvtY0u2CBxq-g2XC5AnVEbmsOml-MW-4sVUva0YS9NlWlBXyHv8NL45LyzVawVAw';
+$settings['hash_salt'] = getenv('HASH_SALT') ?: 'TODO';
 
 /**
  * Deployment identifier.
@@ -755,6 +755,83 @@ $settings['entity_update_backup'] = TRUE;
 $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 /**
+ * Database connection.
+ */
+$databases['default']['default'] = [
+  'init_commands' => [
+    'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'",
+  ],
+  'database' => getenv('DB_NAME'),
+  'driver' => 'mysql',
+  'host' => getenv('DB_HOST'),
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'password' => getenv('DB_PASSWORD'),
+  'port' => getenv('DB_PORT'),
+  'prefix' => getenv('DB_PREFIX'),
+  'username' => getenv('DB_USER'),
+  'collation' => 'utf8mb4_general_ci',
+];
+
+/**
+ * SMTP settings.
+ */
+if (!empty(getenv('SMTP_HOST_ON'))) {
+  $config['smtp.settings']['smtp_on'] = TRUE;
+}
+$config['smtp.settings']['smtp_host'] = getenv('SMTP_HOST') ?? '127.0.0.1';
+$config['smtp.settings']['smtp_port'] = getenv('SMTP_PORT') ?? '25';
+$config['smtp.settings']['smtp_allowhtml'] = TRUE;
+if (!empty(getenv('SMTP_PROTOCOL'))) {
+  $config['smtp.settings']['smtp_protocol'] = getenv('SMTP_PROTOCOL');
+}
+if (!empty(getenv('SMTP_USER'))) {
+  $config['smtp.settings']['smtp_username'] = getenv('SMTP_USER');
+}
+if (!empty(getenv('SMTP_PASSWORD'))) {
+  $config['smtp.settings']['smtp_password'] = getenv('SMTP_PASSWORD');
+}
+if (!empty(getenv('SMTP_FROM'))) {
+  $config['system.site']['mail'] = getenv('SMTP_FROM');
+}
+
+if (!empty(getenv('TRUSTED_HOST_PATTERNS'))) {
+  $settings['trusted_host_patterns'] = explode(';', getenv('TRUSTED_HOST_PATTERNS'));
+}
+
+/**
+ * Search API Solr connection.
+ */
+$config['search_api.server.default_server'] = [
+  'backend_config' => [
+    'connector' => getenv('SOLR_CONNECTOR_TYPE') ?: 'standard',
+    'connector_config' => [
+      'scheme' => getenv('SOLR_CONNECTOR_SCHEME') ?: 'http',
+      'host' => getenv('SOLR_CONNECTOR_HOST') ?: 'localhost',
+      'path' => getenv('SOLR_CONNECTOR_PATH') ?: '/',
+      'core' => getenv('SOLR_CONNECTOR_CORE') ?: 'iccwc',
+      'port' => getenv('SOLR_CONNECTOR_PORT') ?: '8983',
+      'username' => getenv('SOLR_CONNECTOR_USER') ?: '',
+      'password' => getenv('SOLR_CONNECTOR_PASS') ?: '',
+    ]
+  ],
+];
+
+// Dev robots.txt.
+if (!empty(getenv('DEV_ROBOTSTXT'))) {
+  $config['robotstxt.settings']['content'] = file_get_contents(DRUPAL_ROOT . '/../robots-dev.txt');
+}
+
+if (!empty(getenv('DISABLE_CACHING'))) {
+  $config['system.performance']['css']['preprocess'] = FALSE;
+  $config['system.performance']['js']['preprocess'] = FALSE;
+  $settings['cache']['bins']['render'] = 'cache.backend.null';
+  $settings['cache']['bins']['discovery_migration'] = 'cache.backend.memory';
+  $settings['cache']['bins']['page'] = 'cache.backend.null';
+  $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+  $config['advagg.settings']['enabled'] = FALSE;
+}
+
+/**
  * Load local development override configuration, if available.
  *
  * Create a settings.local.php file to override variables on secondary (staging,
@@ -767,20 +844,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-
-$databases['default']['default'] = array (
-  'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],
-  'database' => 'iccwc',
-  'username' => 'root',
-  'password' => 'root',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'driver' => 'mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
-
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }

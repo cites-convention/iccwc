@@ -99,6 +99,7 @@
         "drupal/paragraphs": "^1.14",
         "drupal/pathauto": "^1.9",
         "drupal/redirect": "^1.7",
+        "drupal/robotstxt": "^1.4",
         "drupal/search_api": "^1.23",
         "drupal/search_api_solr": "^4.2",
         "drupal/simple_search_form": "^1.4",
@@ -121,7 +122,8 @@
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "slick/slick": "^1.9.0",
-        "tubalmartin/cssmin": "^4.1"
+        "tubalmartin/cssmin": "^4.1",
+        "vlucas/phpdotenv": "^5.5"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
@@ -130,6 +132,9 @@
         "drupal/twig_vardumper": "^3.0",
         "overtrue/phplint": "^3.2",
         "phpmd/phpmd": "^2.12"
+    },
+    "autoload": {
+        "files": ["load.environment.php"]
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -159,7 +164,8 @@
                 "[web-root]/sites/example.settings.local.php": {
                     "append": "patches/append-example.settings.local.php.txt"
                 },
-                "[web-root]/sites/development.services.yml": false
+                "[web-root]/sites/development.services.yml": false,
+                "[web-root]/robots.txt": false
             }
         },
         "installer-paths": {

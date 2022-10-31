@@ -1,1 +1,4 @@
 label: Página
+relationships:
+  'node:langcode:language':
+    label: Idioma

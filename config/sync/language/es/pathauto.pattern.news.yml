@@ -1,1 +1,4 @@
 label: Noticias
+relationships:
+  'node:langcode:language':
+    label: Idioma

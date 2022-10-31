@@ -1,12 +1,10 @@
 #
 # Project specific settings
 #
-
-$settings['file_private_path'] = realpath($app_root . '/../private');
-# $settings['hash_salt'] = '';
+$settings['hash_salt'] = 'YOUR-HASH-SALT-HERE';
 
 /** Customize to your local configuration */
-$databases['default']['default'] = array (
+$databases['default']['default'] = [
   'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],
   'database' => 'iccwc',
   'username' => 'root',
@@ -16,7 +14,7 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
-);
+];
 
 # SMTP configuration
 $config['smtp.settings']['smtp_host'] = 'localhost';
@@ -41,4 +39,8 @@ $config['search_api.server.solr']['backend_config']['connector_config']['scheme'
 $config['search_api.server.solr']['backend_config']['connector_config']['username'] = FALSE;
 $config['search_api.server.solr']['backend_config']['connector_config']['password'] = FALSE;
 
+// Disable advagg cache.
 $config['advagg.settings']['enabled'] = FALSE;
+
+// Dev robots.txt.
+$config['robotstxt.settings']['content'] = file_get_contents(DRUPAL_ROOT . '/../robots-dev.txt');
