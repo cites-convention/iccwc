@@ -8767,6 +8767,10 @@ img {
           align-self: center;
   margin-left: 29px;
 }
+.region-header-right .block-iccwc-social-media a:hover,
+.region-header-right .block-iccwc-social-media a:focus {
+  text-decoration: none;
+}
 .region-header-right .block-iccwc-social-media a svg {
   height: 15px;
 }
