@@ -32,7 +32,6 @@ module:
   datetime_range: 0
   dblog: 0
   devel_generate: 0
-  drimage: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -107,7 +106,6 @@ module:
   toolbar: 0
   translate_config: 0
   twig_tweak: 0
-  twig_vardumper: 0
   twitter_feed: 0
   update: 0
   user: 0
