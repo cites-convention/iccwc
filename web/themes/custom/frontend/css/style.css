@@ -8338,18 +8338,28 @@ blockquote p:after {
   display: block;
 }
 .node--view-mode-search-teaser .date-tags {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 15px;
 }
-.node--view-mode-search-teaser .date-tags :not(:first-child) {
+.node--view-mode-search-teaser .field--name-created {
+  display: inline;
+}
+.node--view-mode-search-teaser .date-tags > *:not(:first-child) {
   border-left: 1px solid var(--color-black);
   margin-left: 5px;
   padding-left: 5px;
+}
+.node--view-mode-search-teaser .field--name-field-tags {
+  display: inline;
+}
+.node--view-mode-search-teaser .field--name-field-tags .field__item {
+  display: inline;
+}
+.node--view-mode-search-teaser .field--name-field-tags > *:not(:first-child):before {
+  content: ", ";
+  margin-left: -2px;
 }
 .node--view-mode-search-teaser p {
   overflow: hidden;
@@ -8487,9 +8497,22 @@ blockquote p:after {
 .pager li a:hover {
   text-decoration: none;
 }
+.pager li.pager__item--ellipsis {
+  background: none;
+  border: none;
+}
 .pager .active a {
   background-color: var(--color-orange);
   color: white;
+}
+@media (max-width: 767px) {
+  .pager .pager__item--previous,
+.pager .pager__item--next {
+    display: none;
+  }
+  .pager li a {
+    padding: 5px 9px;
+  }
 }
 
 .media-link {
