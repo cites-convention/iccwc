@@ -90,7 +90,7 @@ module:
   responsive_image: 0
   robotstxt: 0
   search_api: 0
-  search_api_solr: 0
+  search_api_db: 0
   shortcut: 0
   slick: 0
   slick_ui: 0
