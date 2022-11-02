@@ -798,24 +798,6 @@ if (!empty(getenv('TRUSTED_HOST_PATTERNS'))) {
   $settings['trusted_host_patterns'] = explode(';', getenv('TRUSTED_HOST_PATTERNS'));
 }
 
-/**
- * Search API Solr connection.
- */
-$config['search_api.server.default_server'] = [
-  'backend_config' => [
-    'connector' => getenv('SOLR_CONNECTOR_TYPE') ?: 'standard',
-    'connector_config' => [
-      'scheme' => getenv('SOLR_CONNECTOR_SCHEME') ?: 'http',
-      'host' => getenv('SOLR_CONNECTOR_HOST') ?: 'localhost',
-      'path' => getenv('SOLR_CONNECTOR_PATH') ?: '/',
-      'core' => getenv('SOLR_CONNECTOR_CORE') ?: 'iccwc',
-      'port' => getenv('SOLR_CONNECTOR_PORT') ?: '8983',
-      'username' => getenv('SOLR_CONNECTOR_USER') ?: '',
-      'password' => getenv('SOLR_CONNECTOR_PASS') ?: '',
-    ]
-  ],
-];
-
 // Dev robots.txt.
 if (!empty(getenv('DEV_ROBOTSTXT'))) {
   $config['robotstxt.settings']['content'] = file_get_contents(DRUPAL_ROOT . '/../robots-dev.txt');
