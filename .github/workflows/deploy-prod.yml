@@ -1,9 +1,18 @@
 on:
-  push:
-    branches:
-      - 'develop'
+  workflow_dispatch:
+    inputs:
+      check_config:
+        type: boolean
+        description: 'Fail when configuration overridden'
+        required: true
+        default: true
+      sql_backup:
+        type: boolean
+        description: 'Create SQL backup'
+        required: true
+        default: true
 
-name: 'Deploy dev instance'
+name: 'Deploy production instance'
 jobs:
   deploy:
     name: 'deployment'
