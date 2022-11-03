@@ -70,9 +70,6 @@
 /.gitattributes
 phpunit.xml
 
-
-/.github/workflows
-
 drush/drush.yml
 
 .idea
