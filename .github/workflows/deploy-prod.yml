@@ -35,10 +35,10 @@ jobs:
       - name: 'Deploy release on the server'
         uses: eaudeweb/drupal-deploy-action@v2.1.2
         with:
-          ssh_user:             ${{ secrets.DEV_SSH_USER }}
-          ssh_host:             ${{ secrets.DEV_SSH_HOST }}
-          ssh_key:              ${{ secrets.DEV_SSH_KEY }}
-          release_id:           ${{ steps.artifact.outputs.base }}
+          ssh_user:             ${{ secrets.PROD_SSH_USER }}
+          ssh_host:             ${{ secrets.PROD_SSH_HOST }}
+          ssh_key:              ${{ secrets.PROD_SSH_KEY }}
+          release_id:           'release-${{ github.ref_name }}'
           release_filename:     ${{ steps.artifact.outputs.filename }}
           project_dir:          /var/www/html/iccwc-wildlifecrime.org
           artifacts_dir:        /data/artifacts/iccwc-wildlifecrime.org
@@ -47,6 +47,8 @@ jobs:
           robo_file:            /data/config/iccwc-wildlifecrime.org/robo.yml
           database_dump_dir:    /data/config/iccwc-wildlifecrime.org/sync
           artifacts_lifespan: 30
+          check_config:       ${{ inputs.check_config }}
+          sql_backup:         ${{ inputs.sql_backup }}
 
       - name: 'Update the Drupal instance'
         id: release
