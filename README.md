@@ -19,8 +19,9 @@ The The International Consortium on Combating Wildlife Crime website
 * Pull the latest version of the `main` branch
 * Create a new branch `XXXXX-issue-description` where XXXXX is the issue number
 * Run `composer install`
-* Run ./install.sh
+* Run `./install.sh`
 * Code
+* Commits should have messages like `refs #XXXXX - Fixed a white screen of death on /front`
 * Create a pull request
 * Update ticket status, set spent time, add a link to the pull request and testing instructions
 
