@@ -316,7 +316,7 @@ display:
     position: 1
     display_options:
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -355,7 +355,7 @@ display:
         row: false
         arguments: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1

@@ -6,9 +6,9 @@ dependencies:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
   module:
-    - image
     - media
     - media_library
+    - svg_image
     - user
   enforced:
     module:
@@ -478,13 +478,20 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.colorbox'
+        - 'config:core.entity_view_display.media.image.colorbox_with_caption'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
   page:
     id: page
     display_title: Page
@@ -781,7 +788,13 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.colorbox'
+        - 'config:core.entity_view_display.media.image.colorbox_with_caption'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
   widget:
     id: widget
     display_title: Widget
@@ -1090,7 +1103,7 @@ display:
           label: Table
           empty: true
           display_id: widget_table
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
       path: admin/content/media-widget
     cache_metadata:
@@ -1101,7 +1114,13 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.colorbox'
+        - 'config:core.entity_view_display.media.image.colorbox_with_caption'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'
@@ -1380,7 +1399,7 @@ display:
           label: Table
           empty: true
           display_id: widget_table
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
       path: admin/content/media-widget-table
     cache_metadata:
