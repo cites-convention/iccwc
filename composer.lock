@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fce1b9a43d82ca88709cede2ba0c5f4",
+    "content-hash": "2e5dc906ec7e6f2cbb044590d233ce77",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3325,23 +3325,26 @@
         },
         {
             "name": "drupal/edwt",
-            "version": "dev-1.1.x",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edwt.git",
-                "reference": "8e4763e9a60ce837249e1683b67c86cd1b86a563"
+                "reference": "1.0.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/edwt-1.0.0-beta3.zip",
+                "reference": "1.0.0-beta3",
+                "shasum": "6ebbe912bbbeb904568e6dce27fbedea7d7b034d"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9.0"
             },
             "type": "drupal-theme",
             "extra": {
-                "branch-alias": {
-                    "dev-1.1.x": "1.1.x-dev"
-                },
                 "drupal": {
-                    "version": "1.1.x-dev",
-                    "datestamp": "1663248787",
+                    "version": "1.0.0-beta3",
+                    "datestamp": "1668019429",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -15687,7 +15690,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/colorbox": 20,
-        "drupal/edwt": 20,
         "drupal/inline_entity_form": 5,
         "drupal/layout_builder_st": 15,
         "drupal/smart_trim": 20
