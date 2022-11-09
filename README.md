@@ -16,7 +16,9 @@ The The International Consortium on Combating Wildlife Crime website
 ## II. Drupal development
 
 * Set ticket status to Under Work
+* Pull the latest version of the `main` branch
 * Create a new branch `XXXXX-issue-description` where XXXXX is the issue number
+* Run `composer install`
 * Run ./install.sh
 * Code
 * Create a pull request
