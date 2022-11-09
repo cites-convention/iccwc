@@ -19,5 +19,8 @@ display:
         nid:
           exception:
             title: Todo(s)
+        nid_1:
+          exception:
+            title: Todo(s)
   block_related_content:
     display_title: Bloque

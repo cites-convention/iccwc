@@ -42,7 +42,6 @@
 /web/sites/*/settings*.php
 !/web/sites/*/settings.php
 /web/sites/*/services*.yml
-/web/sites/example.settings.local.php
 /web/sites/example.sites.php
 /web/sites/README.txt
 

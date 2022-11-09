@@ -19,5 +19,8 @@ display:
         nid:
           exception:
             title: Tout
+        nid_1:
+          exception:
+            title: Tout
   block_related_content:
     display_title: Bloc

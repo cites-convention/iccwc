@@ -25,5 +25,4 @@ sites:
       develop:
         admin_username: username
         modules:
-          - devel
-          - webprofiler
+          - stage_file_proxy
