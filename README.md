@@ -29,6 +29,6 @@ The The International Consortium on Combating Wildlife Crime website
 
 See theme README.md :)
 
-## IIII. Updating Drupal Core
+## IV. Updating Drupal Core
 
 `composer update "drupal/core-*" --with-all-dependencies`
