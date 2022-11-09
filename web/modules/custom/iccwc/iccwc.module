@@ -11,6 +11,7 @@ use Drupal\search_api\Query\QueryInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Url;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_theme().
@@ -257,5 +258,17 @@ function iccwc_preprocess_paragraph__slideshow_item(&$variables) {
 
   if (!empty($block->get('field_portrait')->value)) {
     $variables['content']['field_media_image'][0]['#responsive_image_style_id'] = 'slideshow_portrait';
+  }
+}
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function iccwc_views_pre_build(ViewExecutable $view) {
+  if ($view->storage->id() == 'related_content') {
+    // If field_exclude_related is set to false then we should include NULLs.
+    if ($view->filter['field_exclude_related_value']->value == 0) {
+      $view->filter['field_exclude_related_value']->accept_null = TRUE;
+    }
   }
 }

@@ -3,6 +3,7 @@
 namespace Drupal\iccwc\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 
@@ -27,6 +28,9 @@ class RelatedContentBlock extends ICCWCBlockBase {
 
     // Show data from field from node.
     $entity = $this->routeMatch->getParameter('node');
+    if (is_numeric($entity)) {
+      $entity = Node::load($entity);
+    }
     if ($entity instanceof NodeInterface
       && !$entity->get('field_related_content')->isEmpty()) {
       $related_entities = array_column($entity->get('field_related_content')->getValue(), 'target_id');
