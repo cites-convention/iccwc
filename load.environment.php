@@ -12,4 +12,6 @@ use Dotenv\Dotenv;
  * Load any .env file. See /.env.example.
  */
 $dotenv = Dotenv::createUnsafeMutable(__DIR__);
-$dotenv->safeLoad();
+if (file_exists(__DIR__ . '/.env')) {
+  $dotenv->safeLoad();
+}
