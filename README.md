@@ -7,6 +7,8 @@ The The International Consortium on Combating Wildlife Crime website
 * Clone the repository
 * Run `composer install`
 * Create a new database
+* Create a new virtual host pointing to the web folder of this project
+* Update your `/etc/hosts` file
 * Copy `web/sites/example/settings.local.php` to `web/sites/default/settings.local.php` and customize caching settings, database credentials, SOLR connection, mail server connection (if needed)
 * Copy `example.robo.yml` to `robo.yml` and customize `username`, `password`, `admin_username` - ask the project owner if you don't have these
 * Create the `web/sites/default/files` folder: `mkdir web/sites/default/files`
