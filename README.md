@@ -1,6 +1,6 @@
 # ICCWC
 
-The The International Consortium on Combating Wildlife Crime website
+The "International Consortium on Combating Wildlife Crime" website
 
 ## I. Installation
 
