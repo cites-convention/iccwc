@@ -404,7 +404,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -537,7 +537,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -700,7 +700,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -720,7 +720,7 @@ display:
       defaults:
         title: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1

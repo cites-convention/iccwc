@@ -472,7 +472,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -647,7 +647,7 @@ display:
         footer: false
       display_description: ''
       footer: {  }
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -822,7 +822,7 @@ display:
         footer: false
       display_description: ''
       footer: {  }
-      rendering_language: '***LANGUAGE_language_interface***'
+      rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
