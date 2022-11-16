@@ -70,7 +70,7 @@
                 <a href="{{ file["#url"] }}" class="lang-download" download>{{ language }}</a>
               {% endif %}
             {% endfor %}
-            {%  if not content.field_brochure[0]['#url'] is null %}
+            {% if not node.field_brochure.isEmpty %}
               <a href="{{ content.field_brochure[0]['#url']}}" class="lang-download" id="brochure" target="_blank">{{ "See brochure"|t }}</a><br>
             {% endif %}
           </div>
