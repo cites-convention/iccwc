@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.slideshow_item.field_file
     - field.field.paragraph.slideshow_item.field_image
     - field.field.paragraph.slideshow_item.field_link
-    - field.field.paragraph.slideshow_item.field_media_image
     - field.field.paragraph.slideshow_item.field_title
     - paragraphs.paragraphs_type.slideshow_item
     - responsive_image.styles.slideshow
@@ -58,17 +57,6 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_media_image:
-    type: media_responsive_thumbnail
-    label: hidden
-    settings:
-      responsive_image_style: slideshow
-      image_link: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_title:
     type: string

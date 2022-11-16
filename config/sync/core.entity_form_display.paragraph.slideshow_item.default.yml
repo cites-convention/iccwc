@@ -7,12 +7,12 @@ dependencies:
     - field.field.paragraph.slideshow_item.field_file
     - field.field.paragraph.slideshow_item.field_image
     - field.field.paragraph.slideshow_item.field_link
-    - field.field.paragraph.slideshow_item.field_media_image
     - field.field.paragraph.slideshow_item.field_title
     - paragraphs.paragraphs_type.slideshow_item
   module:
     - link
     - media_library
+    - media_library_edit
     - text
 id: paragraph.slideshow_item.default
 targetEntityType: paragraph
@@ -52,13 +52,6 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
-  field_media_image:
-    type: media_library_widget
-    weight: 4
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
   field_title:
     type: string_textfield
