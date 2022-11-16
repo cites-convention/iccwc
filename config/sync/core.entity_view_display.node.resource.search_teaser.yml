@@ -9,10 +9,7 @@ dependencies:
     - field.field.node.resource.field_additional_materials_links
     - field.field.node.resource.field_brochure
     - field.field.node.resource.field_files
-    - field.field.node.resource.field_flyer_files
-    - field.field.node.resource.field_flyer_image
     - field.field.node.resource.field_image
-    - field.field.node.resource.field_images
     - field.field.node.resource.field_organization
     - field.field.node.resource.field_resource_type
     - field.field.node.resource.field_video
@@ -125,9 +122,6 @@ content:
     weight: 5
     region: content
 hidden:
-  field_flyer_files: true
-  field_flyer_image: true
-  field_images: true
   field_resource_type: true
   links: true
   search_api_excerpt: true

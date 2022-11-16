@@ -8,15 +8,13 @@ dependencies:
     - field.field.node.resource.field_additional_materials_links
     - field.field.node.resource.field_brochure
     - field.field.node.resource.field_files
-    - field.field.node.resource.field_flyer_files
-    - field.field.node.resource.field_flyer_image
     - field.field.node.resource.field_image
-    - field.field.node.resource.field_images
     - field.field.node.resource.field_organization
     - field.field.node.resource.field_resource_type
     - field.field.node.resource.field_video
     - node.type.resource
   module:
+    - conditional_fields
     - link
     - media_library
     - media_library_edit
@@ -53,6 +51,22 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+      conditional_fields:
+        79d06f3c-acd0-47d3-8c8e-68607b45e255:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "publication\r\npartner_resource"
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_additional_materials_links:
     type: link_default
     weight: 17
@@ -60,7 +74,23 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        0f02a41e-cf0f-46cf-8aed-c2a1eec7138a:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "publication\r\npartner_resource"
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_brochure:
     type: media_library_widget
     weight: 15
@@ -70,6 +100,24 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+      conditional_fields:
+        7badffef-9420-43fa-ab05-d191632d187e:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "publication\r\npartner_resource"
+            value_form:
+              -
+                value: publication
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_files:
     type: media_library_widget
     weight: 14
@@ -79,6 +127,22 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+      conditional_fields:
+        3c52eda2-6b88-4dc6-8bcd-f57161498790:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "publication\r\npartner_resource"
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_image:
     type: media_library_widget
     weight: 12
@@ -88,12 +152,46 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+      conditional_fields:
+        362ab676-cf58-416d-95f6-187a19e83034:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: "publication\r\npartner_resource\r\ninfographic"
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_organization:
     type: options_select
     weight: 18
     region: content
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        c7508077-a442-4386-965a-e0e1500b3dc5:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: partner_resource
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_resource_type:
     type: options_select
     weight: 11
@@ -106,7 +204,25 @@ content:
     region: content
     settings:
       placeholder_url: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        9c01eeef-5aac-467b-939b-36408732a8db:
+          entity_type: node
+          bundle: resource
+          dependee: field_resource_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: video
+            effect: show
+            effect_options: {  }
+            selector: ''
   langcode:
     type: language_select
     weight: 1
@@ -169,7 +285,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_flyer_files: true
-  field_flyer_image: true
-  field_images: true
+hidden: {  }

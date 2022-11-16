@@ -68,6 +68,7 @@
         "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/ckeditor_quote": "^1.0",
         "drupal/colorbox": "1.x-dev@dev",
+        "drupal/conditional_fields": "^4.0@alpha",
         "drupal/core-composer-scaffold": "9.4.8",
         "drupal/core-recommended": "9.4.8",
         "drupal/dark_mode_switch": "^2.0",
