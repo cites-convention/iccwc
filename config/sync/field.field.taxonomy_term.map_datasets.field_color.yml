@@ -10,7 +10,7 @@ field_name: field_color
 entity_type: taxonomy_term
 bundle: map_datasets
 label: Color
-description: ''
+description: 'The hex code of the pins in this category. E.g. #ffc3e1'
 required: false
 translatable: false
 default_value: {  }

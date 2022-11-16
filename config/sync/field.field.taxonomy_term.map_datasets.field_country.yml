@@ -11,7 +11,7 @@ field_name: field_country
 entity_type: taxonomy_term
 bundle: map_datasets
 label: Country
-description: ''
+description: 'Use this if you want to highlight the whole country'
 required: false
 translatable: false
 default_value: {  }

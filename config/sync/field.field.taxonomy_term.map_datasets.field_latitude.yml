@@ -10,7 +10,7 @@ field_name: field_latitude
 entity_type: taxonomy_term
 bundle: map_datasets
 label: Latitude
-description: ''
+description: 'Use latitude and longitude if the marker should be a pin to a specific location'
 required: false
 translatable: false
 default_value: {  }
