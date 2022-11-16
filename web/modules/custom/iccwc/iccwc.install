@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Move field_media_image to field_image.
+ */
+function iccwc_update_9001() {
+  /** @var \Drupal\paragraphs\ParagraphInterface[] $paragraphs */
+  $paragraphs = \Drupal::entityTypeManager()
+    ->getStorage('paragraph')
+    ->loadByProperties([
+      'type' => 'slideshow_item',
+    ]);
+
+  foreach ($paragraphs as $paragraph) {
+    $paragraph->get('field_image')->setValue($paragraph->get('field_media_image')->getValue());
+    $paragraph->save();
+  }
+}
