@@ -578,6 +578,8 @@ blockquote {
       }
 
       .bottom {
+        margin-top: 10px;
+
         .card-body {
           padding: 0;
         }
@@ -585,7 +587,6 @@ blockquote {
 
       .top {
         display: flex;
-        margin-bottom: 10px;
         flex-wrap: wrap;
         gap: 7px;
 
