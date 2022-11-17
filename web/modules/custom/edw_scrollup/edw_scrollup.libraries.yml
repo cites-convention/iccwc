@@ -4,6 +4,5 @@ edw_scrollup:
       css/edw_scrollup.css: {}
   js:
     js/edw_scrollup.js: {}
-    js/default-passive-events.js: { minified: true }
   dependencies:
     - core/jquery
