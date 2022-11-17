@@ -4,33 +4,31 @@ status: true
 dependencies:
   config:
     - field.field.media.youtube_video.field_media_oembed_video
-    - image.style.youtube_thumbnail
     - media.type.youtube_video
   module:
-    - blazy
+    - oembed_lazyload
+    - oembed_lazyload_youtube
 id: media.youtube_video.default
 targetEntityType: media
 bundle: youtube_video
 mode: default
 content:
   field_media_oembed_video:
-    type: blazy_oembed
+    type: lazyload_oembed
     label: hidden
     settings:
-      caption: {  }
-      background: true
-      box_caption: ''
-      box_caption_custom: ''
-      box_media_style: ''
-      loading: ''
-      preload: false
-      responsive_image_style: ''
-      box_style: ''
-      image_style: youtube_thumbnail
-      media_switch: ''
-      ratio: '16:9'
-      thumbnail_style: ''
-    third_party_settings: {  }
+      max_width: 640
+      max_height: 360
+      strategy: onclick
+      intersection_observer_margin: ''
+    third_party_settings:
+      oembed_lazyload_youtube:
+        autoplay: true
+        modestbranding: false
+        enablejsapi: false
+        origin: false
+        hideinfo: false
+        rel: false
     weight: 0
     region: content
 hidden:

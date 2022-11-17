@@ -140,7 +140,8 @@
     line-height: 18px;
     color: var(--color-black);
   }
-  .vertical-tabs .tab-pane .blazy {
+  .vertical-tabs .tab-pane .blazy,
+  .vertical-tabs .tab-pane .oembed-lazyload {
     margin: 21.5px 14.5px;
   }
 }

@@ -8625,10 +8625,10 @@ img {
 }
 
 .media.media--bundle--youtube-video.is-b-loading,
-.media.media--bundle--youtube-video.is-b-loaded {
+.oembed-lazyload--youtube .oembed-lazyload__button {
   background: -webkit-linear-gradient(left, var(--color-yellow) 0%, var(--color-orange) 100%);
   background: linear-gradient(90deg, var(--color-yellow) 0%, var(--color-orange) 100%);
-  background: rgb(180, 107, 51);
+  background: rgb(215, 125, 67);
 }
 
 .is-b-loading:not(.is-b-loaded):not([data-animation])::before {
