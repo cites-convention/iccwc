@@ -8624,7 +8624,8 @@ img {
   font-size: 0 !important;
 }
 
-.media.media--bundle--youtube-video.is-b-loading {
+.media.media--bundle--youtube-video.is-b-loading,
+.media.media--bundle--youtube-video.is-b-loaded {
   background: -webkit-linear-gradient(left, var(--color-yellow) 0%, var(--color-orange) 100%);
   background: linear-gradient(90deg, var(--color-yellow) 0%, var(--color-orange) 100%);
   background: rgb(180, 107, 51);
