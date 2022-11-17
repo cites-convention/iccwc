@@ -17,10 +17,8 @@ dependencies:
     - conditional_fields
     - link
     - media_library
-    - media_library_edit
     - path
     - text
-    - youtube
 id: node.resource.default
 targetEntityType: node
 bundle: resource
@@ -199,14 +197,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_video:
-    type: youtube
+    type: media_library_widget
     weight: 13
     region: content
     settings:
-      placeholder_url: ''
+      media_types: {  }
     third_party_settings:
       conditional_fields:
-        9c01eeef-5aac-467b-939b-36408732a8db:
+        a26d37c7-a835-4bc5-ae5e-9459ba0393f2:
           entity_type: node
           bundle: resource
           dependee: field_resource_type

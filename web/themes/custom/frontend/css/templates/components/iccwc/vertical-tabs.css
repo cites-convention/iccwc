@@ -140,7 +140,7 @@
     line-height: 18px;
     color: var(--color-black);
   }
-  .vertical-tabs .tab-pane figure {
+  .vertical-tabs .tab-pane .blazy {
     margin: 21.5px 14.5px;
   }
 }

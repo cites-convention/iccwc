@@ -1,16 +1,17 @@
-uuid: 96fe60a5-da2f-4fde-b0c5-81d217fc420f
+uuid: a9511e54-7426-4005-a11f-e45bea1b53c2
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - youtube
-id: block_content.field_youtube_video
-field_name: field_youtube_video
+    - media
+id: block_content.field_video
+field_name: field_video
 entity_type: block_content
-type: youtube
-settings: {  }
-module: youtube
+type: entity_reference
+settings:
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

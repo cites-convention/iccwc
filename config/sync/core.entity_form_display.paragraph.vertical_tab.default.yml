@@ -14,7 +14,6 @@ dependencies:
     - link
     - media_library
     - text
-    - youtube
 id: paragraph.vertical_tab.default
 targetEntityType: paragraph
 bundle: vertical_tab
@@ -60,11 +59,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_video:
-    type: youtube
-    weight: 4
+    type: media_library_widget
+    weight: 12
     region: content
     settings:
-      placeholder_url: ''
+      media_types: {  }
     third_party_settings: {  }
   translation:
     weight: 10

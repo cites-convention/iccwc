@@ -1,0 +1,15 @@
+uuid: 894cd845-d6bc-4f43-a3f2-fff5be89e1c6
+langcode: en
+status: true
+dependencies: {  }
+name: youtube_thumbnail
+label: 'Youtube thumbnail'
+effects:
+  4f47c304-eef7-413f-a9d2-3bfb1645b6cd:
+    uuid: 4f47c304-eef7-413f-a9d2-3bfb1645b6cd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 360
+      anchor: center-center

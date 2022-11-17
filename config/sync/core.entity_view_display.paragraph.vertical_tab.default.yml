@@ -13,7 +13,6 @@ dependencies:
   module:
     - link
     - text
-    - youtube
 id: paragraph.vertical_tab.default
 targetEntityType: paragraph
 bundle: vertical_tab
@@ -64,20 +63,13 @@ content:
     weight: 0
     region: content
   field_video:
-    type: youtube_video
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      youtube_size: 450x315
-      youtube_width: ''
-      youtube_height: ''
-      youtube_autoplay: false
-      youtube_mute: false
-      youtube_loop: false
-      youtube_controls: false
-      youtube_autohide: false
-      youtube_iv_load_policy: false
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
 hidden:
   search_api_excerpt: true

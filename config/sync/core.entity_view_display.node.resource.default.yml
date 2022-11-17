@@ -17,7 +17,6 @@ dependencies:
     - link
     - options
     - text
-    - youtube
 id: node.resource.default
 targetEntityType: node
 bundle: resource
@@ -91,20 +90,13 @@ content:
     weight: 106
     region: content
   field_video:
-    type: youtube_video
+    type: entity_reference_entity_view
     label: above
     settings:
-      youtube_size: responsive
-      youtube_width: ''
-      youtube_height: ''
-      youtube_autoplay: false
-      youtube_mute: false
-      youtube_loop: false
-      youtube_controls: false
-      youtube_autohide: false
-      youtube_iv_load_policy: false
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 107
+    weight: 113
     region: content
   links:
     settings: {  }

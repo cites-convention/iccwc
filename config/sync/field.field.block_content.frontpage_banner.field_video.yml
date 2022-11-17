@@ -1,15 +1,15 @@
-uuid: 81c7d963-212a-4a25-9dc2-cb32ca6d8788
+uuid: 818ba710-30d6-4198-b51f-a599c2b61b4a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_video
+    - block_content.type.frontpage_banner
+    - field.storage.block_content.field_video
     - media.type.youtube_video
-    - paragraphs.paragraphs_type.vertical_tab
-id: paragraph.vertical_tab.field_video
+id: block_content.frontpage_banner.field_video
 field_name: field_video
-entity_type: paragraph
-bundle: vertical_tab
+entity_type: block_content
+bundle: frontpage_banner
 label: Video
 description: ''
 required: false
