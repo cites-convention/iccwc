@@ -112,6 +112,7 @@
         "drupal/twitter_feed": "^1.4",
         "drupal/video_embed_field": "^2.4",
         "drupal/webform": "^6.1",
+        "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^1.2",
         "drupal/youtube": "^1.2",
         "drush/drush": "^11.0",
