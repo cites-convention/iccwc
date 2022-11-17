@@ -8,6 +8,7 @@
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\RemoveCommand;
+use Drupal\Core\Language\LanguageInterface;
 
 /**
  * Implements hook_field_widget_form_alter().
@@ -16,7 +17,7 @@ use Drupal\Core\Ajax\RemoveCommand;
  */
 function iccwc_media_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   $plugin_id = $context['widget']->getPluginId();
-  $language = \Drupal::languageManager()->getCurrentLanguage();
+  $language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
 
   // Add translate link to media items.
   if ($plugin_id == 'media_library_widget') {
