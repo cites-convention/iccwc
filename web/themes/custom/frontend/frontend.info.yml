@@ -24,3 +24,6 @@ regions:
 
 ckeditor_stylesheets:
   - css/style.css
+
+libraries-override:
+  edwt/theme-fonts: false
