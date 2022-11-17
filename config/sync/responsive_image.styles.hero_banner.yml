@@ -5,6 +5,7 @@ dependencies:
   config:
     - image.style.hero_banner_desktop
     - image.style.hero_banner_mobile
+    - image.style.homepage_banner_mobile
   theme:
     - frontend
 id: hero_banner
@@ -14,6 +15,11 @@ image_style_mappings:
     image_mapping_type: image_style
     image_mapping: hero_banner_desktop
     breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: homepage_banner_mobile
+    breakpoint_id: edwt.screen.sm-max
     multiplier: 1x
 breakpoint_group: screen
 fallback_image_style: hero_banner_mobile
