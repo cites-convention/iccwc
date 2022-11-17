@@ -101,4 +101,8 @@
 .slide__description > * {
   height: 100%;
 }
+
+.slick-arrow {
+  background: transparent;
+}
 /*# sourceMappingURL=../../map/components/slick/slick.css.map */
