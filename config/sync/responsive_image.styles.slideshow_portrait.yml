@@ -12,6 +12,11 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: slideshow_portrait
+    breakpoint_id: edwt.screen.lg-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: slideshow_portrait
     breakpoint_id: edwt.screen.md-max
     multiplier: 1x
 breakpoint_group: screen

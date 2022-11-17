@@ -14,5 +14,10 @@ image_style_mappings:
     image_mapping: slideshow
     breakpoint_id: edwt.screen.md-min
     multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: slideshow
+    breakpoint_id: edwt.screen.sm-max
+    multiplier: 1x
 breakpoint_group: screen
 fallback_image_style: slideshow
