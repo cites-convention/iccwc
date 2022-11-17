@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.hero_banner_desktop
-    - image.style.hero_banner_mobile
+    - image.style.homepage_banner_desktop
     - image.style.homepage_banner_mobile
   theme:
     - frontend
@@ -22,4 +22,4 @@ image_style_mappings:
     breakpoint_id: edwt.screen.sm-max
     multiplier: 1x
 breakpoint_group: screen
-fallback_image_style: hero_banner_mobile
+fallback_image_style: homepage_banner_desktop
