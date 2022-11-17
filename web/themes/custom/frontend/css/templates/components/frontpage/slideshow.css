@@ -1,6 +1,5 @@
 .slideshow-item {
   position: relative;
-  background: #E7C7C7;
   opacity: 0.9;
   border: 2px solid var(--color-white);
   max-width: 100vw;
