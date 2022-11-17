@@ -21,4 +21,4 @@ image_style_mappings:
     breakpoint_id: edwt.screen.sm-max
     multiplier: 1x
 breakpoint_group: screen
-fallback_image_style: teaser_image_mobile
+fallback_image_style: teaser_image_desktop
