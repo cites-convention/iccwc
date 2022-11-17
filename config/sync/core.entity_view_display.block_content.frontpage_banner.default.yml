@@ -57,7 +57,7 @@ content:
       responsive_image_style: homepage_banner
       image_link: ''
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
     weight: 5
     region: content
