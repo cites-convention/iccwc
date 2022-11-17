@@ -1,0 +1,6 @@
+third_party_settings:
+  field_group:
+    group_tabs:
+      label: Onglets
+    group_category_information:
+      label: Catégorie
