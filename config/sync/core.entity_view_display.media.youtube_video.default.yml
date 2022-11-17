@@ -1,0 +1,42 @@
+uuid: 7c0c5953-c47d-455b-a93f-1d6047220074
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.youtube_video.field_media_oembed_video
+    - image.style.youtube_thumbnail
+    - media.type.youtube_video
+  module:
+    - blazy
+id: media.youtube_video.default
+targetEntityType: media
+bundle: youtube_video
+mode: default
+content:
+  field_media_oembed_video:
+    type: blazy_oembed
+    label: hidden
+    settings:
+      caption: {  }
+      background: true
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: youtube_thumbnail
+      media_switch: ''
+      ratio: '16:9'
+      thumbnail_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

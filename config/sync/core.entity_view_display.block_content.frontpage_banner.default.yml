@@ -7,12 +7,11 @@ dependencies:
     - field.field.block_content.frontpage_banner.field_description
     - field.field.block_content.frontpage_banner.field_highlights
     - field.field.block_content.frontpage_banner.field_image
-    - field.field.block_content.frontpage_banner.field_youtube_video
+    - field.field.block_content.frontpage_banner.field_video
     - responsive_image.styles.homepage_banner
   module:
     - iccwc
     - media_responsive_thumbnail
-    - youtube
 id: block_content.frontpage_banner.default
 targetEntityType: block_content
 bundle: frontpage_banner
@@ -57,24 +56,19 @@ content:
     settings:
       responsive_image_style: homepage_banner
       image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 5
     region: content
-  field_youtube_video:
-    type: youtube_video
+  field_video:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      youtube_size: responsive
-      youtube_width: ''
-      youtube_height: ''
-      youtube_autoplay: false
-      youtube_mute: false
-      youtube_loop: false
-      youtube_controls: false
-      youtube_autohide: false
-      youtube_iv_load_policy: false
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 6
     region: content
 hidden:
   langcode: true

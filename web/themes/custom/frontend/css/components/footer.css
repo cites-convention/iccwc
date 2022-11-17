@@ -1,1 +1,69 @@
-.block-iccwc-social-media a+a{margin-left:10px}.footer-right{text-align:right}footer{background:var(--color-black);color:var(--color-white);padding:60px 0}footer .block-iccwc-social-media svg{width:20px}footer .block-iccwc-social-media svg path{fill:var(--color-white)}footer .block-iccwc-social-media svg.youtube path:last-child{fill:var(--color-black)}footer .footer-top{padding-bottom:36px;border-bottom:1px solid var(--color-gray-darker-2)}footer .footer-bottom{padding-top:36px}footer .nav{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;gap:30px}@media(max-width: 991px){footer .nav{font-size:14px;gap:20PX}}footer .nav a{color:var(--color-white)}footer .nav a:hover,footer .nav a:active,footer .nav a:focus{color:var(--color-white)}footer .navbar-brand{color:#fff}footer .navbar-brand svg{width:220px}footer .navbar-brand #darkModeBlack,footer .navbar-brand #darkModeBlack>*{fill:#fff}footer .navbar-brand #darkModeBlack .st2{stroke:#fff !important}footer .navbar-brand #darkModeWhite,footer .navbar-brand #darkModeWhite>*{fill:#000}
+.block-iccwc-social-media a + a {
+  margin-left: 10px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 60px 0;
+}
+footer .block-iccwc-social-media svg {
+  width: 20px;
+}
+footer .block-iccwc-social-media svg path {
+  fill: var(--color-white);
+}
+footer .block-iccwc-social-media svg.youtube path:last-child {
+  fill: var(--color-black);
+}
+footer .footer-top {
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--color-gray-darker-2);
+}
+footer .footer-bottom {
+  padding-top: 36px;
+}
+footer .nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+}
+@media (max-width: 991px) {
+  footer .nav {
+    font-size: 14px;
+    gap: 20PX;
+  }
+}
+footer .nav a {
+  color: var(--color-white);
+}
+footer .nav a:hover, footer .nav a:active, footer .nav a:focus {
+  color: var(--color-white);
+}
+footer .navbar-brand {
+  color: #fff;
+}
+footer .navbar-brand svg {
+  width: 220px;
+}
+footer .navbar-brand #darkModeBlack, footer .navbar-brand #darkModeBlack > * {
+  fill: #fff;
+}
+footer .navbar-brand #darkModeBlack .st2 {
+  stroke: #fff !important;
+}
+footer .navbar-brand #darkModeWhite, footer .navbar-brand #darkModeWhite > * {
+  fill: #000;
+}
+/*# sourceMappingURL=../map/components/footer.css.map */

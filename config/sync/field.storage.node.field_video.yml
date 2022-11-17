@@ -1,16 +1,17 @@
-uuid: c39acf56-a364-4c33-99c5-53831e0c8bfc
+uuid: 80f50405-0b06-4171-be1a-b082b5ae2998
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - youtube
 id: node.field_video
 field_name: field_video
 entity_type: node
-type: youtube
-settings: {  }
-module: youtube
+type: entity_reference
+settings:
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true
