@@ -191,8 +191,5 @@ $settings['trusted_host_patterns'] = [
 // Disable advagg cache.
 $config['advagg.settings']['enabled'] = FALSE;
 
-// Dev robots.txt.
-$config['robotstxt.settings']['content'] = file_get_contents(DRUPAL_ROOT . '/../robots-dev.txt');
-
 // Stage file proxy.
 $config['stage_file_proxy.settings']['origin'] = 'https://iccwc-wildlifecrime.org/';
