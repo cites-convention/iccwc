@@ -33,3 +33,7 @@ See theme README.md :)
 ## IV. Updating Drupal Core
 
 `composer update "drupal/core-*" --with-all-dependencies`
+
+## V. Issues with database import
+
+Depending on your MySQL/MariaDB version, you might have the following error when importing the database dump: `ERROR 1273 (HY000) at line 25: Unknown collation: 'utf8mb4_0900_ai_ci'`. A workaround for this is to run `./old-mysql-install.sh` instead of `./install.sh`

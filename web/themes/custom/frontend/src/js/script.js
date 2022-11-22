@@ -18,7 +18,9 @@
           var element_position = $('.twitter-timeline').offset().top;
           var y_scroll_pos = window.pageYOffset + window.innerHeight;
 
-          if (y_scroll_pos > element_position - 700) {
+          console.log(y_scroll_pos + ' ' + element_position);
+
+          if (y_scroll_pos > element_position - 1500) {
             var element = document.createElement("script");
             element.src = "//platform.twitter.com/widgets.js";
             document.body.appendChild(element);
