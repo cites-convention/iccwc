@@ -13,7 +13,6 @@
   Drupal.behaviors.iccwc_slideshow = {
     attach(context, settings) {
       $('.slideshow-flipster').flipster({
-        loop: true,
         touch: true,
       });
     },
