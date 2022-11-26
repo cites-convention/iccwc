@@ -122,8 +122,7 @@
         "npm-asset/slick-carousel": "1.8.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "slick/slick": "^1.9.0",
-        "tubalmartin/cssmin": "^4.1",
-        "vlucas/phpdotenv": "^5.5"
+        "tubalmartin/cssmin": "^4.1"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
@@ -132,9 +131,6 @@
         "drupal/twig_vardumper": "^3.0",
         "overtrue/phplint": "^3.2",
         "phpmd/phpmd": "^2.12"
-    },
-    "autoload": {
-        "files": ["load.environment.php"]
     },
     "conflict": {
         "drupal/drupal": "*"
