@@ -1,0 +1,43 @@
+.documents-listing {
+  & .view-content {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    & .views-row {
+      display: flex;
+
+      & a {
+        color: var(--color-black);
+        border: 1px solid var(--color-gray);
+        border-radius: 10px;
+        padding: 20px 15px;
+        font-weight: bold;
+        display: block;
+
+        &:before {
+          content: '';
+          background: url("../../../icons/file.svg") no-repeat center;
+          width: 12px;
+          height: 15px;
+          display: inline-block;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  & .documents-listing {
+    & .view-content {
+      & .views-row {
+        & a {
+          &:before {
+            background: url("../../../icons/file-white.svg") no-repeat center;
+          }
+        }
+      }
+    }
+  }
+}

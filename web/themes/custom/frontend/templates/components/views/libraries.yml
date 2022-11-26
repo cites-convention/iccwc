@@ -1,4 +1,0 @@
-documents_listing:
-  css:
-    component:
-      css/templates/components/views/documents-listing.css: { }

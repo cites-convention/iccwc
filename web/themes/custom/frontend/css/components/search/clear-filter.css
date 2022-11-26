@@ -1,0 +1,29 @@
+.block-iccwc-clear-filter {
+  position: relative;
+  color: var(--color-gray-darker);
+  margin-bottom: 0.375rem;
+}
+
+  .block-iccwc-clear-filter p {
+    display: inline;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .block-iccwc-clear-filter svg {
+    width: 1.0625rem;
+    top: -1px;
+    position: relative;
+    fill: var(--color-gray-darker);
+  }
+
+  .block-iccwc-clear-filter a {
+    position: absolute;
+    color: var(--color-gray-darker);
+    right: 0;
+  }
+
+  .block-iccwc-clear-filter a:hover {
+      text-decoration: none;
+      color: var(--color-orange);
+    }

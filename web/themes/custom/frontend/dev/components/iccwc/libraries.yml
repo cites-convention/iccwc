@@ -1,0 +1,39 @@
+social_media_share:
+  js:
+    dev/components/iccwc/js/print.min.js: {}
+    dev/components/iccwc/js/social-media-share.js: {}
+  css:
+    component:
+      css/components/iccwc/social-media-share.css: { }
+
+success_stories:
+  css:
+    component:
+      css/components/iccwc/success-stories.css: { }
+
+banner_block:
+  css:
+    component:
+      css/components/iccwc/banner-block.css: { }
+
+latest_news:
+  css:
+    component:
+      css/components/iccwc/latest-news.css: { }
+
+partners:
+  css:
+    component:
+      css/components/iccwc/partners.css: { }
+
+vertical_tabs:
+  css:
+    component:
+      css/components/iccwc/vertical-tabs.css: { }
+
+horizontal_tabs:
+  js:
+    dev/components/iccwc/js/horizontal-tabs.js: { }
+  css:
+    component:
+      css/components/iccwc/horizontal-tabs.css: { }

@@ -15,7 +15,7 @@
 
 {% block messages %}
   {% if status_message_type == 'alerts' %}
-    {{ attach_library('edwt/bc--alert') }}
+    {{ attach_library('edwt/alert') }}
     {% for type, messages in message_list %}
       {%
         set classes = [
@@ -51,7 +51,7 @@
       {% set attributes = attributes.removeClass(classes) %}
     {% endfor %}
   {% else %}
-    {{ attach_library('edwt/bc--toasts') }}
+    {{ attach_library('edwt/toasts') }}
     <div class="toast-container position-absolute p-3 bottom-0 end-0">
       {% for type, messages in message_list %}
         {%

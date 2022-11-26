@@ -1,0 +1,84 @@
+.sidebar-menu ul {
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+  }
+  .sidebar-menu > ul {
+    border: 1px solid var(--color-gray);
+    border-radius: 0.625rem;
+  }
+  .sidebar-menu .link-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: anywhere;
+  }
+  .sidebar-menu li {
+    padding: 1.25rem 1.25rem;
+  }
+  .sidebar-menu li + li {
+      border-top: 1px solid var(--color-gray);
+    }
+  .sidebar-menu li .link-wrapper > a.is-active {
+      color: var(--color-orange);
+    }
+  .sidebar-menu li .link-wrapper > a.is-active:before {
+        background: var(--color-orange);
+      }
+  .sidebar-menu li:hover {
+      background: var(--color-gray-light);
+    }
+  .sidebar-menu li:hover > .link-wrapper > a {
+        color: var(--color-orange);
+      }
+  .sidebar-menu li:hover > .link-wrapper > a:before {
+          background: var(--color-orange);
+        }
+  .sidebar-menu a {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    color: var(--color-gray-darker);
+    position: relative;
+    padding-left: 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar-menu a:not(.collapse-arrow):before {
+      content: '';
+      width: 0.625rem;
+      height: 0.625rem;
+      background: var(--color-gray-darker);
+      position: absolute;
+      left: 0;
+    }
+  .sidebar-menu a:hover {
+      text-decoration: none;
+    }
+  .sidebar-menu a:hover:before {
+        background: var(--color-orange);
+      }
+  .sidebar-menu a svg {
+      width: 1.5rem;
+      height: auto;
+    }
+  .sidebar-menu .collapse {
+    margin-top: 0.625rem;
+  }
+  .sidebar-menu .collapse a {
+      font-size: 1rem;
+      line-height: 1.125rem;
+    }
+  .sidebar-menu .collapse a:before {
+        display: none;
+      }
+  .sidebar-menu .collapse li {
+      padding: 0 1.5625rem;
+    }
+  .sidebar-menu .collapse li + li {
+        border: none;
+        margin-top: 0.625rem;
+      }
+  .sidebar-menu a:hover {
+      color: var(--color-orange);
+    }

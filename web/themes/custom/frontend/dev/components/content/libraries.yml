@@ -1,0 +1,4 @@
+content_teasers:
+  css:
+    component:
+      css/components/content/content-teasers.css: {}

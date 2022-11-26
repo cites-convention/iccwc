@@ -1,22 +1,18 @@
 # Libraries for the configuration the Eau de Web Theme theme.
-
 global-styling:
   css:
     theme:
-      css/style.css: {}
+      css/typography.css: {}
+      css/general.css: {}
+      css/header.css: {}
+      css/footer.css: {}
+      css/dark-mode.css: {}
   js:
     js/script.js: {}
 
-js-latest:
-  version: '5.1.1'
-  js:
-    https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js: { type: external, minified: true }
-  dependencies:
-    - core/popperjs
-
-flipster:
-  js:
-    js/jquery.flipster.min.js: {}
+theme-fonts:
   css:
     theme:
-      css/jquery.flipster.min.css: {}
+      "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;700&display=swap":
+        { type: external, minified: true }
+
