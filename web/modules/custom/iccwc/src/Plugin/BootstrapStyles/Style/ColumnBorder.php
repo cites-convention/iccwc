@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class ColumnBorder.
+ * Custom bootstrap_styles plugin for column border.
  *
  * @Style(
  *   id = "column_border",

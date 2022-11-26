@@ -3,17 +3,19 @@
 namespace Drupal\iccwc\Commands;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
+use Drupal\pathauto\AliasCleaner;
 use Drupal\taxonomy\Entity\Term;
 use Drush\Commands\DrushCommands;
 use GuzzleHttp\ClientInterface;
 
 /**
- * The "IccwcMigrateCommands" class.
+ * Drush migrate commands for ICCWC.
  */
 class IccwcMigrateCommands extends DrushCommands {
 
@@ -99,15 +101,36 @@ class IccwcMigrateCommands extends DrushCommands {
    */
   protected $entityTypeManager;
 
+  /**
+   * The alias cleaner.
+   *
+   * @var \Drupal\pathauto\AliasCleaner
+   */
+  protected $aliasCleaner;
+
+  /**
+   * An array of already replaced links.
+   *
+   * @var array
+   */
   protected $replacedLinks;
+
+  /**
+   * The module extension list.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
+   */
+  protected $moduleExtensionList;
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(ClientInterface $client, FileSystemInterface $file_system, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(ClientInterface $client, FileSystemInterface $file_system, EntityTypeManagerInterface $entity_type_manager, AliasCleaner $alias_cleaner, ModuleExtensionList $module_extension_list) {
     $this->client = $client;
     $this->fileSystem = $file_system;
     $this->entityTypeManager = $entity_type_manager;
+    $this->aliasCleaner = $alias_cleaner;
+    $this->moduleExtensionList = $module_extension_list;
   }
 
   /**
@@ -157,17 +180,14 @@ class IccwcMigrateCommands extends DrushCommands {
     // @todo Replace with Drupal API.
     $data = json_decode(file_get_contents($file), TRUE);
 
-    /** @var \Drupal\pathauto\AliasCleanerInterface $alias_cleaner */
-    $alias_cleaner = \Drupal::service('pathauto.alias_cleaner');
-
     foreach ($data as $row) {
       $old_url = $row['url'];
       $old_url = str_replace('/eng/', '', $old_url);
 
       $title = $row['title'];
-      $title = $alias_cleaner->cleanString($title);
+      $title = $this->aliasCleaner->cleanString($title);
       $new_url = '/news/' . $title;
-      $new_url = $alias_cleaner->cleanAlias($new_url);
+      $new_url = $this->aliasCleaner->cleanAlias($new_url);
 
       $this->urlMapping[$old_url] = $new_url;
       $this->urlMapping["/eng$old_url"] = $new_url;
@@ -235,6 +255,7 @@ class IccwcMigrateCommands extends DrushCommands {
 
     $row = 1;
     $rows = [];
+    $header = [];
     if (($handle = fopen($file, "r")) !== FALSE) {
       while (($data = fgetcsv($handle, 0, ",")) !== FALSE) {
         if ($row == 1) {
@@ -256,7 +277,7 @@ class IccwcMigrateCommands extends DrushCommands {
   /**
    * Get news by old URL.
    *
-   * @param $old_url
+   * @param string $old_url
    *   The old URL.
    *
    * @return \Drupal\node\NodeInterface
@@ -266,7 +287,7 @@ class IccwcMigrateCommands extends DrushCommands {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   protected function getNewsByOldUrl($old_url) {
-    $json_path = \Drupal::service('extension.list.module')->getPath('iccwc') . '/data/news.json';
+    $json_path = $this->moduleExtensionList->getPath('iccwc') . '/data/news.json';
     $data = json_decode(file_get_contents($json_path), TRUE);
 
     $title = NULL;
@@ -354,7 +375,7 @@ class IccwcMigrateCommands extends DrushCommands {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  protected function getTermByName(string $name, string $vid, $create = FALSE, $extra_values = []) {
+  protected function getTermByName(string $name, string $vid, $create = FALSE, array $extra_values = []) {
     if ($name == 'News and highlights') {
       $name = 'News & Highlights';
     }
@@ -460,6 +481,15 @@ class IccwcMigrateCommands extends DrushCommands {
     $node->save();
   }
 
+  /**
+   * Create a media image from markup.
+   *
+   * @param string $markup
+   *   The markup.
+   *
+   * @return \Drupal\media\MediaInterface|null
+   *   The media image.
+   */
   protected function getImage($markup) {
     $htmlDom = new \DOMDocument();
     @$htmlDom->loadHTML($markup);
@@ -490,15 +520,28 @@ class IccwcMigrateCommands extends DrushCommands {
     return $media_image;
   }
 
+  /**
+   * Create a media image from a source URL.
+   *
+   * @param string $src
+   *   The source URL.
+   *
+   * @return \Drupal\media\MediaInterface|null
+   *   The media entity.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function getMediaImage($src) {
     $src = str_replace('/sites/default/files', 'public:/', $src);
-    $file = \Drupal::entityTypeManager()->getStorage('file')->loadByProperties([
+    $file = $this->entityTypeManager->getStorage('file')->loadByProperties([
       'uri' => $src,
     ]);
 
     $file = reset($file);
 
-    $media_image = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties([
+    /** @var \Drupal\media\MediaInterface[] $media_image */
+    $media_image = $this->entityTypeManager->getStorage('media')->loadByProperties([
       'field_media_image' => $file->id(),
     ]);
     $media_image = reset($media_image);
@@ -663,6 +706,16 @@ class IccwcMigrateCommands extends DrushCommands {
     }
   }
 
+  /**
+   * Replace all the links in a markup.
+   *
+   * @param string $markup
+   *   The markup.
+   * @param string $old_link
+   *   The old link.
+   * @param string $new_link
+   *   The new link.
+   */
   protected function replaceLinks(&$markup, $old_link, $new_link) {
     $this->replacedLinks[$old_link] = $new_link;
     $markup = str_replace("\"$old_link\"", "\"$new_link\"", $markup);

@@ -21,7 +21,7 @@ class ClearFiltersBlock extends ICCWCBlockBase {
   public function build() {
     return [
       '#type' => 'link',
-      '#title' => t('Clear filters'),
+      '#title' => $this->t('Clear filters'),
       '#url' => Url::fromRoute('<current>'),
     ];
   }

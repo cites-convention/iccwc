@@ -72,7 +72,7 @@ class MapboxUnMapBlock extends BlockBase implements ContainerFactoryPluginInterf
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityTypeManager = $entity_type_manager;
     $this->entityRepository = $entity_repository;
-    $this->moduleExtensionList =  $module_extension_list;
+    $this->moduleExtensionList = $module_extension_list;
     $this->mapboxManager = $mapbox_manager;
   }
 

@@ -50,7 +50,6 @@ module:
   image: 0
   image_captcha: 0
   image_max_size_crop: 0
-  inline_entity_form: 0
   lang_dropdown: 0
   language: 0
   languagefield: 0
@@ -82,7 +81,6 @@ module:
   node: 0
   oembed_lazyload: 0
   oembed_lazyload_youtube: 0
-  optional_end_date: 0
   options: 0
   path: 0
   path_alias: 0
@@ -106,7 +104,6 @@ module:
   toolbar: 0
   translate_config: 0
   twig_tweak: 0
-  twitter_feed: 0
   update: 0
   user: 0
   video_embed_field: 0

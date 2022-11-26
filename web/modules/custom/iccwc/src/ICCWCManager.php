@@ -5,6 +5,9 @@ namespace Drupal\iccwc;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 
+/**
+ * A collection of helper ICCWC functions.
+ */
 class ICCWCManager {
 
   /**
@@ -36,7 +39,7 @@ class ICCWCManager {
    *
    * @param \Drupal\Core\Routing\CurrentRouteMatch $route_match
    *   The current route match.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
    */
   public function __construct(CurrentRouteMatch $route_match, EntityTypeManagerInterface $entity_type_manager) {

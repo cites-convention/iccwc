@@ -8,7 +8,6 @@ use Drupal\Core\Field\Plugin\Field\FieldFormatter\EntityReferenceFormatterBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\iccwc\ICCWCManager;
 use Drupal\languagefield\Entity\CustomLanguageManager;
-use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -87,7 +86,7 @@ class MediaFileLinkFormatter extends EntityReferenceFormatterBase implements Con
         '#type' => 'link',
         '#url' => $file->createFileUrl(),
         '#title' => $entity->label(),
-        '#language' => $language
+        '#language' => $language,
       ];
     }
     return $elements;

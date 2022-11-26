@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * iccwc.install
+ */
+
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
 

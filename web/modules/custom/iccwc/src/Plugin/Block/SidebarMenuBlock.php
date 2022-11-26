@@ -2,7 +2,6 @@
 
 namespace Drupal\iccwc\Plugin\Block;
 
-use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\system\Plugin\Block\SystemMenuBlock;
 
 /**
