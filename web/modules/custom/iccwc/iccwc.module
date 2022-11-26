@@ -9,7 +9,6 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\search_api\Query\QueryInterface;
 use Drupal\Core\Language\LanguageInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Url;
 use Drupal\views\ViewExecutable;
 
@@ -160,7 +159,7 @@ function iccwc_search_api_query_alter(QueryInterface $query) {
  */
 function iccwc_pathauto_pattern_alter(&$pattern, array $context) {
   if ($context['module'] == 'node') {
-    if(!$context['data']['node']->path->getFieldDefinition()->isTranslatable()){
+    if (!$context['data']['node']->path->getFieldDefinition()->isTranslatable()) {
       $context['language'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
     }
   }
@@ -202,7 +201,6 @@ function iccwc_form_layout_builder_configure_section_alter(array &$form, FormSta
       '#weight' => -2,
     ];
   }
-
 
   array_unshift($form['#submit'], '_iccwc_submit_section_form');
 }

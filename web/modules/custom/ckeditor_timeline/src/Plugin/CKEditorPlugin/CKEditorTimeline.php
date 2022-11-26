@@ -3,7 +3,6 @@
 namespace Drupal\ckeditor_timeline\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\editor\Entity\Editor;
@@ -84,7 +83,7 @@ class CKEditorTimeline extends CKEditorPluginBase implements ContainerFactoryPlu
     $path = $this->moduleExtensionList->getPath('ckeditor_timeline') . '/js/plugins/timeline/icons';
     return [
       'Timeline' => [
-        'label' => t('Add Timline'),
+        'label' => $this->t('Add Timline'),
         'image' => $path . '/timeline.png',
       ],
     ];

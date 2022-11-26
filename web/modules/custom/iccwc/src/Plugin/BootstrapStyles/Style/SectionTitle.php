@@ -6,7 +6,6 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\block\Entity\Block;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -93,8 +92,8 @@ class SectionTitle extends StylePluginBase {
    * {@inheritdoc}
    */
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
-    // phpcs:ignore
     if (!empty($storage['section_title'])) {
+      // phpcs:ignore
       $build['#section_title'] = $this->t($storage['section_title']);
     }
     if (!empty($storage['social_media'])) {
