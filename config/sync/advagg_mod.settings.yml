@@ -12,7 +12,7 @@ js_adjust_sort_external: true
 js_adjust_sort_browsers: true
 js_async: false
 js_async_in_header: false
-js_defer: 1
+js_defer: 0
 js_footer: null
 js_preprocess: true
 js_remove_console_log: false
