@@ -1,0 +1,176 @@
+.vertical-tabs .nav-pills {
+    display: none;
+  }
+  .vertical-tabs .field--name-field-image picture {
+      position: relative;
+      display: block;
+    }
+  .vertical-tabs .field--name-field-image picture:after {
+        content: " ";
+        background-color: var(--color-orange);
+        background-image: url("data:image/svg+xml,%3csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11 6.85708H6.28571V11.9999H4.71429V6.85708H0V5.1428H4.71429V-6.10352e-05H6.28571V5.1428H11V6.85708Z' fill='white'/%3e%3c/svg%3e");
+        color: white;
+        width: 2.5625rem;
+        height: 2.375rem;
+        overflow: visible;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 35%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+  .vertical-tabs .field--name-field-image picture img {
+        border: solid 4px var(--color-orange);
+        border-radius: 0.625rem;
+        width: 100%;
+      }
+  .vertical-tabs .card-body {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--color-gray);
+    border-radius: 0.625rem;
+  }
+  .vertical-tabs .nav-link {
+    font-weight: bold;
+    font-family: var(--font-family-headings);
+    color: var(--color-text);
+    font-size: 1.625rem;
+    line-height: 1.75rem;
+  }
+  .vertical-tabs iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .vertical-tabs .youtube-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  @media (min-width: 48rem) {
+    .vertical-tabs .nav-pills {
+      display: flex;
+      align-self: baseline;
+    }
+
+      .vertical-tabs .nav-pills .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: var(--color-gray-darker-to-white);
+        font-weight: 700;
+        width: 100%;
+        padding: 0.625rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+      }
+
+        .vertical-tabs .nav-pills .nav-link:before {
+          content: '';
+          width: 0.625rem;
+          height: 0.625rem;
+          position: absolute;
+          left: -1.25rem;
+          background-color: var(--color-gray-darker-to-white);
+        }
+
+        .vertical-tabs .nav-pills .nav-link.active {
+          color: var(--color-orange);
+          background-color: transparent;
+        }
+
+          .vertical-tabs .nav-pills .nav-link.active:before {
+            background-color: var(--color-orange);
+          }
+    .vertical-tabs .tab-content .tab-pane h5 a {
+      display: none;
+    }
+      .vertical-tabs .tab-pane .collapse {
+        display: block;
+      }
+
+      .vertical-tabs .tab-pane .image-container {
+        border: none;
+      }
+
+      .vertical-tabs .tab-pane .col-md-6 {
+        display: flex;
+        flex-direction: column;
+      }
+        .vertical-tabs .tab-pane .col-md-6:nth-child(2) {
+          padding: 0.9375rem;
+        }
+        .vertical-tabs .tab-pane .col-md-6 .btn-iccwc.btn-next{
+          margin-top: auto;
+          margin-right: auto;
+        }
+
+      .vertical-tabs .tab-pane p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        line-clamp: 7;
+        -webkit-box-orient: vertical;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.125rem;
+        color: var(--color-black);
+      }
+      .vertical-tabs .tab-pane .blazy,
+      .vertical-tabs .tab-pane .oembed-lazyload {
+        margin: 1.34375rem 0.90625rem;
+      }
+  }
+  @media (max-width: 47.9375rem) {
+    .vertical-tabs .tab-content > .tab-pane {
+      display: block !important;
+    }
+    .vertical-tabs .tab-content > .tab-pane {
+      opacity: 1;
+    }
+    .vertical-tabs .tab-pane h5 a {
+      position: relative;
+      text-decoration: none;
+      color: var(--color-gray-darker-to-white);
+      font-weight: 700;
+      width: 100%;
+      padding: 0.625rem;
+      text-align: left;
+      display: flex;
+      margin-left: 1.25rem;
+    }
+      .vertical-tabs .tab-pane h5 a:before {
+        content: '◼';
+        width: 0.625rem;
+        height: 0.625rem;
+        position: absolute;
+        top: 0.5625rem;
+        left: -1.25rem;
+      }
+      .vertical-tabs .tab-pane h5 a:hover {
+        text-decoration: none;
+      }
+      .vertical-tabs .tab-pane h5 a[aria-expanded="true"] {
+        color: var(--color-orange);
+      }
+    .vertical-tabs .card-body {
+      padding: 1rem 0.3125rem;
+    }
+    .vertical-tabs p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      line-clamp: 8;
+      -webkit-box-orient: vertical;
+    }
+  }

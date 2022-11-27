@@ -1,0 +1,91 @@
+.horizontal-tabs .nav-pills {
+    margin-bottom: 1.25rem;
+  }
+
+    @media (min-width: 62rem) {.horizontal-tabs .nav-pills {
+      margin-left: -2.5rem;
+      margin-right: -2.5rem;
+      margin-top: -2.5625rem
+  }
+    }
+
+    .horizontal-tabs .nav-pills .nav-link {
+      border-radius: 0;
+      padding: 0.875rem 2.5rem;
+      font-weight: bold;
+      border-bottom: 1px solid var(--color-gray);
+      flex: 1 0 auto;
+      color: var(--color-text);
+    }
+
+    .horizontal-tabs .nav-pills .nav-link + .nav-link {
+        border-left: 1px solid var(--color-gray);
+      }
+
+    @media (max-width: 62rem) {
+
+    .horizontal-tabs .nav-pills .nav-link {
+        border-top: 1px solid var(--color-gray)
+    }
+
+        .horizontal-tabs .nav-pills .nav-link:last-child {
+          border-right: 1px solid var(--color-gray);
+        }
+      }
+
+    .horizontal-tabs .nav-pills .nav-link.active {
+        background: var(--color-orange);
+        color: var(--color-white);
+        border-color: var(--color-orange);
+      }
+  @media (min-width: 48rem) {
+  .horizontal-tabs .tab-pane .collapse {
+      display: block
+  }
+    }
+  .horizontal-tabs .tab-content .tab-pane h5 a {
+    display: none;
+  }
+  @media (max-width: 47.9375rem) {
+    .horizontal-tabs .nav-pills {
+      display: none;
+    }
+
+    .horizontal-tabs .tab-content > .tab-pane {
+      display: block !important;
+    }
+
+    .horizontal-tabs .tab-content > .tab-pane {
+      opacity: 1;
+    }
+
+      .horizontal-tabs .tab-content > .tab-pane h5 a {
+        position: relative;
+        text-decoration: none;
+        color: var(--color-gray-darker-to-white);
+        font-weight: 700;
+        width: 100%;
+        padding: 0.625rem;
+        text-align: left;
+        display: flex;
+        margin-left: 1.25rem;
+      }
+        .horizontal-tabs .tab-content > .tab-pane h5 a:before {
+          content: '◼';
+          width: 0.625rem;
+          height: 0.625rem;
+          position: absolute;
+          top: 0.5625rem;
+          left: -1.25rem;
+        }
+        .horizontal-tabs .tab-content > .tab-pane h5 a:hover {
+          text-decoration: none;
+        }
+        .horizontal-tabs .tab-content > .tab-pane h5 a[aria-expanded="true"] {
+          color: var(--color-orange);
+        }
+
+    .horizontal-tabs .card-body {
+      padding: 1rem 0.3125rem;
+    }
+  }

@@ -1,0 +1,92 @@
+@define-mixin heading {
+  font-weight: bold;
+  font-family: var(--font-family-headings);
+  color: var(--color-text);
+}
+
+@define-mixin heading-1 {
+  @mixin heading;
+  font-size: 56px;
+  line-height: 60px;
+
+  @media (max-width: 991px) {
+    font-size: 26px;
+    line-height: 28px;
+  }
+}
+
+@define-mixin heading-2 {
+  @mixin heading;
+  font-size: 44px;
+  line-height: 50px;
+
+  @media (max-width: 991px) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+@define-mixin heading-3 {
+  @mixin heading;
+  font-size: 36px;
+  line-height: 40px;
+
+  @media (max-width: 991px) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@define-mixin heading-4 {
+  @mixin heading;
+  font-size: 26px;
+  line-height: 28px;
+}
+
+@define-mixin heading-5 {
+  @mixin heading;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+@define-mixin heading-6 {
+  @mixin heading;
+  font-size: 20px;
+  line-height: 22px;
+
+  @media (max-width: 991px) {
+    font-size: 18px;
+  }
+}
+
+@define-mixin large-text {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@define-mixin normal-text {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+@define-mixin small-text {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@define-mixin max-lines $n {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
+
+@define-mixin black-link {
+  color: var(--color-text);
+
+  &:hover, &:focus {
+    color: var(--color-blue);
+  }
+}

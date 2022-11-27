@@ -1,10 +1,15 @@
-name: 'Project front-end theme'
+name: Frontend Theme
 type: theme
-description: 'Front-end theme based on Bootstrap 5 theme.'
-core_version_requirement: '^8.9 || ^9'
-'base theme': edwt
+description: 'Theme with Bootstrap 5 css library'
+core_version_requirement: ^8.9 || ^9.0
+base theme: edwt
+
+stylesheets-remove:
+  - '@classy/css/components/tabs.css'
+
 libraries:
   - frontend/global-styling
+  - frontend/theme-fonts
 
 regions:
   header_left: 'Header left'
@@ -22,8 +27,9 @@ regions:
   footer_bottom: 'Footer bottom'
   disable_region: 'Disabled Region'
 
-ckeditor_stylesheets:
-  - css/style.css
-
 libraries-override:
   edwt/theme-fonts: false
+  edwt/global-styling:
+    css:
+      theme:
+        css/image.css: false

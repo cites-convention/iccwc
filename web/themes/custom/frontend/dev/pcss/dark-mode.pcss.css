@@ -1,0 +1,218 @@
+.dark-mode {
+  --color-orange: #FF9443;
+  --color-orange-darker: #C4661E;
+  --color-yellow: #F5CD26;
+  --color-yellow-darker: #AB901B;
+  --color-black: #FFFFFF;
+  --color-white: #2E2A2B;
+  --color-gray: #8A8888;
+  --color-gray-light: #403D3E;
+  --body-color: #FFF;
+  --color-blue-hover: #8AB4F8;
+  --color-text: #FFF;
+  --color-gray-darker-to-white: #FFF;
+  --icon-expand-more: url('../icons/expand-more-white.svg');
+  --icon-document: url('../icons/file-white.svg');
+}
+
+.dark-mode {
+  & .form-control {
+    background-color: #565455;
+    color: var(--color-black);
+  }
+
+  & .nav-tabs {
+    & .nav-item {
+      & .nav-link {
+        color: var(--color-orange);
+      }
+    }
+  }
+
+  & .nav-tabs .nav-link.active, & .nav-tabs .nav-item.show .nav-link {
+    background-color: var(--color-orange);
+
+    & a {
+      color: var(--color-white);
+    }
+  }
+
+  & a {
+    color: var(--color-blue-hover);
+  }
+
+  & h1, & h2, & h3, & h4, & h5, & h5 {
+    & a {
+      color: var(--color-black);
+
+      &:hover, &:active {
+        color: var(--color-blue-hover);
+      }
+    }
+  }
+
+  & .breadcrumb {
+    background-color: var(--color-white);
+    & a {
+      color: var(--color-black) !important;
+    }
+  }
+
+  & .btn-iccwc {
+    color: var(--color-orange) !important;
+    &:hover {
+      color: var(--color-black) !important;
+    }
+  }
+
+  & .block-field-blocknodenewsfield-tags .field--name-field-tags {
+    & .field__label {
+      color: var(--color-gray-light-3);
+    }
+
+    & .field__items a {
+      color: var(--color-black);
+
+      &:hover {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  & .field--name-field-links a {
+    color: var(--color-black);
+
+    &:hover {
+      color: var(--color-white);
+    }
+
+    &:before {
+      background: url("../icons/open-new-white.svg") no-repeat center;
+    }
+
+    &:hover:before {
+      background: url("../icons/open-new.svg") no-repeat center;
+    }
+  }
+
+  & .menu .navbar-nav {
+    & .dropdown-menu .nav-item {
+      & a {
+        color: var(--color-white);
+      }
+
+      & a:hover {
+        color: var(--color-orange);
+      }
+    }
+
+    & .nav-item .dropdown-menu li + li {
+      border-top: 1px solid var(--color-gray-light-4);
+    }
+  }
+
+  & .navbar-brand {
+    color: #fff;
+
+    & #darkModeBlack {
+      &, & > * {
+        fill: #fff;
+      }
+
+      & .st2 {
+        stroke: #fff !important;
+      }
+    }
+    & #darkModeWhite {
+      &, & > * {
+        fill: #000;
+      }
+    }
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+
+  & .iccwc-search-form {
+    & .form-submit {
+      background: url("../icons/magnify-white.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    & input {
+      color: var(--color-black);
+    }
+
+    & input[type="text"] {
+      background-color: var(--color-white) !important;
+    }
+  }
+
+  & .block-lang-dropdown {
+    & select {
+      color: var(--color-black) !important;
+      background-color: var(--color-white) !important;
+    }
+    & .form-select {
+      background: url("../icons/expand-more-white.svg") no-repeat center;
+      width: 35px;
+      height: 17px;
+      display: inline-block;
+      margin-left: 7px;
+    }
+  }
+
+  & .custom-control input[type="checkbox"] + label:after {
+    background: url("../icons/toggle-switch-on.svg") no-repeat center;
+  }
+
+  & .block-iccwc-social-media {
+    & svg.youtube path:last-child {
+      fill: var(--color-white);
+    }
+  }
+
+  & .partner-teaser {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.45);
+
+    &:hover{
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.85);
+    }
+  }
+
+  & .sidebar-menu a {
+    color: var(--color-gray-light-2);
+  }
+
+  & .sidebar-menu a:not(.collapse-arrow):before {
+    background: var(--color-gray-light-2);
+  }
+
+  & footer {
+    border-top: 1px solid var(--color-gray);
+    background-color: #231F20;
+
+    & .block-iccwc-social-media {
+      & svg {
+        & path {
+          fill: var(--color-black);
+        }
+
+        &.youtube {
+          & path:last-child {
+            fill: var(--color-white);
+          }
+        }
+      }
+    }
+
+    & nav a, & nav a:hover, & nav a:focus {
+      color: var(--color-black) !important;
+    }
+  }
+
+  & .scrollup {
+    background-color: var(--color-black) !important;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.45);
+  }
+}

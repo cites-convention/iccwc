@@ -1,0 +1,4 @@
+slick:
+  css:
+    component:
+      css/components/slick/slick.css: {}

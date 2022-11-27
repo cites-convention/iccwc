@@ -1,1 +1,0 @@
-{"version":3,"names":[],"mappings":"","sources":["components/frontpage/frontpage-banner.scss"],"sourcesContent":[".paragraph--type--highlight {\n  width: 278px;\n  background-color: var(--color-white);\n  background-color: var(--color-white);\n  border-radius: 10px 10px 0 0;\n}\n"],"file":"../../../components/frontpage/frontpage-banner.scss"}

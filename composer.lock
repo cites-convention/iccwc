@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ef34953c3aa219a5c657d5ecfa3bf6f",
+    "content-hash": "dd3672c657906f5c0978da901dd7052d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2727,17 +2727,17 @@
         },
         {
             "name": "drupal/edwt",
-            "version": "1.0.0-beta3",
+            "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edwt.git",
-                "reference": "1.0.0-beta3"
+                "reference": "2.0.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/edwt-1.0.0-beta3.zip",
-                "reference": "1.0.0-beta3",
-                "shasum": "6ebbe912bbbeb904568e6dce27fbedea7d7b034d"
+                "url": "https://ftp.drupal.org/files/projects/edwt-2.0.0-beta3.zip",
+                "reference": "2.0.0-beta3",
+                "shasum": "e927b60a3681400e3c555686efbdab3f2f7ad1dc"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9.0"
@@ -2745,8 +2745,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta3",
-                    "datestamp": "1668019429",
+                    "version": "2.0.0-beta3",
+                    "datestamp": "1669509162",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2765,6 +2765,10 @@
                 {
                     "name": "jonsecret",
                     "homepage": "https://www.drupal.org/user/932520"
+                },
+                {
+                    "name": "mara.predescu",
+                    "homepage": "https://www.drupal.org/user/3539946"
                 },
                 {
                     "name": "stefan.butura",

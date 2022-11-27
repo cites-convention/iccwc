@@ -1,0 +1,29 @@
+.block-iccwc-clear-filter {
+  position: relative;
+  color: var(--color-gray-darker);
+  margin-bottom: 6px;
+
+  & p {
+    display: inline;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  & svg {
+    width: 17px;
+    top: -1px;
+    position: relative;
+    fill: var(--color-gray-darker);
+  }
+
+  & a {
+    position: absolute;
+    color: var(--color-gray-darker);
+    right: 0;
+
+    &:hover {
+      text-decoration: none;
+      color: var(--color-orange);
+    }
+  }
+}

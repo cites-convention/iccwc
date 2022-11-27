@@ -1,0 +1,55 @@
+
+.facets-widget-checkbox a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    padding: 0.625rem;
+  }
+
+    .facets-widget-checkbox a:hover, .facets-widget-checkbox a:active {
+      text-decoration: none;
+      color: var(--color-orange);
+    }
+
+    .facets-widget-checkbox a:before {
+      content: '◼';
+      margin-right: 1.25rem;
+      margin-top: 1.25rem;
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+  .facets-widget-checkbox .facets-soft-limit-link::before {
+    content: none;
+  }
+  .facets-widget-checkbox a[aria-expanded="true"] .arrow {
+    transform: rotate(225deg);
+  }
+  .facets-widget-checkbox li {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .facets-widget-checkbox ul {
+    list-style-type: none;
+    padding: 0 1.25rem;
+  }
+  .facets-widget-checkbox input[type=checkbox] {
+    -webkit-appearance: none;
+    padding: 0.625rem;
+    border-radius: 0;
+    display: inline-block;
+    margin-right: 0.625rem;
+    background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='0.5' y='0.5' width='19' height='19' stroke='%23999999'/%3e%3c/svg%3e");
+  }
+  .facets-widget-checkbox input[type=checkbox]:checked {
+      background-image: url("data:image/svg+xml,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='20' height='20' fill='%23E87722'/%3e%3cpath d='M18 4.76174L7.02857 15.5L2 10.5783L3.28914 9.31656L7.02857 12.9676L16.7109 3.5L18 4.76174Z' fill='white'/%3e%3c/svg%3e");
+    }
+  .facets-widget-checkbox input[type=checkbox]:checked + label {
+      color: var(--color-orange);
+    }
+  .facets-widget-checkbox {
+
+  position: relative;
+}
