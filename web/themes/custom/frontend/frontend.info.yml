@@ -9,7 +9,6 @@ stylesheets-remove:
 
 libraries:
   - frontend/global-styling
-  - frontend/theme-fonts
 
 regions:
   header_left: 'Header left'
