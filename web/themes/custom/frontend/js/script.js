@@ -41,7 +41,7 @@
   };
   $.event.special.wheel = {
     setup: function( _, ns, handle ){
-      this.addEventListener("wheel", handle, { passive: true });
+      this.addEventListener("wheel", handle, { passive: false });
     }
   };
   $.event.special.mousewheel = {
