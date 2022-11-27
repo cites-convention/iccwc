@@ -1,4 +1,11 @@
-.vertical-tabs .nav-pills {
+.vertical-tabs .h5 {
+    font-weight: bold;
+    font-family: var(--font-family-headings);
+    color: var(--color-text);
+    font-size: 1.5rem;
+    line-height: 1.625rem;
+  }
+  .vertical-tabs .nav-pills {
     display: none;
   }
   .vertical-tabs .field--name-field-image picture {
@@ -89,7 +96,7 @@
           .vertical-tabs .nav-pills .nav-link.active:before {
             background-color: var(--color-orange);
           }
-    .vertical-tabs .tab-content .tab-pane h5 a {
+    .vertical-tabs .tab-content .tab-pane .h5 a {
       display: none;
     }
       .vertical-tabs .tab-pane .collapse {
@@ -137,7 +144,7 @@
     .vertical-tabs .tab-content > .tab-pane {
       opacity: 1;
     }
-    .vertical-tabs .tab-pane h5 a {
+    .vertical-tabs .tab-pane .h5 a {
       position: relative;
       text-decoration: none;
       color: var(--color-gray-darker-to-white);
@@ -148,7 +155,7 @@
       display: flex;
       margin-left: 1.25rem;
     }
-      .vertical-tabs .tab-pane h5 a:before {
+      .vertical-tabs .tab-pane .h5 a:before {
         content: '◼';
         width: 0.625rem;
         height: 0.625rem;
@@ -156,10 +163,10 @@
         top: 0.5625rem;
         left: -1.25rem;
       }
-      .vertical-tabs .tab-pane h5 a:hover {
+      .vertical-tabs .tab-pane .h5 a:hover {
         text-decoration: none;
       }
-      .vertical-tabs .tab-pane h5 a[aria-expanded="true"] {
+      .vertical-tabs .tab-pane .h5 a[aria-expanded="true"] {
         color: var(--color-orange);
       }
     .vertical-tabs .card-body {

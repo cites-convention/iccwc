@@ -57,7 +57,7 @@
       {% endfor %}
     </div>
 
-    <div id="content" class="tab-content col-md-9" role="tablist">
+    <div id="content" class="tab-content col-md-9">
       {% for idx, item in items %}
         {% set classes = [
           'tab-pane',
@@ -73,15 +73,15 @@
 
         <div {{ item.attributes.addClass(classes) }} id="v-pills-{{ loop.index }}" role="tabpanel"
                                                      aria-labelledby="v-pills-{{ loop.index }}-tab">
-          <div  role="tab" id="heading-A">
-            <h5 class="mb-15">
+          <div id="heading-A">
+            <div class="h5 mb-15">
               <a data-bs-toggle="collapse" href="#collapse-acc-{{ loop.index }}" aria-expanded="{{ expanded }}"
                  aria-controls="collapse-acc-{{ loop.index }}">
                 {{ titles[idx] }}
               </a>
-            </h5>
+            </div>
           </div>
-          <div id="collapse-acc-{{ loop.index }}" class="collapse {% if loop.index == 1 %}show{% endif %}" data-bs-parent="#content" role="tabpanel"
+          <div id="collapse-acc-{{ loop.index }}" class="collapse {% if loop.index == 1 %}show{% endif %}" data-bs-parent="#content"
                aria-labelledby="collapse-acc-{{ loop.index }}">
             <div class="card-body row">
               {{ item.content }}

@@ -17,6 +17,7 @@ dependencies:
   module:
     - link
     - media_library
+    - media_library_edit
     - path
     - text
 id: node.news.default
@@ -46,7 +47,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_banner_text:
     type: text_textarea
     weight: 17
@@ -61,7 +64,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_links:
     type: link_default
     weight: 14

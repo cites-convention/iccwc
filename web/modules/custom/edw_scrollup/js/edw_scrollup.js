@@ -16,7 +16,7 @@
           var scroll_hover_title = drupalSettings.edw_scrollup_hover_title;
         }
 
-        $('body').append('<a href="#" title="'+scroll_hover_title+'" class="scrollup"><div class="scroll-title">'+scroll_title+'</div></a>');
+        $('body').append('<a aria-label="Scroll Up" href="#" title="'+scroll_hover_title+'" class="scrollup"><div class="scroll-title">'+scroll_title+'</div></a>');
         var position = drupalSettings.edw_scrollup_position;
         var button_bg_color = drupalSettings.edw_scrollup_button_bg_color;
         var hover_button_bg_color = drupalSettings.edw_scrollup_button_hover_bg_color;
