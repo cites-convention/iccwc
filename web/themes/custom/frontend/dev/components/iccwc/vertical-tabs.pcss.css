@@ -1,4 +1,8 @@
 .vertical-tabs {
+  & .h5 {
+    @mixin heading-5;
+  }
+
   & .nav-pills {
     display: none;
   }
@@ -92,7 +96,7 @@
         }
       }
     }
-    & .tab-content .tab-pane h5 a {
+    & .tab-content .tab-pane .h5 a {
       display: none;
     }
 
@@ -137,7 +141,7 @@
       display: block !important;
       opacity: 1;
     }
-    & .tab-pane h5 a {
+    & .tab-pane .h5 a {
       position: relative;
       text-decoration: none;
       color: var(--color-gray-darker-to-white);

@@ -86,3 +86,11 @@ function _iccwc_media_media_translate_save(array &$form, FormStateInterface $for
   }
   return $response;
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for media.
+ */
+function iccwc_media_media_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  /** @var \Drupal\media\Entity\Media $entity */
+  $entity->thumbnail->alt = $entity->field_media_image->alt;
+}
