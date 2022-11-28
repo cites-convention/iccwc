@@ -30,3 +30,9 @@ To run the watcher, use `npm run watch:css`
 - Create a new library in dev/components/*/libraries.yml (see dev/components/frontpage/libraries.yml)
 - Create your SCSS or JS files in the same folder
 - Include this library wherever it is needed using Twig files: {{ attach_library('frontend/LIBRARY_NAME') }} (see block--inline-block--frontpage-banner.html.twig)
+
+### Critical CSS
+
+The website loads frontpage critical CSS inline from css/critical/15.css. If you make changes that can affect the frontpage, run:
+
+`npm run build:critical-css http://iccwc.local`
