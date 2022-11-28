@@ -71,6 +71,7 @@
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/core-composer-scaffold": "9.4.8",
         "drupal/core-recommended": "9.4.8",
+        "drupal/critical_css": "^1.19",
         "drupal/dark_mode_switch": "^2.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
@@ -102,6 +103,7 @@
         "drupal/smart_trim": "2.0.x-dev@dev",
         "drupal/smtp": "^1.0",
         "drupal/spamspan": "^1.2",
+        "drupal/stage_file_proxy": "^1.4",
         "drupal/svg_image": "^1.16",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.1",
@@ -120,7 +122,6 @@
     "require-dev": {
         "drupal/coder": "^8.3",
         "drupal/core-dev": "9.4.8",
-        "drupal/stage_file_proxy": "^1.2",
         "drupal/twig_vardumper": "^3.0",
         "overtrue/phplint": "^3.2",
         "phpmd/phpmd": "^2.12"
