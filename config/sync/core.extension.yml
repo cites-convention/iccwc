@@ -27,6 +27,7 @@ module:
   conditional_fields: 0
   config_translation: 0
   contextual: 0
+  critical_css: 0
   ctools: 0
   dark_mode_switch: 0
   datetime: 0
