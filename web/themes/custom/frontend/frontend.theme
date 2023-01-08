@@ -62,7 +62,7 @@ function frontend_library_info_alter(&$libraries, $extension) {
 
               if (isset($new_library['js'])) {
                 foreach ($new_library['js'] as $file_key => $js_file) {
-                  if (substr($file_key, 0, 14) == 'dev/components') {
+                  if (substr($file_key, 0, 13) == 'js/components') {
                     // Path is absolutely defined
                     // (deprecated, but as default assumed by Drupal).
                   }

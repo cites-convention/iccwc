@@ -1,7 +1,7 @@
 social_media_share:
   js:
-    dev/components/iccwc/js/print.min.js: {}
-    dev/components/iccwc/js/social-media-share.js: {}
+    js/components/iccwc/js/print.min.js: { minified: true }
+    js/components/iccwc/js/social-media-share.js: { minified: true }
   css:
     component:
       css/components/iccwc/social-media-share.css: { }
@@ -30,10 +30,14 @@ vertical_tabs:
   css:
     component:
       css/components/iccwc/vertical-tabs.css: { }
+  dependencies:
+    - edwt/tab
 
 horizontal_tabs:
   js:
-    dev/components/iccwc/js/horizontal-tabs.js: { }
+    js/components/components/iccwc/js/horizontal-tabs.js: { minified: true }
   css:
     component:
       css/components/iccwc/horizontal-tabs.css: { }
+  dependencies:
+    - edwt/tab
