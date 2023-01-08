@@ -8,13 +8,13 @@ slideshow:
     component:
       css/components/frontpage/slideshow.css: { }
   js:
-    dev/components/frontpage/js/slideshow.js: { }
+    js/components/frontpage/js/slideshow.js: { minified: true }
 
 flipster:
   css:
     component:
       css/components/frontpage/jquery.flipster.css: { }
   js:
-    dev/components/frontpage/js/jquery.flipster.min.js: { }
+    js/components/frontpage/js/jquery.flipster.min.js: { minified: true }
   dependencies:
     - core/jquery

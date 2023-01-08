@@ -12,6 +12,8 @@ const check = require('./check');
 
 // Match only on .pcss.css files.
 const fileMatch = './**/*.pcss.css';
+// Match js files.
+const fileMatchJs = './dev/**/*.js';
 // Ignore everything in node_modules
 const globOptions = {
   ignore: './node_modules/**'
@@ -33,5 +35,6 @@ if (argv.file) {
 }
 else {
   glob(fileMatch, globOptions, processFiles);
+  glob(fileMatchJs, globOptions, processFiles);
 }
 process.exitCode = 0;
