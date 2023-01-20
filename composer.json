@@ -103,7 +103,7 @@
         "drupal/smart_trim": "2.0.x-dev@dev",
         "drupal/smtp": "^1.0",
         "drupal/spamspan": "^1.2",
-        "drupal/stage_file_proxy": "^1.4",
+        "drupal/stage_file_proxy": "2.0.x-dev@dev",
         "drupal/svg_image": "^1.16",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.1",
