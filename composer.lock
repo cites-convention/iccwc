@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23214b877f198357710c359f0ccd14c0",
+    "content-hash": "d6c80b4f59ad2827d100765b51412422",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4667,26 +4667,23 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "dev-2.0.x",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "83710d273c47f437b589b89e47fb2f8961b6e7a5"
+                "reference": "874ad553f21aa974f215c457bfa8972cc459d02e"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
-            },
-            "require-dev": {
-                "drush/drush": "^11"
+                "drupal/core": "^9"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-2.0.x": "2.0.x-dev"
+                    "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "2.0.2+4-dev",
-                    "datestamp": "1674001399",
+                    "version": "8.x-1.5+1-dev",
+                    "datestamp": "1672358735",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -4694,7 +4691,7 @@
                 },
                 "drush": {
                     "services": {
-                        "stage_file_proxy.drush.services.yml": "^11"
+                        "stage_file_proxy.drush.services.yml": "^9 || ^10"
                     }
                 }
             },
