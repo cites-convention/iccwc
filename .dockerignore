@@ -1,0 +1,7 @@
+Dockerfile
+.env
+*.iml
+.idea
+.git
+.gitignore
+

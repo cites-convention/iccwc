@@ -1,0 +1,55 @@
+options:
+  docker: true
+
+image: public.ecr.aws/unicc/opsctl:1.21
+
+definitions:
+  CreateRelease: &CreateRelease
+    name: Create Release
+    script:
+      - opsctl create secret -v unicc-cwh-${BITBUCKET_BRANCH}.yaml
+      - opsctl create build -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
+      - opsctl create helm-release -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -o ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
+      - opsctl deploy -f ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH}.yaml -r ${DEPLOY_ENVIRONMENT_REPO}
+      - opsctl create scan -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
+
+  DBDump: &DBDump
+    name: DB dump
+    size: 2x
+    artifacts:
+      - '*.sql.gz'
+
+pipelines:
+  branches:
+    master:
+      - step:
+          deployment: production
+          <<: *CreateRelease
+    test:
+      - step:
+          deployment: staging
+          <<: *CreateRelease
+    dev:
+      - step:
+          deployment: test
+          <<: *CreateRelease
+                
+  custom:
+    db-dump-production:
+      - step:
+          deployment: production
+          <<: *DBDump
+          script:
+            - opsctl get dbdump -p ${BITBUCKET_REPO_SLUG} -f dump.sql.gz
+    db-dump-test:
+      - step:
+          deployment: staging
+          <<: *DBDump
+          script:
+            - opsctl get dbdump -p ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH} -f dump.sql.gz
+    db-dump-dev:
+      - step:
+          deployment: test
+          <<: *DBDump
+          script:
+            - opsctl get dbdump -p ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH} -f dump.sql.gz

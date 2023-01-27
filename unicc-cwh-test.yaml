@@ -1,0 +1,54 @@
+projectName: cites-iccwc-test
+projectType: CWHv2
+security:
+  enabled: true
+apps:
+  - name: nginx-ingress
+    appType: nginx-ingress
+    version: 0.0.3
+    values:
+      hosts:
+        - hostNames: ["cites-iccwc-test.rhone.un-icc.cloud"]
+          appName: web
+  - name: web
+    appType: standard-app
+    version: 0.0.22
+    dockerfile: Dockerfile
+    values:
+      cpu: 400m
+      memory: 512Mi
+      secret:
+        - name: NEW_RELIC_LICENSE_KEY
+          secret_key: new_relic_license_key
+        - name: DB_HOST
+          secret_key: db_host
+        - name: DB_PASSWORD
+          secret_key: user_db_password
+        - name: SMTP_USER
+          secret_key: aws_access_key
+        - name: SMTP_PASSWORD
+          secret_key: aws_smtp_password
+        - name: AWS_SECRET_ACCESS_KEY
+          secret_key: aws_secret_access_key
+      env:
+        ENV: test
+        NEW_RELIC_APP_NAME: cites-iccwc-test
+        DB_USER: citesiccwctest
+        DB_NAME: citesiccwctest
+      sharedStorage:
+        enabled: true
+        mountPaths:
+          - /var/www/web/sites/default/files
+          - /var/www/web/sites/afr/files
+  - name: shared-storage
+    appType: efs-storage
+    version: 0.0.5
+
+  - name: dump-backup
+    appType: s3-backup-restore
+    version: 0.1.2
+    values:
+      projectName: cites-iccwc-test
+      backupStorage: false
+      backupDb: true
+      schedule: "0 14 * * *"
