@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce3f2e7b8346dcc6175658e1f4e47c88",
+    "content-hash": "d2239b7bf9f6585e51973d954ca1488b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2793,17 +2793,17 @@
         },
         {
             "name": "drupal/edwt",
-            "version": "2.1.4",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edwt.git",
-                "reference": "2.1.4"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/edwt-2.1.4.zip",
-                "reference": "2.1.4",
-                "shasum": "c0671c6e9297459e7bbe9194968d4720cbf27286"
+                "url": "https://ftp.drupal.org/files/projects/edwt-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "13a31c7d3bcfdcfb19021bb29e29d4399ed14e77"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -2811,8 +2811,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "2.1.4",
-                    "datestamp": "1674689376",
+                    "version": "2.2.0",
+                    "datestamp": "1674922891",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
