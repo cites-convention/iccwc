@@ -193,3 +193,5 @@ $config['advagg.settings']['enabled'] = FALSE;
 
 // Stage file proxy.
 $config['stage_file_proxy.settings']['origin'] = 'https://iccwc-wildlifecrime.org/';
+$config['stage_file_proxy.settings']['use_imagecache_root'] = FALSE;
+

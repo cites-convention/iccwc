@@ -35,7 +35,7 @@ vertical_tabs:
 
 horizontal_tabs:
   js:
-    js/components/components/iccwc/js/horizontal-tabs.js: { minified: true }
+    js/components/iccwc/js/horizontal-tabs.js: { minified: true }
   css:
     component:
       css/components/iccwc/horizontal-tabs.css: { }
