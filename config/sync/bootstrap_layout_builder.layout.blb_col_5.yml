@@ -6,4 +6,4 @@ _core:
   default_config_hash: J0RRBr3UYJgz6q4vv1jOppF16Z6ompFsoy7obAMnQ94
 id: blb_col_5
 label: 'Bootstrap 5 Cols'
-number_of_columns: '5'
+number_of_columns: 5
