@@ -31,16 +31,15 @@ third_party_settings:
         layout_id: 'bootstrap_layout_builder:blb_col_3'
         layout_settings:
           label: ''
-          context_mapping: {  }
           container_wrapper_classes: ''
           container_wrapper_attributes: null
           container_wrapper:
             bootstrap_styles:
-              section_title: ''
               background:
                 background_type: color
               background_color:
                 class: null
+              section_title: ''
               column_border: 1
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
@@ -72,7 +71,8 @@ third_party_settings:
               - col-lg-3
               - col-md-12
               - col-12
-          remove_gutters: 0
+          remove_gutters: '0'
+          context_mapping: {  }
           invert_column_order: null
           right_sidebar_position: '2'
         components:
@@ -136,16 +136,15 @@ third_party_settings:
         layout_id: 'bootstrap_layout_builder:blb_col_1'
         layout_settings:
           label: ''
-          context_mapping: {  }
           container_wrapper_classes: ''
           container_wrapper_attributes: null
           container_wrapper:
             bootstrap_styles:
-              section_title: 'See also'
               background:
                 background_type: color
               background_color:
                 class: bs-bg-light
+              section_title: 'See also'
               column_border: 0
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
@@ -158,9 +157,10 @@ third_party_settings:
             blb_region_col_1: {  }
           breakpoints: {  }
           layout_regions_classes: {  }
+          remove_gutters: '0'
+          context_mapping: {  }
           invert_column_order: null
           right_sidebar_position: null
-          remove_gutters: 0
         components:
           631d2f42-d574-48d9-9d4b-d89fa38f8d93:
             uuid: 631d2f42-d574-48d9-9d4b-d89fa38f8d93
@@ -195,16 +195,15 @@ third_party_settings:
         layout_id: 'bootstrap_layout_builder:blb_col_1'
         layout_settings:
           label: ''
-          context_mapping: {  }
           container_wrapper_classes: ''
           container_wrapper_attributes: null
           container_wrapper:
             bootstrap_styles:
-              section_title: 'Related content'
               background:
                 background_type: color
               background_color:
                 class: null
+              section_title: 'Related content'
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
           container: container
@@ -217,6 +216,7 @@ third_party_settings:
           breakpoints: {  }
           layout_regions_classes: {  }
           remove_gutters: '0'
+          context_mapping: {  }
         components:
           7ee9a1da-3cac-4045-a666-2b6ed669ba40:
             uuid: 7ee9a1da-3cac-4045-a666-2b6ed669ba40

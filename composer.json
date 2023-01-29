@@ -99,6 +99,8 @@
         "drupal/pathauto": "^1.9",
         "drupal/redirect": "^1.7",
         "drupal/search_api": "^1.23",
+        "drupal/slick": "^2.7.0",
+        "drupal/slick_paragraphs": "^2.2",
         "drupal/slick_views": "^2.6",
         "drupal/smart_trim": "2.0.x-dev@dev",
         "drupal/smtp": "^1.0",
