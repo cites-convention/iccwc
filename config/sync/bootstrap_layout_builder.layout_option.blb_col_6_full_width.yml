@@ -11,4 +11,5 @@ structure: '12'
 breakpoints:
   tablet: tablet
   mobile: mobile
+default_breakpoints: null
 weight: 0
