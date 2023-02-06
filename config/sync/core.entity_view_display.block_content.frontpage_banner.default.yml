@@ -10,8 +10,7 @@ dependencies:
     - field.field.block_content.frontpage_banner.field_video
     - responsive_image.styles.homepage_banner
   module:
-    - blazy
-    - blazy_blurry_placeholder
+    - media_responsive_thumbnail
     - slick_paragraphs
 id: block_content.frontpage_banner.default
 targetEntityType: block_content
@@ -52,44 +51,14 @@ content:
     weight: 4
     region: content
   field_image:
-    type: blazy_media
+    type: media_responsive_thumbnail
     label: hidden
     settings:
-      caption:
-        field_caption: '0'
-        title: '0'
-        alt: '0'
-      class: ''
-      id: ''
-      image: ''
-      link: ''
-      overlay: ''
-      title: ''
-      vanilla: false
-      layout: ''
-      view_mode: default
-      cache: 0
-      skin: ''
-      lazy: ''
-      style: ''
-      background: false
-      box_caption: ''
-      box_caption_custom: ''
-      box_media_style: ''
-      loading: ''
-      preload: true
       responsive_image_style: homepage_banner
-      box_style: ''
-      image_style: ''
-      media_switch: ''
-      ratio: ''
-      thumbnail_style: ''
-      grid: ''
-      grid_medium: ''
-      grid_small: ''
-    third_party_settings:
-      blazy_blurry_placeholder:
-        use_blurry_placeholder: '1'
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
     weight: 5
     region: content
   field_video:

@@ -12,7 +12,6 @@ module:
   allowed_formats: 0
   basic_auth: 0
   blazy: 0
-  blazy_blurry_placeholder: 0
   block: 0
   block_content: 0
   bootstrap_layout_builder: 0
@@ -46,15 +45,11 @@ module:
   field_group: 0
   field_ui: 0
   file: 0
-  file_mdm: 0
-  file_mdm_exif: 0
-  file_mdm_font: 0
   filter: 0
   google_analytics: 0
   honeypot: 0
   image: 0
   image_captcha: 0
-  image_effects: 0
   image_max_size_crop: 0
   lang_dropdown: 0
   language: 0

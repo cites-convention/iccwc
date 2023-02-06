@@ -1,7 +1,0 @@
-name: 'Blazy Blurry Placeholder'
-type: module
-description: "Changes the default placeholder shown while loading a blazy image with a compressed version of the image."
-core_version_requirement: ^8 || ^9 || ^10
-dependencies:
-  - blazy:blazy
-  - image_effects:image_effects
