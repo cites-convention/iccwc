@@ -1,0 +1,27 @@
+.blazy--field-image {
+    max-width: 100%;
+    height: auto;
+}
+.blazy--field-image .media--loading,
+.blazy--field-image .media--loading figure,
+.blazy--field-image .media--loading img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+.blazy--field-image .media--loading::before {
+    display: none;
+}
+.blazy--field-image .b-lazy {
+    filter: blur(3px);
+    transform: scale(1.001);
+    transition: filter .2s, transform .2s;
+    opacity: 1;
+}
+.blazy--field-image .b-loaded {
+    filter: blur(0);
+    transform: scale(1);
+}
+.blazy--field-image .is-b-loading:not(.is-b-loaded):not([data-animation])::before {
+  display: none;
+}
