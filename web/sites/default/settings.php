@@ -811,6 +811,13 @@ if (!empty(getenv('DISABLE_CACHING'))) {
 }
 
 /**
+ * Toolkit used to manipulate images.
+ */
+$toolkit = getenv('IMAGE_TOOLKIT') ?? 'gd';
+$config['system.image']['toolkit'] = $toolkit;
+
+
+/**
  * Load local development override configuration, if available.
  *
  * Create a settings.local.php file to override variables on secondary (staging,
