@@ -32,7 +32,8 @@
 @media (max-width: 61.9375rem) {
 
 .block-inline-blockfrontpage-banner .wrapper {
-      padding: 1.875rem 1.875rem 0 1.875rem
+      padding: 1.875rem 1.875rem 0 1.875rem;
+      background-color: var(--color-yellow)
   }
     }
 
