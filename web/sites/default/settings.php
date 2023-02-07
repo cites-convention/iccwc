@@ -769,6 +769,10 @@ $databases['default']['default'] = [
   'collation' => 'utf8mb4_general_ci',
 ];
 
+if (!empty(getenv('DB_MAX_CACHE_ROW'))) {
+  $settings['database_cache_max_rows']['default'] = getenv('DB_MAX_CACHE_ROWS');
+}
+
 /**
  * SMTP settings.
  */
