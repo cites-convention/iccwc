@@ -758,9 +758,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Database connection.
  */
 $databases['default']['default'] = [
-  'init_commands' => [
-    'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'",
-  ],
   'database' => getenv('DB_NAME'),
   'driver' => 'mysql',
   'host' => getenv('DB_HOST'),
