@@ -1,0 +1,17 @@
+uuid: fa94811e-4a5c-442d-b895-a6953a783c0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_max_size_crop
+name: homepage_banner_desktop
+label: 'Homepage banner (desktop)'
+effects:
+  0045db6c-9588-45b7-b555-64cd2e2ab70a:
+    uuid: 0045db6c-9588-45b7-b555-64cd2e2ab70a
+    id: image_max_size_crop
+    weight: 1
+    data:
+      width: ''
+      height: '620'
+      anchor: center-center

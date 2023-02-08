@@ -1,0 +1,5 @@
+content:
+  field_highlights:
+    settings:
+      title: Párrafo
+      title_plural: Parráfos

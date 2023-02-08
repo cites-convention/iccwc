@@ -1,0 +1,382 @@
+uuid: 28cdc64d-0a93-42b8-866a-8b0b8435d83b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_banner_image
+    - field.field.node.page.field_banner_text
+    - field.field.node.page.field_exclude_related
+    - field.field.node.page.field_image
+    - field.field.node.page.field_links
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_related_content
+    - field.field.node.page.layout_builder__layout
+    - field.field.node.page.layout_builder__translation
+    - node.type.page
+    - system.menu.main
+  module:
+    - iccwc
+    - layout_builder
+    - layout_builder_restrictions
+    - link
+    - metatag
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: 'bootstrap_layout_builder:blb_col_3'
+        layout_settings:
+          label: ''
+          container_wrapper_classes: ''
+          container_wrapper_attributes: null
+          container_wrapper:
+            bootstrap_styles:
+              background:
+                background_type: color
+              background_color:
+                class: null
+              section_title: ''
+              column_border: 1
+          container_wrapper_bg_color_class: ''
+          container_wrapper_bg_media: null
+          container: container
+          section_classes: ''
+          section_attributes: null
+          regions_classes:
+            blb_region_col_1: ''
+            blb_region_col_2: ''
+            blb_region_col_3: ''
+          regions_attributes:
+            blb_region_col_1: null
+            blb_region_col_2: null
+            blb_region_col_3: null
+          breakpoints:
+            desktop: blb_col_2_7_3
+            tablet: blb_col_12
+            mobile: blb_col_12
+          layout_regions_classes:
+            blb_region_col_1:
+              - col-lg-2
+              - col-md-12
+              - col-12
+            blb_region_col_2:
+              - col-lg-7
+              - col-md-12
+              - col-12
+            blb_region_col_3:
+              - col-lg-3
+              - col-md-12
+              - col-12
+          remove_gutters: '0'
+          context_mapping: {  }
+          invert_column_order: null
+          right_sidebar_position: '2'
+        components:
+          94d19010-6d76-47b5-8b86-ebb347cf5e12:
+            uuid: 94d19010-6d76-47b5-8b86-ebb347cf5e12
+            region: blb_region_col_1
+            configuration:
+              id: iccwc_social_media_share
+              label: 'ICCWC Social Media Share Links'
+              label_display: '0'
+              provider: iccwc
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
+          90ff79c6-d332-457a-b3a7-813577c5a808:
+            uuid: 90ff79c6-d332-457a-b3a7-813577c5a808
+            region: blb_region_col_2
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
+          6e179af4-ea0b-43c8-a6f7-992d51326402:
+            uuid: 6e179af4-ea0b-43c8-a6f7-992d51326402
+            region: blb_region_col_3
+            configuration:
+              id: 'sidebar_menu:main'
+              label: 'Main navigation'
+              label_display: '0'
+              provider: iccwc
+              context_mapping: {  }
+              level: '2'
+              depth: '2'
+              expand_all_items: 1
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
+        third_party_settings: {  }
+      -
+        layout_id: 'bootstrap_layout_builder:blb_col_1'
+        layout_settings:
+          label: ''
+          container_wrapper_classes: ''
+          container_wrapper_attributes: null
+          container_wrapper:
+            bootstrap_styles:
+              background:
+                background_type: color
+              background_color:
+                class: bs-bg-light
+              section_title: 'See also'
+              column_border: 0
+          container_wrapper_bg_color_class: ''
+          container_wrapper_bg_media: null
+          container: container
+          section_classes: ''
+          section_attributes: null
+          regions_classes:
+            blb_region_col_1: ''
+          regions_attributes:
+            blb_region_col_1: {  }
+          breakpoints: {  }
+          layout_regions_classes: {  }
+          remove_gutters: '0'
+          context_mapping: {  }
+          invert_column_order: null
+          right_sidebar_position: null
+        components:
+          631d2f42-d574-48d9-9d4b-d89fa38f8d93:
+            uuid: 631d2f42-d574-48d9-9d4b-d89fa38f8d93
+            region: blb_region_col_1
+            configuration:
+              id: 'field_block:node:page:field_links'
+              label: 'Other links'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
+                horizontal_tab_id: ''
+        third_party_settings: {  }
+      -
+        layout_id: 'bootstrap_layout_builder:blb_col_1'
+        layout_settings:
+          label: ''
+          container_wrapper_classes: ''
+          container_wrapper_attributes: null
+          container_wrapper:
+            bootstrap_styles:
+              background:
+                background_type: color
+              background_color:
+                class: null
+              section_title: 'Related content'
+          container_wrapper_bg_color_class: ''
+          container_wrapper_bg_media: null
+          container: container
+          section_classes: ''
+          section_attributes: null
+          regions_classes:
+            blb_region_col_1: ''
+          regions_attributes:
+            blb_region_col_1: {  }
+          breakpoints: {  }
+          layout_regions_classes: {  }
+          remove_gutters: '0'
+          context_mapping: {  }
+        components:
+          7ee9a1da-3cac-4045-a666-2b6ed669ba40:
+            uuid: 7ee9a1da-3cac-4045-a666-2b6ed669ba40
+            region: blb_region_col_1
+            configuration:
+              id: iccwc_related_content
+              label: 'ICCWC Related Content'
+              label_display: '0'
+              provider: iccwc
+              context_mapping: {  }
+              reference_type: view_data
+              content_type:
+                page: page
+              see_more_text: ''
+              see_more_page: null
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              iccwc:
+                border: 0
+                centered: 0
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - 'bootstrap_layout_builder:blb_col_1'
+        - 'bootstrap_layout_builder:blb_col_2'
+        - 'bootstrap_layout_builder:blb_col_3'
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories:
+        - 'Chaos Tools'
+        - Forms
+        - System
+      blacklisted_blocks:
+        'Content fields':
+          - 'field_block:node:page:uid'
+          - 'field_block:node:page:created'
+          - 'field_block:node:page:changed'
+          - 'field_block:node:page:type'
+          - 'field_block:node:page:revision_default'
+          - 'field_block:node:page:default_langcode'
+          - 'field_block:node:page:nid'
+          - 'field_block:node:page:langcode'
+          - 'extra_field_block:node:page:links'
+          - 'field_block:node:page:menu_link'
+          - 'field_block:node:page:field_metatags'
+          - 'field_block:node:page:promote'
+          - 'field_block:node:page:status'
+          - 'field_block:node:page:revision_timestamp'
+          - 'field_block:node:page:vid'
+          - 'field_block:node:page:revision_log'
+          - 'field_block:node:page:revision_translation_affected'
+          - 'field_block:node:page:revision_uid'
+          - 'field_block:node:page:sticky'
+          - 'field_block:node:page:content_translation_outdated'
+          - 'field_block:node:page:content_translation_source'
+          - 'field_block:user:user:changed'
+          - 'field_block:user:user:created'
+          - 'field_block:user:user:default_langcode'
+          - 'field_block:user:user:mail'
+          - 'field_block:user:user:init'
+          - 'field_block:user:user:langcode'
+          - 'field_block:user:user:access'
+          - 'field_block:user:user:login'
+          - 'extra_field_block:user:user:member_for'
+          - 'field_block:user:user:name'
+          - 'field_block:user:user:preferred_admin_langcode'
+          - 'field_block:user:user:preferred_langcode'
+          - 'field_block:user:user:roles'
+          - 'field_block:user:user:timezone'
+          - 'field_block:user:user:uid'
+          - 'field_block:user:user:status'
+      whitelisted_blocks:
+        Webform:
+          - webform_block
+        core:
+          - page_title_block
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_banner_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_banner_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_exclude_related:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 109
+    region: blb_region_col_1
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_related_content:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  created: true
+  langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
+  search_api_excerpt: true
+  uid: true

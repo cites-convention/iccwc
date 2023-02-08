@@ -1,0 +1,25 @@
+uuid: 29db8154-9382-4daa-b46d-ae8316c73855
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.partner
+id: node.partner.field_weight
+field_name: field_weight
+entity_type: node
+bundle: partner
+label: Weight
+description: 'The order in which this content will be displayed in various listings. Higher weighted items are shown last.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

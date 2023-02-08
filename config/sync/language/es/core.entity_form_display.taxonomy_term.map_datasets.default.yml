@@ -1,0 +1,6 @@
+third_party_settings:
+  field_group:
+    group_tabs:
+      label: Pestañas
+    group_category_information:
+      label: Categoría

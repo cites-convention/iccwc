@@ -1,0 +1,11 @@
+uuid: 54a7c24c-904b-4add-8e49-592f1f52041c
+langcode: en
+status: true
+dependencies: {  }
+id: map
+block_id: mapbox_un_map
+category: page_content
+label: Map
+image_path: ''
+image_alt: ''
+weight: -13

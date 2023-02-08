@@ -1,0 +1,23 @@
+uuid: 785ad798-bde5-41f8-8046-15987ee0309c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.teaser_image_large_desktop
+  theme:
+    - frontend
+id: teaser_image_large
+label: 'Teaser image large'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_image_large_desktop
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: teaser_image_large_desktop
+    breakpoint_id: edwt.screen.sm-max
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: teaser_image_large_desktop

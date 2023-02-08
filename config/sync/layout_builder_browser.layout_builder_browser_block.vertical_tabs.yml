@@ -1,0 +1,11 @@
+uuid: 07fdf698-9aef-4a6d-8ae0-b14109ca7f08
+langcode: en
+status: true
+dependencies: {  }
+id: vertical_tabs
+block_id: 'inline_block:vertical_tabs'
+category: frontpage
+label: 'Vertical tabs'
+image_path: ''
+image_alt: ''
+weight: -15

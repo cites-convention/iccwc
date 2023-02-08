@@ -1,0 +1,95 @@
+<?php
+
+/**
+ * @file
+ * iccwc.install
+ */
+
+use Drupal\media\Entity\Media;
+use Drupal\media\Entity\MediaType;
+
+/**
+ * Move field_media_image to field_image.
+ */
+function iccwc_update_9001() {
+  /** @var \Drupal\paragraphs\ParagraphInterface[] $paragraphs */
+  $paragraphs = \Drupal::entityTypeManager()
+    ->getStorage('paragraph')
+    ->loadByProperties([
+      'type' => 'slideshow_item',
+    ]);
+
+  foreach ($paragraphs as $paragraph) {
+    $paragraph->get('field_image')->setValue($paragraph->get('field_media_image')->getValue());
+    $paragraph->save();
+  }
+}
+
+/**
+ * Move Youtube videos to media.
+ */
+function iccwc_update_9002() {
+  if (!MediaType::load('youtube_video')) {
+    throw new \Exception('Please run config import first');
+  }
+
+  $medias = [
+    0 => [
+      'title' => 'ICCWC About',
+      'url' => 'https://www.youtube.com/watch?v=60KPO5rt7EM',
+      'entities' => [
+        'block_content:1',
+        'node:238',
+      ],
+    ],
+    1 => [
+      'title' => 'ICCWC #1 - Five organizations',
+      'url' => 'https://www.youtube.com/watch?v=fpOswiY_r_o',
+      'entities' => [
+        'paragraph:5',
+        'node:239',
+      ],
+    ],
+    2 => [
+      'title' => 'ICCWC #2 - Deter, Detect, Detain, Dismantle',
+      'url' => 'https://www.youtube.com/watch?v=l3kbix003eo',
+      'entities' => [
+        'node:240',
+      ],
+    ],
+    3 => [
+      'title' => 'ICCWC #3 - Operation THUNDER 2021',
+      'url' => 'https://www.youtube.com/watch?v=UHFAFnAZAYk',
+      'entities' => [
+        'node:241',
+      ],
+    ],
+    4 => [
+      'title' => 'ICCWC #4 - Tools',
+      'url' => 'https://www.youtube.com/watch?v=br8aFDMlflU',
+      'entities' => [
+        'node:242',
+      ],
+    ],
+  ];
+
+  foreach ($medias as $media) {
+    $media_entity = Media::create([
+      'bundle' => 'youtube_video',
+      'name' => $media['title'],
+      'field_media_oembed_video' => $media['url'],
+      'status' => 1,
+    ]);
+    $media_entity->save();
+
+    foreach ($media['entities'] as $entity) {
+      [$entity_type, $entity_id] = explode(':', $entity);
+      $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($entity_id);
+      if (!$entity) {
+        continue;
+      }
+      $entity->get('field_video')->target_id = $media_entity->id();
+      $entity->save();
+    }
+  }
+}

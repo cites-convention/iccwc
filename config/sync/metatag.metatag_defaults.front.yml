@@ -1,0 +1,21 @@
+uuid: b58141e1-a84c-428f-b897-8f80ca837d8f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  description: '[node:summary]'
+  image_src: '[node:field_image:entity:field_media_image:entity:url]'
+  og_description: '[node:summary]'
+  og_image: '[node:field_image:entity:field_media_image:entity:url]'
+  og_image_url: '[node:field_image:entity:field_media_image:entity:url]'
+  og_title: '[site:name]'
+  shortlink: '[site:url]'
+  title: '[site:name]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image: '[node:field_image:entity:field_media_image:entity:url]'
+  twitter_cards_title: '[site:title]'

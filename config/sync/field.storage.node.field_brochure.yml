@@ -1,0 +1,20 @@
+uuid: d6cd489a-0b4f-44bd-8a9e-f05b7da56381
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_brochure
+field_name: field_brochure
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

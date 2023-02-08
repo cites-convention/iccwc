@@ -1,0 +1,100 @@
+uuid: c968c1f0-67ec-4659-8c43-f19210b47688
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Reset
+          items:
+            - RemoveFormat
+        -
+          name: Formatting
+          items:
+            - Undo
+            - Redo
+            - Bold
+            - Underline
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+            - JustifyRight
+            - JustifyCenter
+            - JustifyLeft
+            - JustifyBlock
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - quote
+            - DrupalImage
+            - DrupalMediaLibrary
+            - video_embed
+        -
+          name: Tools
+          items:
+            - Timeline
+            - bs_grid
+            - Table
+            - SpecialChar
+            - Source
+            - Styles
+  plugins:
+    stylescombo:
+      styles: "p.section-title|Section Title\r\ndiv.box-shadow|Box shadow\r\ndiv.html-highlights|Highlights"
+    bs_grid:
+      use_cdn: true
+      cdn_url: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap-grid.min.css'
+      available_columns:
+        2: '2'
+        3: '3'
+        4: '4'
+        1: 0
+        5: 0
+        6: 0
+        7: 0
+        8: 0
+        9: 0
+        10: 0
+        11: 0
+        12: 0
+      available_breakpoints:
+        sm: sm
+        md: md
+        lg: lg
+        xs: 0
+        xl: 0
+        xxl: 0
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

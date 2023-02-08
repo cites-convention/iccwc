@@ -1,0 +1,11 @@
+uuid: 7ca77f80-f8e3-4338-a0ce-923332715a19
+langcode: en
+status: true
+dependencies: {  }
+id: past_donors
+block_id: 'views_block:partners_and_donors-past_donors'
+category: page_content
+label: 'Past donors'
+image_path: ''
+image_alt: ''
+weight: -11

@@ -1,0 +1,27 @@
+uuid: bf2e2bbb-5a7e-4df6-8df5-ca86bf203513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_text
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+      - plain_text
+id: node.news.field_banner_text
+field_name: field_banner_text
+entity_type: node
+bundle: news
+label: 'Banner text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

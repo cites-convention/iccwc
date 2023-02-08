@@ -1,0 +1,20 @@
+uuid: a1faf9cb-91bb-4f71-958e-778d097bcddc
+langcode: en
+status: true
+dependencies:
+  module:
+    - dark_mode_switch
+  theme:
+    - frontend
+id: darkmodeswitch
+theme: frontend
+region: header_right
+weight: -3
+provider: null
+plugin: dark_mode_switch_block
+settings:
+  id: dark_mode_switch_block
+  label: 'Dark Mode Switch'
+  label_display: '0'
+  provider: dark_mode_switch
+visibility: {  }

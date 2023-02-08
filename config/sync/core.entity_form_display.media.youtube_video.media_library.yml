@@ -1,0 +1,28 @@
+uuid: e146d4bc-b1cf-4b7c-8205-4a44a998e158
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.youtube_video.field_media_oembed_video
+    - media.type.youtube_video
+id: media.youtube_video.media_library
+targetEntityType: media
+bundle: youtube_video
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_oembed_video: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,4 @@
+label: Page
+relationships:
+  'node:langcode:language':
+    label: Langue

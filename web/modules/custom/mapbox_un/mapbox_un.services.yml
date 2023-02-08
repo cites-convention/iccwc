@@ -1,0 +1,4 @@
+services:
+  mapbox_un.manager:
+    class: Drupal\mapbox_un\Services\MapboxUnManager
+    arguments: [ '@entity_type.manager', '@entity.repository']

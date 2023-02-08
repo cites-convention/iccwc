@@ -1,0 +1,15 @@
+iccwc.settings.social_media:
+  path: '/admin/config/iccwc/social-media'
+  defaults:
+    _form: '\Drupal\iccwc\Form\SocialMediaConfigForm'
+    _title: 'Social media settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+iccwc.admin_config_iccwc:
+  path: '/admin/config/iccwc'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'ICCWC Settings'
+  requirements:
+    _permission: 'administer iccwc settings'

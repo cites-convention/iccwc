@@ -1,0 +1,25 @@
+uuid: 136a4b70-eac5-4313-97f8-34b6dbe522ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero_banner_desktop
+    - image.style.homepage_banner_desktop
+    - image.style.homepage_banner_mobile
+  theme:
+    - frontend
+id: hero_banner
+label: 'Hero banner'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_banner_desktop
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: homepage_banner_mobile
+    breakpoint_id: edwt.screen.sm-max
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: homepage_banner_desktop

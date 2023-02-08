@@ -1,0 +1,11 @@
+uuid: bff76300-bc09-4af7-9b68-df74c29b11a8
+langcode: en
+status: true
+dependencies: {  }
+id: content_body_page
+block_id: 'field_block:node:page:body'
+category: field
+label: 'Page - Content body'
+image_path: ''
+image_alt: ''
+weight: -13

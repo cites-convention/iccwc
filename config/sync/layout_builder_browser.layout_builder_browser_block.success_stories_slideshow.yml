@@ -1,0 +1,11 @@
+uuid: c352af30-8e51-40c7-8f8a-e0a9ffd20b42
+langcode: en
+status: true
+dependencies: {  }
+id: success_stories_slideshow
+block_id: 'views_block:success_stories-block_success_stories'
+category: page_content
+label: 'Success stories slideshow'
+image_path: ''
+image_alt: ''
+weight: -8

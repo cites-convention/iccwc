@@ -1,0 +1,28 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            format: full_html
+      fields:
+        title:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      arguments:
+        nid_1:
+          exception:
+            title: Todo(s)
+    display_title: 'Por defecto'
+  latest_one_news:
+    display_options:
+      arguments:
+        nid:
+          exception:
+            title: Todo(s)

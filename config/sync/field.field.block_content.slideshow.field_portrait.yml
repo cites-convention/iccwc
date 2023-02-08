@@ -1,0 +1,23 @@
+uuid: 5f00508b-7cbe-4305-b26a-6b0c26b396f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slideshow
+    - field.storage.block_content.field_portrait
+id: block_content.slideshow.field_portrait
+field_name: field_portrait
+entity_type: block_content
+bundle: slideshow
+label: 'Portrait slides'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

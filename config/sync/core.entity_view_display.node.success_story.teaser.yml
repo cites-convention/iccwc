@@ -1,0 +1,47 @@
+uuid: f3c2e48e-ea8e-48f8-8a35-0c0a79076d06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.success_story.body
+    - field.field.node.success_story.field_banner_image
+    - field.field.node.success_story.field_banner_text
+    - field.field.node.success_story.field_image
+    - field.field.node.success_story.field_links
+    - field.field.node.success_story.field_related_content
+    - field.field.node.success_story.layout_builder__layout
+    - field.field.node.success_story.layout_builder__translation
+    - node.type.success_story
+    - responsive_image.styles.teaser_image
+  module:
+    - media_responsive_thumbnail
+id: node.success_story.teaser
+targetEntityType: node
+bundle: success_story
+mode: teaser
+content:
+  field_image:
+    type: media_responsive_thumbnail
+    label: hidden
+    settings:
+      responsive_image_style: teaser_image
+      image_link: content
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  created: true
+  field_banner_image: true
+  field_banner_text: true
+  field_links: true
+  field_related_content: true
+  langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
+  links: true
+  search_api_excerpt: true
+  uid: true
