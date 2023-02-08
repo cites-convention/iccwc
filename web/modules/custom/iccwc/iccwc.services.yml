@@ -1,0 +1,16 @@
+services:
+  iccwc.render_block_component_subscriber:
+    class: Drupal\iccwc\EventSubscriber\BlockComponentRenderArray
+    arguments: []
+    tags:
+      - { name: event_subscriber }
+
+  iccwc.manager:
+    class: Drupal\iccwc\ICCWCManager
+    arguments: ['@current_route_match', '@entity_type.manager']
+
+  iccwc.commands:
+    class: \Drupal\iccwc\Commands\IccwcMigrateCommands
+    tags:
+      - { name: drush.command }
+    arguments: [ '@http_client', '@file_system', '@entity_type.manager', '@pathauto.alias_cleaner', '@extension.list.module' ]

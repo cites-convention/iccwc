@@ -1,0 +1,18 @@
+uuid: ca1a20d7-b4ec-45a9-851e-58d2964f816a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slideshow
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.slideshow
+target_entity_type_id: block_content
+target_bundle: slideshow
+default_langcode: site_default
+language_alterable: true

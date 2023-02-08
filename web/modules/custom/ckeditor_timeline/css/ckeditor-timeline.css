@@ -1,0 +1,123 @@
+.ckeditor-timeline {
+  display: grid;
+  grid-template-columns: 80px auto;
+  position: relative;
+}
+
+.ckeditor-timeline span {
+  background: #F5CD26;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+}
+
+.ckeditor-timeline:before {
+  width: 6px;
+  height: 100%;
+  content: '';
+  position: absolute;
+  left: 27px;
+  background: #E5E5E5;
+  z-index: -2;
+  top: 0;
+}
+
+.ckeditor-timeline:after {
+  content: '';
+  position: absolute;
+  background: #F5CD26;
+  z-index: -1;
+  bottom: 0;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.timeline-slider {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.timeline-slider:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #E5E5E5;
+  border-radius: 20px;
+  top: 0;
+}
+
+.timeline-slider a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #999999;
+}
+
+.timeline-slider a:hover,
+.timeline-slider a.active {
+  color: #F5CD26;
+  text-decoration: none;
+}
+
+.timeline-slider a:hover:before,
+.timeline-slider a.active:before {
+  background: #F5CD26;
+}
+
+.timeline-slider a:before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  width: 13px;
+  height: 13px;
+  background: #999999;
+  border-radius: 50%;
+}
+
+.timeline-slider li {
+  padding-left: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .timeline-select-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline-slider {
+    display: none;
+  }
+}
+
+.timeline-select-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+  color: #999999;
+}
+
+.timeline-select-wrapper select {
+  margin-left: 3px;
+  border: none;
+  outline: none !important;
+  font-weight: bold;
+}

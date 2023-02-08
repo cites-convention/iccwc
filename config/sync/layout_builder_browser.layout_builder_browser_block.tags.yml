@@ -1,0 +1,11 @@
+uuid: 6fb73730-8f40-40e3-9e5c-a191b36544cd
+langcode: en
+status: true
+dependencies: {  }
+id: tags
+block_id: 'field_block:node:news:field_tags'
+category: field
+label: 'News - Publication type'
+image_path: ''
+image_alt: ''
+weight: -14

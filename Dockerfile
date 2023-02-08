@@ -13,8 +13,9 @@ RUN mkdir --parents /var/www/drupal/web/sites/default/files /var/www/private && 
     ln -s /var/www/private /var/www/drupal/private
 
 WORKDIR /var/www/drupal
-COPY --chown=nobody:nobody ci /var/www/drupal/ci
-COPY --chown=nobody:nobody composer.json composer.lock /var/www/drupal/
+COPY --chown=nobody:nobody scripts/ /var/www/drupal/scripts/
+COPY --chown=nobody:nobody patches/ /var/www/drupal/patches/
+COPY --chown=nobody:nobody composer.* /var/www/drupal/
 
 # Set composer home directory to writeable dir to allow user 'nobody' to create the cache dir necessary to clone from vcs.
 ENV COMPOSER_HOME /tmp/

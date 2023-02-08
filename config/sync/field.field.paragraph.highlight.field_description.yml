@@ -1,0 +1,26 @@
+uuid: a7568af3-72bb-4001-979c-a4eca4a89300
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.highlight
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: paragraph.highlight.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: highlight
+label: Description
+description: 'Use a description of around 85 characters.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,272 @@
+<?php
+
+/**
+ * @file
+ * The ICCWC module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\search_api\Query\QueryInterface;
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Url;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function iccwc_theme($existing, $type, $theme, $path) {
+  return [
+    'social_media_links' => [
+      'variables' => [
+        'twitter_link' => '',
+        'youtube_link' => '',
+        'linkedin_link' => '',
+      ],
+    ],
+    'social_media_share' => [
+      'variables' => [
+        'link' => '',
+      ],
+    ],
+    'more_links' => [
+      'variables' => [
+        'links' => [],
+      ],
+    ],
+    'banner_block' => [
+      'variables' => [
+        'summary' => '',
+        'title' => '',
+        'breadcrumb' => '',
+        'caption' => '',
+        'image' => '',
+        'tag' => '',
+        'date' => '',
+        'bundle' => '',
+        'search_form' => '',
+      ],
+    ],
+    'related_content' => [
+      'variables' => [
+        'related_content_view' => '',
+        'see_more_text' => '',
+        'see_more_link' => '',
+      ],
+    ],
+    'success_stories' => [
+      'variables' => [
+        'featured_story' => '',
+        'success_stories' => '',
+      ],
+    ],
+    'latest_news' => [
+      'variables' => [
+        'featured_news' => '',
+        'latest_news' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function iccwc_page_attachments(array &$attachments) {
+  // Add custom CSS to admin pages.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'iccwc/admin';
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function iccwc_entity_base_field_info_alter(&$base_field_definitions, EntityTypeInterface $entity_type) {
+  // Make uid and created fields be visible in Managed display.
+  if ($entity_type->id() == 'node') {
+    $fields = ['created', 'uid'];
+    foreach ($fields as $field) {
+      $base_field_definitions[$field]->setDisplayConfigurable('view', TRUE)
+        ->setDisplayOptions('view', ['region' => 'hidden']);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function iccwc_entity_type_build(array &$entity_types) {
+  // Make uid and created fields be visible in Managed display.
+  if (isset($entity_types['node'])) {
+    $entity_types['node']->set('enable_base_field_custom_preprocess_skipping', TRUE);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for layout_builder_configure_block.
+ */
+function iccwc_form_layout_builder_configure_block_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_object = $form_state->getFormObject();
+  /** @var \Drupal\layout_builder\SectionComponent $component */
+  $component = $form_object->getCurrentComponent();
+  array_unshift($form['#submit'], '_iccwc_form_layout_builder_configure_block_submit');
+
+  $form['settings']['border'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Add a border around the block'),
+    '#default_value' => $component->getThirdPartySetting('iccwc', 'border') ?? FALSE,
+  ];
+
+  $form['settings']['centered'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Centered content'),
+    '#default_value' => $component->getThirdPartySetting('iccwc', 'centered') ?? FALSE,
+  ];
+
+  $form['settings']['horizontal_tab_id'] = [
+    '#type' => 'textfield',
+    '#title' => t('Horizontal tab ID'),
+    '#description' => t('If added, this block will be moved inside the horizontal tab with the same ID. Ignore this if the page does not contain any horizontal tabs.'),
+    '#default_value' => $component->getThirdPartySetting('iccwc', 'horizontal_tab_id') ?? '',
+  ];
+}
+
+/**
+ * Layout builder configure block submit.
+ */
+function _iccwc_form_layout_builder_configure_block_submit($form, FormStateInterface $form_state) {
+  /** @var \Drupal\layout_builder\SectionComponent $section_component */
+  $section_component = $form_state->getFormObject()->getCurrentComponent();
+  $section_component->setThirdPartySetting('iccwc', 'border', $form_state->getValue('settings')['border'] ?? 0);
+  $section_component->setThirdPartySetting('iccwc', 'centered', $form_state->getValue('settings')['centered'] ?? 0);
+  $section_component->setThirdPartySetting('iccwc', 'horizontal_tab_id', $form_state->getValue('settings')['horizontal_tab_id'] ?? '');
+}
+
+/**
+ * Implements hook_search_api_query_alter().
+ */
+function iccwc_search_api_query_alter(QueryInterface $query) {
+  /** @var \Drupal\iccwc\ICCWCManager $iccwc_manager */
+  $iccwc_manager = \Drupal::service('iccwc.manager');
+  if ($iccwc_manager->isNewsPage()) {
+    $query->addCondition('type', 'news');
+  }
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function iccwc_pathauto_pattern_alter(&$pattern, array $context) {
+  if ($context['module'] == 'node') {
+    if (!$context['data']['node']->path->getFieldDefinition()->isTranslatable()) {
+      $context['language'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Modify the configuration form for layout builder sections (layouts).
+ */
+function iccwc_form_layout_builder_configure_section_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\layout_builder\Form\ConfigureSectionForm $form_object */
+  $form_object = $form_state->getFormObject();
+  $config = $form_object->getCurrentLayout()->getConfiguration();
+  $column_count = count($config['regions_classes']);
+
+  $form['layout_settings']['ui']['tab_content']['layout']['has_container']['#access'] = FALSE;
+  $form['layout_settings']['ui']['tab_content']['layout']['remove_gutters']['#access'] = FALSE;
+  $form['layout_settings']['ui']['tab_content']['layout']['container_type']['#access'] = FALSE;
+
+  if ($column_count == 2) {
+    $form['layout_settings']['ui']['tab_content']['layout']['invert_column_order'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Invert column order on tablet/mobile'),
+      '#default_value' => $config['invert_column_order'] ?? FALSE,
+      '#weight' => -2,
+    ];
+  }
+  elseif ($column_count == 3) {
+    $form['layout_settings']['ui']['tab_content']['layout']['right_sidebar_position'] = [
+      '#type' => 'select',
+      '#title' => t('Right sidebar position on tablet/mobile'),
+      '#default_value' => $config['right_sidebar_position'] ?? '3',
+      '#options' => [
+        '3' => t('After main content'),
+        '2' => t('Between first sidebar and content'),
+        '1' => t('Before first sidebar'),
+      ],
+      '#weight' => -2,
+    ];
+  }
+
+  array_unshift($form['#submit'], '_iccwc_submit_section_form');
+}
+
+/**
+ * Submit callback for layout_builder_configure_section form.
+ */
+function _iccwc_submit_section_form(array $form, FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+  $config = $form_object->getCurrentLayout()->getConfiguration();
+  if (!$config) {
+    $config = [];
+  }
+  $layout_tab = ['layout_settings', 'ui', 'tab_content', 'layout'];
+  $config = array_merge($config, ['invert_column_order' => $form_state->getValue(array_merge($layout_tab, ['invert_column_order']))]);
+  $config = array_merge($config, ['right_sidebar_position' => $form_state->getValue(array_merge($layout_tab, ['right_sidebar_position']))]);
+
+  $form_object
+    ->getCurrentLayout()
+    ->setConfiguration($config);
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function iccwc_entity_view_mode_alter(&$view_mode, $entity, $context) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'resource' && $view_mode == 'teaser' && $entity->get('field_resource_type')->value != 'infographic') {
+    $view_mode = 'search_teaser';
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function iccwc_preprocess_paragraph__slideshow_item(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['elements']['#paragraph'];
+  $block = $paragraph->getParentEntity();
+  /** @var \Drupal\media\MediaInterface $media_file */
+  $media_file = $paragraph->get('field_file')->entity;
+
+  if (!empty($media_file)) {
+    /** @var \Drupal\file\FileInterface $file */
+    $file = $media_file->get('field_media_file')->entity;
+    if (!empty($file)) {
+      $variables['slide_link'] = $file->createFileUrl();
+    }
+  }
+
+  if (empty($variables['slide_link']) && !$paragraph->get('field_link')->isEmpty()) {
+    $variables['slide_link'] = Url::fromUri($paragraph->get('field_link')->uri)->toString();
+  }
+
+  if (!empty($block->get('field_portrait')->value)) {
+    $variables['content']['field_image'][0]['#responsive_image_style_id'] = 'slideshow_portrait';
+  }
+}
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function iccwc_views_pre_build(ViewExecutable $view) {
+  if ($view->storage->id() == 'related_content') {
+    // If field_exclude_related is set to false then we should include NULLs.
+    if ($view->filter['field_exclude_related_value']->value == 0) {
+      $view->filter['field_exclude_related_value']->accept_null = TRUE;
+    }
+  }
+}

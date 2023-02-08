@@ -1,0 +1,23 @@
+uuid: c44eb271-d178-416a-a9c6-a624788652e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_materials_links
+    - node.type.resource
+  module:
+    - link
+id: node.resource.field_additional_materials_links
+field_name: field_additional_materials_links
+entity_type: node
+bundle: resource
+label: 'Additional materials (links)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

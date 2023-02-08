@@ -1,0 +1,28 @@
+uuid: bc5c4655-fda5-4d86-b2a4-5957075d6147
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slideshow
+    - field.field.block_content.slideshow.field_portrait
+    - field.field.block_content.slideshow.field_slides
+  module:
+    - entity_reference_revisions
+id: block_content.slideshow.default
+targetEntityType: block_content
+bundle: slideshow
+mode: default
+content:
+  field_slides:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_portrait: true
+  langcode: true
+  search_api_excerpt: true

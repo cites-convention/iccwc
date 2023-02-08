@@ -1,0 +1,9 @@
+clear_filter:
+  css:
+    component:
+      css/components/search/clear-filter.css: {}
+
+facets:
+  css:
+    component:
+      css/components/search/facets.css: {}

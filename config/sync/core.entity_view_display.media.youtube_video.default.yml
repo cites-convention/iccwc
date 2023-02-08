@@ -1,0 +1,40 @@
+uuid: 7c0c5953-c47d-455b-a93f-1d6047220074
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.youtube_video.field_media_oembed_video
+    - media.type.youtube_video
+  module:
+    - oembed_lazyload
+    - oembed_lazyload_youtube
+id: media.youtube_video.default
+targetEntityType: media
+bundle: youtube_video
+mode: default
+content:
+  field_media_oembed_video:
+    type: lazyload_oembed
+    label: hidden
+    settings:
+      max_width: 640
+      max_height: 360
+      strategy: onclick
+      intersection_observer_margin: ''
+    third_party_settings:
+      oembed_lazyload_youtube:
+        autoplay: true
+        modestbranding: false
+        enablejsapi: false
+        origin: false
+        hideinfo: false
+        rel: false
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

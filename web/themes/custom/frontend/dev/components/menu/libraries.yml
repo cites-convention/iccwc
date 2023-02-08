@@ -1,0 +1,4 @@
+sidebar_menu:
+  css:
+    component:
+      css/components/menu/sidebar-menu.css: { }

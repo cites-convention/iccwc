@@ -1,0 +1,6 @@
+name: Translate Config
+type: module
+description: 'Override LocaleConfigManager to give the option to translate every config entity through .po files.'
+package: custom
+core: '8.x'
+core_version_requirement: ^8 || ^9

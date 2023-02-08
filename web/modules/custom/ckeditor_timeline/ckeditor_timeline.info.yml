@@ -1,0 +1,10 @@
+name: CKEditor Timeline
+type: module
+description: Allows users to create & display content in a vertical timeline
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: CKEditor
+libraries:
+  - ckeditor_timeline/timeline
+dependencies:
+  - drupal:ckeditor

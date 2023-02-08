@@ -1,0 +1,14 @@
+uuid: 70573d57-9882-417b-be63-0c405a278b05
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: solr
+name: 'Default server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words

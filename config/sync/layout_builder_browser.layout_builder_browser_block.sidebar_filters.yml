@@ -1,0 +1,11 @@
+uuid: 0fbf057d-b779-4730-aabf-c4a41bdc865a
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar_filters
+block_id: iccwc_sidebar_filters
+category: search_pages
+label: 'Sidebar filters'
+image_path: ''
+image_alt: ''
+weight: -16

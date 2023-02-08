@@ -1,0 +1,15 @@
+uuid: f5624990-ada5-47f7-aca6-1f4ade749095
+langcode: en
+status: true
+dependencies: {  }
+name: hero_banner_mobile
+label: 'Hero banner (mobile)'
+effects:
+  bbaafaeb-2139-4457-ba2d-bdfd0ba88f52:
+    uuid: bbaafaeb-2139-4457-ba2d-bdfd0ba88f52
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 400
+      anchor: center-center

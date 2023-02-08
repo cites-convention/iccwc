@@ -1,0 +1,29 @@
+uuid: 818ba710-30d6-4198-b51f-a599c2b61b4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.frontpage_banner
+    - field.storage.block_content.field_video
+    - media.type.youtube_video
+id: block_content.frontpage_banner.field_video
+field_name: field_video
+entity_type: block_content
+bundle: frontpage_banner
+label: Video
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      youtube_video: youtube_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

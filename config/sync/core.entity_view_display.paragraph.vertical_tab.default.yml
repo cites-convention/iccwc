@@ -1,0 +1,75 @@
+uuid: 1d930967-a451-43cc-a87e-86cf2646b7e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vertical_tab.field_button_link
+    - field.field.paragraph.vertical_tab.field_button_text
+    - field.field.paragraph.vertical_tab.field_description
+    - field.field.paragraph.vertical_tab.field_image
+    - field.field.paragraph.vertical_tab.field_title
+    - field.field.paragraph.vertical_tab.field_video
+    - paragraphs.paragraphs_type.vertical_tab
+  module:
+    - link
+    - text
+id: paragraph.vertical_tab.default
+targetEntityType: paragraph
+bundle: vertical_tab
+mode: default
+content:
+  field_button_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_button_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: colorbox
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  search_api_excerpt: true

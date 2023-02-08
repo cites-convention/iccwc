@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a bootstrap columns layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'layout',
+  'row',
+  content['#settings']['remove_gutters'] is same as('1') ? 'no-gutters' : '',
+  content['#settings']['invert_column_order'] ? 'mobile-invert-column-order',
+  content['#settings']['right_sidebar_position'] ? 'mobile-right-sidebar-position-' ~ content['#settings']['right_sidebar_position'],
+  'layout-builder__layout'
+] %}
+{% if content %}
+  {% if content['#section_title'] %}
+    <div class="section-title-wrapper">
+      <h2 class="section-title">{{ content['#section_title'] }}</h2>
+      {{ content['#social_media'] }}
+    </div>
+  {% endif %}
+
+  <div {{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% for i in 1..12 %}
+      {% set region = "blb_region_col_" ~ i %}
+      {% if content[region] %}
+        <div {{ region_attributes[region] }}>
+          {{ content[region] }}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {{ title_suffix }}
+  </div>
+
+{% endif %}

@@ -1,0 +1,20 @@
+uuid: 78740e1c-dec0-4f36-873a-4692561e4082
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_weight
+field_name: field_weight
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

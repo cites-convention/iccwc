@@ -1,0 +1,8 @@
+edw_scrollup:
+  css:
+    theme:
+      css/edw_scrollup.css: {}
+  js:
+    js/edw_scrollup.js: {}
+  dependencies:
+    - core/jquery

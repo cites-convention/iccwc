@@ -1,0 +1,21 @@
+uuid: 91300108-1e91-4aa0-a068-9bfae0678f91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__translation
+    - node.type.success_story
+  module:
+    - layout_builder_st
+id: node.success_story.layout_builder__translation
+field_name: layout_builder__translation
+entity_type: node
+bundle: success_story
+label: 'Layout Labels'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_translation

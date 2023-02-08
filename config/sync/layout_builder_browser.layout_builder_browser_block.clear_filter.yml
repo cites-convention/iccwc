@@ -1,0 +1,11 @@
+uuid: 0406ee86-633b-4522-a930-396d922312d9
+langcode: en
+status: true
+dependencies: {  }
+id: clear_filter
+block_id: iccwc_clear_filter
+category: search_pages
+label: 'Clear filters link'
+image_path: ''
+image_alt: ''
+weight: -15

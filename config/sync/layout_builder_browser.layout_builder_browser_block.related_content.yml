@@ -1,0 +1,11 @@
+uuid: adfa9601-720b-4bbc-b251-a0a9a3a2138f
+langcode: en
+status: true
+dependencies: {  }
+id: related_content
+block_id: iccwc_related_content
+category: page_content
+label: 'Related content'
+image_path: ''
+image_alt: ''
+weight: -6

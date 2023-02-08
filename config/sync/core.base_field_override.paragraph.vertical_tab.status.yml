@@ -1,0 +1,22 @@
+uuid: 5c4fee08-ae7c-4a96-8442-61a99ccf2f0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vertical_tab
+id: paragraph.vertical_tab.status
+field_name: status
+entity_type: paragraph
+bundle: vertical_tab
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

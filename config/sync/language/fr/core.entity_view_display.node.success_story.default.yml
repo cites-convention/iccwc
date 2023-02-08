@@ -1,0 +1,11 @@
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        components:
+          cdcbb09f-7a4e-4b18-891b-36ef85fa4713:
+            configuration:
+              label: Corps
+          fbe8e958-c762-45a4-8581-8578f40de200:
+            configuration:
+              label: 'Navigation principale'

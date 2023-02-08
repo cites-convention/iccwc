@@ -1,0 +1,10 @@
+.featured-news {
+  margin-bottom: 20px;
+}
+
+.view-latest-news {
+  & .view-footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+}

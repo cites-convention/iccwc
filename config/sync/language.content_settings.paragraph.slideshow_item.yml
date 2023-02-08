@@ -1,0 +1,18 @@
+uuid: 4ab3c64c-333e-485f-a144-5bdec55b2ada
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.slideshow_item
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.slideshow_item
+target_entity_type_id: paragraph
+target_bundle: slideshow_item
+default_langcode: site_default
+language_alterable: false

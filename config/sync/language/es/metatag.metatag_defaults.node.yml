@@ -1,0 +1,9 @@
+label: Contenido
+tags:
+  canonical_url: '[node:url]'
+  description: '[node:summary]'
+  og_description: '[node:summary]'
+  og_site_name: '[node:title] | [site:name]'
+  title: '[node:title] | [site:name]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_title: '[node:title] | [site:name]'

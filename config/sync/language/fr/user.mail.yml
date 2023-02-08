@@ -1,0 +1,18 @@
+cancel_confirm:
+  subject: 'Demande d''annulation du compte [user:display-name] sur [site:name]'
+password_reset:
+  subject: 'Modification des informations de connexion pour [user:display-name] sur [site:name]'
+register_admin_created:
+  subject: 'Un administrateur a créé un compte pour vous sur [site:name]'
+register_no_approval_required:
+  subject: 'Détails du compte [user:display-name] sur [site:name]'
+register_pending_approval:
+  subject: 'Détails du compte [user:display-name] sur [site:name] (en attente de validation d''un administrateur)'
+register_pending_approval_admin:
+  subject: 'Détails du compte [user:display-name] sur [site:name] (en attente de validation d''un administrateur)'
+status_activated:
+  subject: 'Détails du compte pour [user:display-name] sur [site:name]'
+status_blocked:
+  subject: 'Détails du compte [user:display-name] sur [site:name] (bloqué)'
+status_canceled:
+  subject: 'Détails du compte [user:display-name] sur [site:name] (annulé)'

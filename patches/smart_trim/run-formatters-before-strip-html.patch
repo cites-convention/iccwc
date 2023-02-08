@@ -1,0 +1,15 @@
+diff --git a/src/Plugin/Field/FieldFormatter/SmartTrimFormatter.php b/src/Plugin/Field/FieldFormatter/SmartTrimFormatter.php
+index b679427..c6df146 100644
+--- a/src/Plugin/Field/FieldFormatter/SmartTrimFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/SmartTrimFormatter.php
+@@ -293,6 +293,10 @@ class SmartTrimFormatter extends FormatterBase implements ContainerFactoryPlugin
+           }
+         }
+ 
++        if (!empty($item->format)) {
++          $output = check_markup($output, $item->format);
++        }
++
+         if (!empty($setting_trim_options['text'])) {
+           // Strip caption.
+           $output = preg_replace('/<figcaption[^>]*>.*?<\/figcaption>/is', ' ', $output);

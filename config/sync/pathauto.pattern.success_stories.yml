@@ -1,0 +1,33 @@
+uuid: 51574ac4-8a5a-469f-8f86-49a3614e44bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: success_stories
+label: 'Success stories'
+type: 'canonical_entities:node'
+pattern: '/success-stories/[node:title]'
+selection_criteria:
+  b892f859-8e82-4ad1-abf8-f9a620a8af66:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: b892f859-8e82-4ad1-abf8-f9a620a8af66
+    context_mapping:
+      node: node
+    bundles:
+      success_story: success_story
+  588bd454-e76e-470f-a4cb-defa2dfc040e:
+    id: language
+    negate: false
+    uuid: 588bd454-e76e-470f-a4cb-defa2dfc040e
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language

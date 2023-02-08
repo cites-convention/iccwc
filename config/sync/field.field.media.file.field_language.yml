@@ -1,0 +1,23 @@
+uuid: 6f1e3283-6b10-469e-8c4a-f6a5d719c972
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_language
+    - media.type.file
+  module:
+    - languagefield
+id: media.file.field_language
+field_name: field_language
+entity_type: media
+bundle: file
+label: Language
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: en
+default_value_callback: ''
+settings: {  }
+field_type: language_field

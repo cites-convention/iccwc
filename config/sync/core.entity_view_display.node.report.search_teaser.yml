@@ -1,0 +1,56 @@
+uuid: 90279cca-f21c-4416-809f-ec6898321448
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_teaser
+    - field.field.node.report.body
+    - field.field.node.report.field_files
+    - node.type.report
+  module:
+    - layout_builder
+    - smart_trim
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.report.search_teaser
+targetEntityType: node
+bundle: report
+mode: search_teaser
+content:
+  body:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 60
+      trim_type: words
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_files: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  uid: true

@@ -1,0 +1,20 @@
+uuid: b27cb1d8-6e1f-4aac-b226-5de48fb485c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.organizations
+  module:
+    - path
+id: taxonomy_term.organizations.path
+field_name: path
+entity_type: taxonomy_term
+bundle: organizations
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

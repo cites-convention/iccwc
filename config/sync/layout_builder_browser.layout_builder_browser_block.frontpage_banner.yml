@@ -1,0 +1,11 @@
+uuid: e9bf4e1a-7f19-4d56-ab51-903f27d0ea9b
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_banner
+block_id: 'inline_block:frontpage_banner'
+category: frontpage
+label: 'Frontpage banner'
+image_path: ''
+image_alt: ''
+weight: -16

@@ -1,0 +1,11 @@
+uuid: 6ad12eeb-f0ed-4062-bfc0-723623a0a481
+langcode: en
+status: true
+dependencies: {  }
+id: latest_news
+block_id: iccwc_latest_news
+category: frontpage
+label: 'Latest news'
+image_path: ''
+image_alt: ''
+weight: -14

@@ -1,0 +1,23 @@
+uuid: b9da0c9c-28ff-4ba1-a4b5-9d753e26aa1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.slideshow
+  theme:
+    - frontend
+id: slideshow
+label: Slideshow
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: slideshow
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: slideshow
+    breakpoint_id: edwt.screen.sm-max
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: slideshow

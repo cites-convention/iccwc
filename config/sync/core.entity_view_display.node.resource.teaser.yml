@@ -1,0 +1,65 @@
+uuid: e94398ab-74fd-4eaf-87b8-cd9b4d7c2e63
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resource.body
+    - field.field.node.resource.field_additional_materials
+    - field.field.node.resource.field_additional_materials_links
+    - field.field.node.resource.field_brochure
+    - field.field.node.resource.field_files
+    - field.field.node.resource.field_image
+    - field.field.node.resource.field_organization
+    - field.field.node.resource.field_resource_type
+    - field.field.node.resource.field_video
+    - node.type.resource
+  module:
+    - text
+id: node.resource.teaser
+targetEntityType: node
+bundle: resource
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: colorbox_with_caption
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_additional_materials: true
+  field_additional_materials_links: true
+  field_brochure: true
+  field_files: true
+  field_organization: true
+  field_resource_type: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true

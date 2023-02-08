@@ -1,0 +1,23 @@
+uuid: 1cc4889c-d085-4eaf-b99d-323efd7e82c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.slideshow_portrait
+  theme:
+    - frontend
+id: slideshow_portrait
+label: 'Slideshow portrait'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: slideshow_portrait
+    breakpoint_id: edwt.screen.lg-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: slideshow_portrait
+    breakpoint_id: edwt.screen.md-max
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: slideshow_portrait

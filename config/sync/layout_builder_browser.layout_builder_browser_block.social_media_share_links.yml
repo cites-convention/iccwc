@@ -1,0 +1,11 @@
+uuid: 72d57109-d9da-467c-aebd-2325ffc891e0
+langcode: en
+status: true
+dependencies: {  }
+id: social_media_share_links
+block_id: iccwc_social_media_share
+category: page_content
+label: 'Social media share links'
+image_path: ''
+image_alt: ''
+weight: -4

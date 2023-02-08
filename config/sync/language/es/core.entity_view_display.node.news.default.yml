@@ -1,0 +1,14 @@
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        components:
+          bc3700ab-5c54-460e-9d98-cbd911151a91:
+            configuration:
+              label: Cuerpo
+          c99833d0-a911-4b4b-a1b5-101999ab5993:
+            configuration:
+              label: Etiquetas
+          538bc2e3-68a6-462b-97ab-05920aa938ec:
+            configuration:
+              label: 'Navegación principal'

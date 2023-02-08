@@ -1,0 +1,9 @@
+label: 'Página de Inicio'
+tags:
+  canonical_url: '[site:url]'
+  description: '[node:summary]'
+  og_description: '[node:summary]'
+  og_title: '[site:name]'
+  shortlink: '[site:url]'
+  title: '[site:name]'
+  twitter_cards_description: '[node:summary]'

@@ -1,0 +1,14 @@
+diff --git a/core/modules/views/src/Plugin/views/argument_default/QueryParameter.php b/core/modules/views/src/Plugin/views/argument_default/QueryParameter.php
+index b864b60..8cd4cbc 100644
+--- a/core/modules/views/src/Plugin/views/argument_default/QueryParameter.php
++++ b/core/modules/views/src/Plugin/views/argument_default/QueryParameter.php
+@@ -65,7 +65,8 @@ public function buildOptionsForm(&$form, FormStateInterface $form_state) {
+   public function getArgument() {
+     $current_request = $this->view->getRequest();
+
+-    if ($current_request->query->has($this->options['query_param'])) {
++    $param = $current_request->query->get($this->options['query_param']);
++    if ($param && $param !== '') {
+       $param = $current_request->query->all()[$this->options['query_param']];
+       if (is_array($param)) {
+         $conjunction = ($this->options['multiple'] == 'and') ? ',' : '+';

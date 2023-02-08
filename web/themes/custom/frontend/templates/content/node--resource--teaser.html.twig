@@ -1,0 +1,113 @@
+{{ attach_library('frontend/content_teasers') }}
+
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
+%}
+{% if node.field_resource_type.value == 'video' %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="row" {{ content_attributes.addClass('node__content') }}>
+      <div class="col-md-8">
+        <div class="date-tags">
+          {{ content.created }}
+        </div>
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h3{{ title_attributes }}>
+            <p class="title-teaser" rel="bookmark" >{{ label }}</p>
+          </h3>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="max-3-lines">
+          {{ content.body }}
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ content.field_video }}</div>
+    </div>
+  </article>
+{% elseif node.field_resource_type.value == 'partner_resource' or node.field_resource_type.value == 'publication' %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="row" {{ content_attributes.addClass('node__content') }}>
+      <div class="col-md-8">
+        {% if not node.field_organization.isEmpty %}
+          <div class="submitted-by">
+            {{ "Submitted by "|t}} {{  content.field_organization }}
+          </div>
+        {% endif %}
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h3{{ title_attributes }}>
+            <p class="title-teaser" rel="bookmark" >{{ label }}</p>
+          </h3>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="max-3-lines">
+          {{ content.body }}
+        </div>
+      </div>
+      <div class="col-md-4">
+        {{ content.field_image }}
+      </div>
+      {% if not node.field_files.isEmpty %}
+        <div class="download-resource-block">
+          <div class="top">
+            <p>{{ "Download"|t }}</p>
+            {% for file in content.field_files %}
+              {% if file["#type"] == "link" %}
+                {% set language = file["#language"].label %}
+                {% if not language %}
+                  {% set language = "English" | t %}
+                {% endif %}
+                <a href="{{ file["#url"] }}" class="lang-download" download>{{ language }}</a>
+              {% endif %}
+            {% endfor %}
+            <a href="{{ content.field_brochure[0]['#url']}}" class="lang-download" id="brochure" target="_blank">{{ "See brochure"|t }}</a><br>
+          </div>
+
+          {% if content.field_additional_materials[0] is not null %}
+            <div class="bottom">
+              <a class="additional-materials" data-bs-toggle="collapse" href="#additionalMaterials-{{ node.id }}" role="button" aria-expanded="true" aria-controls="additionalMaterials-{{ node.id }}">
+                <p>{{ "Additional materials"|t }}</p>
+                <i class="arrow"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.59 7.42004L6 2.83004L1.41 7.42004L0 6.00004L6 4.3869e-05L12 6.00004L10.59 7.42004Z" fill="#231F20"/>
+                  </svg></i>
+              </a>
+              <div class="collapse show" id="additionalMaterials-{{ node.id }}">
+                <div class="files card card-body">
+                  {% for file in content.field_additional_materials %}
+                    {% if file["#type"] == "link" %}
+                      <div class="file"><a href="{{ file["#url"].toString }}" >{{ file["#title"] }}</a></div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </article>
+{% elseif node.field_resource_type.value == 'infographic' %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="row" {{ content_attributes.addClass('node__content') }}>
+      <div class="col-md-12">
+        {{ title_prefix }}
+        {% if label and not page %}
+          <h3{{ title_attributes }}>
+            <p class="title-teaser" rel="bookmark" >{{ label }}</p>
+          </h3>
+        {% endif %}
+        {{ title_suffix }}
+        {{ content.body }}
+        {{ content.field_image }}
+      </div>
+    </div>
+  </article>
+{% endif %}

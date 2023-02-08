@@ -1,0 +1,27 @@
+uuid: b0b7ed50-5a93-45f8-9f93-105649b903ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.slideshow_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+      - plain_text
+id: paragraph.slideshow_item.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: slideshow_item
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

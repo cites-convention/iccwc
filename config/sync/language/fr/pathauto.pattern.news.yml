@@ -1,0 +1,4 @@
+label: 'A la une'
+relationships:
+  'node:langcode:language':
+    label: Langue

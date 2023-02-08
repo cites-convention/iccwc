@@ -1,0 +1,11 @@
+uuid: 05a3a038-d0cd-42dc-ad26-25ebd96d9833
+langcode: en
+status: true
+dependencies: {  }
+id: infographics
+block_id: 'views_block:resources-infographics'
+category: resources_tools
+label: Infographics
+image_path: ''
+image_alt: ''
+weight: -100

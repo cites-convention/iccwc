@@ -1,0 +1,11 @@
+uuid: 833d36f3-189e-4266-8b29-eb5fa7460ddb
+langcode: en
+status: true
+dependencies: {  }
+id: partner_tools_resources
+block_id: 'views_block:resources-partner_tools_resources'
+category: resources_tools
+label: 'Partner tools & resources'
+image_path: ''
+image_alt: ''
+weight: -100

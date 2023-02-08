@@ -1,0 +1,62 @@
+
+.facets-widget-checkbox {
+  & a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    padding: 10px;
+
+    &:hover, &:active {
+      text-decoration: none;
+      color: var(--color-orange);
+    }
+
+    &:before {
+      content: '◼';
+      margin-right: 20px;
+      margin-top: 20px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  & .facets-soft-limit-link::before {
+    content: none;
+  }
+
+  & a[aria-expanded="true"] .arrow {
+    transform: rotate(225deg);
+  }
+
+  & li {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  & ul {
+    list-style-type: none;
+    padding: 0 20px;
+  }
+
+  & input[type=checkbox] {
+    -webkit-appearance: none;
+    padding: 10px;
+    border-radius: 0;
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url("../../../icons/checkbox.svg");
+
+    &:checked {
+      background-image: url("../../../icons/checked.svg");
+    }
+
+    &:checked + label {
+      color: var(--color-orange);
+    }
+  }
+
+  position: relative;
+}

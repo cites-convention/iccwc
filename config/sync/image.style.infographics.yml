@@ -1,0 +1,15 @@
+uuid: ebf288c8-8fd3-4a24-bda4-657fe84487e8
+langcode: en
+status: true
+dependencies: {  }
+name: infographics
+label: 'Infographics (Height 600px)'
+effects:
+  e1343d73-b974-4e76-88ee-d41aec0075fe:
+    uuid: e1343d73-b974-4e76-88ee-d41aec0075fe
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 600
+      upscale: false

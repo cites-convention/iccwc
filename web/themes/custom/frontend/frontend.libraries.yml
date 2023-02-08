@@ -1,0 +1,11 @@
+# Libraries for the configuration the Eau de Web Theme theme.
+global-styling:
+  css:
+    theme:
+      css/typography.css: {}
+      css/general.css: {}
+      css/header.css: {}
+      css/footer.css: {}
+      css/dark-mode.css: {}
+  js:
+    js/script.js: {}

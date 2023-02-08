@@ -1,0 +1,11 @@
+uuid: c3056236-2350-463b-b5bd-a2f387c5336f
+langcode: en
+status: true
+dependencies: {  }
+id: partner_block
+block_id: 'views_block:partners_and_donors-block_2'
+category: page_content
+label: 'Partner block'
+image_path: ''
+image_alt: ''
+weight: -12

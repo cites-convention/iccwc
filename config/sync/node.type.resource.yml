@@ -1,0 +1,17 @@
+uuid: 9cc9a0c9-1212-4fe8-8d37-63a9f75c343f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Resource
+type: resource
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false
