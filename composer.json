@@ -190,6 +190,7 @@
             ]
         },
         "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
         "patches-file": "composer.patches.json"
     },
     "scripts": {
