@@ -6,6 +6,8 @@ image: public.ecr.aws/unicc/opsctl:1.21
 definitions:
   CreateRelease: &CreateRelease
     name: Create Release
+    caches:
+      - docker
     script:
       - opsctl create secret -v unicc-cwh-${BITBUCKET_BRANCH}.yaml
       - opsctl create build -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
