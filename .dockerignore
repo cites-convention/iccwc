@@ -1,7 +1,8 @@
 Dockerfile
+local
 .env
 *.iml
 .idea
 .git
 .gitignore
-
+unicc-cwh-*.yaml

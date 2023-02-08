@@ -9,14 +9,15 @@ apps:
     values:
       certificatesArn: "arn:aws:acm:eu-west-1:488638853303:certificate/96c3ec94-fbfe-4650-876e-03c4681a2b58"
       hosts:
-        - hostNames: ["cites-iccwc.leman.un-icc.cloud", "realdomain.org"]
+        - hostNames: ["cites-iccwc.leman.un-icc.cloud", "iccwc-wildlifecrime.org", "www.iccwc-wildlifecrime.org"]
           appName: web
   - name: web
     appType: standard-app
     version: 0.0.22
     dockerfile: Dockerfile
     values:
-      cpu: 400m
+      cpu: 800m
+      replicaCount: 1
       memory: 512Mi
       secret:
         - name: NEW_RELIC_LICENSE_KEY
@@ -31,20 +32,36 @@ apps:
           secret_key: aws_smtp_password
         - name: AWS_SECRET_ACCESS_KEY
           secret_key: aws_secret_access_key
+        - name: HASH_SALT
+          secret_key: CWH_DRUPAL_HASH_SALT
       env:
         ENV: prod
         NEW_RELIC_APP_NAME: cites-iccwc
         DB_USER: citesiccwc
         DB_NAME: citesiccwc
+        DB_PORT: 3306
+        SMTP_HOST: 'email-smtp.eu-west-1.amazonaws.com'
+        SMTP_PORT: 587
+        SMTP_PROTOCOL: 'tls'
+        SMTP_FROM_ADDRESS: no-reply@wildlifeday.org
+        TRUSTED_HOST_PATTERNS: '^iccwc-wildlifecrime\.org$;^www\.iccwc-wildlifecrime\.org$;^stag\.iccwc-wildlifecrime\.org$;^cites-iccwc\.leman\.un-icc\.cloud$'
+        DB_MAX_CACHE_ROWS: 50000
+        IMAGE_TOOLKIT: imagick
       sharedStorage:
         enabled: true
+        existingPvc: cites-iccwc
         mountPaths:
-          - /var/www/web/sites/default/files
-          - /var/www/web/sites/afr/files
+          - /var/www/html/sites/default/files
+          - /var/www/private
   - name: shared-storage
     appType: efs-storage
     version: 0.0.5
-
+    values:
+      efsPermissions:
+        enabled: false
+      enabled: true
+      name: cites-iccwc
+      efsEndpoint: cites-iccwc.storage.leman.un-icc.cloud
   - name: dump-backup
     appType: s3-backup-restore
     version: 0.1.2
