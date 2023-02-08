@@ -43,7 +43,7 @@ apps:
         SMTP_HOST: 'email-smtp.eu-west-1.amazonaws.com'
         SMTP_PORT: 587
         SMTP_PROTOCOL: 'tls'
-        SMTP_FROM_ADDRESS: no-reply@wildlifeday.org
+        SMTP_FROM_ADDRESS: no-reply@iccwc-wildlifecrime.org
         TRUSTED_HOST_PATTERNS: '^iccwc-wildlifecrime\.org$;^www\.iccwc-wildlifecrime\.org$;^stag\.iccwc-wildlifecrime\.org$;^cites-iccwc\.leman\.un-icc\.cloud$'
         DB_MAX_CACHE_ROWS: 50000
         IMAGE_TOOLKIT: imagick
