@@ -8,7 +8,7 @@ apps:
     version: 0.0.3
     values:
       hosts:
-        - hostNames: ["cites-iccwc-test.rhone.un-icc.cloud", "https://stag.iccwc-wildlifecrime.org"]
+        - hostNames: ["cites-iccwc-test.rhone.un-icc.cloud", "stag.iccwc-wildlifecrime.org"]
           appName: web
   - name: web
     appType: standard-app
