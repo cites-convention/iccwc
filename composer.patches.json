@@ -24,6 +24,9 @@
     "drupal/media_responsive_thumbnail": {
       "#3322231 - Respect lazy loading settings": "https://www.drupal.org/files/issues/2022-11-17/3322231-respect-lazy-loading-settings-2.patch"
     },
+    "drupal/webp": {
+      "#3116000 Add Imagick module support" : "https://git.drupalcode.org/project/webp/-/commit/01a2d7bf4f7020fbdf047243b227f4763a43cc5c.patch"
+    },
     "drupal/stage_file_proxy": {
       "#3332930 - use_imagecache_root doesn't work with webp": "https://www.drupal.org/files/issues/2023-01-17/webp_compatibility_patch-3332930-8.patch"
     }
