@@ -27,6 +27,6 @@ RUN touch .env
 
 COPY --chown=nobody:nobody ./ /var/www/drupal/
 
-RUN date -Iseconds > 'web/build.html'
+RUN date -Iseconds > '/var/www/html/build.html'
 
 CMD ["/var/www/drupal/commands.sh"]
