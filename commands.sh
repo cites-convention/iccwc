@@ -2,6 +2,7 @@
 
 echo "Running commands before entrypoint"
 set -x
+{
 
 cd /var/www/drupal/
 
@@ -13,4 +14,5 @@ then
   echo -e "User-agent: *\nDisallow: /" > web/robots.txt
 fi
 
+} 2>&1 | tee "web/deployment.log"
 date -Iseconds > 'web/deployment.html'
