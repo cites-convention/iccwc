@@ -5,7 +5,7 @@ security:
 apps:
   - name: alb-ingress
     appType: alb-ingress
-    version: 0.0.9
+    version: 0.0.11
     values:
       certificatesArn: "arn:aws:acm:eu-west-1:488638853303:certificate/96c3ec94-fbfe-4650-876e-03c4681a2b58"
       hosts:
