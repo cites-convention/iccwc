@@ -758,9 +758,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Database connection.
  */
 $databases['default']['default'] = [
-  'init_commands' => [
-    'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'",
-  ],
   'database' => getenv('DB_NAME'),
   'driver' => 'mysql',
   'host' => getenv('DB_HOST'),
@@ -771,6 +768,10 @@ $databases['default']['default'] = [
   'username' => getenv('DB_USER'),
   'collation' => 'utf8mb4_general_ci',
 ];
+
+if (!empty(getenv('DB_MAX_CACHE_ROW'))) {
+  $settings['database_cache_max_rows']['default'] = getenv('DB_MAX_CACHE_ROWS');
+}
 
 /**
  * SMTP settings.
@@ -812,6 +813,13 @@ if (!empty(getenv('DISABLE_CACHING'))) {
   $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
   $config['advagg.settings']['enabled'] = FALSE;
 }
+
+/**
+ * Toolkit used to manipulate images.
+ */
+$toolkit = getenv('IMAGE_TOOLKIT') ?? 'gd';
+$config['system.image']['toolkit'] = $toolkit;
+
 
 /**
  * Load local development override configuration, if available.

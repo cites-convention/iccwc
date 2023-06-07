@@ -82,6 +82,7 @@
         "drupal/google_analytics": "^4.0",
         "drupal/honeypot": "^2.0",
         "drupal/image_max_size_crop": "^2.0",
+        "drupal/imagick": "^1.6",
         "drupal/lang_dropdown": "^2.0",
         "drupal/languagefield": "^1.8",
         "drupal/layout_builder_browser": "^1.4",

@@ -195,3 +195,4 @@ $config['advagg.settings']['enabled'] = FALSE;
 $config['stage_file_proxy.settings']['origin'] = 'https://iccwc-wildlifecrime.org/';
 $config['stage_file_proxy.settings']['use_imagecache_root'] = FALSE;
 
+$config['system.image']['toolkit'] = 'gd';
