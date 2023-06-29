@@ -55,13 +55,7 @@ apps:
           - /var/www/private
   - name: shared-storage
     appType: efs-storage
-    version: 0.0.5
-    values:
-      efsPermissions:
-        enabled: false
-      enabled: true
-      name: cites-iccwc
-      efsEndpoint: cites-iccwc.storage.leman.un-icc.cloud
+    version: 0.0.8
   - name: dump-backup
     appType: s3-backup-restore
     version: 0.1.2
