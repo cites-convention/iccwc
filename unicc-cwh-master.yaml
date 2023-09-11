@@ -5,7 +5,7 @@ security:
 apps:
   - name: alb-ingress
     appType: alb-ingress
-    version: 0.0.9
+    version: 0.0.11
     values:
       certificatesArn: "arn:aws:acm:eu-west-1:488638853303:certificate/96c3ec94-fbfe-4650-876e-03c4681a2b58"
       hosts:
@@ -13,7 +13,7 @@ apps:
           appName: web
   - name: web
     appType: standard-app
-    version: 0.0.22
+    version: 0.0.26
     dockerfile: Dockerfile
     values:
       cpu: 800m
@@ -43,7 +43,7 @@ apps:
         SMTP_HOST: 'email-smtp.eu-west-1.amazonaws.com'
         SMTP_PORT: 587
         SMTP_PROTOCOL: 'tls'
-        SMTP_FROM_ADDRESS: no-reply@wildlifeday.org
+        SMTP_FROM_ADDRESS: no-reply@iccwc-wildlifecrime.org
         TRUSTED_HOST_PATTERNS: '^iccwc-wildlifecrime\.org$;^www\.iccwc-wildlifecrime\.org$;^stag\.iccwc-wildlifecrime\.org$;^cites-iccwc\.leman\.un-icc\.cloud$'
         DB_MAX_CACHE_ROWS: 50000
         IMAGE_TOOLKIT: imagick
@@ -55,13 +55,7 @@ apps:
           - /var/www/private
   - name: shared-storage
     appType: efs-storage
-    version: 0.0.5
-    values:
-      efsPermissions:
-        enabled: false
-      enabled: true
-      name: cites-iccwc
-      efsEndpoint: cites-iccwc.storage.leman.un-icc.cloud
+    version: 0.0.8
   - name: dump-backup
     appType: s3-backup-restore
     version: 0.1.2
