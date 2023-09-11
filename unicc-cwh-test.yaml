@@ -5,14 +5,14 @@ security:
 apps:
   - name: nginx-ingress
     appType: nginx-ingress
-    version: 0.0.3
+    version: 0.0.4
     values:
       hosts:
         - hostNames: ["cites-iccwc-test.rhone.un-icc.cloud", "stag.iccwc-wildlifecrime.org"]
           appName: web
   - name: web
     appType: standard-app
-    version: 0.0.22
+    version: 0.0.30
     dockerfile: Dockerfile
     values:
       cpu: 400m
@@ -53,13 +53,7 @@ apps:
           - /var/www/private
   - name: shared-storage
     appType: efs-storage
-    version: 0.0.5
-    values:
-      efsPermissions:
-        enabled: false
-      enabled: true
-      name: cites-iccwc-test
-      efsEndpoint: cites-iccwc-test.storage.rhone.un-icc.cloud
+    version: 0.0.8
   - name: dump-backup
     appType: s3-backup-restore
     version: 0.1.2

@@ -1,57 +1,16 @@
-options:
-  docker: true
-
-image: public.ecr.aws/unicc/opsctl:1.21
-
-definitions:
-  CreateRelease: &CreateRelease
-    name: Create Release
-    caches:
-      - docker
-    script:
-      - opsctl create secret -v unicc-cwh-${BITBUCKET_BRANCH}.yaml
-      - opsctl create build -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
-      - opsctl create helm-release -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -o ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
-      - opsctl deploy -f ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH}.yaml -r ${DEPLOY_ENVIRONMENT_REPO}
-      - opsctl create scan -v unicc-cwh-${BITBUCKET_BRANCH}.yaml -t ${BITBUCKET_BUILD_NUMBER}
-
-  DBDump: &DBDump
-    name: DB dump
-    size: 2x
-    artifacts:
-      - '*.sql.gz'
-
 pipelines:
   branches:
     master:
-      - step:
-          deployment: production
-          <<: *CreateRelease
+      import: platform-cloud-operations-templates:stable:cwh-production
     test:
-      - step:
-          deployment: staging
-          <<: *CreateRelease
+      import: platform-cloud-operations-templates:stable:cwh-staging
     dev:
-      - step:
-          deployment: test
-          <<: *CreateRelease
-                
+      import: platform-cloud-operations-templates:stable:cwh-dev      
+
   custom:
     db-dump-production:
-      - step:
-          deployment: production
-          <<: *DBDump
-          script:
-            - opsctl get dbdump -p ${BITBUCKET_REPO_SLUG} -f dump.sql.gz
+      import: platform-cloud-operations-templates:stable:db-dump-production   
     db-dump-test:
-      - step:
-          deployment: staging
-          <<: *DBDump
-          script:
-            - opsctl get dbdump -p ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH} -f dump.sql.gz
+      import: platform-cloud-operations-templates:stable:db-dump-staging 
     db-dump-dev:
-      - step:
-          deployment: test
-          <<: *DBDump
-          script:
-            - opsctl get dbdump -p ${BITBUCKET_REPO_SLUG}-${BITBUCKET_BRANCH} -f dump.sql.gz
+      import: platform-cloud-operations-templates:stable:db-dump-dev 
