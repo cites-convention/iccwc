@@ -69,8 +69,9 @@
         "drupal/ckeditor_quote": "^1.0",
         "drupal/colorbox": "^2.0",
         "drupal/conditional_fields": "^4.0@alpha",
-        "drupal/core-composer-scaffold": "9.5.2",
-        "drupal/core-recommended": "9.5.2",
+        "drupal/core-composer-scaffold": "9.5.10",
+        "drupal/core-project-message": "9.5.10",
+        "drupal/core-recommended": "9.5.10",
         "drupal/critical_css": "^1.19",
         "drupal/dark_mode_switch": "^2.0",
         "drupal/easy_breadcrumb": "^2.0",
@@ -140,7 +141,8 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "drupal/core-project-message": true
         }
     },
     "extra": {

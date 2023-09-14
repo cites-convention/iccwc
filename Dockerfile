@@ -20,8 +20,7 @@ COPY --chown=nobody:nobody composer.* /var/www/drupal/
 # Set composer home directory to writeable dir to allow user 'nobody' to create the cache dir necessary to clone from vcs.
 ENV COMPOSER_HOME /tmp/
 
-RUN composer -vvv install
-RUN composer -vvv require newrelic/monolog-enricher
+RUN composer -vvv install --no-dev
 
 RUN touch .env
 
