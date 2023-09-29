@@ -1,0 +1,66 @@
+projectName: cites-iccwc
+projectType: CWHv2
+security:
+  enabled: true
+apps:
+  - name: alb-ingress
+    appType: alb-ingress
+    version: 0.0.13
+    values:
+      certificatesArn: "arn:aws:acm:eu-west-1:488638853303:certificate/96c3ec94-fbfe-4650-876e-03c4681a2b58"
+      hosts:
+        - hostNames: ["cites-iccwc.leman.un-icc.cloud", "iccwc-wildlifecrime.org", "www.iccwc-wildlifecrime.org"]
+          appName: web
+  - name: web
+    appType: standard-app
+    version: 0.0.30
+    dockerfile: Dockerfile
+    values:
+      cpu: 800m
+      replicaCount: 2
+      memory: 512Mi
+      secret:
+        - name: NEW_RELIC_LICENSE_KEY
+          secret_key: new_relic_license_key
+        - name: DB_HOST
+          secret_key: db_host
+        - name: DB_PASSWORD
+          secret_key: user_db_password
+        - name: SMTP_USER
+          secret_key: aws_access_key
+        - name: SMTP_PASSWORD
+          secret_key: aws_smtp_password
+        - name: AWS_SECRET_ACCESS_KEY
+          secret_key: aws_secret_access_key
+        - name: HASH_SALT
+          secret_key: CWH_DRUPAL_HASH_SALT
+      env:
+        ENV: prod
+        NEW_RELIC_APP_NAME: cites-iccwc
+        DB_USER: citesiccwc
+        DB_NAME: citesiccwc
+        DB_PORT: 3306
+        SMTP_HOST: 'email-smtp.eu-west-1.amazonaws.com'
+        SMTP_PORT: 587
+        SMTP_PROTOCOL: 'tls'
+        SMTP_FROM_ADDRESS: no-reply@iccwc-wildlifecrime.org
+        TRUSTED_HOST_PATTERNS: '^iccwc-wildlifecrime\.org$;^www\.iccwc-wildlifecrime\.org$;^stag\.iccwc-wildlifecrime\.org$;^cites-iccwc\.leman\.un-icc\.cloud$'
+        DB_MAX_CACHE_ROWS: 50000
+        IMAGE_TOOLKIT: imagick
+      sharedStorage:
+        enabled: true
+        existingPvc: cites-iccwc
+        mountPaths:
+          - /var/www/html/sites/default/files
+          - /var/www/private
+  - name: shared-storage
+    appType: efs-storage
+    version: 0.0.8
+  - name: dump-backup
+    appType: s3-backup-restore
+    version: 0.1.4
+    values:
+      projectName: cites-iccwc
+      backupStorage: false
+      backupDb: true
+      schedule: "0 14 * * *"

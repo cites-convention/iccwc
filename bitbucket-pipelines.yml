@@ -1,0 +1,16 @@
+pipelines:
+  branches:
+    master:
+      import: platform-cloud-operations-templates:stable:cwh-production
+    test:
+      import: platform-cloud-operations-templates:stable:cwh-staging
+    dev:
+      import: platform-cloud-operations-templates:stable:cwh-dev      
+
+  custom:
+    db-dump-production:
+      import: platform-cloud-operations-templates:stable:db-dump-production   
+    db-dump-test:
+      import: platform-cloud-operations-templates:stable:db-dump-staging 
+    db-dump-dev:
+      import: platform-cloud-operations-templates:stable:db-dump-dev 

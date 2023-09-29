@@ -1,0 +1,37 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cites-iccwc
+  description: cites-iccwc
+  tags: 
+    - live
+    - active
+    - cites-p-d01-r
+    - cpd-coordinators
+    - boisseau-simon
+    - icc-cwh-prod
+    - silver
+  annotations:
+    backstage.io/kubernetes-id: cites-iccwc
+    backstage.io/kubernetes-label-selector: 'cwh-project-id=cites-iccwc'
+  links:
+    - url: https://cites-iccwc.leman.un-icc.cloud
+      icon: web
+    - url: https://iccwc-wildlifecrime.org
+      icon: web
+    - url: https://www.iccwc-wildlifecrime.org
+      icon: web
+    - url: https://observ.unicc.org/s/pops_cites_cwh_iccwc
+      title: Logs & Metrics
+      icon: web
+    - url: https://cwh-docs.un-icc.cloud/
+      title: CWH Docs
+      icon: web
+spec:
+  type: website
+  lifecycle: production
+  owner: ddd-developers
+  system: cwh
+  dependsOn: 
+    - component:cites-iccwc-infra
