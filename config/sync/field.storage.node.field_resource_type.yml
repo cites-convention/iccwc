@@ -23,6 +23,9 @@ settings:
     -
       value: infographic
       label: Infographic
+    -
+      value: report
+      label: Report
   allowed_values_function: ''
 module: options
 locked: false
