@@ -136,7 +136,7 @@ content:
             grouping: AND
             values_set: 3
             value: ''
-            values: "publication\r\npartner_resource"
+            values: "publication\r\npartner_resource\r\nreport"
             value_form: {  }
             effect: show
             effect_options: {  }
@@ -161,7 +161,7 @@ content:
             grouping: AND
             values_set: 3
             value: ''
-            values: "publication\r\npartner_resource\r\ninfographic"
+            values: "publication\r\npartner_resource\r\ninfographic\r\nreport"
             value_form: {  }
             effect: show
             effect_options: {  }
