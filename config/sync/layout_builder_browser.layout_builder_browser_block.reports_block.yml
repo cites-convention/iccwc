@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: reports_block
-block_id: 'views_block:resources-block_1'
+block_id: 'views_block:resources-reports_resources'
 category: resources_tools
 label: Reports
 image_path: ''

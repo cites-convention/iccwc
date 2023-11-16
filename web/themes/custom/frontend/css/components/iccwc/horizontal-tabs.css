@@ -39,7 +39,7 @@
         border-color: var(--color-orange);
       }
   @media (min-width: 48rem) {
-  .horizontal-tabs .tab-pane .collapse {
+  .horizontal-tabs .tab-pane > .collapse {
       display: block
   }
     }
