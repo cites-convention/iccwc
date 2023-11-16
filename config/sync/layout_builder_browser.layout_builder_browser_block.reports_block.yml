@@ -1,0 +1,11 @@
+uuid: 6239fcbf-a608-4b09-9dca-b4f5f6e31a60
+langcode: en
+status: true
+dependencies: {  }
+id: reports_block
+block_id: 'views_block:resources-reports_resources'
+category: resources_tools
+label: Reports
+image_path: ''
+image_alt: ''
+weight: null

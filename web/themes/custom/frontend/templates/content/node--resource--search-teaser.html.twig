@@ -77,13 +77,13 @@
 
           {% if not node.field_additional_materials.isEmpty or not node.field_additional_materials_links.isEmpty %}
             <div class="bottom">
-              <a class="additional-materials" data-bs-toggle="collapse" href="#additionalMaterials-{{ node.id }}" role="button" aria-expanded="true" aria-controls="additionalMaterials-{{ node.id }}">
+              <a class="additional-materials" data-bs-toggle="collapse" href="#additionalMaterials-{{ node.id }}" role="button" aria-expanded="false" aria-controls="additionalMaterials-{{ node.id }}">
                 <p>{{ "Additional materials"|t }}</p>
                 <i class="arrow"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.59 7.42004L6 2.83004L1.41 7.42004L0 6.00004L6 4.3869e-05L12 6.00004L10.59 7.42004Z" fill="#231F20"/>
                   </svg></i>
               </a>
-              <div class="collapse show" id="additionalMaterials-{{ node.id }}">
+              <div class="collapse" id="additionalMaterials-{{ node.id }}">
                 <div class="files">
                   {% for file in content.field_additional_materials %}
                     {% if file["#type"] == "link" %}

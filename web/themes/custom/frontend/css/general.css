@@ -705,3 +705,7 @@ img {
 .block-local-tasks-block .nav-item.nav-link {
     border-color: #dee2e6 #dee2e6 #fff;
   }
+
+.min-height {
+  min-height: 100vh;
+}

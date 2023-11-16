@@ -36,7 +36,7 @@
     }
   }
 
-  & .tab-pane .collapse {
+  & .tab-pane > .collapse {
     @media (min-width: 768px) {
       display: block;
     }
